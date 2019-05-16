@@ -3,6 +3,6 @@ Temporary landing page used while the static website is under construction. Buil
 
 # Installation 
 
-'*Coming Soon*' 
+`*Coming Soon*`
 
 
