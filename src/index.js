@@ -28,15 +28,17 @@ class App extends React.Component {
                 <div className = "bottomNav">
 
                     <div id="bottomNav-left"> 
-                        <a target="_blank" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"> <img id="MLHLogo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-black.svg"></img> </a> 
+                        <a target="_blank" rel="noopener noreferrer" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"> 
+                            <img id="MLHLogo" alt="Major League Hacking Logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-black.svg"></img> 
+                        </a> 
                     </div> 
 
                     <div id="bottomNav-right">
-                        <a target="_blank" href="https://www.facebook.com/cuhacking/"> <img className ="socialLink" src={facebookLogo}></img> </a> 
-                        <a target="_blank" href="https://www.linkedin.com/company/cuhacking/"> <img className ="socialLink" src={linkedinLogo}></img> </a> 
-                        <a target="_blank" href="https://www.instagram.com/cuHacking/"> <img className ="socialLink" src={instagramLogo}></img> </a> 
-                        <a target="_blank" href="https://twitter.com/cuhacking?lang=en"> <img className ="socialLink" src={twitterLogo}></img> </a> 
-                        <a target="_blank" href="https://github.com/cuhacking"> <img className ="socialLink" src={githubLogo}></img> </a> 
+                        <a target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/cuhacking/">           <img className ="socialLink" alt="Link to cuHacking Facebook Page"      src={facebookLogo}></img> </a> 
+                        <a target="_blank"  rel="noopener noreferrer" href="https://www.linkedin.com/company/cuhacking/">   <img className ="socialLink" alt="Link to cuHacking LinkedIn Page"      src={linkedinLogo}></img> </a> 
+                        <a target="_blank"  rel="noopener noreferrer" href="https://www.instagram.com/cuHacking/">          <img className ="socialLink" alt="Link to cuHacking Instagram Profile"  src={instagramLogo}></img> </a> 
+                        <a target="_blank"  rel="noopener noreferrer" href="https://twitter.com/cuhacking?lang=en">         <img className ="socialLink" alt="Link to cuHacking Twitter Page"       src={twitterLogo}></img> </a> 
+                        <a target="_blank"  rel="noopener noreferrer" href="https://github.com/cuhacking">                  <img className ="socialLink" alt="Link to cuHacking's Github"           src={githubLogo}></img> </a> 
                     </div>
 
                 </div>
