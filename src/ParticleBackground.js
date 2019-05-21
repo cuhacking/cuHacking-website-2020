@@ -121,10 +121,10 @@ const parameters =
     },
     "retina_detect": true
 }
+    
+export default (isIE) => (
 
+  <div style={style}>
 
-export default () => (
-  <div style={style} >
-    <Particles params = {parameters}/>
   </div>
 );

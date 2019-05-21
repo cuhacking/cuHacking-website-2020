@@ -18,7 +18,7 @@ npm install
 To **run the development server** on [localhost:3000](localhost:3000) *(includes hot-reload)*: 
 
 ```
-npm run
+npm start
 ```
 
 ### Building

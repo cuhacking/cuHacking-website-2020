@@ -24,6 +24,7 @@ html, body {
 }
 
 #leftSide {
+  width: 60vw; 
   margin: 30px; 
   display: flex; 
   align-items: left; 
