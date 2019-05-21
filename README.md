@@ -15,7 +15,7 @@ npm install
 ```
 
 ### Testing
-To **run the development server** on localhost:3000 *(includes hot-reload)*: 
+To **run the development server** on [localhost:3000](localhost:3000) *(includes hot-reload)*: 
 
 ```
 npm run
@@ -28,7 +28,7 @@ To **create an optimized production build:**
 npm run build
 ```
 
-To **test the production build** (go to localhost:5000): 
+To **test the production build** (visible at [localhost:5000](localhost:5000)): 
 
 ```
 serve -s build
