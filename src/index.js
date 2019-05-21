@@ -11,43 +11,75 @@ class App extends React.Component {
     render() {
 
         console.log(isIE);
+        
+        if(!isIE) {
+            return (
+                <div id = "content">
+                  <div id="leftSide">
+      
+                      <div id = "topNav">
+                          <img id="logo" src={cuHackingLogo} alt="Logo for cuHacking."></img>
+                      </div>
+      
+                      <div id = "heading"> 
+                          <h1> cuHacking is coming </h1>
+                          <h1> January 2020 </h1>
+                      </div>  
+      
+                      <div className = "bottomNav">
+      
+                          <div id="bottomNav-left"> 
+                              <a target="_blank" rel="noopener noreferrer" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"> 
+                                  <img id="MLHLogo" alt="Major League Hacking Logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-black.svg"></img> 
+                              </a> 
+                          </div> 
+      
+                          <div id="bottomNav-right">
+                              <SocialLinks /> 
+                           </div>
+      
+                      </div>
+                  
+                  </div> 
+      
+                  <div id="particles"> 
+                      <ParticleBackground /> 
+                  </div>
+               </div> 
+            )
+        } else { 
+            return (
+                <div id = "content">
+                  <div id="leftSide">
+      
+                      <div id = "topNav">
+                          <img id="logo" src={cuHackingLogo} alt="Logo for cuHacking."></img>
+                      </div>
+      
+                      <div id = "heading"> 
+                          <h1> cuHacking is coming </h1>
+                          <h1> January 2020 </h1>
+                      </div>  
+      
+                      <div className = "bottomNav">
+      
+                          <div id="bottomNav-left"> 
+                              <a target="_blank" rel="noopener noreferrer" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"> 
+                                  <img id="MLHLogo" alt="Major League Hacking Logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-black.svg"></img> 
+                              </a> 
+                          </div> 
+      
+                          <div id="bottomNav-right">
+                              <SocialLinks /> 
+                           </div>
+      
+                      </div>
+                  
+                  </div> 
 
-        return (
-          <div id = "content">
-            <div id="leftSide">
-
-                <div id = "topNav">
-                    <img id="logo" src={cuHackingLogo} alt="Logo for cuHacking."></img>
-                </div>
-
-                <div id = "heading"> 
-                    <h1> cuHacking is coming </h1>
-                    <h1> January 2020 </h1>
-                </div>  
-
-                <div className = "bottomNav">
-
-                    <div id="bottomNav-left"> 
-                        <a target="_blank" rel="noopener noreferrer" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"> 
-                            <img id="MLHLogo" alt="Major League Hacking Logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-black.svg"></img> 
-                        </a> 
-                    </div> 
-
-                    <div id="bottomNav-right">
-                        <SocialLinks /> 
-                     </div>
-
-                </div>
-            
-            </div> 
-
-            <div id="particles"> 
-                <ParticleBackground /> 
-            </div> 
-
-        </div> 
-
-        ) 
+               </div> 
+            )
+        }
     }
 }
 
