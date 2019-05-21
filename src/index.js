@@ -42,7 +42,7 @@ class App extends React.Component {
             </div> 
 
             <div id="particles"> 
-
+                <ParticleBackground /> 
             </div> 
 
         </div> 

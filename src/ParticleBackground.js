@@ -125,6 +125,6 @@ const parameters =
 export default (isIE) => (
 
   <div style={style}>
-
+      <Particles params={parameters}></Particles>
   </div>
 );
