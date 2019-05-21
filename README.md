@@ -28,7 +28,7 @@ To **create an optimized production build:**
 npm run build
 ```
 
-To **test the production build:**
+To **test the production build** (go to localhost:5000): 
 
 ```
 serve -s build
