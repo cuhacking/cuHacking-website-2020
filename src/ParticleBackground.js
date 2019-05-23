@@ -1,13 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js'
 
-
 const style = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
+
 }
 
 const parameters =
@@ -21,7 +16,7 @@ const parameters =
         }
         },
         "color": {
-        "value": "#070707"
+        "value": "#000000"
         },
         "shape": {
         "type": "circle",
@@ -49,7 +44,7 @@ const parameters =
         }
         },
         "size": {
-        "value": 1,
+        "value": 2.5,
         "random": true,
         "anim": {
             "enable": false,
@@ -61,8 +56,8 @@ const parameters =
         "line_linked": {
         "enable": true,
         "distance": 150,
-        "color": "#484444",
-        "opacity": 0.10422178395625899,
+        "color": "#000000",
+        "opacity": 0.16835826639087975,
         "width": 1
         },
         "move": {
@@ -84,11 +79,11 @@ const parameters =
         "detect_on": "canvas",
         "events": {
         "onhover": {
-            "enable": false,
+            "enable": true,
             "mode": "repulse"
         },
         "onclick": {
-            "enable": false,
+            "enable": true,
             "mode": "push"
         },
         "resize": true
@@ -120,8 +115,8 @@ const parameters =
         }
     },
     "retina_detect": true
-}
-    
+    }
+
 export default () => (
   <div style={style}>
       <Particles params={parameters}></Particles>
