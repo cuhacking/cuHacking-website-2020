@@ -15,14 +15,13 @@ body {
   height: 100vh;
   width: 100vh; 
   /* Big Raven */ 
-  background-image: url('./images/trimmedLogoV3.png');
+  background-image: url('./images/trimmedLogoA.png');
   background-position: right; 
   background-repeat: no-repeat; 
   background-size: contain; 
   overflow: hidden; 
   min-height: 300px; 
 }
-
 
 #wrapper {
   display: flex; 
@@ -83,7 +82,7 @@ img.socialLink:hover {
 @media screen and (max-width: 890px) and (min-height: 400px)  {
 
   body { 
-    background-image: url('./images/trimmedLogoV2.png'); 
+    background-image: url('./images/trimmedLogoB.png'); 
     background-position: bottom right;
     background-size: 40vw auto; 
   } 
@@ -107,14 +106,12 @@ img.socialLink:hover {
 
 }
 
-
-
 @media screen and (max-width: 890px) and (min-height: 600px)  {
 
   body { 
-    background-image: url('./images/trimmedLogoV2.png'); 
+    background-image: url('./images/trimmedLogoB.png'); 
     background-position: bottom right;
-    background-size: 65vw auto; 
+    background-size: 65vw auto;
   } 
 
   .content {

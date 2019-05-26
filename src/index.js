@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import CuHackingLogo from './cuHackingLogo';
 import ParticleBackground from './particleBackground';
-import SocialLinks from './socialLinks';
-import backgroundImage from './images/trimmedLogo.png'; 
+import SocialLinks from './socialLinks'; 
 
 const isIE = false || !!document.documentMode;
 
@@ -30,9 +29,7 @@ class App extends React.Component {
                 </div> 
               
                 <div id="backgroundImage"/>  
-                
-
-    
+                   
                 {!isIE ? <ParticleBackground id="particleBackground"/> : <></>}
 
             </div>
