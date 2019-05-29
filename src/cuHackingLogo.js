@@ -1,5 +1,5 @@
 import React from 'react';
-import cuHackingLogo from './images/logo.png'
+import cuHackingLogo from './images/logo.svg'
 
 const style = { 
     width: "30px", 

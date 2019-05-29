@@ -7,10 +7,16 @@ import SocialLinks from './socialLinks';
 
 const isIE = false || !!document.documentMode;
 
+ 
 class App extends React.Component {
     render() {
         return (
+            <>
+            
+            {!isIE ? <ParticleBackground id="particleBackground"/> : <></>}
+
             <div id="wrapper">
+
                 <div className="content">
 
                         <div className = "top navbar row">
@@ -27,12 +33,10 @@ class App extends React.Component {
                     </div> 
 
                 </div> 
-              
-                <div id="backgroundImage"/>  
-                   
-                {!isIE ? <ParticleBackground id="particleBackground"/> : <></>}
-
+ 
             </div>
+
+            </> 
         )
     }
 }
