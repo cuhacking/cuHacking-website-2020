@@ -25,7 +25,7 @@ class App extends React.Component {
                         </div>
         
                         <div className = "heading"> 
-                            <h1 id = "heading-cu"> cuHacking 2020<br/><span id="test"> coming soon </span> </h1>
+                            <h1 id = "heading-cu"> cuHacking 2020<br/><span id="blueText"> coming soon </span> </h1>
                         </div>  
                 
 

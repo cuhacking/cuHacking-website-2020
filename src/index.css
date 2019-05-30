@@ -101,6 +101,12 @@ canvas {
   padding-right: 0; 
 }
 
+/*
+#blueText {
+  color: var(--aero); 
+}
+ */ 
+
 @media screen and (max-width: 500px) and (min-height: 400px)  {
 
   #wrapper {
@@ -124,7 +130,6 @@ canvas {
 }
 
 @media screen and (max-width: 900px) and (min-height: 600px)  {
-
 
   #wrapper {
     /* Big Raven */ 
