@@ -19,6 +19,7 @@ class App extends React.Component {
 
                 <div className="content">
 
+       
                         <div className = "top navbar row">
                             <CuHackingLogo/> 
                         </div>
@@ -26,7 +27,7 @@ class App extends React.Component {
                         <div className = "heading"> 
                             <h1 id = "heading-cu"> cuHacking 2020<br/><span id="test"> coming soon </span> </h1>
                         </div>  
-
+                
 
                     <div className = "bottom navbar"> 
                        <SocialLinks className = "row" /> 

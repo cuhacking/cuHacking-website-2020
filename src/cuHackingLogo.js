@@ -2,8 +2,8 @@ import React from 'react';
 import cuHackingLogo from './images/logo.svg'
 
 const style = { 
-    width: "30px", 
-    height: "30px"
+    width: "45px", 
+    height: "45px"
 }
 
 export default () => ( 
