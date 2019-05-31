@@ -21,7 +21,7 @@ class App extends Component {
               <CuHackingLogo/>
             </div>
             <div className="heading">
-              <h1>cuHacking 2020<br/><span id="blueText">coming soon</span></h1>
+              <h1>cuHacking 2020<br/><span id="blueText">coming soon.</span></h1>
             </div>
             <SocialLinks className="row" />
           </div>
