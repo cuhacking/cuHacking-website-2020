@@ -43,3 +43,4 @@ serve -s build
 * [Reactjs](https://reactjs.org/docs/getting-started.html)
 * [create-react-app](https://github.com/facebook/create-react-app)
 * [react-particles-js](https://github.com/Wufe/react-particles-js)
+* [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)
