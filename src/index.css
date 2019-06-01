@@ -72,7 +72,7 @@ canvas {
   height: 100vh;
   position: relative;
   /* Big Raven */
-  background-image: url('./images/trimmedLogoA.png');
+  background-image: url('./images/trimmedLogoA.svg');
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
@@ -88,7 +88,7 @@ canvas {
 @media screen and (max-width: 500px) and (min-height: 400px) {
   #wrapper {
     /* Big Raven */
-    background-image: url('./images/trimmedLogoB.png');
+    background-image: url('./images/trimmedLogoB.svg');
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 45vw auto;
@@ -108,7 +108,7 @@ canvas {
 @media screen and (max-width: 900px) and (min-height: 600px) {
   #wrapper {
     /* Big Raven */
-    background-image: url('./images/trimmedLogoB.png');
+    background-image: url('./images/trimmedLogoB.svg');
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 45vw auto;
