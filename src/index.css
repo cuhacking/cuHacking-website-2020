@@ -48,9 +48,9 @@ canvas {
 }
 
 .heading {
-  color: var(--darkPrimaryColour);
+  /* color: var(--darkPrimaryColour);
   font-size: 5vmin;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Audiowide', monospace; */
   /* font-weight: bold; */
   overflow: visible;
   white-space: nowrap;
@@ -58,8 +58,15 @@ canvas {
   width: 100%;
 }
 
-#blueText {
+.titleText {
+  color: var(--darkPrimaryColour);
+  font-size: 12vmin;
+  font-family: 'Inconsolata', monospace;
+}
+.subtitleText {
   color: var(--primaryColour);
+  font-size: 8vmin;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
