@@ -78,13 +78,6 @@ canvas {
   background-size: contain;
 }
 
-#logo {
-  padding-top: 10px;
-  padding-bottom: 0;
-  padding-left: 10px;
-  padding-right: 0;
-}
-
 @media screen and (max-width: 500px) and (min-height: 400px) {
   #wrapper {
     /* Big Raven */
