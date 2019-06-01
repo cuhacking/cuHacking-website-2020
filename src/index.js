@@ -11,7 +11,6 @@ const isIE = false || !!document.documentMode;
 
 class App extends Component {
   render() {
-    console.log(process.env.NODE_PATH)
     return (
       <>
         {!isIE ? <ParticleBackground id="particleBackground"/> : <></>}
