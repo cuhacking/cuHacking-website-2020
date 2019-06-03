@@ -75,7 +75,7 @@ canvas {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-image: url('./images/trimmedLogoA.svg');
+  background-image: url('./images/trimmedLogo.png');
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
@@ -83,7 +83,7 @@ canvas {
 
 @media all and (orientation:portrait) {
   #wrapper {
-    background-image: url('./images/trimmedLogoB.svg');
+    background-image: url('./images/trimmedLogo.png');
     background-position: bottom right;
     background-repeat: no-repeat;
     background-size: 45vw auto;

@@ -1,5 +1,5 @@
 import React from 'react';
-import cuHackingLogo from 'images/logo.svg'
+import cuHackingLogo from 'images/logo.png'
 import styles from './cuHackingLogo.module.css';
 
 export default () => (
