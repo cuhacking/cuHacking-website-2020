@@ -22,9 +22,10 @@ html, body {
 
 body {
   height: 100vh;
-  width: 100vh;
+  width: 100vw; 
   background-color: white;
   overflow: hidden;
+  position: relative;
   min-height: 300px;
 }
 
