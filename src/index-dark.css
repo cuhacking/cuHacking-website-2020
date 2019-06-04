@@ -1,0 +1,118 @@
+* {
+    --textColour: #0C0F0A;
+    --lightPrimaryColour: #8668aa;
+    --primaryColour: #9756D8;
+    --darkPrimaryColour: #31263E;
+    --secondaryColour: #7DB0E8;
+    --spaceColour: #F1F9ED;
+    --background: #0c0f0a; 
+}
+
+a {
+    text-decoration: none;
+    display: inline-flex;
+}
+
+html, body {
+    min-width: 335px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    height: 100vh;
+    width: 100vw; 
+    background-color: var(--background);
+    overflow: hidden;
+    position: relative;
+    min-height: 300px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.content {
+    height: 98vh;
+    width: 100%;
+    max-width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--smokyBlack);
+}
+
+.heading {
+    overflow: visible;
+    white-space: nowrap;
+    margin-left: 15px;
+    width: 100%;
+}
+
+.titleText {
+    color: var(--darkPrimaryColour);
+    font-size: 12vmin;
+    font-family: 'Inconsolata', monospace;
+}
+.subtitleText {
+    color: var(--primaryColour);
+    font-size: 8vmin;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    z-index: 1;
+}
+
+.socialButton {
+    color: white; 
+}
+
+.socialButton:hover {
+    color: white
+}   
+
+.titleText {
+    color: var(--spaceColour); 
+}
+
+.socialButton {
+    color: var(--spaceColour); 
+  }
+
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url('./images/trimmedLogoWhite.png');
+    background-position: bottom right; 
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media all and (orientation:portrait) {
+    #wrapper {
+        background-image: url('./images/trimmedLogoWhite.png');
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 45vw auto;
+    }
+
+    .content {
+        max-width: none;
+        width: 100vw;
+        justify-content: flex-start;
+    }
+
+    .heading {
+        margin: none;
+    }
+}

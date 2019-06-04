@@ -9,7 +9,17 @@
   color: var(--textColour);
 }
 
+.socialButtonDarkMode {
+  margin-left: 15px;
+  color: var(--spaceColour);
+}
+
 .socialButton:hover {
+  color: var(--primaryColour); 
+  transition: 0.2s; 
+}
+
+.socialButtonDarkMode:hover {
   color: var(--primaryColour); 
   transition: 0.2s; 
 }

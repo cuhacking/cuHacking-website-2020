@@ -56,7 +56,7 @@ canvas {
 }
 
 .titleText {
-  color: var(--darkPrimaryColour);
+  color: var(--textColour);
   font-size: 12vmin;
   font-family: 'Inconsolata', monospace;
 }
