@@ -1,36 +1,39 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'
+import './index.css';
 import {
   ParticleBackground,
   SocialLinks
 } from 'components';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   const hours = (new Date()).getHours();
+    const LIGHT_THEME = 'lightTheme';
+    const DARK_THEME = 'darkTheme';
 
-  //   this.state = {
-  //     isNight: hours > 18 || hours < 6,
-  //   };
-  // }
+    const hours = (new Date()).getHours();
+    const isNight = hours > 18 || hours < 6;
+
+    this.state = {
+      isNight,
+      getTheme: () => isNight ? DARK_THEME : LIGHT_THEME
+    };
+  }
 
   render() {
     return (
-      <>
-        <ParticleBackground id="particleBackground" darkMode={this.state.isNight}/>
-        <div id="appSpace">
-          <div id="content">
-            <div id="titleSpace">
-              <h1 id="titleText">cuHacking 2020<br/><span id="subtitleText">coming soon.</span></h1>
-            </div>
-            <SocialLinks className="row" darkMode={this.state.isNight}/>
-            <div id="logo"/>
+      <div className={`app ${this.state.getTheme()}`}>
+        <ParticleBackground darkMode={this.state.isNight}/>
+        <div id="content">
+          <div id="titleSpace">
+            <h1 id="title">cuHacking 2020<br/><span id="subtitle">coming soon.</span></h1>
           </div>
+          <SocialLinks/>
+          <div id="logo"/>
         </div>
-      </>
+      </div>
     )
   }
 };

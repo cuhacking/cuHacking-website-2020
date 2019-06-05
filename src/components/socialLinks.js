@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import styles from './socialLinks.module.css';
 import {
   faFacebook,
   faLinkedin,
@@ -9,12 +10,10 @@ import {
   faGithub
 } from '@fortawesome/free-brands-svg-icons';
 
-import styles from './socialLinks.module.css';
-
 export default class SocialLinks extends Component {
   createLogo(icon, target, link) {
     return (
-      <a className={this.props.darkMode? styles.socialButtonDarkMode : styles.socialButton} target={target} rel="noopener noreferrer" href={link}>
+      <a className={styles.socialButton} target={target} rel="noopener noreferrer" href={link}>
         <FontAwesomeIcon icon={icon} size="lg"/>
       </a> 
     );

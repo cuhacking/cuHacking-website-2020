@@ -11,7 +11,7 @@ export default class ParticleBackground extends Component {
   }
 
   render() {
-    let config = this.props.night ? darkParticleConfig : lightParticleConfig;
+    let config = this.props.darkMode ? darkParticleConfig : lightParticleConfig;
 
     if (this.state.isIE)
       return <></>;

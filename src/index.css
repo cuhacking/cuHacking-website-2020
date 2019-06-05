@@ -1,15 +1,33 @@
-* {
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--spaceColour);
+}
+
+.lightTheme {
   --textColour: #0C0F0A;
   --lightPrimaryColour: #8668aa;
   --primaryColour: #9756D8;
   --darkPrimaryColour: #31263E;
   --secondaryColour: #7DB0E8;
   --spaceColour: #FFFFFF;
+  --logo: url(assets/images/cuHackingLogo-light.png);
+}
+
+.darkTheme {
+  --textColour: #FFFFFF;
+  --lightPrimaryColour: #8668aa;
+  --primaryColour: #9756D8;
+  --darkPrimaryColour: #31263E;
+  --secondaryColour: #7DB0E8;
+  --spaceColour: #0C0F0A;
+  --logo: url(assets/images/cuHackingLogo-dark.png);
 }
 
 a {
-  text-decoration: none;
   display: inline-flex;
+  text-decoration: none;
 }
 
 html, body {
@@ -23,7 +41,6 @@ html, body {
 body {
   height: 100vh;
   width: 100vw; 
-  background-color: var(--spaceColour);
   overflow: hidden;
   position: relative;
   min-height: 300px;
@@ -38,17 +55,11 @@ canvas {
   z-index: 0;
 }
 
-#appSpace {
-  height: 98vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
 #content {
   display: flex;
-  flex: 1;
+  align-self: stretch;
   flex-direction: column;
+  position: relative;
 }
 
 #titleSpace {
@@ -63,7 +74,7 @@ canvas {
 }
 
 #logo {
-  background-image: url(./assets//images/cuHackingLogo-light.png);
+  background-image: var(--logo);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -74,12 +85,13 @@ canvas {
   left: 60vw;
 }
 
-#titleText {
+#title {
   color: var(--textColour);
   font-size: 12vmin;
   font-family: 'Inconsolata', monospace;
 }
-#subtitleText {
+
+#subtitle {
   color: var(--primaryColour);
   font-size: 8vmin;
   font-family: 'Montserrat', sans-serif;
@@ -95,7 +107,7 @@ canvas {
   }
 
   #logo {
-    background-image: url(./assets//images/cuHackingLogo-light.png);
+    background-image: var(--logo);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
