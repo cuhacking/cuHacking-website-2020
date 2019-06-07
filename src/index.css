@@ -27,6 +27,13 @@
   --promo: url(assets/images/promoText-white.svg);
 }
 
+.noSelect {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
 a {
   display: inline-flex;
   text-decoration: none;

@@ -26,9 +26,9 @@ class App extends Component {
 
   promoText() {
     if (this.state.isNight)
-      return <img src={darkPromo} alt='cuHacking2020, coming soon.'/>;
+      return <img className={'noSelect'} draggable={false} src={darkPromo} alt='cuHacking2020, coming soon.'/>;
     else
-      return <img src={lightPromo} alt='cuHacking2020, coming soon.'/>;
+      return <img className={'noSelect'} draggable={false} src={lightPromo} alt='cuHacking2020, coming soon.'/>;
   }
 
   render() {
