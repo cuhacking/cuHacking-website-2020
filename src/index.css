@@ -88,6 +88,13 @@ canvas {
   padding-left: 15px;
 }
 
+#promo {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
 @media all and (orientation:portrait) {
   #content {
     padding-top: 10%
