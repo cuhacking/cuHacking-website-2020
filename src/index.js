@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import lightPromo from './assets/images/promoText-black.svg';
+import darkPromo from './assets/images/promoText-white.svg';
 import './index.css';
 import {
   ParticleBackground,
@@ -22,13 +24,20 @@ class App extends Component {
     };
   }
 
+  promoText() {
+    if (this.state.isNight)
+      return <img src={darkPromo} alt='cuHacking2020, coming soon.'/>;
+    else
+      return <img src={lightPromo} alt='cuHacking2020, coming soon.'/>;
+  }
+
   render() {
     return (
       <div className={`app ${this.state.getTheme()}`}>
         <ParticleBackground darkMode={this.state.isNight}/>
         <div id="content">
-          <div id="titleSpace">
-            <h1 id="title">cuHacking 2020<br/><span id="subtitle">coming soon.</span></h1>
+          <div id="promoSpace">
+            {this.promoText()}
           </div>
           <SocialLinks/>
           <div id="logo"/>
