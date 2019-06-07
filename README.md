@@ -1,6 +1,6 @@
 # cuHacking: Promo Website
 
-Temporary landing page used while the full website is under construction. Built in React using create-react-app. 
+Temporary landing page used while the full website is under construction. Built in [React](https://reactjs.org/) using [create-react-app](https://github.com/facebook/create-react-app). 
 
 
 ## Getting Started
@@ -8,37 +8,35 @@ Temporary landing page used while the full website is under construction. Built 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Installing
-This project uses node package manager (npm). First, **install all required dependencies with:**
-
+First you will need to clone this project to your machine.
+Next you will need to install dependencies. This project uses yarn. Navigate to the root of the repo and run 
 ```
-npm install
+yarn
+```
+or
+```
+yarn install
 ```
 
 ### Testing
-To **run the development server** on [localhost:3000](localhost:3000) *(includes hot-reload)*: 
-
+Run the development server with
 ```
-npm start
+yarn start
 ```
+The server runs on [localhost:3000](localhost:3000). 
 
 ### Building
-To **create an optimized production build:**
-
+Create an optimized production build with
 ```
-npm run build
+yarn build
 ```
-
-To **test the production build** (visible at [localhost:5000](localhost:5000)): 
-
+Test your production build with
 ```
 serve -s build
-``` 
+```
+and navigate to [localhost:5000](localhost:5000).
 
-## Deployment
-
-*Coming Soon*
-
-## Built With
+## Packages
 
 * [Reactjs](https://reactjs.org/docs/getting-started.html)
 * [create-react-app](https://github.com/facebook/create-react-app)
