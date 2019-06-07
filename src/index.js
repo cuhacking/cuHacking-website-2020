@@ -1,62 +1,50 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-
+import lightPromo from './assets/images/promoText-black.svg';
+import darkPromo from './assets/images/promoText-white.svg';
+import './index.css';
 import {
-  CuHackingLogo,
   ParticleBackground,
   SocialLinks
 } from 'components';
 
-const isIE = false || !!document.documentMode;
-const time = new Date(); 
-const sunrise = 6;  
-const sunset = 18; 
-
-let darkMode = true;  /* Test it here! Change it to true or false to switch between modes. 
-                       Set it to to null, and delete lines 21-29 when you're done. */ 
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    const LIGHT_THEME = 'lightTheme';
+    const DARK_THEME = 'darkTheme';
+
+    const hours = (new Date()).getHours();
+    const isNight = hours > 18 || hours < 6;
+
+    this.state = {
+      isNight,
+      getTheme: () => isNight ? DARK_THEME : LIGHT_THEME
+    };
+  }
+
+  promoText() {
+    if (this.state.isNight)
+      return <img src={darkPromo} alt='cuHacking2020, coming soon.'/>;
+    else
+      return <img src={lightPromo} alt='cuHacking2020, coming soon.'/>;
+  }
+
   render() {
-
-    if(!darkMode) {
-      // It's day time! Between sunrise AM and sunset PM!
-      require('./index.css'); 
-      darkMode = false; 
-    } else {  
-      // It's night time! 
-      require('./index-dark.css'); 
-      darkMode = true;  
-    } 
-
-  /* Uncomment this once we are done testing the 'look' of dark mode. 
-   if(sunrise < time.getHours() < sunset) {
-      // It's day time! Between sunrise AM and sunset PM!
-      require('./index.css'); 
-      darkMode = false; 
-    } else {  
-      // It's night time! 
-      require('./index-dark.css'); 
-      darkMode = true;  
-    } 
-  */ 
-
     return (
-      <>
-        {!isIE ? <ParticleBackground id="particleBackground" darkMode={darkMode}/> : <></>}
-        <div id="wrapper">
-          <div className="content">
-            <div className="top navbar row">
-                <CuHackingLogo darkMode={darkMode}/>
-            </div>
-            <div className="heading">
-              <h1 className="titleText">cuHacking 2020<br/><span className="subtitleText">coming soon.</span></h1>
-            </div>
-            <SocialLinks className="row" darkMode={darkMode} />
+      <div className={`app ${this.state.getTheme()}`}>
+        <ParticleBackground darkMode={this.state.isNight}/>
+        <div id='content'>
+          <div id='promoSpace'>
+            {this.promoText()}
           </div>
+          <SocialLinks/>
+          <div id='logo'/>
         </div>
-      </>
+      </div>
     )
   }
-}; 
+};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));

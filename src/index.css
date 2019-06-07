@@ -1,15 +1,35 @@
-* {
+.app {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--spaceColour);
+}
+
+.lightTheme {
   --textColour: #0C0F0A;
   --lightPrimaryColour: #8668aa;
   --primaryColour: #9756D8;
   --darkPrimaryColour: #31263E;
   --secondaryColour: #7DB0E8;
-  --spaceColour: #F1F9ED;
+  --spaceColour: #FFFFFF;
+  --logo: url(assets/images/cuHackingLogo-purple.svg);
+  --promo: url(assets/images/promoText-black.svg);
+}
+
+.darkTheme {
+  --textColour: #FFFFFF;
+  --lightPrimaryColour: #8668aa;
+  --primaryColour: #9756D8;
+  --darkPrimaryColour: #31263E;
+  --secondaryColour: #7DB0E8;
+  --spaceColour: #0C0F0A;
+  --logo: url(assets/images/cuHackingLogo-white.svg);
+  --promo: url(assets/images/promoText-white.svg);
 }
 
 a {
-  text-decoration: none;
   display: inline-flex;
+  text-decoration: none;
 }
 
 html, body {
@@ -23,7 +43,6 @@ html, body {
 body {
   height: 100vh;
   width: 100vw; 
-  background-color: white;
   overflow: hidden;
   position: relative;
   min-height: 300px;
@@ -38,64 +57,57 @@ canvas {
   z-index: 0;
 }
 
-.content {
-  height: 98vh;
-  width: 100%;
-  max-width: 60vw;
+#content {
   display: flex;
+  flex: 1;
+  align-self: stretch;
   flex-direction: column;
-  justify-content: space-between;
-  color: var(--smokyBlack);
+  position: relative;
 }
 
-.heading {
+#logo {
+  background-image: var(--logo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 125vh;
+  height: 125vh;
+  position: absolute;
+  top: 40vh;
+  left: 60vw;
+}
+
+#promoSpace {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
   overflow: visible;
   white-space: nowrap;
-  margin-left: 15px;
-  width: 100%;
-}
-
-.titleText {
-  color: var(--textColour);
-  font-size: 12vmin;
-  font-family: 'Inconsolata', monospace;
-}
-.subtitleText {
-  color: var(--primaryColour);
-  font-size: 8vmin;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.navbar {
-  width: 100%;
-  z-index: 1;
-}
-
-#wrapper {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background-image: url('./images/trimmedLogo.png');
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: contain;
+  max-width: 100vh;
+  padding-left: 15px;
 }
 
 @media all and (orientation:portrait) {
-  #wrapper {
-    background-image: url('./images/trimmedLogo.png');
-    background-position: bottom right;
+  #content {
+    padding-top: 10%
+  }
+
+  #promoSpace {
+    flex: unset;
+    max-width: 85vw;
+    margin-bottom: -3rem;
+  }
+
+  #logo {
+    background-image: var(--logo);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: 45vw auto;
-  }
-
-  .content {
-    max-width: none;
-    width: 100vw;
-    justify-content: flex-start;
-  }
-
-  .heading {
-    margin: none;
+    background-position: center;
+    width: 125vw;
+    height: 125vw;
+    position: absolute;
+    top: 50vh;
+    left: 20vw;
   }
 }

@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import Particles from 'react-particles-js';
-import config from './particlesjs-config.json';
-import darkconfig from './particlejs-darkconfig.json'; 
+import {lightParticleConfig, darkParticleConfig} from 'assets/configs';
 
 export default class ParticleBackground extends Component {
-  render() {    
-    return (
-      <> {this.props.darkMode? <Particles params={darkconfig}></Particles> : <Particles params={config}></Particles>} </>
-    )
+  constructor(props) {
+    super(props);
+    this.state = {
+      isIE: false || !!document.documentMode
+    }
+  }
+
+  render() {
+    let config = this.props.darkMode ? darkParticleConfig : lightParticleConfig;
+
+    if (this.state.isIE)
+      return <></>;
+    else
+      return <Particles params={config}/>;
   }
 }
-
