@@ -27,13 +27,6 @@
   --promo: url(assets/images/promoText-white.svg);
 }
 
-.noSelect {
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-}
-
 a {
   display: inline-flex;
   text-decoration: none;
@@ -93,6 +86,13 @@ canvas {
   white-space: nowrap;
   max-width: 100vh;
   padding-left: 15px;
+}
+
+#promo {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
 }
 
 @media all and (orientation:portrait) {
