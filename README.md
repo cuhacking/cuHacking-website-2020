@@ -1,7 +1,6 @@
-# cuHacking: Promo Website
+# project: Snorlax
 
-Temporary landing page used while the full website is under construction. Built in [React](https://reactjs.org/) using [create-react-app](https://github.com/facebook/create-react-app). 
-
+The main website for cuHacking 2020. Built with [React](https://reactjs.org/) using [create-react-app](https://github.com/facebook/create-react-app). Find an explanation of what it contains [here](https://github.com/cuhacking/cuHacking-wiki/wiki/Website).
 
 ## Getting Started
 
