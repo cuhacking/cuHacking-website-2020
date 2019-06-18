@@ -5,7 +5,8 @@ import darkPromo from './assets/images/promoText-white.svg';
 import './index.css';
 import {
   ParticleBackground,
-  SocialLinks
+  SocialLinks,
+  MailingListForm
 } from 'components';
 
 class App extends Component {
@@ -26,9 +27,9 @@ class App extends Component {
 
   promoText() {
     if (this.state.isNight)
-      return <img id='promo' draggable={false} src={darkPromo} alt='cuHacking2020, coming soon.'/>;
+      return <img id='promo' draggable={false} src={darkPromo} alt='cuHacking2020, January 11-12.'/>;
     else
-      return <img id='promo' draggable={false} src={lightPromo} alt='cuHacking2020, coming soon.'/>;
+      return <img id='promo' draggable={false} src={lightPromo} alt='cuHacking2020, January 11-12.'/>;
   }
 
   render() {
@@ -37,9 +38,10 @@ class App extends Component {
         <ParticleBackground darkMode={this.state.isNight}/>
         <div id='content'>
           <div id='promoSpace'>
-            {this.promoText()}
+            {this.promoText()} 
+            <MailingListForm darkMode={this.state.isNight}/> 
           </div>
-          <SocialLinks/>
+          <SocialLinks/>  
           <div id='logo'/>
         </div>
       </div>

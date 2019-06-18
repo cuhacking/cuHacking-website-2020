@@ -8,7 +8,7 @@
 .lightTheme {
   --textColour: #0C0F0A;
   --lightPrimaryColour: #8668aa;
-  --primaryColour: #9756D8;
+  --primaryColour: #7C39BF;
   --darkPrimaryColour: #31263E;
   --secondaryColour: #7DB0E8;
   --spaceColour: #FFFFFF;
@@ -26,6 +26,8 @@
   --logo: url(assets/images/cuHackingLogo-white.svg);
   --promo: url(assets/images/promoText-white.svg);
 }
+
+h5 { font-size: 50px; }
 
 a {
   display: inline-flex;
@@ -57,6 +59,10 @@ canvas {
   z-index: 0;
 }
 
+input:focus {
+  outline: none; 
+}
+
 #content {
   display: flex;
   flex: 1;
@@ -86,6 +92,33 @@ canvas {
   white-space: nowrap;
   max-width: 100vh;
   padding-left: 15px;
+}
+
+#emailField {
+  background-color: var(--spaceColour);
+  border: none;
+  border-bottom: 1px solid var(--textColour);
+  color: var(--textColour); 
+  font-family: Inconsolata; 
+  font-size: 20px; 
+  margin-right: 10px; 
+  padding: 10px 10px;
+  width: 75%;
+}
+
+#submitButton {
+  background-color: var(--spaceColour); 
+  border: 1px solid var(--textColour);
+  color: var(--textColour);
+  cursor: pointer;
+  font-family: Inconsolata; 
+  font-size: 16px; 
+  padding: 10px 10px; 
+  text-decoration: none;
+}
+
+#submitButton:hover {
+ background-color: var(--primaryColour); 
 }
 
 #promo {
