@@ -112,13 +112,15 @@ input:focus {
   color: var(--textColour);
   cursor: pointer;
   font-family: Inconsolata; 
-  font-size: 16px; 
+  font-size: 17px; 
   padding: 10px 10px; 
   text-decoration: none;
+  transition-duration: 0.3s; 
 }
 
 #submitButton:hover {
  background-color: var(--primaryColour); 
+ color: var(--spaceColour);
 }
 
 #promo {

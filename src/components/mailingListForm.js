@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import lightMailingText from '../assets/images/mailingText-black.svg';
-import darkMailingText from '../assets/images/mailingText-white.svg'; ;
+import darkMailingText from '../assets/images/mailingText-white.svg';
 
 const API_URL = 'http://localhost:8080/mailinglist/'; 
 
@@ -18,7 +18,7 @@ export default class MailingListForm extends Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state.value); 
+        
         event.preventDefault();
         
         const post = {
@@ -29,13 +29,19 @@ export default class MailingListForm extends Component {
             method: 'POST',
             body: JSON.stringify(post), 
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json', 
             }
         }; 
 
         fetch(API_URL, options)
             .then(res => res.json())
-            .then(res => console.log(res))
+            .then(res => {
+                if(res.status === "success") {
+                    // Server added email successfully. 
+                } else {
+                    // Server found an error 
+                }
+            })
             .catch(err => console.log('ERROR:'));
         
     }
@@ -51,7 +57,7 @@ export default class MailingListForm extends Component {
                 {this.text()}
                 <form id="emailForm" onSubmit={this.handleSubmit}>
                     <input id="emailField" type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                <input id="submitButton" type="submit" value="Submit" />
+                    <input id="submitButton" type="submit" value="Submit" />
                 </form>
             </div>
         );  
