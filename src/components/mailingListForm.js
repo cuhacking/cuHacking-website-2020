@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import lightMailingText from '../assets/images/mailingText-black.svg';
 import darkMailingText from '../assets/images/mailingText-white.svg';
 
-const API_URL = 'http://localhost:8080/mailinglist/'; 
+const API_URL = 'http://localhost:8080/mailinglist/subscribe'; 
 
 export default class MailingListForm extends Component {
 
@@ -26,15 +26,18 @@ export default class MailingListForm extends Component {
         }
 
         const options = {
+            mode: 'cors',
             method: 'POST',
             body: JSON.stringify(post), 
             headers: {
-                'Content-Type': 'application/json', 
+                'Access-Control-Request-Method': 'POST', 
+                'Authorization': 'Bearer test',
+                'Content-Type': 'application/json'
             }
         }; 
 
         fetch(API_URL, options)
-            .then(res => res.json())
+            .then(res => res.json())    
             .then(res => {
                 if(res.status === "success") {
                     // Server added email successfully. 
@@ -42,7 +45,7 @@ export default class MailingListForm extends Component {
                     // Server found an error 
                 }
             })
-            .catch(err => console.log('ERROR:'));
+            .catch(err => console.log('Error sending email to API Server'));
         
     }
 
