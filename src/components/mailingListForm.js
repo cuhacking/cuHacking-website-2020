@@ -1,26 +1,40 @@
 import React, {Component} from 'react';
-import lightMailingText from '../assets/images/mailingText-black.svg';
-import darkMailingText from '../assets/images/mailingText-white.svg';
+import './mailingListForm.css'
 
 const API_URL = 'http://localhost:8080/mailinglist/subscribe'; 
 
 export default class MailingListForm extends Component {
 
+
+    validateEmail(email){
+        // Extremely rudimentary validation for now (borrowed from Ryan's API)
+        return email.includes("@") && email.includes(".");
+    }
+
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {  value: '',          // The value of the email form (email@email.com)
+                        status: 'before',   // Before: Before a submission, After: after a submission
+                        loading: false,     // false: not waiting for response, true: waiting for response
+                        valid: false,       // email in value is a valid email
+                        error: ''           // Error message displayed below email form. 
+                    }; 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value, error: ''});
+        this.validateEmail(this.state.value) ? this.setState({valid:true}) : this.setState({valid:false})
     }
 
     handleSubmit(event) {
         
+        this.setState({loading: true}); 
+        this.render(); 
+
         event.preventDefault();
-        
+
         const post = {
             email: this.state.value
         }
@@ -40,28 +54,35 @@ export default class MailingListForm extends Component {
             .then(res => res.json())    
             .then(res => {
                 if(res.status === "success") {
-                    // Server added email successfully. 
+                    this.setState({status: 'after'}); 
                 } else {
-                    // Server found an error 
+                    this.setState({loading: false, status: 'before'}); 
                 }
             })
-            .catch(err => console.log('Error sending email to API Server'));
-        
+            .catch(err => {
+                this.setState({error: 'Uh-oh! That didn\'t work. Try again?', value: '', valid: false, loading: false}); 
+            })
+    }
+
+    buttonText() {
+        return this.state.loading ? "Working on it..." : "Submit"; 
     }
 
     text() {
-        let config = this.props.darkMode ? darkMailingText : lightMailingText; 
-        return <img id="mailingListText" draggable={false} src={config} alt='Be the first to know about all things cuHacking!'/>
+        return this.state.status === 'before' ? <p id="mailingListText"> Be the first to know about all things cuHacking! </p>
+                                              : <p id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
+
     }
 
     render() {
         return (
             <div id="mailingListForm">
                 {this.text()}
-                <form id="emailForm" onSubmit={this.handleSubmit}>
-                    <input id="emailField" type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                    <input id="submitButton" type="submit" value="Submit" />
+                <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
+                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
+                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid}    type="submit" value={this.buttonText()} />
                 </form>
+                <p className="errorMessage"> &nbsp; {this.state.error} </p> 
             </div>
         );  
     } 
