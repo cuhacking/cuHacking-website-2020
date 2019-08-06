@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './mailingListForm.css'
 
-const API_URL = 'http://localhost:8080/mailinglist/subscribe'; 
+const API_URL = ''; 
 
 export default class MailingListForm extends Component {
 
