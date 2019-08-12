@@ -1,4 +1,3 @@
-
 #mailingListText {
   color: var(--textColour); 
   font-family: Inconsolata; 
@@ -60,7 +59,7 @@
   }
 
   .submitButton:disabled {
-    background-color: white; 
+    background-color: var(--spaceColour); 
     transition-duration: 0.3s; 
     opacity: 0.5; 
   }

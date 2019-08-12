@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import validator from 'email-validator'; 
 import './mailingListForm.css'
 
 const API_URL = ''; 
@@ -18,9 +17,14 @@ export default class MailingListForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    emailValidator(email) {
+        // Rudimentary and borrowed from the API, temporary. 
+        return email.includes("@") && email.includes(".");
+    }
+
     handleChange(event) {
         this.setState({value: event.target.value, error: ''}); 
-        validator.validate(this.state.value) ? this.setState({valid:true}) : this.setState({valid:false})
+        this.emailValidator(this.state.value) ? this.setState({valid:true}) : this.setState({valid:false})
     }
 
     handleSubmit(event) {
