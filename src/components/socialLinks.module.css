@@ -3,6 +3,7 @@
   flex-direction: row; 
   justify-content: flex-start;
   margin-bottom: 15px;
+  padding-left: 10px; 
 }
 
 .socialButton {

@@ -36,13 +36,14 @@ class App extends Component {
     return (
       <div className={`app ${this.state.getTheme()}`}>
         <ParticleBackground darkMode={this.state.isNight}/>
+        <div id="logo"/>
         <div id='content'>
           <div id='promoSpace'>
             {this.promoText()} 
             <MailingListForm darkMode={this.state.isNight}/> 
           </div>
           <SocialLinks/>  
-          <div id='logo'/>
+
         </div>
       </div>
     )

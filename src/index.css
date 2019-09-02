@@ -59,6 +59,13 @@ canvas {
   z-index: 0;
 }
 
+
+input {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+}
+
 input:focus {
   outline: none; 
 }
@@ -89,36 +96,9 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   overflow: visible;
-  white-space: nowrap;
   max-width: 100vh;
   padding-left: 15px;
-}
-
-#emailField {
-  background-color: var(--spaceColour);
-  border: none;
-  border-bottom: 1px solid var(--textColour);
-  color: var(--textColour); 
-  font-family: Inconsolata; 
-  font-size: 20px; 
-  margin-right: 10px; 
-  padding: 10px 10px;
-  width: 75%;
-}
-
-#submitButton {
-  background-color: var(--spaceColour); 
-  border: 1px solid var(--textColour);
-  color: var(--textColour);
-  cursor: pointer;
-  font-family: Inconsolata; 
-  font-size: 16px; 
-  padding: 10px 10px; 
-  text-decoration: none;
-}
-
-#submitButton:hover {
- background-color: var(--primaryColour); 
+  padding-bottom: 30px; 
 }
 
 #promo {
@@ -129,8 +109,13 @@ input:focus {
 }
 
 @media all and (orientation:portrait) {
+
+  body {
+    overflow: overflow-y; 
+  }
+
   #content {
-    padding-top: 10%
+    padding-top: 10%; 
   }
 
   #promoSpace {
