@@ -4,6 +4,8 @@ import lightPromo from './assets/images/promoText-black.svg';
 import darkPromo from './assets/images/promoText-white.svg';
 import './index.css';
 import {
+  Navbar, 
+  MLHBanner, 
   ParticleBackground,
   SocialLinks,
   MailingListForm
@@ -33,18 +35,24 @@ class App extends Component {
   }
 
   render() {
+
+    /* 
     return (
       <div className={`app ${this.state.getTheme()}`}>
-        <ParticleBackground darkMode={this.state.isNight}/>
-        <div id="logo"/>
+        <Navbar /> 
         <div id='content'>
-          <div id='promoSpace'>
-            {this.promoText()} 
-            <MailingListForm darkMode={this.state.isNight}/> 
-          </div>
+          {this.promoText()} 
+          <MailingListForm darkMode={this.state.isNight}/> 
           <SocialLinks/>  
+        </div> 
+      </div>
+    )
+    */ 
 
-        </div>
+    return (
+      <div className={`app ${this.state.getTheme()}`}>
+        <Navbar /> 
+        <MLHBanner /> 
       </div>
     )
   }
