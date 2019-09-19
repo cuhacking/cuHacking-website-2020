@@ -72,7 +72,7 @@ export default class MailingListForm extends Component {
                                               : <p id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
 
     }
-
+/*
     render() {
         return (
             <div id="mailingListForm">
@@ -85,6 +85,19 @@ export default class MailingListForm extends Component {
             </div>
         );  
     } 
+*/ 
+    render() {
+        return (
+            <div id="mailingListForm">
+                <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
+                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
+                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid}    type="submit" value={this.buttonText()} />
+                </form>
+                <p className="errorMessage"> &nbsp; {this.state.error} </p> 
+            </div>
+        );  
+    } 
+
 
 }
 

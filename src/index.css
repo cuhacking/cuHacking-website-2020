@@ -75,7 +75,7 @@ input:focus {
   display: flex; 
   justify-content: space-between; 
   margin: 15px; 
-  margin-right: 110px; 
+  margin-right: 150px; 
 }
 
 .nav-links {
@@ -88,10 +88,43 @@ input:focus {
   list-style-type: none;  
 }
 
+.nav-item {
+  font-family: 'Reem Kufi', sans-serif; 
+  font-style: normal;
+  font-weight: normal;
+  border-bottom: #280749 2px solid; 
+  transition-duration: 3ms; 
+  text-align: right; 
+}
+
+.nav-item:active {
+  border-bottom-color: #00D0FE; 
+}
+
 .nav-logo {
   width: 20%; 
 }
 
+.slide {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100vw; 
+}
+
+.landing-logo {
+  width: 80%; 
+}
+
+.landing-bottom {
+  display: flex;
+  justify-content: center; 
+  width: 100%; 
+}
+
+
+/* These properties are specified by MLH's brand guidelines, don't touch them. */ 
 #MLHBanner {
   width: 100%; 
 }

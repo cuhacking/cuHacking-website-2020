@@ -6,6 +6,7 @@ import './index.css';
 import {
   Navbar, 
   MLHBanner, 
+  Landing, 
   ParticleBackground,
   SocialLinks,
   MailingListForm
@@ -49,9 +50,13 @@ class App extends Component {
     )
     */ 
 
+
+
     return (
       <div className={`app ${this.state.getTheme()}`}>
         <Navbar /> 
+        <Landing /> 
+        
         <MLHBanner /> 
       </div>
     )
