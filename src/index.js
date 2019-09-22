@@ -7,10 +7,11 @@ import {
   Navbar, 
   MLHBanner, 
   Landing, 
-  AboutUs, 
-  ParticleBackground,
-  SocialLinks,
-  MailingListForm
+  AboutUs,
+  Sponsors, 
+  TimeCount, 
+  FAQ,
+  Footer
 } from 'components';
 
 class App extends Component { 
@@ -49,9 +50,7 @@ class App extends Component {
         </div> 
       </div>
     )
-    */ 
-
-
+    */
 
     return (
       <div className={`app ${this.state.getTheme()}`}>
@@ -59,7 +58,11 @@ class App extends Component {
         <div className="slide-wrapper">
           <Landing />
           <AboutUs /> 
+          <Sponsors /> 
+          <FAQ />
+          <Footer /> 
         </div>
+
         <MLHBanner /> 
       </div>
     )

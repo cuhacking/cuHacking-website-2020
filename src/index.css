@@ -120,7 +120,6 @@ input:focus {
   align-items: center; 
   padding-top: 150px; 
   width: 100vw; 
-  height: 800vh; 
 }
 
 
@@ -150,6 +149,41 @@ input:focus {
   width: 30%; 
 }
 
+/* Header Styles */ 
+.custom-header { 
+  align-content: center; 
+  display: flex; 
+  flex-direction: row; 
+  text-align: left; 
+  font-family: 'Reem Kufi', sans-serif; 
+  font-style: normal;
+  font-weight: normal; 
+  font-size: 32px; 
+  width: 100%; 
+}
+
+.custom-header > p {
+  margin-top: 40px; 
+  margin-bottom: 0; 
+}
+
+/* Footer Styles*/ 
+.footer-wrapper {
+  font-family: 'Reem Kufi', sans-serif;
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding-left: 10%; 
+  height: 100px; 
+  width: 100vw; 
+  background-color: #280749;
+  color: white; 
+}
+
+#footer-purple { 
+  color: #9756D8; 
+}
 
 /* These properties are specified by MLH's brand guidelines, don't touch them. */ 
 #MLHBanner {

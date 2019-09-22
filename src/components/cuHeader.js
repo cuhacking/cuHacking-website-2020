@@ -1,5 +1,5 @@
 import React, {Component} from 'react'; 
-import featherSRC from '../assets/images/stamp.svg'
+import feather from '../assets/images/feather.svg'
 
 export default class cuHeader extends Component {
   constructor(props) {
@@ -13,7 +13,11 @@ export default class cuHeader extends Component {
   render() {
     console.log(this.state.text)
     return (
-        <h1> {this.state.text} </h1>
+      <div className="custom-header">
+        <img id="feather" src={feather}/>
+        <p> {this.state.text} </p>
+      </div>
+        
     )
   }
 }
