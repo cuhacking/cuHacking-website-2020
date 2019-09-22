@@ -10,6 +10,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
+      <div className="navbar-parent">
         <nav className="navbar"> 
             <a href="#home">
                 <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/>
@@ -20,6 +21,7 @@ export default class Navbar extends Component {
                 <li className="nav-item"> <a href="#FAQ"> FAQ </a> </li>
             </ul> 
         </nav>
-        )
+      </div>
+    )
   }
 }

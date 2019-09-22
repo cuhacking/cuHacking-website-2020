@@ -7,12 +7,13 @@ import {
   Navbar, 
   MLHBanner, 
   Landing, 
+  AboutUs, 
   ParticleBackground,
   SocialLinks,
   MailingListForm
 } from 'components';
 
-class App extends Component {
+class App extends Component { 
   constructor(props) {
     super(props);
 
@@ -55,8 +56,10 @@ class App extends Component {
     return (
       <div className={`app ${this.state.getTheme()}`}>
         <Navbar /> 
-        <Landing /> 
-        
+        <div className="slide-wrapper">
+          <Landing />
+          <AboutUs /> 
+        </div>
         <MLHBanner /> 
       </div>
     )

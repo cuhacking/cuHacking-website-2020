@@ -3,6 +3,7 @@ import SocialLinks from './socialLinks';
 import MailingListForm from './mailingListForm'; 
 import Navbar from './navbar'; 
 import MLHBanner from './mlhBanner'; 
-import Landing from './landing'
+import Landing from './landing';
+import AboutUs from './aboutUs'; 
 
-export {Landing, MLHBanner, ParticleBackground, SocialLinks, MailingListForm, Navbar};
+export {AboutUs, Landing, MLHBanner, ParticleBackground, SocialLinks, MailingListForm, Navbar};

@@ -11,10 +11,11 @@ export default class Landing extends Component {
 
   render() {
     return (
-        <div className="slide landing">
+        <div className="slide landing" id="home">
             <img className="landing-top landing-logo" src={require("../assets/images/cuHackingLogo-large.png")} alt="cuHacking 2020"/>
             <div className="landing-bottom">
-                <MailingListForm />
+                <MailingListForm /> 
+                <img className="landing-date" src={require("../assets/images/stamp.svg")}/> 
             </div>
         </div> 
     )
