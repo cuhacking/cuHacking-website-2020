@@ -13,14 +13,15 @@ export default class Sponsors extends Component {
     return (
       <div className="slide sponsors" id="Sponsors">
         <CuHeader text="Meet our sponsors"/>
-        <p> interested in sponsoring? send an email t sponsorship@cuhacking.com </p> 
+        <br/>
+        <br/>         
+        <br/>
+        <br/>
+        <br/><br/>
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-
+        <p className="bodyText"> Interested in sponsoring? Contact us at sponsorship@cuhacking.com </p> 
     </div> 
     )
   }

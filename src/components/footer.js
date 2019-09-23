@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import SocialLinks from './socialLinks.js';
+import {
+  faHeart
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Footer extends Component {
   constructor(props) {
@@ -11,8 +15,8 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <div className="footer-wrapper">
-        <p>Made with &lt;3 by the <span id="footer-purple">cu</span>Hacking team</p> 
+      <div className="bar-wrapper">
+        <p>Made with <FontAwesomeIcon icon={faHeart} size='sm'/> by the <span id="footer-purple">cu</span>Hacking team</p> 
         <SocialLinks/>
       </div>
     )

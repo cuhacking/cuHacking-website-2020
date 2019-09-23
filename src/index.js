@@ -38,31 +38,17 @@ class App extends Component {
   }
 
   render() {
-
-    /* 
-    return (
-      <div className={`app ${this.state.getTheme()}`}>
-        <Navbar /> 
-        <div id='content'>
-          {this.promoText()} 
-          <MailingListForm darkMode={this.state.isNight}/> 
-          <SocialLinks/>  
-        </div> 
-      </div>
-    )
-    */
-
     return (
       <div className={`app ${this.state.getTheme()}`}>
         <Navbar /> 
         <div className="slide-wrapper">
           <Landing />
           <AboutUs /> 
+          <TimeCount/>
           <Sponsors /> 
           <FAQ />
           <Footer /> 
         </div>
-
         <MLHBanner /> 
       </div>
     )

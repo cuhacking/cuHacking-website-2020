@@ -13,21 +13,9 @@ export default class AboutUs extends Component {
     return (
       <div className="slide about" id="About">
         <CuHeader text="Canada's Capital Hackathon"/>
-        <p>Last year, we had over 500 students from all over Canada! More text</p> 
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <CuHeader text="Hacker Stories"/>
-        <p> big stuff here </p>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        <p className="bodyText"> Carleton University's cuHacking is the longest running student-led MLH Hackathon in Ottawa. 
+          The hackathon takes place over 24 hours, non-stop! Students can compete against each other and 
+          themselves to take their projects from concept to reality. </p> 
       </div> 
     )
   }
