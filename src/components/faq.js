@@ -44,9 +44,10 @@ export default class FAQ extends Component {
         <div className="faq-questions-wrapper">
           <div className="faq-left">
             <Question question="What is cuHacking?" answer="cuHacking is Ottawa's Largest Hackathon.."/>
+            <Question question="This is a placeholder?" answer="How does the formatting look if I put another question here?"/>
           </div>
           <div className="faq-right">
-            <Question question="What is cuHacking?" answer="cuHacking is Ottawa's Largest Hackathon.."/>
+            <Question question="Who are you?" answer="How does the length of the text affect the place that this goes?."/>
           </div>
         </div>
 

@@ -204,11 +204,17 @@ input:focus {
 /* Freqently Asked Questions */ 
 .faq-questions-wrapper { 
   display: flex; 
+  width: 100%; 
   justify-content: space-between;
 }
 
 .faq-question {
   display: flex; 
+  align-items: flex-end; 
+}
+
+.faq-question > h2 {
+  margin: 0; 
 }
 
 /* These properties are specified by MLH's brand guidelines, don't touch them. */ 
