@@ -122,8 +122,7 @@ input:focus {
 /* Landing Page */ 
 
 .landing-logo {
-  width: 50vw; 
-  
+  width: 40vw; 
 }
 
 .landing-bottom {
@@ -136,7 +135,7 @@ input:focus {
 }
 
 .landing-date {
-  width: 30%; 
+  width: 20%; 
 }
 
 /* Heading Styles */ 

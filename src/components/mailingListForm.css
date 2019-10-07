@@ -1,3 +1,6 @@
+.mailingListButton 
+
+
 #mailingListText {
   color: var(--textColour); 
   font-family: Inconsolata; 
@@ -26,6 +29,7 @@
   width: 100%;
   transition-duration: 0.3ms; 
 }
+
 
   .emailField:disabled {
     transition-duration: 0.3s; 

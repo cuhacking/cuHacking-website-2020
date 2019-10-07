@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import './mailingListForm.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {
-  faArrowRight
-} from '@fortawesome/free-solid-svg-icons';
 
 const API_URL = "https://cuhacking.com/api/"; 
+
 
 export default class MailingListForm extends Component {
 
@@ -15,8 +12,9 @@ export default class MailingListForm extends Component {
                         status: 'before',   // Before: Before a submission, After: after a submission
                         loading: false,     // false: not waiting for response, true: waiting for response
                         valid: false,       // email in value is a valid email
-                        error: ''           // Error message displayed below email form. 
+                        error: ''           // Error message displayed below email form.        
                     }; 
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -73,21 +71,17 @@ export default class MailingListForm extends Component {
     }
 
     text() {
-        return this.state.status === 'before' ? <p id="mailingListText"> Be the first to know about all things cuHacking! </p>
-                                              : <p id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
-
-    }
-
-    openField() {
-        
+        return this.state.status === 'before' ? <p className="bodyText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
+                                              : <p className="bodyText" id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
     }
 
     render() {
         return (
             <div id="mailingListForm" onClick={this.openField}>
+                {this.text()}
                 <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
                     <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid}    type="submit" value={this.buttonText()} />
+                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit" value={this.buttonText()} />
                 </form>
             </div>
         );  
