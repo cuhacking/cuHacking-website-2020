@@ -12,10 +12,10 @@ export default class Navbar extends Component {
       <div className="navbar-parent">
         <nav className="navbar"> 
 
-            <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/>
-
+            <a href="#"> <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/></a>
             <ul className="nav-links"> 
                 <li className="nav-item" role="link"> <a href="#about"> About Us </a> </li>
+                <li className="nav-item" role="link"> <a href="#sponsors"> Our Sponsors </a> </li>
             </ul> 
         </nav>
       </div>

@@ -22,6 +22,8 @@
 
 a {
   text-decoration: none; 
+  font-size: inherit; 
+  font-family: inherit;
 }
 
 html, body {
@@ -186,7 +188,6 @@ footer {
   color: #9756D8; 
 }
 
-
 /* Freqently Asked Questions */ 
 .faq-questions-wrapper { 
   display: flex; 
@@ -204,13 +205,45 @@ footer {
 }
 
 /* Sponsors */ 
-.mega {
+.sponsor-wrapper {
   display: flex; 
-  align-items: center; 
+  flex-direction: column; 
+  flex-wrap: wrap;
+}
+
+.sponsor-tier {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: baseline;
 }
 
 .sponsor-img {
-  width: 400px; 
+  padding: 20px; 
+}
+
+.tera {
+  max-height: 250px;
+  width: 500px;
+}
+
+.giga {
+  max-height: 250px;
+  width: 500px; 
+}
+
+.mega {
+  flex-wrap: wrap; 
+}
+
+.mega img {
+  max-height: 200px; 
+  width: 300px; 
+}
+
+.kilo img {
+  max-height: 150px;
+  width: 150px; 
 }
 
 /* These properties are specified by MLH's brand guidelines, don't touch them. */ 
