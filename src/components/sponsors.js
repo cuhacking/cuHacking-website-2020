@@ -38,7 +38,7 @@ export default class Sponsors extends Component {
     return (
       <div className="slide sponsors" id="sponsors">
         <CuHeader text="Meet our sponsors"/>
-        <p className="bodyText"> Interested in sponsoring? Contact us at <a href="mailto:sponsorship@cuhacking.com"> sponsorship@cuhacking.com  </a> </p> 
+        <p className="bodyText"> Interested in sponsoring? Contact us at <a className="mailtoLink" href="mailto:sponsorship@cuhacking.com"> sponsorship@cuhacking.com  </a> </p> 
         <div className="sponsor-wrapper">
           <div className="sponsor-tier tera">    
 

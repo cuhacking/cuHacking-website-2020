@@ -43,16 +43,14 @@ html, body {
 
 input {
   -webkit-appearance: none; 
-  -moz-appearance: none;
-  appearance: none;
+  -moz-appearance: none;  
 }
 
 input:focus {
   outline: none; 
 }
 
-footer {
-  background-color: orange;
+.footer {
   position: relative;
   left: 0;
   bottom: 0;
@@ -124,12 +122,14 @@ footer {
 /* Landing Page */ 
 
 .landing-logo {
-  width: 70%; 
+  width: 50vw; 
+  
 }
 
 .landing-bottom {
-  display: flex;
-  align-items: flex-end; 
+  display: flex; 
+  align-items: flex-end;
+  align-content: center;
   justify-content: space-evenly;
   flex-direction: row; 
   width: 100%; 
@@ -183,9 +183,12 @@ footer {
   font-size: 50px; 
 }
 
-
 #footer-purple { 
   color: #9756D8; 
+}
+
+.mailtoLink {
+  color:  #9756D8;
 }
 
 /* Freqently Asked Questions */ 
@@ -260,6 +263,16 @@ footer {
   top:0;
   width:10%;
   z-index:10000;
+}
+
+@media (orientation: portrait) {
+  .footer {
+    height: auto; 
+    color: white; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 /* 

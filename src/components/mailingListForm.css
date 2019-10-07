@@ -15,21 +15,16 @@
 }
 
 .emailField {
+  height: 40px; 
   background-color: white;
-  border: none;
-  border-bottom: 1px solid var(--textColour);
+  border: 1px solid black; 
+  border-left: 3px solid #00D0FE; 
   color: black; 
   font-size: 20px; 
   margin-right: 10px; 
-  padding: 10px 10px;
-  width: 75%;
+  padding: 3px 10px;
+  width: 100%;
   transition-duration: 0.3ms; 
-}
-
-.emailField::placeholder {
-  background-color: #5827B8; 
-  text-align: center; 
-  color: white; 
 }
 
   .emailField:disabled {
@@ -38,25 +33,23 @@
   }
   
 .submitButton {
-  background-color: var(--spaceColour); 
+  width: 48px;
+  height: 48px; 
+  background-color: #5827B8; 
   border: 1px solid var(--textColour);
   color: white;
   font-family: Inconsolata; 
-  font-size: 17px; 
-  padding: 10px 10px; 
+  font-size: 17px;  
   text-decoration: none;
   transition-duration: 0.3s; 
 }
 
-  .submitButton:enabled {
-    background-color: var(--primaryColour); 
-    color: var(--spaceColour); 
+  .submitButton:enabled { 
     cursor: pointer;
   }
 
   .submitButton:hover:enabled {
-    background-color: var(--primaryColour); 
-    color: var(--spaceColour);
+    color: white;
   }
 
   .submitButton:active:enabled {
