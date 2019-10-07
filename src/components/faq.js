@@ -15,18 +15,14 @@ class Question extends Component {
     return (
       <div className="faq-item">
         <div className="faq-question">
-          <img id="feather2" src={feather2}/> 
+          <img id="feather2" src={feather2} alt=""/> 
           <h2>{this.state.question}</h2> 
         </div>
         <p> {this.state.answer}</p> 
       </div>
     )
   }
-
-
 }
-
-
 
 export default class FAQ extends Component {
   constructor(props) {
@@ -50,8 +46,6 @@ export default class FAQ extends Component {
             <Question question="Who are you?" answer="How does the length of the text affect the place that this goes?."/>
           </div>
         </div>
-
-        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> 
       </div> 
     )
   }

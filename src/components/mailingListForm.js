@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import './mailingListForm.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
 
 const API_URL = ''; 
 
@@ -64,13 +68,19 @@ export default class MailingListForm extends Component {
     }
 
     buttonText() {
-        return this.state.loading ? "Working on it..." : "Submit"; 
+       // return this.state.loading ? "Working on it..." : "Submit"; 
+        return "Submit"; 
     }
 
     text() {
         return this.state.status === 'before' ? <p id="mailingListText"> Be the first to know about all things cuHacking! </p>
                                               : <p id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
 
+    }
+
+    openField() {
+        console.log("hello")
+         
     }
 /*
     render() {
@@ -88,9 +98,9 @@ export default class MailingListForm extends Component {
 */ 
     render() {
         return (
-            <div id="mailingListForm">
+            <div id="mailingListForm" onClick={this.openField}>
                 <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
-                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
+                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Join our mailing list" value={this.state.value} onChange={this.handleChange} />
                     <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid}    type="submit" value={this.buttonText()} />
                 </form>
                 <p className="errorMessage"> &nbsp; {this.state.error} </p> 

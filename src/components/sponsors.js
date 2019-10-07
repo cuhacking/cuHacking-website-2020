@@ -11,17 +11,9 @@ export default class Sponsors extends Component {
 
   render() {
     return (
-      <div className="slide sponsors" id="Sponsors">
+      <div className="slide sponsors" id="sponsors">
         <CuHeader text="Meet our sponsors"/>
-        <br/>
-        <br/>         
-        <br/>
-        <br/>
-        <br/><br/>
-        <br/>
-        <br/>
-        <br/>
-        <p className="bodyText"> Interested in sponsoring? Contact us at sponsorship@cuhacking.com </p> 
+        <p className="bodyText"> Interested in sponsoring? Contact us at <a href="mailto:sponsorship@cuhacking.com"> sponsorship@cuhacking.com  </a> </p> 
     </div> 
     )
   }

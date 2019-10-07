@@ -14,7 +14,7 @@ export default class cuHeader extends Component {
     console.log(this.state.text)
     return (
       <div className="custom-header">
-        <img id="feather" src={feather}/>
+        <img id="feather" src={feather} alt=""/>
         <p> {this.state.text} </p>
       </div>
         

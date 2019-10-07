@@ -31,34 +31,12 @@ html, body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; 
 }
-
-/*
-  font-family: 'Reem Kufi', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-*/ 
 
 * {
   font-family: 'Reem Kufi', sans-serif; 
 }
-
-/*
-body {
-  height: 100vh;
-  width: 100vw; 
-  overflow: hidden;
-  position: relative;
-  min-height: 300px;
-}
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}*/ 
 
 input {
   -webkit-appearance: none; 
@@ -70,12 +48,19 @@ input:focus {
   outline: none; 
 }
 
+footer {
+  background-color: orange;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
 .navbar-parent {
   position: fixed;
   top: 0;
   left: 0;
   margin: auto;
-  width: 100vw; 
+  width: 100%;
   background-color: white; 
 }
 
@@ -85,13 +70,13 @@ input:focus {
   justify-content: space-between; 
   margin: 15px; 
   margin-right: 150px; 
-  max-width: 100vw;
+  max-width: 90vw;
 }
 
 .nav-links {
   display: flex; 
   justify-content: flex-end; 
-  width: 150%; 
+
 }
 
 .nav-links > li {
@@ -106,7 +91,7 @@ input:focus {
   text-align: right; 
 }
 
-.nav-item:active {
+.nav-item:hover {
   border-bottom-color: #00D0FE; 
 }
 
@@ -125,7 +110,6 @@ input:focus {
   width: 100vw; 
 }
 
-
 .slide {
   display: flex; 
   flex-direction: column; 
@@ -137,7 +121,7 @@ input:focus {
 /* Landing Page */ 
 
 .landing-logo {
-  width: 80%; 
+  width: 70%; 
 }
 
 .landing-bottom {
@@ -175,7 +159,7 @@ input:focus {
   font-family: 'Reem Kufi', sans-serif;
   display: flex; 
   flex-direction: row; 
-  justify-content: space-evenly; 
+  justify-content: space-around;
   align-items: center; 
   height: 100px; 
   width: 100vw; 
@@ -195,6 +179,7 @@ input:focus {
 #timer { 
   font-size: 50px; 
 }
+
 
 #footer-purple { 
   color: #9756D8; 

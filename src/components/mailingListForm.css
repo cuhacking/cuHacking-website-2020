@@ -15,11 +15,10 @@
 }
 
 .emailField {
-  background-color: var(--spaceColour);
+  background-color: #5827B8;
   border: none;
   border-bottom: 1px solid var(--textColour);
-  color: var(--textColour); 
-  font-family: Inconsolata; 
+  color: white; 
   font-size: 20px; 
   margin-right: 10px; 
   padding: 10px 10px;
@@ -34,7 +33,7 @@
 .submitButton {
   background-color: var(--spaceColour); 
   border: 1px solid var(--textColour);
-  color: var(--textColour);
+  color: white;
   font-family: Inconsolata; 
   font-size: 17px; 
   padding: 10px 10px; 

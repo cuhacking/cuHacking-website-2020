@@ -15,9 +15,7 @@ export default class Navbar extends Component {
             <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/>
 
             <ul className="nav-links"> 
-                <li className="nav-item" role="link"> About Us </li>
-                <li className="nav-item" role="link"> Sponsors </li>
-                <li className="nav-item" role="link"> FAQ </li>
+                <li className="nav-item" role="link"> <a href="#about"> About Us </a> </li>
             </ul> 
         </nav>
       </div>

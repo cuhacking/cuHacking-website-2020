@@ -15,10 +15,10 @@ export default class Footer extends Component {
 
   render() {
     return (
-      <div className="bar-wrapper">
+      <footer className="bar-wrapper">
         <p>Made with <FontAwesomeIcon icon={faHeart} size='sm'/> by the <span id="footer-purple">cu</span>Hacking team</p> 
         <SocialLinks/>
-      </div>
+      </footer>
     )
   }
 }
