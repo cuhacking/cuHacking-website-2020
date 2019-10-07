@@ -202,16 +202,6 @@ footer {
   margin: 0; 
 }
 
-/* Sponsors */ 
-.mega {
-  display: flex; 
-  align-items: center; 
-}
-
-.sponsor-img {
-  width: 400px; 
-}
-
 /* These properties are specified by MLH's brand guidelines, don't touch them. */ 
 #MLHBanner {
   width: 100%; 

@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import CuHeader from './cuHeader.js';
-import logoFullscript from '../assets/images/sponsors/fullscript.svg';
-import logoLightHouse from '../assets/images/sponsors/lhl-logo.png'; 
-import logoCiena from '../assets/images/sponsors/ciena.svg';
-import logoCSE from '../assets/images/sponsors/cse.png';
-
+import { createRequireFromPath } from 'module';
 
 class Sponsor extends Component {
   constructor(props) {
@@ -42,14 +38,13 @@ export default class Sponsors extends Component {
         </div>
         <div className="giga"></div>
         <div className="mega">
-          <Sponsor alt="Fullscript Logo" src={logoFullscript} url="https://fullscript.com/"/>          
-          <Sponsor alt="Lighthouse Labs" src={logoLightHouse} url="https://www.lighthouselabs.ca/"/>
-          <Sponsor alt="Ciena" src={logoCiena} url="https://www.ciena.com/"/>
-          <Sponsor alt="CSE" src={logoCSE} url="https://www.cse-cst.gc.ca/en"/>
+          <Sponsor alt="Fullscript Logo" src='../assets/images/sponsors/fullscript.svg' url="https://fullscript.com/"/>
+          <Sponsor alt="Lighthouse Labs" src='' url="https://www.lighthouselabs.ca/"/>
+          <Sponsor alt="Ciena" src='' url="https://fullscript.com/"/>
+          <Sponsor alt="CSE" src='' url="https://www.lighthouselabs.ca/"/>
         </div>
         <div className="kilo">
-          <Sponsor alt="FDM Group" src='' url="#"/>
-
+          <Sponsor alt="CSE" src='' url="https://www.lighthouselabs.ca/"/>
         </div>
         <p className="bodyText"> Interested in sponsoring? Contact us at <a href="mailto:sponsorship@cuhacking.com"> sponsorship@cuhacking.com  </a> </p> 
     </div> 
