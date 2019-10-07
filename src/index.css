@@ -25,6 +25,7 @@ a {
 }
 
 html, body {
+  overflow-x: hidden;
   width: 100vw; 
   min-width: 335px;
   margin: 0;
