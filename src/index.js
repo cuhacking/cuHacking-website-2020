@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {
   Navbar, 
+  AboutUs, 
+  Sponsors, 
   MLHBanner, 
   Landing, 
   Footer
@@ -22,8 +24,11 @@ class App extends Component {
         <Navbar /> 
         <div className="slide-wrapper">
           <Landing />
-          <Footer /> 
+          <AboutUs />
+          <Sponsors /> 
+
         </div>
+        <Footer /> 
         <MLHBanner /> 
       </div>
     )

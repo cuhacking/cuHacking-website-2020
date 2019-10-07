@@ -79,23 +79,9 @@ export default class MailingListForm extends Component {
     }
 
     openField() {
-        console.log("hello")
-         
+        
     }
-/*
-    render() {
-        return (
-            <div id="mailingListForm">
-                {this.text()}
-                <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
-                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid}    type="submit" value={this.buttonText()} />
-                </form>
-                <p className="errorMessage"> &nbsp; {this.state.error} </p> 
-            </div>
-        );  
-    } 
-*/ 
+
     render() {
         return (
             <div id="mailingListForm" onClick={this.openField}>
