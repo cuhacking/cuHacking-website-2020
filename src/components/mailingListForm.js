@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
+
 import './mailingListForm.css'
 
-const API_URL = "https://cuhacking.com/api/"; 
-
+const API_URL = "https://cuhacking.com/api"; 
 
 export default class MailingListForm extends Component {
 
@@ -41,7 +43,7 @@ export default class MailingListForm extends Component {
         }
 
         const options = {
-            mode: 'cors',
+            mode: 'no-cors',
             method: 'POST',
             body: JSON.stringify(post), 
             headers: {
@@ -65,11 +67,6 @@ export default class MailingListForm extends Component {
             })
     }
 
-    buttonText() {
-       // return this.state.loading ? "Working on it..." : "Submit"; 
-        return ">"; 
-    }
-
     text() {
         return this.state.status === 'before' ? <p className="bodyText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
                                               : <p className="bodyText" id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
@@ -80,13 +77,10 @@ export default class MailingListForm extends Component {
             <div id="mailingListForm" onClick={this.openField}>
                 {this.text()}
                 <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
-                    <input className="emailField"    disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                    <input className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit" value={this.buttonText()} />
+                    <input className="emailField"     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
+                    <button className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> <FontAwesomeIcon icon={faArrowRight}/></button>
                 </form>
             </div>
         );  
     } 
-
-
 }
-

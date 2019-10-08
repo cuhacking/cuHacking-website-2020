@@ -26,10 +26,9 @@
   font-size: 20px; 
   margin-right: 10px; 
   padding: 3px 10px;
-  width: 100%;
+  width: 80%;
   transition-duration: 0.3ms; 
 }
-
 
   .emailField:disabled {
     transition-duration: 0.3s; 
@@ -37,6 +36,7 @@
   }
   
 .submitButton {
+  opacity: 1; 
   width: 48px;
   height: 48px; 
   background-color: #5827B8; 
@@ -62,9 +62,8 @@
   }
 
   .submitButton:disabled {
-    background-color: var(--spaceColour); 
     transition-duration: 0.3s; 
-    opacity: 0.5; 
+    opacity: 0.2
   }
   
 .after {

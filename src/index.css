@@ -62,7 +62,8 @@ input:focus {
   left: 0;
   margin: auto;
   width: 100%;
-  background-color: white; 
+  background-color: rgba(255,255,255,0.9);  
+  z-index: 10; 
 }
 
 .navbar {
@@ -74,10 +75,13 @@ input:focus {
   max-width: 90vw;
 }
 
+.toggle {
+  cursor: pointer; 
+}
+
 .nav-links {
   display: flex; 
   justify-content: flex-end; 
-
 }
 
 .nav-links > li {
@@ -92,8 +96,16 @@ input:focus {
   text-align: right; 
 }
 
+.nav-item:active {
+  color: hotpink; 
+}
+
 .nav-item:hover {
   border-bottom-color: #00D0FE; 
+}
+
+.navbar .toggle {
+  display: none; 
 }
 
 .nav-logo {
@@ -135,7 +147,7 @@ input:focus {
 }
 
 .landing-date {
-  width: 20%; 
+  min-width: 20%; 
 }
 
 /* Heading Styles */ 
@@ -258,13 +270,28 @@ input:focus {
   max-width: 70px;
   min-width:60px;
   position:fixed;
-  right:50px;
+  right:60px;
   top:0;
   width:10%;
   z-index:10000;
 }
 
 @media (orientation: portrait) {
+  
+  .landing-bottom {
+    flex-direction: column-reverse;
+    flex-wrap: wrap; 
+    align-items: center; 
+  }
+
+  .landing-logo {
+    width: 70vw; 
+  }
+
+  .landing-date {
+    width: 30vw; 
+  }
+
   .footer {
     height: auto; 
     color: white; 

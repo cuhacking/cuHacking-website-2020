@@ -20,7 +20,7 @@ class Sponsor extends Component {
   render() {
     return (
       <a href={this.state.url} target="_blank" rel="noopener noreferrer">
-         <img className="sponsor-img" src={this.state.src} alt={this.state. alt}/>
+         <img className="sponsor-img" src={this.state.src} alt={this.state.alt}/>
       </a> 
     )
   }
@@ -45,16 +45,14 @@ export default class Sponsors extends Component {
           </div>
           <div className="sponsor-tier giga"></div>
           <div className="sponsor-tier mega">
-            <Sponsor alt="Fullscript Logo" src={logoFullscript} url="https://fullscript.com/"/>          
-            <Sponsor alt="Lighthouse Labs" src={logoLightHouse} url="https://www.lighthouselabs.ca/"/>
-            <Sponsor alt="Ciena" src={logoCiena} url="https://www.ciena.com/"/>
-            <Sponsor alt="CSE" src={logoCSE} url="https://www.cse-cst.gc.ca/en"/>
+            <Sponsor alt="Fullscript Logo"  src={logoFullscript}  url="https://fullscript.com/"/>          
+            <Sponsor alt="Lighthouse Labs"  src={logoLightHouse}  url="https://www.lighthouselabs.ca/"/>
+            <Sponsor alt="Ciena"            src={logoCiena}       url="https://www.ciena.com/"/>
+            <Sponsor alt="CSE"              src={logoCSE}         url="https://www.cse-cst.gc.ca/en"/>
           </div>
           <div className="sponsor-tier kilo">
-            <Sponsor alt="FDM Group" src={logoFDM} url="https://www.fdmgroup.com/en-ca/ca-home/"/>
-
+            <Sponsor alt="FDM Group"        src={logoFDM}         url="https://www.fdmgroup.com/en-ca/ca-home/"/>
           </div>
-
         </div>
     </div> 
     )

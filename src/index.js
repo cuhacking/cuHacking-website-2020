@@ -26,7 +26,6 @@ class App extends Component {
           <Landing />
           <AboutUs />
           <Sponsors /> 
-
         </div>
         <Footer /> 
         <MLHBanner /> 
