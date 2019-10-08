@@ -80,3 +80,9 @@
 .dialogText {
   text-align: right;
 }
+
+@media (orientation: portrait) {
+  .dialogText {
+    text-align: center;
+  }
+}

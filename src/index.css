@@ -56,6 +56,11 @@ input:focus {
   bottom: 0;
 }
 
+#root {
+  background-image: url('./assets/images/bkg.svg');
+  background-size: cover;
+  background-position: bottom;
+}
 .navbar-parent {
   position: fixed;
   top: 0;
@@ -83,7 +88,7 @@ input:focus {
 
 .nav-links {
   display: flex; 
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 
 .nav-links > li {
@@ -135,6 +140,10 @@ input:focus {
 }
 
 /* Landing Page */ 
+
+.landing {
+  margin-bottom: 150px;
+}
 
 .landing-logo {
   width: 50vh; 
@@ -295,19 +304,21 @@ input:focus {
 }
 
 @media (orientation: portrait) {
-  
+  .landing-logo {
+    width: 80vw;
+  }
+
+  .landing-top {
+    flex-direction: column;
+  }
+
+  .landing-top-left {
+    max-width: unset;
+  }
   .landing-bottom {
     flex-direction: column-reverse;
     flex-wrap: wrap; 
     align-items: center; 
-  }
-
-  .landing-logo {
-    width: 70vw; 
-  }
-
-  .landing-date {
-    width: 30vw; 
   }
 
   .footer {
@@ -316,6 +327,10 @@ input:focus {
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .nav-links {
+    opacity: 0;
   }
 }
 
