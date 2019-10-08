@@ -13,7 +13,7 @@
 
 .emailForm {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   transition-property: opacity; 
   transition-duration: 0.3s; 
   white-space: nowrap; 

@@ -4,7 +4,7 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 import './mailingListForm.css'
 
-const API_URL = "https://cuhacking.com/api"; 
+const API_URL = "https://cuhacking.com/api/mailinglist/subscribe"; 
 
 export default class MailingListForm extends Component {
 
