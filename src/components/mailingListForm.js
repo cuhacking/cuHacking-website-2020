@@ -4,7 +4,7 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 import './mailingListForm.css'
 
-const API_URL = "https://cuhacking.com/api"; 
+const API_URL = "https://cuhacking.com/api/mailinglist/subscribe"; 
 
 export default class MailingListForm extends Component {
 
@@ -68,8 +68,8 @@ export default class MailingListForm extends Component {
     }
 
     text() {
-        return this.state.status === 'before' ? <p className="bodyText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
-                                              : <p className="bodyText" id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
+        return this.state.status === 'before' ? <p className="bodyText dialogText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
+                                              : <p className="bodyText dialogText" id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
     }
 
     render() {

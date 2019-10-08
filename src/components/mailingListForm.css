@@ -12,6 +12,8 @@
 }
 
 .emailForm {
+  display: flex;
+  justify-content: flex-end;
   transition-property: opacity; 
   transition-duration: 0.3s; 
   white-space: nowrap; 
@@ -73,4 +75,14 @@
 .errorMessage {
   font-family: Inconsolata; 
   color: red; 
+}
+
+.dialogText {
+  text-align: right;
+}
+
+@media (orientation: portrait) {
+  .dialogText {
+    text-align: center;
+  }
 }

@@ -18,7 +18,7 @@ export default class Navbar extends Component {
     return (
       <div className="navbar-parent">
         <nav className="navbar"> 
-            <a href="#landing"> <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/></a>
+            <a href="/"> <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/></a>
             <ul className="nav-links"> 
               <li className="nav-item" role="link"> <a href="#home"> Home </a> </li>
               <li className="nav-item" role="link"> <a href="#about"> About Us </a> </li>
