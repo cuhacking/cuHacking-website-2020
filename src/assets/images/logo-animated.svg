@@ -6,48 +6,51 @@
 
 	<style>
 		#bkgTriangle {
-			animation: floatB 7s ease-in-out infinite
+			-webkit-animation: floatB 7s ease-in-out infinite;
+			-moz-animation: floatB 7s ease-in-out infinite;
+			-o-animation: floatB 7s ease-in-out infinite;
+			animation: floatB 7s ease-in-out infinite;
+			will-change: transform;
 		}
 
 		#purpleTriangle {
+			-webkit-animation: floatC 5s ease-in-out infinite;
+			-moz-animation: floatC 5s ease-in-out infinite;
+			-o-animation: floatC 5s ease-in-out infinite;
 			animation: floatC 5s ease-in-out infinite;
+			will-change: transform;
 		}
 
 		#glowTriangle {
-			animation: floatA 3s ease-in-out infinite
+			-webkit-animation: floatA 3s ease-in-out infinite;
+			-moz-animation: floatA 3s ease-in-out infinite;
+			-o-animation: floatA 3s ease-in-out infinite;
+			animation: floatA 3s ease-in-out infinite;
+			will-change: transform;
 		}
 
 		@keyframes floatA {
-			0% {
-				transform: translatey(5px);
+			0%, 100% {
+				transform: translatey(10px);
 			}
 			50% {
-				transform: translatey(-5px);
-			}
-			100% {
-				transform: translatey(5px);
+				transform: translatey(-10px);
 			}
 		}
 		@keyframes floatB {
-			0% {
-				transform: translatey(-25px);
+			0%, 100% {
+				transform: translatey(-50px);
 			}
 			50% {
-				transform: translatey(25px);
-			}
-			100% {
-				transform: translatey(-25px);
+				transform: translatey(50px);
 			}
 		}
 		@keyframes floatC {
-			0% {
-				transform: translatey(-35px);
+			0%, 100% {
+				transform: translatey(-70px);
 			}
 			50% {
-				transform: translatey(35px);
-			}
-			100% {
-				transform: translatey(-35px);
+				transform: translatey(70px);
 			}
 		}
 	</style>
