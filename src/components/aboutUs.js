@@ -16,6 +16,7 @@ export default class AboutUs extends Component {
         <p className="bodyText"> Carleton University's cuHacking is the longest running student-led MLH Hackathon in Ottawa. 
           The hackathon takes place over 24 hours, non-stop! Students can compete against each other and 
           themselves to take their projects from concept to reality. </p> 
+        
       </div> 
     )
   }
