@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import logoMLH from '../assets/images/mlh.svg';
 import logoSCE from '../assets/images/sce.png';
 import logoSCS from '../assets/images/scs.png';
-import CuHeader from './cuHeader.js';
 
 class Partner extends Component {
     constructor(props) {

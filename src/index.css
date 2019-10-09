@@ -102,10 +102,6 @@ input:focus {
   text-align: right; 
 }
 
-.nav-item:active {
-  color: hotpink; 
-}
-
 .nav-item:hover {
   border-bottom-color: #00D0FE; 
 }

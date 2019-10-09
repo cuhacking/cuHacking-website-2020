@@ -38,6 +38,10 @@ export default class MailingListForm extends Component {
 
         event.preventDefault();
 
+        var data = this.state.value; 
+
+        // because it doesn't make sense that I can't just send stuff to the thing
+
 
         const post = {
             email: this.state.value
@@ -48,7 +52,7 @@ export default class MailingListForm extends Component {
             body: JSON.stringify(post), 
             headers: {
                 'Access-Control-Request-Headers': 'POST', 
-                'mode': 'no-cors', 
+                'mode': 'cors', 
                 'Content-Type': 'application/json',
             }
         }; 
@@ -67,6 +71,7 @@ export default class MailingListForm extends Component {
                 this.setState({error: 'Uh-oh! That didn\'t work. Try again?', value: '', valid: false, loading: false}); 
             })
     }
+
 
     text() {
         return this.state.status === 'before' ? <p className="bodyText dialogText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
