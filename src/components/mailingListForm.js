@@ -37,12 +37,7 @@ export default class MailingListForm extends Component {
         this.render(); 
 
         event.preventDefault();
-
-        var data = this.state.value; 
-
-        // because it doesn't make sense that I can't just send stuff to the thing
-
-
+        
         const post = {
             email: this.state.value
         }
