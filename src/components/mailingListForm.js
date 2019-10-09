@@ -47,8 +47,7 @@ export default class MailingListForm extends Component {
             body: JSON.stringify(post), 
             headers: {
                 'Access-Control-Request-Headers': 'POST', 
-                'mode': 'cors', 
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             }
         }; 
 
