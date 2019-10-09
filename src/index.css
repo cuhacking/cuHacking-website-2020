@@ -256,10 +256,11 @@ input:focus {
   flex-direction: row;
   justify-content: center; 
   align-items: baseline;
+  
 }
 
 .sponsor-img {
-  padding: 20px; 
+  padding: 10px; 
 }
 
 .tera {
@@ -278,13 +279,22 @@ input:focus {
 
 .mega img {
   max-height: 200px; 
-  width: 350px; 
+  width: 300px;  
 }
 
 .kilo img {
   max-height: 150px;
-  width: 150px; 
+  width: 100px; 
 }
+
+#sponsor-ciena {
+  width: 250px;
+}
+
+#sponsor-lighthouse {
+  width: 310px; 
+}
+
 
 /* Partners */ 
 .partner-wrapper {
