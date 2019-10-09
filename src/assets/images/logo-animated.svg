@@ -10,7 +10,6 @@
 			-moz-animation: floatB 7s ease-in-out infinite;
 			-o-animation: floatB 7s ease-in-out infinite;
 			animation: floatB 7s ease-in-out infinite;
-			will-change: transform;
 		}
 
 		#purpleTriangle {
@@ -18,7 +17,6 @@
 			-moz-animation: floatC 5s ease-in-out infinite;
 			-o-animation: floatC 5s ease-in-out infinite;
 			animation: floatC 5s ease-in-out infinite;
-			will-change: transform;
 		}
 
 		#glowTriangle {
@@ -26,7 +24,6 @@
 			-moz-animation: floatA 3s ease-in-out infinite;
 			-o-animation: floatA 3s ease-in-out infinite;
 			animation: floatA 3s ease-in-out infinite;
-			will-change: transform;
 		}
 
 		@keyframes floatA {
