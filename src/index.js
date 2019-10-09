@@ -7,14 +7,14 @@ import {
   Sponsors, 
   MLHBanner, 
   Landing, 
-  Footer
+  Footer,
+  Partners
 } from 'components';
 
 class App extends Component { 
   constructor(props) {
     super(props);
     this.state = {
-    
     };
   }
 

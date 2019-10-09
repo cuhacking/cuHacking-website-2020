@@ -38,24 +38,24 @@ export default class MailingListForm extends Component {
 
         event.preventDefault();
 
+
         const post = {
             email: this.state.value
         }
 
         const options = {
-            mode: 'no-cors',
-            method: 'POST',
+            method: 'POST', 
             body: JSON.stringify(post), 
             headers: {
-                'Access-Control-Request-Method': 'POST', 
-                'Authorization': 'Bearer test',
-                'Content-Type': 'application/json'
+                'mode': 'no-cors', 
+                'Content-Type': 'application/json',
             }
         }; 
 
         fetch(API_URL, options)
             .then(res => res.json())    
             .then(res => {
+                console.log(res)
                 if(res.status === "success") {
                     this.setState({status: 'after'}); 
                 } else {
@@ -73,6 +73,7 @@ export default class MailingListForm extends Component {
     }
 
     render() {
+        /*
         return (
             <div id="mailingListForm" onClick={this.openField}>
                 {this.text()}
@@ -82,5 +83,16 @@ export default class MailingListForm extends Component {
                 </form>
             </div>
         );  
+        */
+
+       return (
+        <div id="mailingListForm" onClick={this.openField}>
+            {this.text()}
+            <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
+                <input className="emailField"     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
+                <button className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> <FontAwesomeIcon icon={faArrowRight}/></button>
+            </form>
+        </div>
+    );  
     } 
 }

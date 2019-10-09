@@ -6,7 +6,6 @@ import logoCiena from '../assets/images/sponsors/ciena.png';
 import logoCSE from '../assets/images/sponsors/cse.png';
 import logoFDM from '../assets/images/sponsors/fdm.jpg'; 
 
-
 class Sponsor extends Component {
   constructor(props) {
     super(props)

@@ -9,5 +9,6 @@ import Sponsors from './sponsors';
 import TimeCount from './timeCount';
 import FAQ from './faq'; 
 import Footer from './footer';
+import Partners from './partners'; 
 
-export {Sponsors, TimeCount, FAQ, Footer, AboutUs, Landing, MLHBanner, ParticleBackground, SocialLinks, MailingListForm, Navbar};
+export {Partners, Sponsors, TimeCount, FAQ, Footer, AboutUs, Landing, MLHBanner, ParticleBackground, SocialLinks, MailingListForm, Navbar};
