@@ -10,10 +10,6 @@ export default class Navbar extends Component {
     }
   }
 
-  expandNavbar() {
-
-  }
-
   render() {
     return (
       <div className="navbar-parent">
@@ -24,7 +20,7 @@ export default class Navbar extends Component {
               <li className="nav-item" role="link"> <a href="#about"> About Us </a> </li>
               <li className="nav-item" role="link"> <a href="#sponsors"> Sponsors </a> </li>
             </ul> 
-            <FontAwesomeIcon className="toggle" icon={faBars} onClick={this.expandNavbar()}/>
+            <FontAwesomeIcon className="toggle" icon={faBars}/>
         </nav>
       </div>
     )

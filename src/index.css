@@ -278,12 +278,41 @@ input:focus {
 
 .mega img {
   max-height: 200px; 
-  width: 300px; 
+  width: 350px; 
 }
 
 .kilo img {
   max-height: 150px;
   width: 150px; 
+}
+
+/* Partners */ 
+.partner-wrapper {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+}
+
+.partner-img {
+  max-height: 150px;
+  padding: 20px; 
+}
+
+
+#partner-heading {
+  margin: 0; 
+  padding-left: 20%; 
+  padding-right: 20%;
+  padding-bottom: 10px;  
+  border-bottom: 1px solid #9756D8; 
+}
+
+#SCSLogo, #SCELogo{
+  width: 250px;
+}
+
+#MLHLogo {
+  width: 150px;
 }
 
 /* These properties are specified by MLH's brand guidelines, don't touch them. */ 
@@ -303,6 +332,11 @@ input:focus {
 }
 
 @media (orientation: portrait) {
+
+  .partner-wrapper {
+    flex-direction: column; 
+  }
+
   .landing-logo {
     width: 80vw;
   }

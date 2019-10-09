@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import logoMLH from '../assets/images/mlh.svg';
+import logoSCE from '../assets/images/sce.png';
+import logoSCS from '../assets/images/scs.png';
 import CuHeader from './cuHeader.js';
 
 class Partner extends Component {
     constructor(props) {
       super(props)
       this.state = {
+        id: props.id, 
         url: props.url, 
         src: props.src, 
         alt: props.alt
@@ -15,7 +18,7 @@ class Partner extends Component {
     render() {
       return (
         <a href={this.state.url} target="_blank" rel="noopener noreferrer">
-           <img className="partner-img" src={this.state.src} alt={this.state.alt}/>
+           <img id={this.state.id} className="partner-img" src={this.state.src} alt={this.state.alt}/>
         </a> 
       )
     }
@@ -32,12 +35,13 @@ export default class Partners extends Component {
   render() {
     return (
         <div className="slide partners">
-         
-        {/*Need a link to SCE, SCS, and MLH as per Rico's request*/}
-        <Partner url="https://carleton.ca/scs/" src="" alt="Link to Carleton's School of Computer Science Webpage"/>
-        <Partner url="https://carleton.ca/sce/" src="" alt="Link to Carleton's School of Computer and Systems Engineering Webpage"/>
-        <Partner url="https://mlh.io/" src={logoMLH} alt="Link to MLH Webpage"/>
-      </div> 
+            <p id="partner-heading" className="bodyText"> Our Proud Partners </p>
+            <div className="partner-wrapper">
+                <Partner id="SCSLogo" url="https://carleton.ca/scs/" src={logoSCS} alt="Link to Carleton's School of Computer Science Webpage"/>
+                <Partner id="SCELogo" url="https://carleton.ca/sce/" src={logoSCE} alt="Link to Carleton's School of Computer and Systems Engineering Webpage"/>
+                <Partner id="MLHLogo" url="https://mlh.io/"          src={logoMLH} alt="Link to MLH Webpage"/>
+            </div>
+        </div> 
     )
   }
 }
