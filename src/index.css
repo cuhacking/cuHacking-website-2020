@@ -1,10 +1,3 @@
-.app {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--spaceColour);
-}
-
 .lightTheme {
   --textColour: #0C0F0A;
   --lightPrimaryColour: #8668aa;
@@ -27,49 +20,360 @@
   --promo: url(assets/images/promoText-white.svg);
 }
 
-h5 { font-size: 50px; }
-
 a {
-  display: inline-flex;
-  text-decoration: none;
+  text-decoration: none; 
+  font-size: inherit; 
+  font-family: inherit;
 }
 
 html, body {
+  overflow-x: hidden;
+  width: 100vw; 
   min-width: 335px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; 
 }
 
-body {
-  height: 100vh;
-  width: 100vw; 
-  overflow: hidden;
-  position: relative;
-  min-height: 300px;
+* {
+  font-family: 'Reem Kufi', sans-serif; 
 }
-
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}
-
 
 input {
   -webkit-appearance: none; 
-  -moz-appearance: none;
-  appearance: none;
+  -moz-appearance: none;  
 }
 
 input:focus {
   outline: none; 
 }
 
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+#root {
+  background-image: url('./assets/images/bkg.svg');
+  background-size: cover;
+  background-position: bottom;
+}
+.navbar-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10; 
+}
+
+.navbar {
+  align-items: center; 
+  display: flex; 
+  justify-content: space-between; 
+  margin: 15px 150px;
+  width: 90%;
+  max-width: 1024px;
+}
+
+.toggle {
+  cursor: pointer; 
+}
+
+.nav-links {
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.nav-links > li {
+  list-style-type: none;  
+}
+
+.nav-item {
+  cursor: pointer; 
+  color: black;
+  margin-right: 30px; 
+  border-bottom: #280749 2px solid;  
+  text-align: right; 
+}
+
+.nav-item:hover {
+  border-bottom-color: #00D0FE; 
+}
+
+.navbar .toggle {
+  display: none; 
+}
+
+.nav-logo {
+  width: 120px;   
+}
+
+/* Slide Rules */
+
+.slide-wrapper {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center; 
+  padding-top: 100px; 
+  width: 100%; 
+}
+
+.slide {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  width: 90%;
+  max-width: 1024px;
+}
+
+/* Landing Page */ 
+
+.landing {
+  margin-bottom: 150px;
+}
+
+.landing-logo {
+  width: 50vh; 
+}
+
+.landing-top {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing-top-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  max-width: 512px;
+}
+
+.landing-bottom {
+  display: flex; 
+  align-items: flex-end;
+  align-content: center;
+  justify-content: flex-end;
+  width: 100%; 
+}
+
+.landing-date {
+  min-width: 20%;
+  margin-right: -50px;
+}
+
+/* Heading Styles */ 
+.custom-header { 
+  align-content: center; 
+  display: flex; 
+  flex-direction: row; 
+  text-align: left; 
+  font-family: 'Reem Kufi', sans-serif; 
+  font-style: normal;
+  font-weight: normal; 
+  font-size: 32px; 
+  width: 100%; 
+}
+
+.custom-header > p {
+  margin-top: 40px; 
+  margin-bottom: 0; 
+}
+
+/* Bar (footer, timer) Styles*/ 
+.bar-wrapper {
+  font-family: 'Reem Kufi', sans-serif;
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: center; 
+  height: 100px; 
+  width: 100vw; 
+  background-color: #280749;
+  color: white; 
+}
+
+.bodyText {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.timer-wrapper {
+  font-size: 30px;
+  justify-content: center; 
+}
+
+#timer { 
+  font-size: 50px; 
+}
+
+#footer-purple { 
+  color: #9756D8; 
+}
+
+.mailtoLink {
+  color:  #9756D8;
+}
+
+/* Freqently Asked Questions */ 
+.faq-questions-wrapper { 
+  display: flex; 
+  width: 100%; 
+  justify-content: space-between;
+}
+
+.faq-question {
+  display: flex; 
+  align-items: flex-end; 
+}
+
+.faq-question > h2 {
+  margin: 0; 
+}
+
+/* Sponsors */ 
+.sponsor-wrapper {
+  display: flex; 
+  flex-direction: column; 
+  flex-wrap: wrap;
+}
+
+.sponsor-tier {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: baseline;
+  
+}
+
+.sponsor-img {
+  padding: 10px; 
+}
+
+.tera {
+  max-height: 250px;
+  width: 500px;
+}
+
+.giga {
+  max-height: 250px;
+  width: 500px; 
+}
+
+.mega {
+  flex-wrap: wrap; 
+}
+
+.mega img {
+  max-height: 200px; 
+  width: 300px;  
+}
+
+.kilo img {
+  max-height: 150px;
+  width: 100px; 
+}
+
+#sponsor-ciena {
+  width: 250px;
+}
+
+#sponsor-lighthouse {
+  width: 310px; 
+}
+
+
+/* Partners */ 
+.partner-wrapper {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center;
+}
+
+.partner-img {
+  max-height: 150px;
+  padding: 20px; 
+}
+
+
+#partner-heading {
+  margin: 0; 
+  padding-left: 20%; 
+  padding-right: 20%;
+  padding-bottom: 10px;  
+  border-bottom: 1px solid #9756D8; 
+}
+
+#SCSLogo, #SCELogo{
+  width: 250px;
+}
+
+#MLHLogo {
+  width: 150px;
+}
+
+/* These properties are specified by MLH's brand guidelines, don't touch them. */ 
+#MLHBanner {
+  width: 100%; 
+}
+
+#mlh-trust-badge {
+  display:block;
+  max-width: 90px;
+  min-width:60px;
+  position:fixed;
+  right:60px;
+  top:0;
+  width:10%;
+  z-index:10000;
+}
+
+@media (orientation: portrait) {
+
+  .partner-wrapper {
+    flex-direction: column; 
+  }
+
+  .landing-logo {
+    width: 80vw;
+  }
+
+  .landing-top {
+    flex-direction: column;
+  }
+
+  .landing-top-left {
+    max-width: unset;
+  }
+  .landing-bottom {
+    flex-direction: column-reverse;
+    flex-wrap: wrap; 
+    align-items: center; 
+  }
+
+  .footer {
+    height: auto; 
+    color: white; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    opacity: 0;
+  }
+}
+
+/* 
 #content {
   display: flex;
   flex: 1;
@@ -136,3 +440,4 @@ input:focus {
     left: 20vw;
   }
 }
+*/

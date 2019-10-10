@@ -1,3 +1,6 @@
+.mailingListButton 
+
+
 #mailingListText {
   color: var(--textColour); 
   font-family: Inconsolata; 
@@ -9,21 +12,24 @@
 }
 
 .emailForm {
+  display: flex;
+  justify-content: flex-end;
   transition-property: opacity; 
   transition-duration: 0.3s; 
   white-space: nowrap; 
 }
 
 .emailField {
-  background-color: var(--spaceColour);
-  border: none;
-  border-bottom: 1px solid var(--textColour);
-  color: var(--textColour); 
-  font-family: Inconsolata; 
+  height: 40px; 
+  background-color: white;
+  border: 1px solid black; 
+  border-left: 3px solid #00D0FE; 
+  color: black; 
   font-size: 20px; 
   margin-right: 10px; 
-  padding: 10px 10px;
-  width: 75%;
+  padding: 3px 10px;
+  width: 80%;
+  transition-duration: 0.3ms; 
 }
 
   .emailField:disabled {
@@ -32,25 +38,24 @@
   }
   
 .submitButton {
-  background-color: var(--spaceColour); 
+  opacity: 1; 
+  width: 48px;
+  height: 48px; 
+  background-color: #5827B8; 
   border: 1px solid var(--textColour);
-  color: var(--textColour);
+  color: white;
   font-family: Inconsolata; 
-  font-size: 17px; 
-  padding: 10px 10px; 
+  font-size: 17px;  
   text-decoration: none;
   transition-duration: 0.3s; 
 }
 
-  .submitButton:enabled {
-    background-color: var(--primaryColour); 
-    color: var(--spaceColour); 
+  .submitButton:enabled { 
     cursor: pointer;
   }
 
   .submitButton:hover:enabled {
-    background-color: var(--primaryColour); 
-    color: var(--spaceColour);
+    color: white;
   }
 
   .submitButton:active:enabled {
@@ -59,9 +64,8 @@
   }
 
   .submitButton:disabled {
-    background-color: var(--spaceColour); 
     transition-duration: 0.3s; 
-    opacity: 0.5; 
+    opacity: 0.2
   }
   
 .after {
@@ -71,4 +75,14 @@
 .errorMessage {
   font-family: Inconsolata; 
   color: red; 
+}
+
+.dialogText {
+  text-align: right;
+}
+
+@media (orientation: portrait) {
+  .dialogText {
+    text-align: center;
+  }
 }
