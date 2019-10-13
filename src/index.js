@@ -25,7 +25,7 @@ class App extends Component {
           <Partners /> 
         </div>
         <Footer /> 
-        <MLHBanner /> 
+        <MLHBanner />   
       </div>
     )
   }
