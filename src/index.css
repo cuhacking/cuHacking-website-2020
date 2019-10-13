@@ -1,19 +1,23 @@
-.lightTheme {
-  --textColour: #0C0F0A;
-  --lightPrimaryColour: #8668aa;
-  --primaryColour: #7C39BF;
-  --darkPrimaryColour: #31263E;
-  --secondaryColour: #7DB0E8;
-  --spaceColour: #FFFFFF;
+@media (prefers-color-scheme: light) {
+  * {
+    --textColour: #000000;
+    --secondTextColour: #FFFFFF; 
+    --lightPrimaryColour: #9756D8; 
+    --primaryColour: #5827B8;
+    --darkPrimaryColour: #280749;
+    --secondaryColour: #00D0FE;
+  }
 }
 
-.darkTheme {
-  --textColour: #FFFFFF;
-  --lightPrimaryColour: #8668aa;
-  --primaryColour: #9756D8;
-  --darkPrimaryColour: #31263E;
-  --secondaryColour: #7DB0E8;
-  --spaceColour: #0C0F0A;
+@media (prefers-color-scheme: dark) {
+  * {
+    --textColour: #FFFFFF;
+    --secondTextColour: #FFFFFF; 
+    --lightPrimaryColour: #9756D8; 
+    --primaryColour: #5827B8;
+    --darkPrimaryColour: #280749;
+    --secondaryColour: #00D0FE;
+  }
 }
 
 a {
@@ -57,6 +61,7 @@ input:focus {
   background-size: cover;
   background-position: bottom;
 }
+
 .navbar-parent {
   position: absolute;
   top: 0;
@@ -92,14 +97,14 @@ input:focus {
 
 .nav-item {
   cursor: pointer; 
-  color: black;
+  color: var(--textColour);
   margin-right: 30px; 
-  border-bottom: #280749 2px solid;  
+  border-bottom: var(--darkPrimaryColour) 2px solid;  
   text-align: right; 
 }
 
 .nav-item:hover {
-  border-bottom-color: #00D0FE; 
+  border-bottom-color: var(--secondaryColour); 
 }
 
 .navbar .toggle {
@@ -195,12 +200,13 @@ input:focus {
   align-items: center; 
   height: 100px; 
   width: 100vw; 
-  background-color: #280749;
-  color: white; 
+  background-color: var(--darkPrimaryColour);
+  color: var(--textColour); 
 }
 
 .bodyText {
   font-family: 'Montserrat', sans-serif;
+  color: var(--textColour);
 }
 
 .timer-wrapper {
@@ -213,11 +219,11 @@ input:focus {
 }
 
 #footer-purple { 
-  color: #9756D8; 
+  color: var(--lightPrimaryColour); 
 }
 
 .mailtoLink {
-  color:  #9756D8;
+  color: var(--lightPrimaryColour);
 }
 
 /* Freqently Asked Questions */ 
@@ -247,25 +253,24 @@ input:focus {
   display: flex;
   flex-direction: row;
   justify-content: center; 
-  align-items: baseline;
-  
+  align-items: baseline; 
 }
 
 .sponsor-img {
   padding: 10px; 
 }
 
-.tera {
+.tera img {
   max-height: 250px;
   width: 500px;
 }
 
-.giga {
+.giga img {
   max-height: 250px;
   width: 500px; 
 }
 
-.mega {
+.mega img {
   flex-wrap: wrap; 
 }
 
@@ -278,15 +283,6 @@ input:focus {
   max-height: 150px;
   width: 100px; 
 }
-
-#sponsor-ciena {
-  width: 250px;
-}
-
-#sponsor-lighthouse {
-  width: 310px; 
-}
-
 
 /* Partners */ 
 .partner-wrapper {
@@ -306,7 +302,7 @@ input:focus {
   padding-left: 20%; 
   padding-right: 20%;
   padding-bottom: 10px;  
-  border-bottom: 1px solid #9756D8; 
+  border-bottom: 1px solid var(--lightPrimaryColour); 
 }
 
 #SCSLogo, #SCELogo{
@@ -350,6 +346,7 @@ input:focus {
   .landing-top-left {
     max-width: unset;
   }
+
   .landing-bottom {
     flex-direction: column-reverse;
     flex-wrap: wrap; 
@@ -358,7 +355,7 @@ input:focus {
 
   .footer {
     height: auto; 
-    color: white; 
+    color: var(--secondTextColour); 
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
@@ -367,4 +364,5 @@ input:focus {
   .nav-links {
     opacity: 0;
   }
+
 }
