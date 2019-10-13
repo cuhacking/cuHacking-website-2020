@@ -5,8 +5,6 @@
   --darkPrimaryColour: #31263E;
   --secondaryColour: #7DB0E8;
   --spaceColour: #FFFFFF;
-  --logo: url(assets/images/cuHackingLogo-purple.svg);
-  --promo: url(assets/images/promoText-black.svg);
 }
 
 .darkTheme {
@@ -16,8 +14,6 @@
   --darkPrimaryColour: #31263E;
   --secondaryColour: #7DB0E8;
   --spaceColour: #0C0F0A;
-  --logo: url(assets/images/cuHackingLogo-white.svg);
-  --promo: url(assets/images/promoText-white.svg);
 }
 
 a {
@@ -372,72 +368,3 @@ input:focus {
     opacity: 0;
   }
 }
-
-/* 
-#content {
-  display: flex;
-  flex: 1;
-  align-self: stretch;
-  flex-direction: column;
-  position: relative;
-}
-
-#logo {
-  background-image: var(--logo);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 125vh;
-  height: 125vh;
-  position: absolute;
-  top: 40vh;
-  left: 60vw;
-}
-
-#promoSpace {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  overflow: visible;
-  max-width: 100vh;
-  padding-left: 15px;
-  padding-bottom: 30px; 
-}
-
-#promo {
-  user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-}
-
-@media all and (orientation:portrait) {
-
-  body {
-    overflow: overflow-y; 
-  }
-
-  #content {
-    padding-top: 10%; 
-  }
-
-  #promoSpace {
-    flex: unset;
-    max-width: 85vw;
-    margin-bottom: -3rem;
-  }
-
-  #logo {
-    background-image: var(--logo);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 125vw;
-    height: 125vw;
-    position: absolute;
-    top: 50vh;
-    left: 20vw;
-  }
-}
-*/

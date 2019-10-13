@@ -73,18 +73,6 @@ export default class MailingListForm extends Component {
     }
 
     render() {
-        /*
-        return (
-            <div id="mailingListForm" onClick={this.openField}>
-                {this.text()}
-                <form className={`emailForm ${this.state.status}`} onSubmit={this.handleSubmit}>
-                    <input className="emailField"     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                    <button className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> <FontAwesomeIcon icon={faArrowRight}/></button>
-                </form>
-            </div>
-        );  
-        */
-
        return (
         <div id="mailingListForm" onClick={this.openField}>
             {this.text()}
