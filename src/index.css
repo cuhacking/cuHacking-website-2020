@@ -133,7 +133,7 @@ input:focus {
 /* Landing Page */ 
 
 .landing {
-  margin-bottom: 50px;
+  margin-bottom: 150px;
 }
 
 .landing-logo {
@@ -213,7 +213,7 @@ input:focus {
 }
 
 .footer {
-  position: absolute; 
+  position: relative; 
   bottom: 0;
   left: 0; 
 }
