@@ -16,9 +16,7 @@ export default class Navbar extends Component {
         <nav className="navbar"> 
             <a href="/"> <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/></a>
             <ul className="nav-links"> 
-              <li className="nav-item" role="link"> <a href="#home"> Home </a> </li>
-              <li className="nav-item" role="link"> <a href="#about"> About Us </a> </li>
-              <li className="nav-item" role="link"> <a href="#sponsors"> Sponsors </a> </li>
+              {/*<li className="nav-item" role="link"> <a href="#home"> Home </a> </li>*/}
             </ul> 
             <FontAwesomeIcon className="toggle" icon={faBars}/>
         </nav>

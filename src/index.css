@@ -50,17 +50,13 @@ input:focus {
   outline: none; 
 }
 
-.footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-}
-
 #root {
   background-image: url('./assets/images/bkg.svg');
   background-size: cover;
   background-position: bottom;
+  min-height: 100vh;
 }
+
 .navbar-parent {
   position: absolute;
   top: 0;
@@ -216,6 +212,12 @@ input:focus {
   font-size: 50px; 
 }
 
+.footer {
+  position: relative; 
+  bottom: 0;
+  left: 0; 
+}
+
 #footer-purple { 
   color: #9756D8; 
 }
@@ -291,10 +293,9 @@ input:focus {
   width: 310px; 
 }
 
-
 /* Partners */ 
 .partner-wrapper {
-  display: flex; 
+  display: flex;
   flex-direction: row; 
   align-items: center;
 }
@@ -303,7 +304,6 @@ input:focus {
   max-height: 150px;
   padding: 20px; 
 }
-
 
 #partner-heading {
   margin: 0; 
@@ -361,6 +361,7 @@ input:focus {
   }
 
   .footer {
+    position: relative;
     height: auto; 
     color: white; 
     display: flex; 
