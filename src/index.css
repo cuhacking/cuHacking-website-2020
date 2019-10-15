@@ -6,6 +6,7 @@
     --primaryColour: #5827B8;
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
+    --background: url('./assets/images/bkg.svg');
   }
 }
 
@@ -17,6 +18,8 @@
     --primaryColour: #5827B8;
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
+    --backgroundColour: #161616fb; 
+    --background: url('./assets/images/bkgdark.svg'); 
   }
 }
 
@@ -57,7 +60,7 @@ input:focus {
 }
 
 #root {
-  background-image: url('./assets/images/bkg.svg');
+  background-image: var(--background); 
   background-size: cover;
   background-position: bottom;
 }
@@ -175,6 +178,7 @@ input:focus {
 
 /* Heading Styles */ 
 .custom-header { 
+  color: var(--textColour);
   align-content: center; 
   display: flex; 
   flex-direction: row; 
