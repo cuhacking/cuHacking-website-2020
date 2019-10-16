@@ -73,7 +73,8 @@
 }
 
 .errorMessage {
-  font-family: Inconsolata; 
+  text-align: center; 
+  font-family: 'Montserrat', sans-serif;
   color: red; 
 }
 
