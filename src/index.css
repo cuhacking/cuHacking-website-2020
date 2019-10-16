@@ -191,7 +191,7 @@ input:focus {
   font-family: 'Reem Kufi', sans-serif;
   display: flex; 
   flex-direction: row; 
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center; 
   height: 100px; 
   width: 100vw; 
@@ -220,6 +220,15 @@ input:focus {
 
 #footer-purple { 
   color: #9756D8; 
+}
+
+#MLHCodeOfConduct  {
+  color: white;  
+  transition-duration: 0.3s;
+}
+
+#MLHCodeOfConduct:hover  {
+  color: #7C39BF; 
 }
 
 .mailtoLink {
@@ -285,15 +294,11 @@ input:focus {
   width: 100px; 
 }
 
-#sponsor-ciena {
-  width: 250px;
-}
-
-#sponsor-lighthouse {
-  width: 310px; 
-}
-
 /* Partners */ 
+.partners {
+  margin-bottom: 100px; 
+}
+
 .partner-wrapper {
   display: flex;
   flex-direction: row; 
