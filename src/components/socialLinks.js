@@ -14,7 +14,7 @@ export default class SocialLinks extends Component {
   createLogo(icon, target, link) {
     return (
       <a className={styles.socialButton} target={target} rel='noopener noreferrer' href={link}>
-        <FontAwesomeIcon icon={icon} size='lg'/>
+        <FontAwesomeIcon icon={icon} size='1x'/>
       </a> 
     );
   }

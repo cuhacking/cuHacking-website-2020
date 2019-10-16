@@ -40,6 +40,7 @@ export default class Partners extends Component {
                 <Partner id="SCELogo" url="https://carleton.ca/sce/" src={logoSCE} alt="Link to Carleton's School of Computer and Systems Engineering Webpage"/>
                 <Partner id="MLHLogo" url="https://mlh.io/"          src={logoMLH} alt="Link to MLH Webpage"/>
             </div>
+            <p id="footer-questions">Questions? Send us an email at <a className="mailtoLink" href="mailto:info@cuhacking.com"> info@cuhacking.com </a> </p>
         </div> 
     )
   }
