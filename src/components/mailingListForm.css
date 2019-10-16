@@ -73,7 +73,7 @@
 }
 
 .errorMessage {
-  text-align: center; 
+  text-align: right; 
   font-family: 'Montserrat', sans-serif;
   color: red; 
 }
@@ -83,6 +83,10 @@
 }
 
 @media (orientation: portrait) {
+  .errorMessage {
+    text-align: center; 
+  }
+  
   .dialogText {
     text-align: center;
   }
