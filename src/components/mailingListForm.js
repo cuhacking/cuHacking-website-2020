@@ -54,7 +54,6 @@ export default class MailingListForm extends Component {
         fetch(API_URL, options)
             .then(res => {
                 res.json()
-                console.log(res)
                 if(res.status === 201) {
                     // The email was added successfully. 
                     this.setState({status: 'after'}); 
