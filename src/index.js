@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {
   Navbar, 
-  AboutUs, 
-  Sponsors, 
   MLHBanner, 
   Landing, 
   Footer,
@@ -15,17 +13,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      darkMode: matchMedia('(prefers-color-scheme: dark)').matches, 
     };
   }
 
   render() {
     return (
       <div className={`app`}>
-        <Navbar /> 
+        <Navbar dark={this.state.darkMode} /> 
         <div className="slide-wrapper">
-          <Landing />
-          <AboutUs />
-          <Sponsors /> 
+          <Landing dark={this.state.darkMode}/>
           <Partners /> 
         </div>
         <Footer /> 
