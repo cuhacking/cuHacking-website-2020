@@ -9,6 +9,8 @@ import {
   Partners
 } from 'components';
 
+// A superfluous comment to trigger a diff and make a PR
+
 class App extends Component { 
   constructor(props) {
     super(props);
