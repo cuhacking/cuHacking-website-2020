@@ -14,7 +14,7 @@ jobs:
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               yarn build
 
-              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'rm -r ~/test/build'
-              scp -r ./build $SERVER_USER@$SERVER_IP:~/test/build/
-              # ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'pm2 restart Snorlax'
+              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'rm -r ~/snorlax/build'
+              scp -r ./build $SERVER_USER@$SERVER_IP:~/snorlax/build/
+              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'pm2 restart Snorlax'
             fi
