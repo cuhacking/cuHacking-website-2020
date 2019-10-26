@@ -9,6 +9,8 @@ import {
   Partners
 } from 'components';
 
+// Superfluous comment
+
 class App extends Component { 
   constructor(props) {
     super(props);
