@@ -1,0 +1,24 @@
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.17
+    working_directory: ~/cuhacking-website
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "19:8c:26:3b:39:71:9b:a4:8d:0d:a7:75:ce:ee:1a:12"
+      - run: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: |
+            if [ "$CIRCLE_BRANCH" = "master" ]; then
+              rm -r build
+              yarn build
+
+              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'rm -r ~/snorlax/build'
+              scp -oStrictHostKeyChecking=no -r ./build $SERVER_USER@$SERVER_IP:~/snorlax/build/
+              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'pm2 restart Snorlax'
+            fi
