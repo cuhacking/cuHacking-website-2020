@@ -5,6 +5,7 @@ jobs:
     working_directory: ~/cuhacking-website
 
     steps:
+      - checkout
       - add_ssh_keys:
           fingerprints:
             - "19:8c:26:3b:39:71:9b:a4:8d:0d:a7:75:ce:ee:1a:12"
@@ -13,7 +14,7 @@ jobs:
             if [ "$CIRCLE_BRANCH" = "master" ]; then
               yarn build
 
-              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'rm -r ~/snorlax/build'
-              scp -oStrictHostKeyChecking=no -r ./build $SERVER_USER@$SERVER_IP:~/snorlax/build/
-              ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'pm2 restart Snorlax'
+              # ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'rm -r ~/snorlax/build'
+              scp -oStrictHostKeyChecking=no -r ./build $SERVER_USER@$SERVER_IP:~/test/build/
+              # ssh -oStrictHostKeyChecking=no $SERVER_USER@$SERVER_IP 'pm2 restart Snorlax'
             fi
