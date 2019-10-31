@@ -52,13 +52,18 @@ export default class MailingListForm extends Component {
         }; 
 
         fetch(API_URL, options)
-            .then(res => res.json())    
             .then(res => {
-                console.log(res)
-                if(res.status === "success") {
+                res.json()
+                if(res.status === 201) {
+                    // The email was added successfully. 
                     this.setState({status: 'after'}); 
+                } else if (res.status === 400) {
+                    // Server said the email was invalid. 
+                    this.setState({error: 'That email didn\'t look right! Try again?', loading: false, status: 'before'}); 
+                } else if (res.status === 500) {
+                    this.setState({error: 'Something went wrong on our end! Try it again!', loading: false, status: 'before'});
                 } else {
-                    this.setState({loading: false, status: 'before'}); 
+                    this.setState({error: 'Uh-oh! That didn\'t work. Try again?', value: '', valid: false, loading: false}); 
                 }
             })
             .catch(err => {
@@ -80,6 +85,7 @@ export default class MailingListForm extends Component {
                 <input className="emailField"     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
                 <button className="submitButton"  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> <FontAwesomeIcon icon={faArrowRight}/></button>
             </form>
+            <p className="errorMessage">&nbsp;{this.state.error}</p>
         </div>
     );  
     } 

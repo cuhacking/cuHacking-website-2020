@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
 import CuHeader from './cuHeader.js';
-import logoFullscript from '../assets/images/sponsors/fullscript.svg';
-import logoLightHouse from '../assets/images/sponsors/lhl-logo.png'; 
-import logoCiena from '../assets/images/sponsors/ciena.png';
-import logoCSE from '../assets/images/sponsors/cse.png';
-import logoFDM from '../assets/images/sponsors/fdm.jpg'; 
+// import logo_name from '../assets/images/sponsors/<logo_filename>.<type>';
 
 class Sponsor extends Component {
+
+  // usage: <Sponsor
+
   constructor(props) {
     super(props)
     this.state = {
-      id: props.id, 
-      url: props.url, 
-      src: props.src, 
-      alt: props.alt
+      id: props.id,   // optional id tag for the img, good for resizing specific sponsor logos 
+      url: props.url, // link to sponsor's website  
+      src: props.src, // imported photo, (logo_name) in imports at the top. 
+      alt: props.alt  // alt for img description, 
     }
   }
 
@@ -40,19 +39,10 @@ export default class Sponsors extends Component {
         <CuHeader text="Meet our sponsors"/>
         <p className="bodyText"> Interested in sponsoring? Contact us at <a className="mailtoLink" href="mailto:sponsorship@cuhacking.com"> sponsorship@cuhacking.com  </a> </p> 
         <div className="sponsor-wrapper">
-          <div className="sponsor-tier tera">    
-
-          </div>
+          <div className="sponsor-tier tera"></div>
           <div className="sponsor-tier giga"></div>
-          <div className="sponsor-tier mega">
-            <Sponsor id="sponsor-fullscript" alt="Fullscript Logo"  src={logoFullscript}  url="https://fullscript.com/"/>          
-            <Sponsor id="sponsor-CSE"        alt="CSE"              src={logoCSE}         url="https://www.cse-cst.gc.ca/en"/>
-            <Sponsor id="sponsor-ciena"      alt="Ciena"            src={logoCiena}       url="https://www.ciena.com/"/>
-            <Sponsor id="sponsor-lighthouse" alt="Lighthouse Labs"  src={logoLightHouse}  url="https://www.lighthouselabs.ca/"/>
-          </div>
-          <div className="sponsor-tier kilo">
-            <Sponsor alt="FDM Group"        src={logoFDM}         url="https://www.fdmgroup.com/en-ca/ca-home/"/>
-          </div>
+          <div className="sponsor-tier mega"></div>
+          <div className="sponsor-tier kilo"></div>
         </div>
     </div> 
     )

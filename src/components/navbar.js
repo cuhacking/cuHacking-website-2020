@@ -25,6 +25,7 @@ export default class Navbar extends Component {
         <nav className="navbar"> 
             {this.navLogo()}
             <ul className="nav-links"> 
+              {/*<li className="nav-item" role="link"> <a href="#home"> Home </a> </li>*/}
             </ul> 
             <FontAwesomeIcon className="toggle" icon={faBars}/>
         </nav>
