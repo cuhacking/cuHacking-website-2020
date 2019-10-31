@@ -15,15 +15,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      darkMode: matchMedia('(prefers-color-scheme: dark)').matches, 
     };
   }
 
   render() {
     return (
       <div className={`app`}>
-        <Navbar /> 
+        <Navbar dark={this.state.darkMode} /> 
         <div className="slide-wrapper">
-          <Landing />
+          <Landing dark={this.state.darkMode}/>
           <Partners /> 
         </div>
         <Footer /> 

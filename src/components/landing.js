@@ -6,9 +6,17 @@ export default class Landing extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isIE: false || !!document.documentMode
+      isIE: false || !!document.documentMode,
+      dark: props.dark
     }
   }
+
+  date() {
+    if (this.state.dark) {
+      return <img className="landing-date" src={require("../assets/images/dateStampdark.svg")} alt="January 11-12th @ Carleton University"/>
+    } else {
+      return <img className="landing-date" src={require("../assets/images/dateStamp.svg")} alt="January 11-12th @ Carleton University"/>
+  }}
 
   render() {
     return (
@@ -17,7 +25,7 @@ export default class Landing extends Component {
           <div className='landing-top-left'>
             <Logo className='landing-logo'/>
           </div>
-          <img className="landing-date" src={require("../assets/images/dateStamp.svg")} alt="January 11th @ Carleton University"/>
+          {this.date()}
         </div>
         <div className="landing-bottom">
           <MailingListForm /> 

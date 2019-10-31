@@ -6,7 +6,16 @@ export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      isIE: false || !!document.documentMode
+      isIE: false || !!document.documentMode,
+      dark: props.dark
+    }
+  }
+
+  navLogo() {
+    if (this.state.dark) {
+      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogoDark.svg")} alt="cuHacking 2020"/></a>
+    } else {
+      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogo.svg")} alt="cuHacking 2020"/></a>
     }
   }
 
@@ -14,7 +23,7 @@ export default class Navbar extends Component {
     return (
       <div className="navbar-parent">
         <nav className="navbar"> 
-            <a href="/"> <img className="nav-logo" src={require("../assets/images/cuHackingText.png")} alt="cuHacking 2020"/></a>
+            {this.navLogo()}
             <ul className="nav-links"> 
               {/*<li className="nav-item" role="link"> <a href="#home"> Home </a> </li>*/}
             </ul> 
