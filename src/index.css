@@ -251,6 +251,10 @@ input:focus {
   color: var(--lightPrimaryColour); 
 }
 
+#footer-questions {
+  color: var(--textColour); 
+}
+
 #MLHCodeOfConduct  {
   color: white;  
   transition-duration: 0.3s;
