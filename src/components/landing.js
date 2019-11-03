@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MailingListForm from './mailingListForm'; 
-import {ReactComponent as Logo} from '../assets/images/logo-animated.svg'
+import {ReactComponent as Logo} from '../assets/logo-animated.svg'
 
 export default class Landing extends Component {
   constructor(props) {
@@ -13,9 +13,9 @@ export default class Landing extends Component {
 
   date() {
     if (this.state.dark) {
-      return <img className="landing-date" src={require("../assets/images/dateStampdark.svg")} alt="January 11-12th @ Carleton University"/>
+      return <img className="landing-date" src={require("../assets/dateStamp-dark.svg")} alt="January 11-12th @ Carleton University"/>
     } else {
-      return <img className="landing-date" src={require("../assets/images/dateStamp.svg")} alt="January 11-12th @ Carleton University"/>
+      return <img className="landing-date" src={require("../assets/dateStamp.svg")} alt="January 11-12th @ Carleton University"/>
   }}
 
   render() {

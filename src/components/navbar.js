@@ -13,9 +13,9 @@ export default class Navbar extends Component {
 
   navLogo() {
     if (this.state.dark) {
-      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogoDark.svg")} alt="cuHacking 2020"/></a>
+      return <a href="/"> <img className="nav-logo" src={require("../assets/shortLogo-dark.svg")} alt="cuHacking 2020"/></a>
     } else {
-      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogo.svg")} alt="cuHacking 2020"/></a>
+      return <a href="/"> <img className="nav-logo" src={require("../assets/shortLogo.svg")} alt="cuHacking 2020"/></a>
     }
   }
 

@@ -6,7 +6,7 @@
     --primaryColour: #5827B8;
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
-    --background: url('./assets/images/bkg.svg');
+    --background: url('./assets/bkg.svg');
     --backgroundColour: white; 
   }
 
@@ -30,7 +30,7 @@
     --primaryColour: #5827B8;
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
-    --background: url('./assets/images/bkgdark.svg'); 
+    --background: url('./assets/bkg-dark.svg'); 
     --backgroundColour: black; 
   }
 

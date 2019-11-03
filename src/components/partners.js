@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import logoMLH from '../assets/images/partners/mlh.svg';
-import logoSCE from '../assets/images/partners/sce.png';
-import logoSCS from '../assets/images/partners/scs.png';
+import logoMLH from '../assets/partners/mlh.svg';
+import logoSCE from '../assets/partners/sce.png';
+import logoSCS from '../assets/partners/scs.png';
 
 class Partner extends Component {
     constructor(props) {
