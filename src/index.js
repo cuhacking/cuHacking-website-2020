@@ -1,37 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from 'pages/home';
 import './index.css';
-import {
-  Navbar, 
-  MLHBanner, 
-  Landing, 
-  Footer,
-  Partners
-} from 'components';
 
-// Superfluous comment
-
-class App extends Component { 
-  constructor(props) {
-    super(props);
-    this.state = {
-      darkMode: matchMedia('(prefers-color-scheme: dark)').matches, 
-    };
-  }
-
-  render() {
-    return (
-      <div className={`app`}>
-        <Navbar dark={this.state.darkMode} /> 
-        <div className="slide-wrapper">
-          <Landing dark={this.state.darkMode}/>
-          <Partners /> 
-        </div>
-        <Footer /> 
-        <MLHBanner />   
-      </div>
-    )
-  }
-};
+const App = () => (
+  <Home/>
+);
 
 ReactDOM.render(<App/>, document.getElementById('root'));

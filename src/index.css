@@ -108,6 +108,10 @@ input:focus {
   cursor: pointer; 
 }
 
+.navbar .toggle {
+  display: none; 
+}
+
 .nav-links {
   display: flex; 
   justify-content: flex-end;
@@ -127,10 +131,6 @@ input:focus {
 
 .nav-item:hover {
   border-bottom-color: var(--secondaryColour); 
-}
-
-.navbar .toggle {
-  display: none; 
 }
 
 .nav-logo {
