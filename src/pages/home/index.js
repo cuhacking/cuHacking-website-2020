@@ -41,7 +41,7 @@ function Sponsors() {
         <Partner id={styles.SCELogo} url="https://carleton.ca/sce/" src={logoSCE} alt="Link to Carleton's School of Computer and Systems Engineering Webpage"/>
         <Partner id={styles.MLHLogo} url="https://mlh.io/"          src={logoMLH} alt="Link to MLH Webpage"/>
       </div>
-      <p style={{textAlign: 'center'}}>Questions? Send us an email at <a className={styles.mailToLink} href="mailto:info@cuhacking.com">info@cuhacking.com</a>.</p>
+      {/* <p style={{textAlign: 'center'}}>Questions? Send us an email at <a className={styles.mailToLink} href="mailto:info@cuhacking.com">info@cuhacking.com</a>.</p> */}
     </div> 
   );
 }
