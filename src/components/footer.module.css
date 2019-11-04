@@ -1,0 +1,45 @@
+#container {
+  width: 100vw;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--darkPrimaryColour);
+  color: var(--secondTextColour);
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+#MLHCodeOfConduct  {
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 15px 0;
+}
+
+.socialButton {
+  margin-left: 15px;
+  color: white;
+}
+
+.socialButton:hover {
+  color: #9756D8;
+  transition: 0.2s;
+}
+
+@media only screen and (min-width: 700px) {
+  #container {
+    height: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  #MLHCodeOfConduct:hover  {
+    color: #7C39BF;
+  }
+}

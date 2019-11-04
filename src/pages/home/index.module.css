@@ -1,0 +1,128 @@
+@media (prefers-color-scheme: light) {
+  * {
+    --dateSvg: url('../../assets/dateStamp.svg');
+  }
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --dateSvg: url('../../assets/dateStamp-dark.svg');
+  }
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/* Landing slide */
+.landingTop {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  max-width: 512px;
+}
+
+.landingLogo {
+  width: 50vw;
+  max-width: 512px;
+}
+
+.landingDate {
+  width: 100%;
+  height: 200px;
+  min-width: 40%;
+  margin-right: -50px;
+  background-image: var(--dateSvg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.landingBottom {
+  display: flex; 
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+  width: 100%; 
+  margin-bottom: 50px;
+}
+
+.mailToLink {
+  color: var(--lightPrimaryColour);
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1024px;
+}
+
+/* Sponsors slide */
+#SCSLogo, #SCELogo{
+  width: 250px;
+}
+
+#MLHLogo {
+  width: 150px;
+}
+
+.sponsors {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  border: 3px solid var(--secondaryColour); 
+  border-radius: 15px; 
+  background-color: rgba(255, 255, 255, 1);
+  margin-bottom: 10px;
+}
+
+.partnerLogo {
+  max-height: 150px;
+  padding: 20px; 
+}
+
+@media only screen and (min-width: 700px) {
+  /* Landing slide */
+  .landingTop {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .landingLogo {
+    width: 50vh;
+    max-width: 512px;
+  }
+
+  .landingDate {
+    max-width: 60%;
+    background-position: right;
+  }
+
+  .landingBottom {
+    margin-bottom: 100px;
+    justify-content: flex-end;
+  }
+
+  /* Sponsors slide */
+  .sponsors {
+    flex-direction: row;
+    margin-bottom: 100px;
+  }
+}

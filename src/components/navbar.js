@@ -1,35 +1,12 @@
-import React, {Component} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faBars} from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import styles from './navbar.module.css';
 
-export default class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      isIE: false || !!document.documentMode,
-      dark: props.dark
-    }
-  }
-
-  navLogo() {
-    if (this.state.dark) {
-      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogoDark.svg")} alt="cuHacking 2020"/></a>
-    } else {
-      return <a href="/"> <img className="nav-logo" src={require("../assets/images/shortLogo.svg")} alt="cuHacking 2020"/></a>
-    }
-  }
-
-  render() {
-    return (
-      <div className="navbar-parent">
-        <nav className="navbar"> 
-            {this.navLogo()}
-            <ul className="nav-links"> 
-              {/*<li className="nav-item" role="link"> <a href="#home"> Home </a> </li>*/}
-            </ul> 
-            <FontAwesomeIcon className="toggle" icon={faBars}/>
-        </nav>
-      </div>
-    )
-  }
-}
+export default () => (
+  <div id={styles.container}>
+    <nav id={styles.navbar}> 
+      <a href="/">
+        <div id={styles.navLogo}/>
+      </a>
+    </nav>
+  </div>
+);

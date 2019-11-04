@@ -1,0 +1,45 @@
+@media (prefers-color-scheme: light) {
+  * {
+    --navLogo: url('../assets/shortLogo.svg');
+  }
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --navLogo: url('../assets/shortLogo-dark.svg');
+  }
+}
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+#navbar {
+  display: flex;
+  justify-content: center;
+  margin: 15px 150px;
+  width: 90%;
+  max-width: 1024px;
+}
+
+#navLogo {
+  width: 120px;
+  height: 100%;
+  background-image: var(--navLogo);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (min-width: 700px) {
+  #navbar {
+    justify-content: flex-start;
+  }
+}
