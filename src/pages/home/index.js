@@ -48,9 +48,9 @@ function Sponsors() {
 
 export default () => (
   <>
-    <Navbar dark={matchMedia('(prefers-color-scheme: dark)').matches}/>
+    <Navbar/>
     <div id={styles.content}>
-      <Landing dark={matchMedia('(prefers-color-scheme: dark)').matches}/>
+      <Landing/>
       <Sponsors/>
     </div>
     <Footer/> 
