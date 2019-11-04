@@ -73,7 +73,7 @@ export default class MailingListForm extends Component {
 
 
     text() {
-        return this.state.status === 'before' ? <p className="bodyText dialogText" id="mailingListText"> Be the first to know when applications open! Join our mailing list! </p>
+        return this.state.status === 'before' ? <p className="bodyText dialogText" id="mailingListText"> Join our mailing list! Be the first to know when applications open.</p>
                                               : <p className="bodyText dialogText" id="mailingListText"> Thanks! We'll keep you in the loop!</p> 
     }
 
