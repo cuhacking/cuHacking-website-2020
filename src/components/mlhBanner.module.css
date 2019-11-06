@@ -3,7 +3,7 @@
   max-width: 90px;
   min-width:60px;
   position:fixed;
-  right:60px;
+  right:20px;
   top:0;
   width:10%;
   z-index:10000;
@@ -11,4 +11,10 @@
 
 #banner {
   width: 100%; 
+}
+
+@media only screen and (min-width: 700px) {
+  #container {
+    right:60px;
+  }
 }
