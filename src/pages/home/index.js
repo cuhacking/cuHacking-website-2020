@@ -82,7 +82,7 @@ function Sponsors() {
             <Partner id={styles.MLHLogo} url="https://mlh.io/"          src={logoMLH} alt="Link to MLH Webpage"/>
           </div>
       </div>
-      {/* <p style={{textAlign: 'center'}}>Questions? Send us an email at <a className={styles.mailToLink} href="mailto:info@cuhacking.com">info@cuhacking.com</a>.</p> */}
+      <p style={{textAlign: 'center'}}>Thinking about sponsoring? Reach out to <a className={styles.mailToLink} href="mailto:sponsorship@cuhacking.com">sponsorship@cuhacking.com</a> to learn more.</p>
     </div> 
   );
 }

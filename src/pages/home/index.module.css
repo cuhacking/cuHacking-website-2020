@@ -61,10 +61,6 @@
   margin-bottom: 50px;
 }
 
-.mailToLink {
-  color: var(--lightPrimaryColour);
-}
-
 .slide {
   display: flex;
   flex-direction: column;
@@ -160,6 +156,11 @@
 
 #partners {
   flex-direction: column;
+}
+
+.mailToLink {
+  color: var(--lightPrimaryColour);
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 700px) {
