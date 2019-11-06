@@ -96,53 +96,47 @@
 #rbc {
   display: flex;
   height: 200px;
+  margin-bottom: 10px;
 }
 
 /* Mega */
 #ciena,
 #fullscript{
   width: 40%;
-  margin: 0 40px;
+  margin: 0 10px;
 }
 
 #lighthouseLabs,
 #marchNetworks {
   width: 40%;
-  margin: 0 30px 10px;
+  margin: 0 10px;
 }
 
 #ciena {
-  margin-top: -30px;
+  margin-top: -10px;
 }
 
 /* Kilo */
 #balsamiq,
 #fdmGroup {
-  width: 20%;
-  margin: 0 25px 10px;
+  width: 30%;
+  margin: 0 5px 10px;
 }
 
 #balsamiq {
   margin-bottom: -10px;
 }
 
-#fdmGroup {
-  margin-top: -20px;
-}
-
 /* In Kind */
 #onePassword,
 #ea,
 #wolfram {
-  width: 10%;
-  margin: 0 25px;
+  width: 20%;
+  margin: 0 20px;
 }
 
-#onePassword {
-  width: 12%;
-}
 #ea {
-  width: 8%;
+  width: 15%;
 }
 
 /* Partners */
@@ -198,6 +192,52 @@
     height: 325px;
   }
 
+  /* Mega */
+  #ciena,
+  #fullscript{
+    margin: 0 40px;
+  }
+
+  #ciena {
+    margin-top: -30px;
+  }
+
+  #lighthouseLabs,
+  #marchNetworks {
+    margin: 0 30px 10px;
+  }
+
+  /* Kilo */
+  #balsamiq,
+  #fdmGroup {
+    width: 20%;
+    margin: 0 25px 10px;
+  }
+
+  #balsamiq {
+    margin-bottom: -10px;
+  }
+
+  #fdmGroup {
+    margin-top: -20px;
+  }
+
+  /* In Kind */
+  #onePassword,
+  #ea,
+  #wolfram {
+    width: 10%;
+    margin: 0 25px;
+  }
+
+  #onePassword {
+    width: 12%;
+  }
+  #ea {
+    width: 8%;
+  }
+
+  /* Partners */
   #SCSLogo, #SCELogo, #MLHLogo {
     width: 100%;
   }
