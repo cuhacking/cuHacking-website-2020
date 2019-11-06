@@ -100,11 +100,15 @@
 
 /* Mega */
 #ciena,
-#fullscript,
+#fullscript{
+  width: 40%;
+  margin: 0 40px;
+}
+
 #lighthouseLabs,
 #marchNetworks {
   width: 40%;
-  margin: 0 20px;
+  margin: 0 30px 10px;
 }
 
 #ciena {
@@ -115,7 +119,7 @@
 #balsamiq,
 #fdmGroup {
   width: 20%;
-  margin: 0 15px;
+  margin: 0 25px 10px;
 }
 
 #balsamiq {
@@ -123,7 +127,7 @@
 }
 
 #fdmGroup {
-  margin-top: -30px;
+  margin-top: -20px;
 }
 
 /* In Kind */
@@ -131,7 +135,7 @@
 #ea,
 #wolfram {
   width: 10%;
-  margin: 0 15px;
+  margin: 0 25px;
 }
 
 #onePassword {
