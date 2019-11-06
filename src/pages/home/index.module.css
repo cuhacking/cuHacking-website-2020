@@ -75,27 +75,91 @@
 }
 
 /* Sponsors slide */
-#SCSLogo, #SCELogo{
-  width: 250px;
-}
-
-#MLHLogo {
-  width: 150px;
-}
-
-.sponsors {
+#sponsorBkg {
   display: flex;
   flex-direction: column; 
   align-items: center;
   border: 3px solid var(--secondaryColour); 
   border-radius: 15px; 
   background-color: rgba(255, 255, 255, 1);
-  margin-bottom: 10px;
+  color: #000000;
+  margin-bottom: 60px;
+  width: 90%;
 }
 
+.logoSection, #partners {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 30px;
+}
+
+/* Giga */
+#rbc {
+  display: flex;
+  height: 200px;
+}
+
+/* Mega */
+#ciena,
+#fullscript,
+#lighthouseLabs,
+#marchNetworks {
+  width: 40%;
+  margin: 0 20px;
+}
+
+#ciena {
+  margin-top: -30px;
+}
+
+/* Kilo */
+#balsamiq,
+#fdmGroup {
+  width: 20%;
+  margin: 0 15px;
+}
+
+#balsamiq {
+  margin-bottom: -10px;
+}
+
+#fdmGroup {
+  margin-top: -30px;
+}
+
+/* In Kind */
+#onePassword,
+#ea,
+#wolfram {
+  width: 10%;
+  margin: 0 15px;
+}
+
+#onePassword {
+  width: 12%;
+}
+#ea {
+  width: 8%;
+}
+
+/* Partners */
 .partnerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-height: 150px;
-  padding: 20px; 
+  padding: 20px;
+}
+
+#SCSLogo, #SCELogo, #MLHLogo {
+  width: 50%;
+}
+
+#partners {
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 700px) {
@@ -121,8 +185,19 @@
   }
 
   /* Sponsors slide */
-  .sponsors {
-    flex-direction: row;
+  #sponsorBkg {
     margin-bottom: 100px;
+  }
+
+  #rbc {
+    height: 325px;
+  }
+
+  #SCSLogo, #SCELogo, #MLHLogo {
+    width: 100%;
+  }
+  
+  #partners {
+    flex-direction: row;
   }
 }

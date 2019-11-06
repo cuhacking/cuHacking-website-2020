@@ -9,23 +9,15 @@ import {ReactComponent as MarchNetworks} from './march-networks.svg';
 import {ReactComponent as Rbc} from './rbc.svg';
 import {ReactComponent as Wolfram} from './wolfram.svg';
 
-export default {
-  giga: [
-    Rbc
-  ],
-  mega: [
-    Ciena,
-    Fullscript,
-    LighthouseLabs,
-    MarchNetworks
-  ],
-  kilo: [
-    Balsamiq,
-    FdmGroup
-  ],
-  inKind: [
-    OnePassword,
-    Ea,
-    Wolfram
-  ]
-};
+export {
+  OnePassword,
+  Balsamiq,
+  Ciena,
+  Ea,
+  FdmGroup,
+  Fullscript,
+  LighthouseLabs,
+  MarchNetworks,
+  Rbc,
+  Wolfram
+}
