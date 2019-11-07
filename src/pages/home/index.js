@@ -59,11 +59,11 @@ function Sponsors() {
           {sponsorLogo(styles.rbc, 'https://rbc.com', Rbc)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.ciena, 'https://ciena.ca', Ciena)}
+          {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.lighthouseLabs, 'https://lighthouselabs.ca', LighthouseLabs)}
+          {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
           {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
         </div>
         <div className={styles.logoSection}>
@@ -72,7 +72,7 @@ function Sponsors() {
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
-          {sponsorLogo(styles.ea, 'https://ea.com', Ea)}
+          {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
           {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
         </div>
         <h2>Partners</h2>
