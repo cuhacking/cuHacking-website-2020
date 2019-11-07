@@ -52,6 +52,10 @@ input:focus {
   outline: none; 
 }
 
+h2 {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
 #root {
   background-color: var(--backgroundColour); 
   background-image: var(--background); 
