@@ -59,18 +59,18 @@
 				<path id="clipMask" d="M249.554,1589.996L1521.385,91.003l-90.733,2339.941L249.554,1589.996z"/>
 			</defs>
 			<use xlink:href="#clipMask" overflow="visible" fill="#FFFFFF"/>
-			<clipPath id="clipMask_1_">
+			<clipPath id="clipMask1">
 				<use xlink:href="#clipMask" overflow="visible"/>
 			</clipPath>
-			<g id="raven" clip-path="url(#clipMask_1_)">
+			<g id="raven" clip-path="url(#clipMask1)">
 				<defs>
 
-					<ellipse id="SVGID_1_" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -666.9982 1395.3087)" cx="1350.787" cy="1502.792" rx="731.77" ry="731.77"/>
+					<ellipse id="CUHID1" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -666.9982 1395.3087)" cx="1350.787" cy="1502.792" rx="731.77" ry="731.77"/>
 				</defs>
-				<clipPath id="SVGID_2_">
-					<use xlink:href="#SVGID_1_" overflow="visible"/>
+				<clipPath id="CUHID2">
+					<use xlink:href="#CUHID1" overflow="visible"/>
 				</clipPath>
-				<g clip-path="url(#SVGID_2_)">
+				<g clip-path="url(#CUHID2)">
 					<path fill="#240444" d="M3267.766,2133.545c0,611.361-524.932,1106.962-1172.487,1106.962
 					c-647.533,0-1172.476-495.6-1172.476-1106.962c0-345.303,167.453-653.673,429.884-856.678l-0.031,0.01
 					c-32.868-17.664-104.124-51.315-201.47-40.868c-77.181,8.294-179.263,49.09-268.925,136.008c0,0-16.394,16.312-33.996,9.95
@@ -79,17 +79,17 @@
 					c53.368-7.033,107.895-10.662,163.316-10.662C2742.834,1026.572,3267.766,1522.182,3267.766,2133.545z"/>
 					<g>
 						<defs>
-							<path id="SVGID_3_" d="M3267.766,2133.544c0,611.361-524.932,1106.963-1172.487,1106.963
+							<path id="CUHID3" d="M3267.766,2133.544c0,611.361-524.932,1106.963-1172.487,1106.963
 							c-647.533,0-1172.476-495.601-1172.476-1106.963c0-345.303,167.453-653.671,429.884-856.677l-0.031,0.01
 							c-32.868-17.664-104.124-51.315-201.47-40.868c-77.181,8.294-179.263,49.09-268.925,136.008c0,0-16.394,16.312-33.996,9.95
 							c0,0-4.31-2.033-3.191-12.4c2.287-21.262,2.795-101.675,31.08-139.219c23.884-31.7,99.937-115.802,103.332-136.637
 							c42.432-260.997,299.08-310.564,394.677-322.08h507.725l99.033,245.346l-48.957,20.256
 							c53.368-7.033,107.895-10.662,163.316-10.662C2742.834,1026.572,3267.766,1522.182,3267.766,2133.544z"/>
 						</defs>
-						<clipPath id="SVGID_4_">
-							<use xlink:href="#SVGID_3_" overflow="visible"/>
+						<clipPath id="CUHID4">
+							<use xlink:href="#CUHID3" overflow="visible"/>
 						</clipPath>
-						<g clip-path="url(#SVGID_4_)">
+						<g clip-path="url(#CUHID4)">
 							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#29074B" points="1297.386,858.921 1304.288,1034.382 
 							1447.592,914.585 						"/>
 							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#57238B" points="1621.273,1344.857 2047.451,1278.212 
@@ -187,15 +187,15 @@
 						</g>
 					</g>
 				</g>
-				<polygon clip-path="url(#SVGID_2_)" fill-rule="evenodd" clip-rule="evenodd" fill="#1D0437" points="1379.429,971.566 
+				<polygon clip-path="url(#CUHID2)" fill-rule="evenodd" clip-rule="evenodd" fill="#1D0437" points="1379.429,971.566 
 				1396.871,1041.112 1514.95,1012.226 			"/>
-				<path clip-path="url(#SVGID_2_)" fill="#FFFFFF" d="M1304.288,1034.382c-14.864,36.843-94.012,65.046-142.415,42.432
+				<path clip-path="url(#CUHID2)" fill="#FFFFFF" d="M1304.288,1034.382c-14.864,36.843-94.012,65.046-142.415,42.432
 				c-2.282-1.066-3.412-3.363-0.312-4.835c17.766-8.437,106.266-53.224,133.834-63.641
 				C1307.781,1003.658,1306.402,1029.143,1304.288,1034.382z"/>
 			</g>
-			<polygon clip-path="url(#clipMask_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#491B76" points="1210.003,2197.355 
+			<polygon clip-path="url(#clipMask1)" fill-rule="evenodd" clip-rule="evenodd" fill="#491B76" points="1210.003,2197.355 
 			1431.137,2444.172 1072.241,2176.485 		"/>
-			<polygon clip-path="url(#clipMask_1_)" fill-rule="evenodd" clip-rule="evenodd" fill="#350E5C" points="1191.817,2194.6 
+			<polygon clip-path="url(#clipMask1)" fill-rule="evenodd" clip-rule="evenodd" fill="#350E5C" points="1191.817,2194.6 
 			1500.426,2189.418 1519.267,2348.593 1458.658,2472.873 		"/>
 		</g>
 		<g id="glowTriangle">
