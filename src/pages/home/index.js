@@ -56,7 +56,7 @@ function Sponsors() {
       <div id={styles.sponsorBkg}>
         <h2>Sponsors</h2>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.rbc, 'https://rbc.com', Rbc)}
+          {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
