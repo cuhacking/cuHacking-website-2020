@@ -1,12 +1,5 @@
-@media (prefers-color-scheme: light) {
-  * {
-    --navLogo: url('../assets/shortLogo.svg');
-  }
-}
-@media (prefers-color-scheme: dark) {
-  * {
-    --navLogo: url('../assets/shortLogo-dark.svg');
-  }
+* {
+  --navLogo: url('../assets/shortLogo.svg');
 }
 
 #container {
@@ -41,5 +34,11 @@
 @media only screen and (min-width: 700px) {
   #navbar {
     justify-content: flex-start;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --navLogo: url('../assets/shortLogo-dark.svg');
   }
 }

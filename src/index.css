@@ -1,27 +1,12 @@
-@media (prefers-color-scheme: light) {
-  * {
-    --textColour: #000000;
-    --secondTextColour: #FFFFFF; 
-    --lightPrimaryColour: #9756D8; 
-    --primaryColour: #5827B8;
-    --darkPrimaryColour: #280749;
-    --secondaryColour: #00D0FE;
-    --background: url('./assets/bkg.svg');
-    --backgroundColour: white; 
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  * {
-    --textColour: #ffffff;
-    --secondTextColour: #FFFFFF; 
-    --lightPrimaryColour: #9756D8; 
-    --primaryColour: #5827B8;
-    --darkPrimaryColour: #280749;
-    --secondaryColour: #00D0FE;
-    --background: url('./assets/bkg-dark.svg'); 
-    --backgroundColour: black; 
-  }
+* {
+  --textColour: #000000;
+  --secondTextColour: #FFFFFF; 
+  --lightPrimaryColour: #9756D8; 
+  --primaryColour: #5827B8;
+  --darkPrimaryColour: #280749;
+  --secondaryColour: #00D0FE;
+  --background: url('./assets/bkg.svg');
+  --backgroundColour: white; 
 }
 
 a {
@@ -62,4 +47,17 @@ h2 {
   background-size: cover;
   background-position: bottom;
   min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --textColour: #ffffff;
+    --secondTextColour: #FFFFFF; 
+    --lightPrimaryColour: #9756D8; 
+    --primaryColour: #5827B8;
+    --darkPrimaryColour: #280749;
+    --secondaryColour: #00D0FE;
+    --background: url('./assets/bkg-dark.svg'); 
+    --backgroundColour: black; 
+  }
 }
