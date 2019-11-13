@@ -17,9 +17,12 @@ import {
   Ea,
   FdmGroup,
   Fullscript,
+  JetBrains,
   LighthouseLabs,
   MarchNetworks,
   Rbc,
+  Sketch,
+  Voiceflow,
   Wolfram
 } from 'assets/sponsors';
 import styles from './index.module.css';
@@ -73,6 +76,9 @@ function Sponsors() {
         <div className={styles.logoSection}>
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
           {sponsorLogo(styles.ea, 'https://ea.com', Ea)}
+          {sponsorLogo(styles.jetbrains, 'https://www.jetbrains.com/', JetBrains)}
+          {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
+          {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
           {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
         </div>
         <h2>Partners</h2>
