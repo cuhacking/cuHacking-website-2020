@@ -21,7 +21,8 @@ import {
   MarchNetworks,
   Rbc,
   Wolfram, 
-  DigitalOcean
+  DigitalOcean,
+  Cse
 } from 'assets/sponsors';
 import styles from './index.module.css';
 
@@ -62,6 +63,7 @@ function Sponsors() {
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://ciena.ca', Ciena)}
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
+          {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.lighthouseLabs, 'https://lighthouselabs.ca', LighthouseLabs)}
