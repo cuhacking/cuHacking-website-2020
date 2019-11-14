@@ -107,7 +107,8 @@
 }
 
 #lighthouseLabs,
-#marchNetworks {
+#marchNetworks
+{
   width: 40%;
   margin: 0 10px;
 }
@@ -130,7 +131,8 @@
 /* In Kind */
 #onePassword,
 #ea,
-#wolfram {
+#wolfram,
+#digitalOcean {
   width: 20%;
   margin: 0 20px;
 }

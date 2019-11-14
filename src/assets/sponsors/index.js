@@ -8,6 +8,7 @@ import {ReactComponent as LighthouseLabs} from './lighthouse-labs.svg';
 import {ReactComponent as MarchNetworks} from './march-networks.svg';
 import {ReactComponent as Rbc} from './rbc.svg';
 import {ReactComponent as Wolfram} from './wolfram.svg';
+import {ReactComponent as DigitalOcean} from './digital-ocean.svg'; 
 
 export {
   OnePassword,
@@ -19,5 +20,6 @@ export {
   LighthouseLabs,
   MarchNetworks,
   Rbc,
-  Wolfram
+  Wolfram,
+  DigitalOcean
 }

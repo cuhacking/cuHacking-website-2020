@@ -20,7 +20,8 @@ import {
   LighthouseLabs,
   MarchNetworks,
   Rbc,
-  Wolfram
+  Wolfram, 
+  DigitalOcean
 } from 'assets/sponsors';
 import styles from './index.module.css';
 
@@ -74,6 +75,7 @@ function Sponsors() {
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
           {sponsorLogo(styles.ea, 'https://ea.com', Ea)}
           {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
+          {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
         </div>
         <h2>Partners</h2>
           <div id={styles.partners}>
