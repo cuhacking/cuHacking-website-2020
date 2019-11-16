@@ -1,12 +1,5 @@
-@media (prefers-color-scheme: light) {
-  * {
-    --dateSvg: url('../../assets/dateStamp.svg');
-  }
-}
-@media (prefers-color-scheme: dark) {
-  * {
-    --dateSvg: url('../../assets/dateStamp-dark.svg');
-  }
+* {
+  --dateSvg: url('../../assets/dateStamp.svg');
 }
 
 #content {
@@ -244,5 +237,11 @@
   
   #partners {
     flex-direction: row;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --dateSvg: url('../../assets/dateStamp-dark.svg');
   }
 }
