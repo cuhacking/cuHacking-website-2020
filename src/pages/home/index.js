@@ -20,7 +20,9 @@ import {
   LighthouseLabs,
   MarchNetworks,
   Rbc,
-  Wolfram
+  Wolfram, 
+  DigitalOcean,
+  Cse
 } from 'assets/sponsors';
 import styles from './index.module.css';
 
@@ -61,6 +63,7 @@ function Sponsors() {
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
+          {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
@@ -74,6 +77,7 @@ function Sponsors() {
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
           {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
           {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
+          {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
         </div>
         <h2>Partners</h2>
           <div id={styles.partners}>
