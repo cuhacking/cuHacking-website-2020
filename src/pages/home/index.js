@@ -14,15 +14,18 @@ import {
   OnePassword,
   Balsamiq,
   Ciena,
+  Cse,
+  DigitalOcean,
   Ea,
   FdmGroup,
   Fullscript,
+  JetBrains,
   LighthouseLabs,
   MarchNetworks,
   Rbc,
-  Wolfram, 
-  DigitalOcean,
-  Cse
+  Sketch,
+  Voiceflow,
+  Wolfram
 } from 'assets/sponsors';
 import styles from './index.module.css';
 
@@ -62,11 +65,13 @@ function Sponsors() {
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
-          {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
           {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
         <div className={styles.logoSection}>
+          {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
+        </div>
+        <div className={styles.logoSection}>
           {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
         </div>
         <div className={styles.logoSection}>
@@ -75,9 +80,14 @@ function Sponsors() {
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
-          {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
-          {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
           {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
+          {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
+          {sponsorLogo(styles.jetbrains, 'https://www.jetbrains.com/', JetBrains)}
+        </div>
+        <div className={styles.logoSection}>
+          {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
+          {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
+          {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
         </div>
         <h2>Partners</h2>
           <div id={styles.partners}>
