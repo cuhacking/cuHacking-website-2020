@@ -1,6 +1,8 @@
 import {ReactComponent as OnePassword} from './1password.svg';
 import {ReactComponent as Balsamiq} from './balsamiq.svg';
 import {ReactComponent as Ciena} from './ciena.svg';
+import {ReactComponent as Cse} from './cse.svg';
+import {ReactComponent as DigitalOcean} from './digital-ocean.svg';
 import {ReactComponent as Ea} from './ea.svg';
 import {ReactComponent as FdmGroup} from './fdm-group.svg';
 import {ReactComponent as Fullscript} from './fullscript.svg';
@@ -16,6 +18,8 @@ export {
   OnePassword,
   Balsamiq,
   Ciena,
+  Cse,
+  DigitalOcean,
   Ea,
   FdmGroup,
   Fullscript,

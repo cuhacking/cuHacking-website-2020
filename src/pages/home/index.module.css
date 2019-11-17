@@ -1,12 +1,5 @@
-@media (prefers-color-scheme: light) {
-  * {
-    --dateSvg: url('../../assets/dateStamp.svg');
-  }
-}
-@media (prefers-color-scheme: dark) {
-  * {
-    --dateSvg: url('../../assets/dateStamp-dark.svg');
-  }
+* {
+  --dateSvg: url('../../assets/dateStamp.svg');
 }
 
 #content {
@@ -104,7 +97,8 @@
 
 /* Mega */
 #ciena,
-#fullscript {
+#fullscript, 
+#cse {
   width: 40%;
   margin: 0 10px;
 }
@@ -133,6 +127,7 @@
 /* In Kind */
 #onePassword,
 #ea,
+#digitalOcean,
 #jetbrains,
 #sketch,
 #voiceflow,
@@ -255,5 +250,11 @@
   
   #partners {
     flex-direction: row;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --dateSvg: url('../../assets/dateStamp-dark.svg');
   }
 }

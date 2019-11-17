@@ -14,6 +14,8 @@ import {
   OnePassword,
   Balsamiq,
   Ciena,
+  Cse,
+  DigitalOcean,
   Ea,
   FdmGroup,
   Fullscript,
@@ -59,14 +61,15 @@ function Sponsors() {
       <div id={styles.sponsorBkg}>
         <h2>Sponsors</h2>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.rbc, 'https://rbc.com', Rbc)}
+          {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.ciena, 'https://ciena.ca', Ciena)}
+          {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
+          {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.lighthouseLabs, 'https://lighthouselabs.ca', LighthouseLabs)}
+          {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
           {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
         </div>
         <div className={styles.logoSection}>
@@ -75,7 +78,8 @@ function Sponsors() {
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
-          {sponsorLogo(styles.ea, 'https://ea.com', Ea)}
+          {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
+          {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
           {sponsorLogo(styles.jetbrains, 'https://www.jetbrains.com/', JetBrains)}
           {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
           {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
