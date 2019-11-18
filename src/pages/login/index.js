@@ -15,6 +15,7 @@ function Login() {
   function handleSubmit(event) {
     event.preventDefault(); 
     console.log(event);      
+    /* this is where we handle the all the logic for attempting (and maybe succeeding) to sign in */ 
   }
 
   return (

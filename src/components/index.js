@@ -3,6 +3,6 @@ import Navbar from './navbar';
 import MLHBanner from './mlhBanner'; 
 import Footer from './footer';
 import Input from './input';
-import Button from './Button';
+import Button from './button';
 
 export {Footer, MLHBanner, MailingListForm, Navbar, Input, Button};
