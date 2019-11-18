@@ -1,0 +1,15 @@
+/* Added basic on hover attributes for now */ 
+
+.button {
+  border: none; 
+  background-color: #7C39BF;
+  color: var(--secondTextColour); 
+  font-size: 20px; 
+  font-family: 'Reem Kufi', sans-serif; 
+  width: 100%; 
+  opacity: 0.8; 
+}
+
+.button:hover {
+  opacity: 1; 
+}

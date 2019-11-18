@@ -1,0 +1,23 @@
+input {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none; 
+  border-bottom: 1px solid var(--textColour); 
+  color: var(--textColour);
+  font-family: inherit;
+  width: 100%; 
+}
+
+.inputContainer {
+  padding: 5px; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.label {
+  color: var(--textColour);
+  margin: 0;
+  margin-top: 0.4em;  
+}

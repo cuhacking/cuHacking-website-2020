@@ -51,7 +51,7 @@ h2 {
 
 @media (prefers-color-scheme: dark) {
   * {
-    --textColour: #ffffff;
+    --textColour: #FFFFFF;
     --secondTextColour: #FFFFFF; 
     --lightPrimaryColour: #9756D8; 
     --primaryColour: #5827B8;
