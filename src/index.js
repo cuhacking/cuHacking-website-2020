@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from 'pages/home';
+import Dashboard from 'pages/dashboard';
 import './index.css';
 
 const App = () => (
-  <Home/>
+  <Dashboard/>
 );
 
 ReactDOM.render(<App/>, document.getElementById('root'));
