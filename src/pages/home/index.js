@@ -28,6 +28,7 @@ import {
   Wolfram
 } from 'assets/sponsors';
 import styles from './index.module.css';
+import { Link } from 'react-router-dom'; 
 
 function Landing() {
   return (
@@ -106,6 +107,16 @@ export default () => (
     <Navbar/>
     <div id={styles.content}>
       <Landing/>
+      
+      <ul>
+        <Link to="/login">
+          <li> login </li>
+        </Link>
+        <Link to="/dashboard">
+          <li> dashboard </li>
+        </Link>
+      </ul>
+      
       <Sponsors/>
     </div>
     <Footer/> 
