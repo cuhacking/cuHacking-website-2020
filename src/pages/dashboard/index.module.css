@@ -10,16 +10,78 @@
   width: 20%; 
 }
 
-.applicationPage {
+.formContainer {
+  display: flex;
+  height: 100vh; 
+  width: 80vw;
+  justify-content: center;
+}
+
+.page {
+  height: 100vh; 
   width: 80%;
+}
+
+.formHeading {
+  font-family: 'Reem Kufi', sans-serif; 
+  font-weight: normal;
+  font-style: normal;
+  font-size: 4em; 
+  margin-bottom: 0; 
+}
+
+.row {
+  display: flex; 
+  justify-content: space-between; 
+  flex-direction: row;
+}
+
+.column {
+  display: flex; 
+  flex-direction: column;
+}
+
+.colItem {
+  width:  49%; 
+}
+
+
+/* Start Page */ 
+#start {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 0;
 }
 
-.nextButton {
-  height: 80px;
-  width: 300px; 
+#start > #cuHacking2020 {
+  font-size: 2em; 
+  font-weight: normal; 
+  font-style: normal; 
 }
 
+#start > #applicationTitle {
+  font-size: 4em; 
+  font-weight: normal; 
+  font-style: normal; 
+  margin-top: 25px;    
+}
+
+/* Basic Info Page */ 
+#basicInfo { 
+  display: flex; 
+  align-items: left;
+  flex-direction: column;
+}
+
+/* Profile Page */ 
+#resume {
+  height: 30vh; 
+  align-items: center;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 4px dashed #9756D8;
+  background-color: rgba(151, 86, 216, 0.1); 
+}
