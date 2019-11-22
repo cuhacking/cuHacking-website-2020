@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom'; 
 import styles from './dashboard.module.css';
 import {ReactComponent as Logo} from 'assets/logo-animated.svg'
 import {
@@ -30,7 +31,8 @@ function Start() {
 
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to about you in a graceful way'); 
+    console.log('switch to basic info '); 
+    ReactDOM.render(<BasicInfo/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -48,6 +50,7 @@ function BasicInfo() {
   function handleNext(event) {
     event.preventDefault(); 
     console.log('switch to something else in a graceful way'); 
+    ReactDOM.render(<AboutYou/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -91,6 +94,7 @@ function AboutYou() {
   function handleNext(event) {
     event.preventDefault(); 
     console.log('switch to something else in a graceful way'); 
+    ReactDOM.render(<SkillsFeats/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -138,7 +142,7 @@ function AboutYou() {
 function SkillsFeats() {
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to something else in a graceful way'); 
+    ReactDOM.render(<Profile/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -172,6 +176,7 @@ function Profile() {
   function handleNext(event) {
     event.preventDefault(); 
     console.log('switch to something else in a graceful way'); 
+    ReactDOM.render(<Submit/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -244,14 +249,13 @@ function Submit() {{
       </div>
     )
   }
-
 }
 
 export default () => (
   <div className={styles.dashboard}>
     <SideNav />
-    <div className={styles.formContainer}>
-      <Submit /> 
+    <div className={styles.formContainer} id="form-container">
+      <Start /> 
     </div>
   </div>
 );
