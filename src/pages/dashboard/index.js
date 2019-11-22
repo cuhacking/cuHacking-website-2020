@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './dashboard.module.css';
+import {ReactComponent as Logo} from 'assets/logo-animated.svg'
 import {
   Input, 
   Button, 
@@ -8,12 +9,19 @@ import {
 function SideNav() {
   return (
     <div className={styles.sideNav}>
-      <ul>
-        <li> logo </li>
-        <li> start </li>
-        <li> stuff </li> 
-        <li> logo </li>3
-      </ul>
+      <Logo className={styles.landingLogo}/>
+      <div className={styles.sideNavList}>
+        <ul>
+          <li>Basic Info</li>
+          <li>About You </li>
+          <li>Skills & Feats</li> 
+          <li>Profile</li>
+          <li>Submit</li>
+        </ul>
+      </div>
+      <div className={styles.sideNavLogout}>
+        <p>Logout</p>
+      </div>
     </div>
   )
 }

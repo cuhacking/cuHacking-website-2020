@@ -1,3 +1,7 @@
+* {
+  --navBackgroundColour: #3e205b; 
+}
+
 .dashboard {
   display: flex; 
   flex-direction: row; 
@@ -6,8 +10,31 @@
 }
 
 .sideNav {
-  background-color: var(--primaryColour); 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--navBackgroundColour);  
   width: 20%; 
+}
+
+.sideNavList {
+  display: flex; 
+  flex-direction: column;
+  background-color: var(--darkPrimaryColour); 
+  border-top: 2px solid var(--secondaryColour);
+  width: 100%; 
+}
+
+.sideNavLogout {
+  text-align: center; 
+  font-size: 1em; 
+}
+
+.sideNavLogout:hover {
+  cursor: pointer; 
+  background-color: var(--darkPrimaryColour); 
+  text-align: center; 
+  font-size: 1em; 
 }
 
 .formContainer {
