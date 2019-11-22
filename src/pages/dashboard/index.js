@@ -54,7 +54,7 @@ function BasicInfo() {
   }
 
   return (
-    <div className={styles.page} id={styles.basicInfo} id="start">
+    <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Basic Info </h1> 
 
       <form  onSubmit={handleNext}> 
@@ -98,7 +98,7 @@ function AboutYou() {
   }
 
   return (
-    <div className={styles.page} id={styles.basicInfo} id="about">
+    <div className={styles.page} id={styles.basicInfo} >
       <h1 className={styles.formHeading}> About You </h1> 
 
       <form  onSubmit={handleNext}> 
@@ -146,7 +146,7 @@ function SkillsFeats() {
   }
 
   return (
-    <div className={styles.page} id={styles.basicInfo} id="skills">
+    <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Skills & Feats </h1> 
 
       <form  onSubmit={handleNext}> 
@@ -180,7 +180,7 @@ function Profile() {
   }
 
   return (
-    <div className={styles.page} id={styles.basicInfo} id="skills">
+    <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Profile </h1> 
 
       <form  onSubmit={handleNext}> 
@@ -220,7 +220,7 @@ function Submit() {{
   }
 
   return (
-    <div className={styles.page} id={styles.basicInfo} id="skills">
+    <div className={styles.page} id={styles.submit}>
       <h1 className={styles.formHeading}> Profile </h1> 
 
       <form  onSubmit={handleNext}> 
