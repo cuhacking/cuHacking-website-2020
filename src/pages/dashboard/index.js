@@ -237,11 +237,23 @@ function Submit() {{
   }
 }
 
+function Status() {{
+
+  return (
+    <div className={styles.page} id={styles.start}>
+      <p id={styles.cuHacking2020}> cuHacking 2020 </p>  
+      <p id={styles.applicationTitle}> Application </p> 
+      <p> We have received your application! Keep an eye on your email for updates! </p> 
+    </div>
+    )
+  }
+}
+
 export default () => (
   <div className={styles.dashboard}>
     <SideNav />
     <div className={styles.formContainer} id="form-container">
-      <Submit /> 
+      <Start /> 
     </div>
   </div>
 );
