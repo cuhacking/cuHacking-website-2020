@@ -30,8 +30,7 @@ function SideNav() {
 function Start() {
 
   function handleNext(event) {
-    event.preventDefault(); 
-    console.log('switch to basic info '); 
+    event.preventDefault();  
     ReactDOM.render(<BasicInfo/>, document.getElementById('form-container')); 
   }
 
@@ -49,7 +48,6 @@ function Start() {
 function BasicInfo() {
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to something else in a graceful way'); 
     ReactDOM.render(<AboutYou/>, document.getElementById('form-container')); 
   }
 
@@ -93,7 +91,6 @@ function BasicInfo() {
 function AboutYou() {
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to something else in a graceful way'); 
     ReactDOM.render(<SkillsFeats/>, document.getElementById('form-container')); 
   }
 
@@ -175,7 +172,6 @@ function SkillsFeats() {
 function Profile() {
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to something else in a graceful way'); 
     ReactDOM.render(<Submit/>, document.getElementById('form-container')); 
   }
 
@@ -216,35 +212,25 @@ function Profile() {
 function Submit() {{
   function handleNext(event) {
     event.preventDefault(); 
-    console.log('switch to something else in a graceful way'); 
   }
 
   return (
     <div className={styles.page} id={styles.submit}>
-      <h1 className={styles.formHeading}> Profile </h1> 
-
+      <h1 className={styles.formHeading}> Submit </h1> 
       <form  onSubmit={handleNext}> 
-
-        <div className={styles.row}>
-          <Input type="text" label="Github"/>
-          <Input type="text" label="LinkedIn"/> 
-        </div> 
-
-
-        <div className={styles.row}>
-          <Input type="text" label="Personal Website"/>
-          <Input type="dropdown" label="What type of positions are you looking for?"/> 
-        </div> 
-
-        <div className={styles.column}>
-          <div id={styles.resume}>
-              <p> lil icon </p>
-              <p> Resume </p>
+          <div className={styles.row}> 
+            <p> check </p>
+            <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"> MLH Code of Conduct.</a></p>
           </div> 
-          <p> <i> By uploading your resume, you agree to having it distributed to our sponsors attending the event.</i> </p>
-        </div>
-
-          <Button className={styles.nextButton} label="Next"/> 
+          <div className={styles.row}> 
+            <p> check </p>
+            <p> I have read and agree to the <a href="https://mlh.io/privacy"> MLH Privacy Policy.</a></p>
+          </div> 
+          <div className={styles.row}> 
+            <p> check </p>
+            <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-member-event-guidelines.pdf"> MLH Contest Terms.</a></p>
+          </div>
+          <Button className={styles.nextButton} label="Submit"/> 
         </form> 
       </div>
     )
@@ -255,7 +241,7 @@ export default () => (
   <div className={styles.dashboard}>
     <SideNav />
     <div className={styles.formContainer} id="form-container">
-      <Start /> 
+      <Submit /> 
     </div>
   </div>
 );
