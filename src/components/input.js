@@ -8,7 +8,7 @@ class Input extends React.Component {
         if (this.props.required) {
             return (
                 <div className={styles.inputContainer}> 
-                    <input className={styles.input} type={this.props.type} label={this.props.label} required>
+                    <input className={styles.input} type={this.props.type} label={this.props.label} placeholder={this.props.placeholder} required>
                     </input>
                     <p className={styles.label}>{this.props.label}</p>
                 </div> 
@@ -16,7 +16,7 @@ class Input extends React.Component {
         } else {
             return (
                 <div className={styles.inputContainer}> 
-                    <input className={styles.input} type={this.props.type} label={this.props.label}>
+                    <input className={styles.input} type={this.props.type} label={this.props.label} placeholder={this.props.placeholder} > 
                     </input>
                     <p className={styles.label}>{this.props.label}</p>
                 </div> 

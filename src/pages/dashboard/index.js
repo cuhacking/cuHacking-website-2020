@@ -63,12 +63,12 @@ function BasicInfo() {
       <form  onSubmit={handleNext}> 
 
         <div className={styles.row}>
-          <Input type="email" label="Email *" required={true}/> 
+          <Input type="email" label="Email *" placeholder="@gmail.com" required={true}/> 
         </div>
 
         <div className={styles.row}>
-          <Input type="text" label="First Name *" required={true}/>
-          <Input type="text" label="Last Name *" required={true}/>          
+          <Input type="text" label="First Name *" placeholder="John" required={true}/>
+          <Input type="text" label="Last Name *" placeholder="Smith"required={true}/>          
         </div>
 
         <div className={styles.row}>
@@ -83,7 +83,7 @@ function BasicInfo() {
         </div>
 
         <div className={styles.row}>
-          <Input type="number" label="What is your phone number (for emergencies)? *" required={true}/> 
+          <Input type="text" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/> 
         </div>
 
         <Button className={styles.nextButton} label="Next"/>
