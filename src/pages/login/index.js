@@ -5,7 +5,7 @@ import {
     Button, 
     Navbar
 } from 'components';
-import styles from './index.module.css';
+import styles from './login.module.css';
 
 class Login extends React.Component {
   // Initial login page to the dashboard, ask for email/password by default. 
