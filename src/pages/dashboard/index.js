@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'; 
+import {Redirect} from 'react-router-dom'; 
 import styles from './dashboard.module.css';
 import {ReactComponent as Logo} from 'assets/logo-animated.svg'
 import {
@@ -8,6 +9,10 @@ import {
 } from 'components';
 
 function SideNav() {
+  function logout() {
+    console.log('save application status and logout'); 
+  }
+
   return (
     <div className={styles.sideNav}>
       <Logo className={styles.landingLogo}/>
@@ -20,7 +25,7 @@ function SideNav() {
           <li>Submit</li>
         </ul>
       </div>
-      <div className={styles.sideNavLogout}>
+      <div className={styles.sideNavLogout} onClick={logout}>
         <p>Logout</p>
       </div>
     </div>
@@ -58,12 +63,12 @@ function BasicInfo() {
       <form  onSubmit={handleNext}> 
 
         <div className={styles.row}>
-          <Input type="email" label="Email *" required/> 
+          <Input type="email" label="Email *" required={true}/> 
         </div>
 
         <div className={styles.row}>
-          <Input type="text" label="First Name *" required/>
-          <Input type="text" label="Last Name *" required/>          
+          <Input type="text" label="First Name *" required={true}/>
+          <Input type="text" label="Last Name *" required={true}/>          
         </div>
 
         <div className={styles.row}>
@@ -78,7 +83,7 @@ function BasicInfo() {
         </div>
 
         <div className={styles.row}>
-          <Input type="number" label="What is your phone number (for emergencies)? *" required/> 
+          <Input type="number" label="What is your phone number (for emergencies)? *" required={true}/> 
         </div>
 
         <Button className={styles.nextButton} label="Next"/>
@@ -212,6 +217,7 @@ function Profile() {
 function Submit() {{
   function handleNext(event) {
     event.preventDefault(); 
+    ReactDOM.render(<Status/>, document.getElementById('form-container')); 
   }
 
   return (
