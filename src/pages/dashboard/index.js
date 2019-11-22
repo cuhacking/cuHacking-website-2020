@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom'; 
-import {Redirect} from 'react-router-dom'; 
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';  
 import styles from './dashboard.module.css';
 import {ReactComponent as Logo} from 'assets/logo-animated.svg'
 import {
@@ -51,8 +50,29 @@ function Start() {
 }
 
 function BasicInfo() {
+
+  var email = ''; 
+  var basicInfo = {
+    firstName:'',
+    lastName:'',
+    gender:'',
+    race:'',
+    emergencyPhone:''
+  }
+  
+  function handleChange(event) {
+
+    if (event.target.name === "email") {
+      email = event.target.value; 
+    } else if (event.target.name in basicInfo) { 
+      basicInfo[event.target.name] = event.target.value; 
+    }
+
+  }
+
   function handleNext(event) {
     event.preventDefault(); 
+    console.log(basicInfo);  
     ReactDOM.render(<AboutYou/>, document.getElementById('form-container')); 
   }
 
@@ -60,15 +80,15 @@ function BasicInfo() {
     <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Basic Info </h1> 
 
-      <form  onSubmit={handleNext}> 
+      <form onSubmit={handleNext} onChange={handleChange}> 
 
         <div className={styles.row}>
-          <Input type="email" label="Email *" placeholder="@gmail.com" required={true}/> 
+          <Input name="email" type="email" label="Email *" placeholder="example@email.com" required={true}/> 
         </div>
 
         <div className={styles.row}>
-          <Input type="text" label="First Name *" placeholder="John" required={true}/>
-          <Input type="text" label="Last Name *" placeholder="Smith"required={true}/>          
+          <Input name="firstName" type="text" label="First Name *" placeholder="John" required={true}/>
+          <Input name="lastName"  type="text" label="Last Name *" placeholder="Smith" required={true}/>          
         </div>
 
         <div className={styles.row}>
@@ -83,17 +103,22 @@ function BasicInfo() {
         </div>
 
         <div className={styles.row}>
-          <Input type="text" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/> 
+          <Input name="emergencyPhone" type="text" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/> 
         </div>
 
         <Button className={styles.nextButton} label="Next"/>
       </form> 
     </div>
   )
-
 }
 
+
 function AboutYou() {
+
+  /* Information this form needs to pull: 
+
+  */ 
+  
   function handleNext(event) {
     event.preventDefault(); 
     ReactDOM.render(<SkillsFeats/>, document.getElementById('form-container')); 
@@ -142,6 +167,11 @@ function AboutYou() {
 }
 
 function SkillsFeats() {
+  
+  /* Information this form needs to pull: 
+
+  */ 
+  
   function handleNext(event) {
     event.preventDefault(); 
     ReactDOM.render(<Profile/>, document.getElementById('form-container')); 
@@ -170,11 +200,14 @@ function SkillsFeats() {
       </form> 
     </div>
   )
-
-
 }
 
 function Profile() {
+  
+  /* Information this form needs to pull: 
+
+  */ 
+  
   function handleNext(event) {
     event.preventDefault(); 
     ReactDOM.render(<Submit/>, document.getElementById('form-container')); 
@@ -214,7 +247,12 @@ function Profile() {
   )
 }
 
-function Submit() {{
+function Submit() {
+  
+  /* Information this form needs to pull: 
+
+  */ 
+  
   function handleNext(event) {
     event.preventDefault(); 
     ReactDOM.render(<Status/>, document.getElementById('form-container')); 
@@ -239,12 +277,10 @@ function Submit() {{
           <Button className={styles.nextButton} label="Submit"/> 
         </form> 
       </div>
-    )
-  }
+  )
 }
 
-function Status() {{
-
+function Status() {
   return (
     <div className={styles.page} id={styles.start}>
       <p id={styles.cuHacking2020}> cuHacking 2020 </p>  
@@ -252,14 +288,81 @@ function Status() {{
       <p> We have received your application! Keep an eye on your email for updates! </p> 
     </div>
     )
-  }
 }
 
-export default () => (
-  <div className={styles.dashboard}>
-    <SideNav />
-    <div className={styles.formContainer} id="form-container">
-      <Start /> 
+
+class Dashboard extends Component {
+  // Initial login page to the dashboard, ask for email/password by default. 
+  // To think about - do we want to add Sign in with Google/Apple/etc...
+  // This should also branch to a create account page if they don't already have one? 
+
+  constructor(props) {
+    super();
+    /* if (application === "inProgress") {
+      this.state = {application: that in progress application} 
+    } else { 
+      this.state = a new application object 
+    }*/ 
+
+    this.state = {
+      application: {
+        status: 'unsubmitted', 
+        basicInfo: {
+          firstName: '',
+          lastName: '', 
+          gender: '',
+          race: '', 
+          emergencyPhone: ''
+        }, 
+        personalInfo: {
+          school: '',
+          major: '', 
+          minor: '',
+          degree: '', 
+          expectedGraduation: -1, 
+          cityOfOrigin: '',
+          tShirtSize: '',
+          dietaryRestrictions: '',
+          wantsShuttle: false
+        },
+        skills: {
+          numHackathons: -1,
+          selfTitle: '',
+          accomplishmentStatement: '',
+          challengeStatement: ''
+        },
+        profile: {
+          gitHub: '',
+          linkedin: '', 
+          website: '',
+          soughtPosition: '', 
+          resume: '// Can firebase store .pdf files?' 
+        },
+        terms: {
+          codeOfConduct: false,
+          privacyPolicy: false,
+          contestTerms: false
+        }        
+      }        
+    }; 
+
+  }
+
+  handler(data){
+    console.log("dashboard -> " + data); 
+  }
+
+  render () {
+    return (
+      <div className={styles.dashboard}>
+      <SideNav />
+      <div className={styles.formContainer} id="form-container">
+        <BasicInfo handler={this.handler.bind(this)}/> 
+      </div>
     </div>
-  </div>
-);
+    );
+  }
+
+}
+
+export default Dashboard; 

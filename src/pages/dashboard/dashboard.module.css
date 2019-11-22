@@ -10,6 +10,7 @@
 }
 
 .sideNav {
+  color: var(--secondTextColour);
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
