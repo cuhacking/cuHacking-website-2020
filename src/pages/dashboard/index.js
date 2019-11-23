@@ -193,7 +193,7 @@ function Profile(props) {
 
         <div className={styles.row}>
           <Input name="website" type="text" label="Personal Website"/>
-          <Input name="soughPosition" type="dropdown" label="What type of positions are you looking for?"/> 
+          <Input name="soughtPosition" type="dropdown" label="What type of positions are you looking for?"/> 
         </div> 
 
         <div className={styles.column}>
