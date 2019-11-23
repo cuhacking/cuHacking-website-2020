@@ -48,39 +48,19 @@ function Start() {
     </div>
   )
 }
-
-function BasicInfo() {
-
-  var email = ''; 
-  var basicInfo = {
-    firstName:'',
-    lastName:'',
-    gender:'',
-    race:'',
-    emergencyPhone:''
-  }
-  
-  function handleChange(event) {
-
-    if (event.target.name === "email") {
-      email = event.target.value; 
-    } else if (event.target.name in basicInfo) { 
-      basicInfo[event.target.name] = event.target.value; 
-    }
-
-  }
+ 
+function BasicInfo(props) {
 
   function handleNext(event) {
     event.preventDefault(); 
-    console.log(basicInfo);  
-    ReactDOM.render(<AboutYou/>, document.getElementById('form-container')); 
+    ReactDOM.render(<AboutYou onChange={props.onChange}/>, document.getElementById('form-container')); 
   }
 
   return (
     <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Basic Info </h1> 
 
-      <form onSubmit={handleNext} onChange={handleChange}> 
+      <form onSubmit={handleNext} onChange={props.onChange}> 
 
         <div className={styles.row}>
           <Input name="email" type="email" label="Email *" placeholder="example@email.com" required={true}/> 
@@ -112,50 +92,45 @@ function BasicInfo() {
   )
 }
 
+function AboutYou(props) {
 
-function AboutYou() {
-
-  /* Information this form needs to pull: 
-
-  */ 
-  
   function handleNext(event) {
     event.preventDefault(); 
-    ReactDOM.render(<SkillsFeats/>, document.getElementById('form-container')); 
+    ReactDOM.render(<SkillsFeats  onChange={props.onChange}/>, document.getElementById('form-container')); 
   }
 
   return (
     <div className={styles.page} id={styles.basicInfo} >
       <h1 className={styles.formHeading}> About You </h1> 
 
-      <form  onSubmit={handleNext}> 
+      <form  onSubmit={handleNext} onChange={props.onChange}> 
 
         <div className={styles.row}>
-          <Input type="text" label="What school do you attend? *" required/> 
+          <Input name="school" type="text" label="What school do you attend? *" required={true}/> 
         </div>
 
         <div className={styles.row}>
-          <Input type="text" label="What is your major?*" required/>
-          <Input type="text" label="What is your minor (if applicable)?" required/>          
+          <Input name="major" type="text" label="What is your major?*" required={true}/>
+          <Input name="minor" type="text" label="What is your minor (if applicable)?" required={true}/>          
         </div>
 
         <div className={styles.row}>
-          <Input type="dropdown" label="What degree are you pursuing?"/>
-          <Input type="dropdown" label="When do you expect to graduate?"/>
+          <Input name="degree" type="dropdown" label="What degree are you pursuing?"/>
+          <Input name="expectedGraduation" type="dropdown" label="When do you expect to graduate?"/>
         </div> 
 
         <div className={styles.row}>
-          <Input type="dropdown" label="Where will you be travelling from?"/>
-          <Input type="dropdown" label="What's your T-Shirt size? *"/>
+          <Input name="cityOfOrigin" type="dropdown" label="Where will you be travelling from?"/>
+          <Input name="tShirtSize" type="dropdown" label="What's your T-Shirt size? *"/>
         </div> 
 
         <div className={styles.row}>
-          <Input type="text" label="Please specify (in detail) any dietary restrctions you have. *" required/> 
+          <Input name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrctions you have. *"/> 
         </div>
 
         <div className={styles.row}>
           <p>If you are not travelling from Ottawa, are you interested in a shuttle? <br/> We'll be creating them based on demand.</p>
-          <p>checkbox here</p>
+          <p name="wantsShuttle">checkbox here</p>
         </div>
 
         <Button className={styles.nextButton} label="Next"/> 
@@ -166,47 +141,38 @@ function AboutYou() {
 
 }
 
-function SkillsFeats() {
-  
-  /* Information this form needs to pull: 
-
-  */ 
+function SkillsFeats(props) {
   
   function handleNext(event) {
     event.preventDefault(); 
-    ReactDOM.render(<Profile/>, document.getElementById('form-container')); 
+    ReactDOM.render(<Profile onChange={props.onChange}/>, document.getElementById('form-container')); 
   }
 
   return (
     <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Skills & Feats </h1> 
 
-      <form  onSubmit={handleNext}> 
+      <form  onSubmit={handleNext} onChange={props.onChange}> 
 
         <div className={styles.row}>
-          <Input type="dropdown" label="How many hackathons have you been to?"/>
-          <Input type="text" label="How would you describe yourself?"/> 
+          <Input name="numHackathons" type="dropdown" label="How many hackathons have you been to?"/>
+          <Input name="selfTitle" type="text" label="How would you describe yourself?"/> 
         </div> 
 
         <div className={styles.row}>
-          <Input type="textarea" label="What are you looking to learn or accomplish at cuHacking 2020? (250 words max)"/> 
+          <Input name="accomplishmentStatement" type="textarea" label="What are you looking to learn or accomplish at cuHacking 2020? (250 words max)"/> 
         </div>
 
         <div className={styles.row}>
-          <Input type="textarea" label="Tell us about a time you faced a challenge, and how you overcame it. (500 words max)."/> 
+          <Input name="challengeStatement" type="textarea" label="Tell us about a time you faced a challenge, and how you overcame it. (500 words max)."/> 
         </div>
-
         <Button className={styles.nextButton} label="Next"/> 
       </form> 
     </div>
   )
 }
 
-function Profile() {
-  
-  /* Information this form needs to pull: 
-
-  */ 
+function Profile(props) {
   
   function handleNext(event) {
     event.preventDefault(); 
@@ -217,17 +183,17 @@ function Profile() {
     <div className={styles.page} id={styles.basicInfo}>
       <h1 className={styles.formHeading}> Profile </h1> 
 
-      <form  onSubmit={handleNext}> 
+      <form onSubmit={handleNext} onChange={props.onChange}> 
 
         <div className={styles.row}>
-          <Input type="text" label="Github"/>
-          <Input type="text" label="LinkedIn"/> 
+          <Input name="github" type="text" label="Github"/>
+          <Input name="linkedin" type="text" label="LinkedIn"/> 
         </div> 
 
 
         <div className={styles.row}>
-          <Input type="text" label="Personal Website"/>
-          <Input type="dropdown" label="What type of positions are you looking for?"/> 
+          <Input name="website" type="text" label="Personal Website"/>
+          <Input name="soughPosition" type="dropdown" label="What type of positions are you looking for?"/> 
         </div> 
 
         <div className={styles.column}>
@@ -235,6 +201,7 @@ function Profile() {
              <p> lil icon </p>
              <p> Resume </p>
           </div> 
+
           <div className={styles.row}>
             <p> <i> By uploading your resume, you agree to having it distributed to our sponsors attending the event.</i> </p>
             <p> a check box </p> 
@@ -247,11 +214,7 @@ function Profile() {
   )
 }
 
-function Submit() {
-  
-  /* Information this form needs to pull: 
-
-  */ 
+function Submit(props) {
   
   function handleNext(event) {
     event.preventDefault(); 
@@ -261,7 +224,7 @@ function Submit() {
   return (
     <div className={styles.page} id={styles.submit}>
       <h1 className={styles.formHeading}> Submit </h1> 
-      <form  onSubmit={handleNext}> 
+      <form  onSubmit={handleNext}  onChange={props.onChange}> 
           <div className={styles.row}> 
             <p> check </p>
             <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"> MLH Code of Conduct.</a></p>
@@ -289,8 +252,7 @@ function Status() {
     </div>
     )
 }
-
-
+ 
 class Dashboard extends Component {
   // Initial login page to the dashboard, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
@@ -348,8 +310,17 @@ class Dashboard extends Component {
 
   }
 
-  handler(data){
-    console.log("dashboard -> " + data); 
+  handleFormChange(event){
+    /*  Commenting this out to suppress console spam, BUT
+        event.target.name ->  the name of the field being changed, 
+                              this is working great for text, will need to test for other
+                              types. 
+        event.target.value -> the value of the field being changed. 
+    Next step is to figure out how to apply these to the state. 
+    console.log(event.target.name); 
+    console.log(event.target.value); 
+    */ 
+   console.log(event.target.name); 
   }
 
   render () {
@@ -357,7 +328,7 @@ class Dashboard extends Component {
       <div className={styles.dashboard}>
       <SideNav />
       <div className={styles.formContainer} id="form-container">
-        <BasicInfo handler={this.handler.bind(this)}/> 
+        <Profile onChange={this.handleFormChange}/> 
       </div>
     </div>
     );
