@@ -31,11 +31,11 @@ function SideNav() {
   )
 }
 
-function Start() {
+function Start(props) {
 
   function handleNext(event) {
     event.preventDefault();  
-    ReactDOM.render(<BasicInfo/>, document.getElementById('form-container')); 
+    ReactDOM.render(<BasicInfo onChange={props.onChange}/>, document.getElementById('form-container')); 
   }
 
   return (
@@ -328,7 +328,7 @@ class Dashboard extends Component {
       <div className={styles.dashboard}>
       <SideNav />
       <div className={styles.formContainer} id="form-container">
-        <Profile onChange={this.handleFormChange}/> 
+        <Start onChange={this.handleFormChange}/> 
       </div>
     </div>
     );
