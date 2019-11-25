@@ -65,15 +65,21 @@ const BasicInfo = ({nextPage}) => {
     [event.target.name]: (event.target.value || APPLICATION_SCHEMA.basicInfo[event.target.name])
   })
 
-  const genderOptions = ['Female', 'Male', 'Prefer not to answer', 'Other (please specify)']
+  const genderOptions = [
+    'Prefer not to answer',
+    'Female',
+    'Male',
+    'Other (please specify)'
+  ]
+
   const ethnicityOptions = [
+    'Prefer not to answer',
     'Indigenous',
     'Asian',
     'Black / African American',
     'Hispanic',
     'White / Caucasian',
-    'Mixed / Other (please specify)',
-    'Prefer not to answer'
+    'Mixed / Other (please specify)'
   ]
 
   return (
@@ -98,7 +104,7 @@ const BasicInfo = ({nextPage}) => {
         <div className={styles.section}>
           <Input name="emergencyPhone" type="tel" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/>
         </div>
-        <Button className={styles.nextButton} label="Next" type='submit' action={() => {}}/>
+        <Button label="Next" type='submit'/>
       </form>
     </div>
   )
@@ -129,16 +135,16 @@ const AboutYou = ({nextPage}) => {
         </div>
         <div className={styles.section}>
           <Input name="cityOfOrigin" type="dropdown" label="Where will you be travelling from?"/>
-          <Input name="tShirtSize" type="dropdown" label="What's your T-Shirt size? *"/>
+          <Input name="tShirtSize" type="dropdown" label="What is your T-Shirt size? *"/>
         </div>
         <div className={styles.section}>
-          <Input name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrctions you have. *"/>
+          <Input name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrctions you may have. *"/>
         </div>
         <div className={styles.section}>
           <p>If you are not travelling from Ottawa, are you interested in a shuttle? <br/> We'll be creating them based on demand.</p>
           <p name="wantsShuttle">checkbox here</p>
         </div>
-        <Button className={styles.nextButton} label="Next"/>
+        <Button label="Next" type='submit'/>
       </form>
     </div>
   )
@@ -169,7 +175,7 @@ function SkillsFeats(props) {
         <div className={styles.row}>
           <Input name="challengeStatement" type="textarea" label="Tell us about a time you faced a challenge, and how you overcame it. (500 words max)."/>
         </div>
-        <Button className={styles.nextButton} label="Next"/>
+        <Button label="Next" type='submit'/>
       </form>
     </div>
   )
@@ -211,7 +217,7 @@ function Profile(props) {
           </div>
         </div>
 
-        <Button className={styles.nextButton} label="Next"/>
+        <Button label="Next" type='submit'/>
       </form>
     </div>
   )
@@ -240,7 +246,7 @@ function Submit(props) {
             <p> check </p>
             <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-member-event-guidelines.pdf"> MLH Contest Terms.</a></p>
           </div>
-          <Button className={styles.nextButton} label="Submit"/>
+          <Button label="Next"/>
         </form>
       </div>
   )
@@ -357,7 +363,10 @@ const Application = () => {
   const pages = [
     <StartPage nextPage={nextPage(1)}/>,
     <BasicInfo nextPage={nextPage(2)}/>,
-    <AboutYou/>
+    <AboutYou nextPage={nextPage(3)}/>,
+    <SkillsFeats nextPage={nextPage(4)}/>,
+    <Profile nextPage={nextPage(5)}/>,
+    <Submit/>
   ]
 
   return (
