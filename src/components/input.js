@@ -10,7 +10,7 @@ const Input = ({label, inputStyle, options = [], ...props}) => {
         <div className={styles.inputContainer}>
           <div className={styles.selectContainer}>
             <select className={styles.selectInput} label={label} {...props}>
-              {options.map(option => <option value={option}>{option}</option>)}
+              {options.map(option => <option key={option} value={option}>{option}</option>)}
             </select>
             <FontAwesomeIcon className={styles.selectIcon} icon={faChevronDown} size='lg'/>
           </div>

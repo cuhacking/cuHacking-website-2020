@@ -32,6 +32,11 @@
   vertical-align: bottom;
 }
 
+.selectInput {
+  position: relative;
+  z-index: 1;
+}
+
 .selectContainer {
   display: flex;
   justify-content: flex-end;

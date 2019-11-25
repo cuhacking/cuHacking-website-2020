@@ -1,114 +1,130 @@
-* {
-  --navBackgroundColour: #3e205b; 
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 6em;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 2em;
+  font-weight: normal;
 }
 
 .dashboard {
-  display: flex; 
-  flex-direction: row; 
-  height: 100vh; 
-  width: 100vw; 
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
 }
 
 .sideNav {
   color: var(--secondTextColour);
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--navBackgroundColour);  
-  width: 20%; 
+  background-color: var(--navBackgroundColour);
+  width: 20%;
 }
 
 .sideNavList {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  background-color: var(--darkPrimaryColour); 
+  background-color: var(--darkPrimaryColour);
   border-top: 2px solid var(--secondaryColour);
-  width: 100%; 
+  width: 100%;
 }
 
 .sideNavLogout {
-  text-align: center; 
-  font-size: 1em; 
+  text-align: center;
+  font-size: 1em;
 }
 
 .sideNavLogout:hover {
-  cursor: pointer; 
-  background-color: var(--darkPrimaryColour); 
-  text-align: center; 
-  font-size: 1em; 
+  cursor: pointer;
+  background-color: var(--darkPrimaryColour);
+  text-align: center;
+  font-size: 1em;
 }
 
 .formContainer {
-  display: flex;
-  height: 100vh; 
-  width: 80vw;
-  justify-content: center;
+  width: 100%;
 }
 
 .page {
-  height: 100vh; 
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* height: 100vh; */
+  width: 90%;
+  padding-left: 5vw;
 }
 
 .formHeading {
-  font-family: 'Reem Kufi', sans-serif; 
+  font-family: 'Reem Kufi', sans-serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 4em; 
-  margin-bottom: 0; 
+  font-size: 4em;
+  margin-bottom: 0;
 }
 
-.row {
-  display: flex; 
-  justify-content: space-between; 
-  flex-direction: row;
-}
-
-.column {
-  display: flex; 
+.section {
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 
 .colItem {
-  width:  49%; 
+  width:  49%;
 }
 
-/* Start Page */ 
+/* Start Page */
 #start {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   line-height: 0;
+  font-family: 'Reem Kufi', sans-serif;
 }
 
-#start > #cuHacking2020 {
-  font-size: 2em; 
-  font-weight: normal; 
-  font-style: normal; 
+#start > #superTitle {
+  font-size: 2em;
+  font-weight: normal;
+  font-style: normal;
 }
 
-#start > #applicationTitle {
-  font-size: 4em; 
-  font-weight: normal; 
-  font-style: normal; 
-  margin-top: 25px;    
+#start > #title {
+  font-size: 5em;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 35px;
+  margin-bottom: 50px;
 }
 
-/* Basic Info Page */ 
-#basicInfo { 
-  display: flex; 
+/* Basic Info Page */
+#basicInfo {
+  display: flex;
   align-items: left;
   flex-direction: column;
 }
 
-/* Profile Page */ 
+/* Profile Page */
 #resume {
-  height: 30vh; 
+  height: 30vh;
   align-items: center;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   border: 4px dashed #9756D8;
-  background-color: rgba(151, 86, 216, 0.1); 
+  background-color: rgba(151, 86, 216, 0.1);
+}
+
+@media only screen and (min-width: 700px) {
+  .page {
+    max-width: 800px;
+  }
+
+  .section {
+    flex-direction: row;
+  }
 }

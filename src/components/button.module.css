@@ -1,10 +1,10 @@
 .button {
   padding: 0;
   margin: 25px;
-  border: none; 
+  border: none;
   background-color: var(--primaryColour);
-  color: var(--secondTextColour); 
-  font-size: 18px; 
+  color: var(--secondTextColour);
+  font-size: 18px;
 }
 
 .label {

@@ -25,6 +25,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth; 
   color: var(--textColour);
+  background-color: var(--backgroundColour);
   font-family: 'Montserrat', sans-serif;
 }
 

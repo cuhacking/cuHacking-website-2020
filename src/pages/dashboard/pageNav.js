@@ -36,15 +36,15 @@ const PageButton = ({id, page, label, closeOverlay}) => {
   )
 }
 
-const PageNav = () => {
+const PageNav = ({stage, currentPage, changePage}) => {
   const isMobile = useMobile()
   const [showOverlay, toggleOverlay] = useState(false)
 
-  // Hoist this state once you use the component
-  const [current, changeTo] = useState(0)
-  const stage = 3 // This is the currently unfinished page (i.e. the furthest point in the application)
-
-  const page = {current, changeTo, stage}
+  const page = {
+    current: currentPage,
+    changeTo: changePage,
+    stage
+  }
 
   const menu = (
     <div className={styles.container}>
@@ -52,11 +52,11 @@ const PageNav = () => {
         <Logo className={styles.logo}/>
       </div>
       <div className={styles.pageButtons}>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={0} page={page} label='Basic Info'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={1} page={page} label='About You'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={2} page={page} label='Skills & Feats'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={3} page={page} label='Profiles & Links'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={4} page={page} label='Submit'/>
+        <PageButton closeOverlay={() => toggleOverlay(false)} id={1} page={page} label='Basic Info'/>
+        <PageButton closeOverlay={() => toggleOverlay(false)} id={2} page={page} label='About You'/>
+        <PageButton closeOverlay={() => toggleOverlay(false)} id={3} page={page} label='Skills & Feats'/>
+        <PageButton closeOverlay={() => toggleOverlay(false)} id={4} page={page} label='Profile'/>
+        <PageButton closeOverlay={() => toggleOverlay(false)} id={5} page={page} label='Submit'/>
       </div>
       <button className={styles.logoutButton}>Logout</button>
     </div>
