@@ -1,4 +1,4 @@
-.input {
+.input, .longInput {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
@@ -6,8 +6,13 @@
   border-bottom: 1px solid var(--textColour); 
   color: var(--textColour);
   font-family: 'Montserrat', sans-serif;
-  font-size: 21px;
+  font-size: 18px;
   width: 100%; 
+}
+
+.longInput {
+  resize: none;
+  vertical-align: bottom;
 }
 
 .inputContainer {
