@@ -1,4 +1,21 @@
-.input, .longInput {
+
+.inputContainer {
+  padding: 5px;
+  margin-right: 1vw;
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.label {
+  color: var(--textColour);
+  margin: 0;
+  margin-top: 0.4em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.input, .longInput, .selectInput {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
@@ -15,18 +32,12 @@
   vertical-align: bottom;
 }
 
-.inputContainer {
-  padding: 5px;
-  margin-right: 1vw;
-  width: 100%; 
-  display: flex; 
-  flex-direction: column;
+.selectContainer {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.label {
-  color: var(--textColour);
-  margin: 0;
-  margin-top: 0.4em;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+.selectIcon {
+  display: flex;
+  position: absolute;
 }

@@ -1,8 +1,22 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import styles from './input.module.css';
 
-const Input = ({label, inputStyle, ...props}) => {
+const Input = ({label, inputStyle, options = [], ...props}) => {
   switch (inputStyle) {
+    case 'select':
+      return (
+        <div className={styles.inputContainer}>
+          <div className={styles.selectContainer}>
+            <select className={styles.selectInput} label={label} {...props}>
+              {options.map(option => <option value={option}>{option}</option>)}
+            </select>
+            <FontAwesomeIcon className={styles.selectIcon} icon={faChevronDown} size='lg'/>
+          </div>
+          <p className={styles.label}>{label}</p>
+        </div>
+      )
     case 'long':
       return (
         <div className={styles.inputContainer}>
