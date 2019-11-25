@@ -1,0 +1,24 @@
+.emptyBox, .fullBox {
+  height: 30vh; 
+  padding-top: 1vh;
+  margin-top: 2vh;
+  align-items: center;
+  text-align: center;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  border: 4px dashed var(--primaryColour);
+  background-color: rgba(151, 86, 216, 0.1); 
+}
+
+.fullBox {
+  border: 4px solid var(--primaryColour);
+}
+
+.emptyBox:hover, .fullBox:hover {
+  cursor: pointer;
+}
+
+.fullBox:hover {
+  text-decoration: underline;
+}

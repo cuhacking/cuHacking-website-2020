@@ -1,15 +1,26 @@
-/* Added basic on hover attributes for now */ 
-
 .button {
+  padding: 0;
+  margin: 25px;
   border: none; 
-  background-color: #7C39BF;
+  background-color: var(--primaryColour);
   color: var(--secondTextColour); 
-  font-size: 20px; 
-  font-family: 'Reem Kufi', sans-serif; 
-  width: 100%; 
-  opacity: 0.8; 
+  font-size: 18px; 
 }
 
-.button:hover {
-  opacity: 1; 
+.label {
+  margin: 5px 80px;
+  position: relative;
+  z-index: 2;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.bkgStripe {
+  position: absolute;
+  background-color: var(--secondaryColour);
+}
+
+@media only screen and (min-width: 700px) {
+  .button:hover {
+    cursor: pointer;
+  }
 }

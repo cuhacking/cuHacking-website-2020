@@ -1,28 +1,37 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import styles from './input.module.css';
 
-class Input extends React.Component {
+const Input = ({label, inputStyle, options = [], ...props}) => {
+  switch (inputStyle) {
+    case 'select':
+      return (
+        <div className={styles.inputContainer}>
+          <div className={styles.selectContainer}>
+            <select className={styles.selectInput} label={label} {...props}>
+              {options.map(option => <option value={option}>{option}</option>)}
+            </select>
+            <FontAwesomeIcon className={styles.selectIcon} icon={faChevronDown} size='lg'/>
+          </div>
+          <p className={styles.label}>{label}</p>
+        </div>
+      )
+    case 'long':
+      return (
+        <div className={styles.inputContainer}>
+          <textarea className={styles.longInput} rows={4} label={label} {...props} />
+          <p className={styles.label}>{label}</p>
+        </div>
+      )
+    default:
+      return (
+        <div className={styles.inputContainer}>
+          <input className={styles.input} label={label} {...props}/>
+          <p className={styles.label}>{label}</p>
+        </div>
+      )
+  }
+};
 
-    
-    render() {
-        if (this.props.required) {
-            return (
-                <div className={styles.inputContainer}> 
-                    <input name={this.props.name} className={styles.input} type={this.props.type} label={this.props.label} placeholder={this.props.placeholder} required>
-                    </input>
-                    <p className={styles.label}>{this.props.label}</p>
-                </div> 
-            );  
-        } else {
-            return (
-                <div className={styles.inputContainer}> 
-                    <input name={this.props.name} className={styles.input} type={this.props.type} label={this.props.label} placeholder={this.props.placeholder} > 
-                    </input>
-                    <p className={styles.label}>{this.props.label}</p>
-                </div> 
-            );  
-        }
-    }
-}
-
-export default Input; 
+export default Input;
