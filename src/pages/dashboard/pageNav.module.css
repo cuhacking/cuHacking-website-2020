@@ -32,6 +32,7 @@
 .disabledButton {
   padding: 0;
   margin: 5px 0;
+  width: var(--width);
   display: flex;
   border: none;
   font-family: 'Reem Kufi', sans-serif;
@@ -44,6 +45,7 @@
 .disabledButton {
   color: rgba(255, 255, 255, 0.5);
   cursor: unset;
+  user-select: none;
 }
 
 .selectedButton {
@@ -67,6 +69,22 @@
 
 .indicatorOff {
   opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 50;
+}
+
+.menuButton {
+  position: fixed;
+  padding: 20px;
+  right: 0;
+  top: 0;
 }
 
 .logoutButton {

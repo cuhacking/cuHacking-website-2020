@@ -1,5 +1,6 @@
 import React, {useLayoutEffect, useRef, useState} from 'react';
 import {animated, useSpring} from 'react-spring';
+import {useMobile} from 'hooks'
 import styles from './button.module.css';
 
 const Stripe = ({isActive, dimensions}) => {
@@ -19,6 +20,8 @@ const Stripe = ({isActive, dimensions}) => {
 
 const Button = ({type, label, action}) => {
   const buttonRef = useRef();
+
+  const isMobile = useMobile()
 
   const [isHovering, toggleStripe] = useState(false);
   const [dimensions, updateDimensions] = useState({width: 0, height: 0});
@@ -41,7 +44,7 @@ const Button = ({type, label, action}) => {
     >
       <Stripe
         dimensions={dimensions}
-        isActive={isHovering} 
+        isActive={isHovering && !isMobile} 
         style={{backgroundColor: 'var(--secondaryColour)'}}
       />
       {/* To render above the stripe, the label needs its own style */}
