@@ -1,4 +1,3 @@
-
 .inputContainer {
   padding: 5px;
   margin-right: 1vw;
@@ -35,6 +34,10 @@
 .selectInput {
   position: relative;
   z-index: 1;
+}
+
+option {
+  color: black;
 }
 
 .selectContainer {
