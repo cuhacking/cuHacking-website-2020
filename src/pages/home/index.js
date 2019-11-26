@@ -2,6 +2,7 @@ import React from 'react';
 import 'index.css';
 import {
   MailingListForm,
+  Button, 
   Navbar, 
   MLHBanner, 
   Footer,
@@ -38,7 +39,11 @@ function Landing() {
         <div className={styles.landingDate}/>
       </div>  
       <div className={styles.landingBottom}>
-        <MailingListForm /> 
+        <h2 className={styles.applicationMessage}> Applications are now open!</h2>
+        <Link to="/create">
+          <Button type="submit" label="APPLY NOW"/>    
+        </Link>
+        {/*<MailingListForm />*/}
       </div>
     </div> 
   );
