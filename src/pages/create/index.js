@@ -91,7 +91,8 @@ class Create extends React.Component {
       <div className={styles.loginPage}>
         <Navbar /> 
         <div> 
-          <h2> Create your cuHacking account.</h2> 
+          <h2>Create your cuHacking account.</h2> 
+          <p>Already have an account? <a href="/login"> Click here to login.</a></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit}> 
             <Input name="email"     type="email"    label="Email"                                     value={this.state.email}      onChange={this.handleChange} required={true}/>
             <Input name="pw"        type="password" label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>

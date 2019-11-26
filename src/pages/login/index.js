@@ -82,6 +82,7 @@ class Login extends React.Component {
         <Navbar /> 
         <div className={styles.loginContainer}> 
           <h2>Welcome to cuHacking!</h2> 
+          <p>Don't have an account? <a href="/create"> Click here.</a></p>
           <form onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
