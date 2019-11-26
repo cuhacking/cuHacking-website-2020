@@ -6,6 +6,7 @@ import {
 } from 'components';
 import PageNav from './pageNav'
 import Dropbox from './dropbox'
+import {schools} from './schools.json'
 
 const APPLICATION_SCHEMA = {
   status: 'unsubmitted',
@@ -45,7 +46,6 @@ const APPLICATION_SCHEMA = {
   terms: {
     codeOfConduct: false,
     privacyPolicy: false
-    // contestTerms: false // TODO: Remind Ryan that we don't need this anymore
   }
 }
 
@@ -120,11 +120,6 @@ const AboutYou = ({initialState, nextPage}) => {
       ((target.type === 'checkbox' ? target.checked : target.value) || APPLICATION_SCHEMA.personalInfo[target.name])
   })
 
-  // TODO: use actual school options
-  const schoolOptions = [
-    1, 2, 3, 4
-  ]
-
   const degreeOptions = [
     'Other',
     'High School Diploma',
@@ -151,13 +146,12 @@ const AboutYou = ({initialState, nextPage}) => {
     'Extra Large'
   ]
 
-  console.log(personalInfo.wantsShuttle)
   return (
     <div className={styles.page}>
       <h1 className={styles.formHeading}>About You</h1>
       <form onSubmit={() => nextPage({personalInfo})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
-          <Input value={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={schoolOptions}/>
+          <Input value={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['Other', ...schools]}/>
         </div>
         <div className={styles.section}>
           <Input placeholder='Computer Science' value={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
