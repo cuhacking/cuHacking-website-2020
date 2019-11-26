@@ -1,4 +1,5 @@
 .button {
+  opacity: 1; 
   padding: 0;
   margin: 25px;
   border: none;
@@ -6,6 +7,17 @@
   color: var(--secondTextColour);
   font-size: 18px;
 }
+
+.buttonDisabled {
+  opacity: 0.2; 
+  padding: 0;
+  margin: 25px;
+  border: none;
+  background-color: var(--primaryColour);
+  color: var(--secondTextColour);
+  font-size: 18px;
+}
+
 
 .label {
   margin: 5px 80px;

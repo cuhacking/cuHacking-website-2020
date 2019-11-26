@@ -18,7 +18,7 @@ const Stripe = ({isActive, dimensions}) => {
   );
 };
 
-const Button = ({type, label, action}) => {
+const Button = ({type, label, action, disabled}) => {
   const buttonRef = useRef();
 
   const isMobile = useMobile()
@@ -33,24 +33,43 @@ const Button = ({type, label, action}) => {
   useLayoutEffect(() => updateDimensions({width: buttonRef.current.offsetWidth, height: buttonRef.current.offsetHeight}),
     [widthDependency, heightDependency])
 
-  return (
-    <button
-      ref={buttonRef}
-      type={type || 'button'}
-      className={styles.button}
-      onMouseEnter={() => toggleStripe(true)}
-      onMouseLeave={() => toggleStripe(false)}
-      onClick={action}
-    >
-      <Stripe
-        dimensions={dimensions}
-        isActive={isHovering && !isMobile} 
-        style={{backgroundColor: 'var(--secondaryColour)'}}
-      />
-      {/* To render above the stripe, the label needs its own style */}
-      <div className={styles.label}>{label}</div>
-    </button>
-  )
+  if(disabled) {
+    return (
+      <button
+        disabled
+        ref={buttonRef}
+        type={type || 'button'}
+        className={styles.buttonDisabled}
+      >
+        <Stripe
+          dimensions={dimensions}
+          isActive={isHovering && !isMobile} 
+          style={{backgroundColor: 'var(--secondaryColour)'}}
+        />
+        {/* To render above the stripe, the label needs its own style */}
+        <div className={styles.label}>{label}</div>
+      </button>
+    )
+  } else {
+    return (
+      <button
+        ref={buttonRef}
+        type={type || 'button'}
+        className={styles.button}
+        onMouseEnter={() => toggleStripe(true)}
+        onMouseLeave={() => toggleStripe(false)}
+        onClick={action}
+      >
+        <Stripe
+          dimensions={dimensions}
+          isActive={isHovering && !isMobile} 
+          style={{backgroundColor: 'var(--secondaryColour)'}}
+        />
+        {/* To render above the stripe, the label needs its own style */}
+        <div className={styles.label}>{label}</div>
+      </button>
+    )
+  } 
 }
 
 export default Button;
