@@ -47,8 +47,7 @@
 
 .landingBottom {
   display: flex; 
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   align-content: center;
   justify-content: center;
   width: 100%; 
@@ -62,10 +61,6 @@
   align-items: center;
   width: 90%;
   max-width: 1024px;
-}
-
-.applicationMessage {
-  margin-bottom: 0; 
 }
 
 /* Sponsors slide */
