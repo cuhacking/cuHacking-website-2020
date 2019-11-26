@@ -15,7 +15,6 @@ h2 {
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-  background-image: url('../../assets/applications-bkg.svg');
   background-position: bottom right;
   background-size: cover;
 }
@@ -81,13 +80,14 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: 0;
+  text-align: center;
 }
 
 #start > #superTitle {
   font-size: 2em;
   font-weight: normal;
   font-style: normal;
+  line-height: 0;
 }
 
 #start > #title {
@@ -96,6 +96,7 @@ h2 {
   font-style: normal;
   margin-top: 35px;
   margin-bottom: 50px;
+  line-height: 0;
 }
 
 /* Basic Info Page */
@@ -117,9 +118,19 @@ h2 {
 }
 
 @media only screen and (min-width: 1000px) {
+  .application {
+    background-image: url('../../assets/applications-bkg.svg');
+  }
+
   .section {
     flex-direction: row;
   }
+
+  @media (prefers-color-scheme: dark) {
+    .application {
+      background-image: url('../../assets/applications-bkg-dark.svg');
+    }
+  }  
 }
 
 @media only screen and (min-width: 700px) {
@@ -128,11 +139,5 @@ h2 {
   }
   .formContainer, .formHeading {
     max-width: 800px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .application {
-    background-image: url('../../assets/applications-bkg-dark.svg');
-  }
+  }  
 }
