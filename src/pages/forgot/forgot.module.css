@@ -8,19 +8,16 @@
   margin-bottom: 0; 
 }
 
-.loginPage {
+.forgotPage {
   height: 100vh;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../../assets/login-bkg.svg');
-  background-position: center;
-  background-size: cover;
 }
 
-.loginContainer {
+.formVisible {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,8 +25,10 @@
   width: 100%; 
 }
 
-@media (prefers-color-scheme: dark) {
-  .loginPage {
-    background-image: url('../../assets/login-bkg-dark.svg');
-  }
+.formInvisible {
+  opacity: 0; 
+}
+
+.forgotPassword {
+  text-align: left; 
 }
