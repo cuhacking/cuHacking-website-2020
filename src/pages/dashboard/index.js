@@ -20,13 +20,13 @@ const APPLICATION_SCHEMA = {
     emergencyPhone: ''
   },
   personalInfo: {
-    school: '',
+    school: 'Other',
     major: '',
     minor: '',
-    degree: '',
+    degree: 'Bachelor',
     expectedGraduation: 2019,
     cityOfOrigin: '',
-    tShirtSize: '',
+    tShirtSize: 'Small',
     dietaryRestrictions: '',
     wantsShuttle: false
   },
@@ -37,15 +37,16 @@ const APPLICATION_SCHEMA = {
     challengeStatement: ''
   },
   profile: {
-    gitHub: '',
+    github: '',
     linkedin: '',
     website: '',
-    soughtPosition: '',
+    soughtPosition: 'Internship (Co-op)',
     resume: '// Can firebase store .pdf files?'
   },
   terms: {
     codeOfConduct: false,
-    privacyPolicy: false
+    privacyPolicy: false,
+    under18: false
   }
 }
 
@@ -87,23 +88,20 @@ const BasicInfo = ({initialState, nextPage}) => {
     <div className={styles.page}>
       <h1 className={styles.formHeading}>Basic Info</h1>
       <form onSubmit={() => nextPage({basicInfo})} onChange={onChange} className={styles.formContainer}>
-        {/* <div className={styles.section}>
-          <Input name="email" type="email" label="Email *" placeholder="example@email.com" required={true}/>
-        </div> */}
         <div className={styles.section}>
-          <Input value={basicInfo.firstName} name="firstName" type="text" label="First Name *" placeholder="John" required={true}/>
-          <Input value={basicInfo.lastName} name="lastName"  type="text" label="Last Name *" placeholder="Smith" required={true}/>
+          <Input defaultValue={basicInfo.firstName} name="firstName" type="text" label="First Name *" placeholder="John" required={true}/>
+          <Input defaultValue={basicInfo.lastName} name="lastName"  type="text" label="Last Name *" placeholder="Smith" required={true}/>
         </div>
         <div className={styles.section}>
-          <Input value={basicInfo.gender} name='gender' type="text" label="What do you identify as?" inputStyle='select' options={genderOptions}/>
-          <Input value={basicInfo.otherGender} name='otherGender' type="text" label="If other, please specify." />
+          <Input defaultValue={basicInfo.gender} name='gender' type="text" label="What do you identify as?" inputStyle='select' options={genderOptions}/>
+          <Input defaultValue={basicInfo.otherGender} name='otherGender' type="text" label="If other, please specify." />
         </div>
         <div className={styles.section}>
-          <Input value={basicInfo.ethnicity} name='ethnicity' type="text" label="What is your race/ethnicity?" inputStyle='select' options={ethnicityOptions}/>
-          <Input value={basicInfo.otherEthnicity} name='otherEthnicity' type="text" label="If other, please specify." />
+          <Input defaultValue={basicInfo.ethnicity} name='ethnicity' type="text" label="What is your race/ethnicity?" inputStyle='select' options={ethnicityOptions}/>
+          <Input defaultValue={basicInfo.otherEthnicity} name='otherEthnicity' type="text" label="If other, please specify." />
         </div>
         <div className={styles.section}>
-          <Input value={basicInfo.emergencyPhone} name="emergencyPhone" type="tel" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/>
+          <Input defaultValue={basicInfo.emergencyPhone} name="emergencyPhone" type="tel" label="What is your phone number (for emergencies)? *" placeholder="(123) 456-7890" required={true}/>
         </div>
         <Button label="Next" type='submit'/>
       </form>
@@ -121,10 +119,9 @@ const AboutYou = ({initialState, nextPage}) => {
   })
 
   const degreeOptions = [
-    'Other',
+    'Bachelor',
     'High School Diploma',
     'College Diploma',
-    'Bachelor',
     'Master',
     'Doctorate'
   ]
@@ -151,27 +148,30 @@ const AboutYou = ({initialState, nextPage}) => {
       <h1 className={styles.formHeading}>About You</h1>
       <form onSubmit={() => nextPage({personalInfo})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
-          <Input value={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['Other', ...schools]}/>
+          <Input defaultValue={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['Other', ...schools]}/>
         </div>
         <div className={styles.section}>
-          <Input placeholder='Computer Science' value={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
-          <Input placeholder='Psychology' value={personalInfo.minor} name="minor" type="text" label="What is your minor (if applicable)?" required={true}/>
+          <Input placeholder='Computer Science' defaultValue={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
+          <Input placeholder='Psychology' defaultValue={personalInfo.minor} name="minor" type="text" label="What is your minor (if applicable)?" required={true}/>
         </div>
         <div className={styles.section}>
-          <Input value={personalInfo.degree} name="degree" label="What degree are you pursuing?" inputStyle='select' options={degreeOptions} required/>
-          <Input value={personalInfo.expectedGraduation} name="expectedGraduation" label="When do you expect to graduate?" inputStyle='select' options={graduationOptions} required/>
+          <Input defaultValue={personalInfo.degree} name="degree" label="What degree are you pursuing?" inputStyle='select' options={degreeOptions} required/>
+          <Input defaultValue={personalInfo.expectedGraduation} name="expectedGraduation" label="When do you expect to graduate?" inputStyle='select' options={graduationOptions} required/>
         </div>
         <div className={styles.section}>
-          <Input value={personalInfo.tShirtSize} name="tShirtSize" label="What is your T-Shirt size (unisex)? *" required inputStyle='select' options={tShirtSizes}/>
+          <Input defaultValue={personalInfo.tShirtSize} name="tShirtSize" label="What is your T-Shirt size (unisex)? *" required inputStyle='select' options={tShirtSizes}/>
         </div>
         <div className={styles.section}>
-          <Input placeholder="e.x. I'm vegeterian" value={personalInfo.dietaryRestrictions} name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrictions you may have."/>
+          <Input placeholder="e.x. I'm vegeterian" defaultValue={personalInfo.dietaryRestrictions} name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrictions you may have."/>
         </div>
         <div className={styles.section}>
-          <Input placeholder='Ottawa, Ontario' value={personalInfo.cityOfOrigin} name="cityOfOrigin" label="Where will you be travelling from? * " required/>
+          <Input placeholder='Ottawa, Ontario' defaultValue={personalInfo.cityOfOrigin} name="cityOfOrigin" label="Where will you be travelling from? * " required/>
         </div>
-        <div className={styles.section} style={{paddingTop: 10}}>
-          <Input checked={personalInfo.wantsShuttle} inputStyle='checkbox' name='wantsShuttle' label="I'm interested in a shuttle coming to my city (based on demand)."/>
+        <div className={styles.section} style={{paddingTop: 30}}>
+          We're looking at getting shuttles to transport hackers from other cities to cuHacking and back, however they will be organized based on demand.
+        </div>
+        <div className={styles.section}>
+          <Input defaultChecked={personalInfo.wantsShuttle} inputStyle='checkbox' name='wantsShuttle' label="I'm interested in using a shuttle service from my city."/>
         </div>
         <Button label="Next" type='submit'/>
       </form>
@@ -193,14 +193,14 @@ const Skills = ({initialState, nextPage}) => {
       <h1 className={styles.formHeading}>Skills & Feats</h1>
       <form onSubmit={() => nextPage({skills})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
-          <Input value={skills.numHackathons} name="numHackathons" type="number" min={0} label="How many hackathons have you been to?"/>
-          <Input value={skills.selfTitle} placeholder='Frontend Developer (React)' name="selfTitle" type="text" label="How would you describe yourself?"/>
+          <Input defaultValue={skills.numHackathons} name="numHackathons" type="number" min={0} label="How many hackathons have you been to?"/>
+          <Input defaultValue={skills.selfTitle} placeholder='Frontend Developer (React)' name="selfTitle" type="text" label="How would you describe yourself?"/>
         </div>
         <div className={styles.section}>
-          <Input value={skills.accomplishmentStatement} name="accomplishmentStatement" inputStyle='long' label="What are you looking to learn or accomplish at cuHacking 2020? (~250 words)"/>
+          <Input defaultValue={skills.accomplishmentStatement} name="accomplishmentStatement" inputStyle='long' label="What are you looking to learn or accomplish at cuHacking 2020?"/>
         </div>
         <div className={styles.section}>
-          <Input value={skills.challengeStatement} name="challengeStatement" inputStyle='long' label="Tell us about a time you faced a challenge, and how you overcame it. (500 words max)."/>
+          <Input defaultValue={skills.challengeStatement} name="challengeStatement" inputStyle='long' label="Tell us about a time you faced a challenge, and how you overcame it."/>
         </div>
         <Button label="Next" type='submit'/>
       </form>
@@ -228,12 +228,12 @@ const Profile = ({initialState, nextPage, resume, setResume}) => {
       <h1 className={styles.formHeading}>Profile</h1>
       <form onSubmit={() => nextPage({profile})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
-          <Input value={profile.github} name="github" type="text" label="Github"/>
-          <Input value={profile.linkedin} name="linkedin" type="text" label="LinkedIn"/>
+          <Input defaultValue={profile.github} name="github" type="text" label="GitHub"/>
+          <Input defaultValue={profile.linkedin} name="linkedin" type="text" label="LinkedIn"/>
         </div>
         <div className={styles.section}>
-          <Input value={profile.website} name="website" type="text" label="Website"/>
-          <Input value={profile.soughtPosition} name="soughtPosition" label="What type of positions are you looking for?" inputStyle='select' options={employmentTypes}/>
+          <Input defaultValue={profile.website} name="website" type="text" label="Website"/>
+          <Input defaultValue={profile.soughtPosition} name="soughtPosition" label="What type of positions are you looking for?" inputStyle='select' options={employmentTypes}/>
         </div>
         <div className={styles.section}>
           <Dropbox resume={resume} setResume={setResume}/>
@@ -258,7 +258,7 @@ const Submit = ({initialState, submitApplication}) => {
 
   const Link = ({href, children}) => (
     <a
-      style={{color: 'var(--secondaryColour)'}}
+      style={{color: 'var(--secondaryColour)', textDecoration: 'underline'}}
       href={href}
       target='_blank'
       rel='noopener noreferrer external'
@@ -273,9 +273,10 @@ const Submit = ({initialState, submitApplication}) => {
       <form onSubmit={() => submitApplication({terms})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input
-            checked={terms.codeOfConduct}
+            defaultChecked={terms.codeOfConduct}
             inputStyle='checkbox'
             name='codeOfConduct'
+            required
             label={
               <div>
                 I have read and agree to the <Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</Link>.
@@ -285,17 +286,35 @@ const Submit = ({initialState, submitApplication}) => {
         </div>
         <div className={styles.section}>
           <Input
-            checked={terms.privacyPolicy}
+            defaultChecked={terms.privacyPolicy}
             inputStyle='checkbox'
             name='privacyPolicy'
+            required
             label={
               <div>
-                I authorize you to share certain application/registration information for event administration, ranking, MLH administration, pre and post-event informational e-mails, and occasional messages about hackathons in-line with the <Link href='https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md'>MLH Privacy Policy</Link>. I further I agree to the terms of both the <Link href='https://mlh.io/privacy'>MLH Contest Terms and Conditions</Link> and the <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+                I authorize cuHacking to share certain application/registration information for event administration, ranking, MLH administration, pre and post-event informational e-mails, and occasional messages about hackathons in-line with the <Link href='https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md'>MLH Privacy Policy</Link>. Furthermore, agree to the terms of both the <Link href='https://mlh.io/privacy'>MLH Contest Terms and Conditions</Link> and the <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
               </div>
             }
           />
         </div>
-        <Button label="Submit" type='submit'/>
+        <div className={styles.section} style={{marginTop: 25}}>
+          At cuHacking, we encourage young hackers in high school to participate. The more hackers, the merrier!
+        </div>
+        <div className={styles.section}>
+          <Input
+            defaultChecked={terms.under18}
+            inputStyle='checkbox'
+            name='under18'
+            label={
+              <div>
+                I will be under the age of 18 by January 11, 2020, and I agree to sign a Parental Consent form should I be accepted to the event.
+              </div>
+            }
+          />
+        </div>
+        <div className={styles.formHeading}>
+          <Button label="Submit" type='submit'/>
+        </div>
       </form>
     </div>
   )
@@ -337,7 +356,9 @@ const Application = () => {
     // TODO: Send the whole application to the api
 
     // TODO: pull 'submitted' into a constant
+    console.log({...applicationForm, ...formData, status: 'submitted'})
     setApplication({...applicationForm, ...formData, status: 'submitted'})
+
   }
 
   const pages = [

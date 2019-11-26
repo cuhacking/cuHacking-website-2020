@@ -44,7 +44,7 @@ h2 {
 
 #root {
   background-color: var(--backgroundColour); 
-  background-image: var(--background); 
+  background-image: var(--background);
   background-size: cover;
   background-position: bottom;
   min-height: 100vh;

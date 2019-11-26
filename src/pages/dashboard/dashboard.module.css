@@ -52,11 +52,10 @@ h2 {
 
 .page {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  align-items: flex-start;
-  /* height: 100vh; */
+  padding: 0 25px;
   width: 90%;
-  padding-left: 5vw;
 }
 
 .formHeading {
@@ -71,15 +70,6 @@ h2 {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-}
-
-.colItem {
-  width:  49%;
-}
-
-.checkbox {
-  width: 20px;
-  height: 20px;
 }
 
 /* Start Page */
@@ -123,12 +113,17 @@ h2 {
   background-color: rgba(151, 86, 216, 0.1);
 }
 
-@media only screen and (min-width: 700px) {
-  .page {
-    max-width: 800px;
-  }
-
+@media only screen and (min-width: 1000px) {
   .section {
     flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .page {
+    align-items: center;
+  }
+  .formContainer, .formHeading {
+    max-width: 800px;
   }
 }
