@@ -1,13 +1,12 @@
-* {
-  --dateSvg: url('../../assets/dateStamp.svg');
-}
-
 #content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  background-image: url('../../assets/bkg.svg');
+  background-position: bottom;
+  background-size: cover;
 }
 
 /* Landing slide */
@@ -39,7 +38,7 @@
   height: 200px;
   min-width: 40%;
   margin-right: -50px;
-  background-image: var(--dateSvg);
+  background-image: url('../../assets/dateStamp.svg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -269,7 +268,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  * {
-    --dateSvg: url('../../assets/dateStamp-dark.svg');
+  #content {
+    background-image: url('../../assets/bkg-dark.svg');
+  }
+  
+  .landingDate {
+    background-image: url('../../assets/dateStamp-dark.svg');
   }
 }

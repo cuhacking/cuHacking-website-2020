@@ -15,6 +15,9 @@ h2 {
   flex-direction: row;
   height: 100vh;
   width: 100vw;
+  background-image: url('../../assets/applications-bkg.svg');
+  background-position: bottom right;
+  background-size: cover;
 }
 
 .sideNav {
@@ -125,5 +128,11 @@ h2 {
   }
   .formContainer, .formHeading {
     max-width: 800px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dashboard {
+    background-image: url('../../assets/applications-bkg-dark.svg');
   }
 }

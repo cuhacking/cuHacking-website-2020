@@ -329,6 +329,7 @@ const Submitted = () => (
 )
 
 const Application = () => {
+  // TODO: push the stage along with the unsubmitted application on save
   const [stage, changeStage] = useState(0)
   const [page, changePage] = useState(0)
 

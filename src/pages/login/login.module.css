@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('../../assets/login-bkg.svg');
+  background-position: center;
+  background-size: cover;
 }
 
 .loginContainer {
@@ -13,4 +16,10 @@
   align-items: center;
   align-content: center;
   width: 40%; 
+}
+
+@media (prefers-color-scheme: dark) {
+  .loginPage {
+    background-image: url('../../assets/login-bkg-dark.svg');
+  }
 }
