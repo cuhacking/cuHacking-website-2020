@@ -337,9 +337,9 @@ const Application = props => {
   const [applicationForm, setApplication] = useState(APPLICATION_SCHEMA)
   const [resume, setResume] = useState()
 
-  // if(props.location.token === undefined) {
-  //   return (<Redirect to="/login"/>); 
-  // }
+  if(props.location.token === undefined) {
+    return (<Redirect to="/login"/>); 
+  }
 
   const nextPage = pageNumber => formData => {
     // Move to the next page
