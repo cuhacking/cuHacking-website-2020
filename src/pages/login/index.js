@@ -6,6 +6,7 @@ import {
     Navbar
 } from 'components';
 import styles from './login.module.css';
+import { Redirect } from 'react-router-dom'; 
 
 class Login extends React.Component {
   // Initial login page to the dashboard, ask for email/password by default. 
@@ -17,7 +18,9 @@ class Login extends React.Component {
     this.state = {  email: '',          
                     password: '',
                     validForm: false, 
-                    error: ''           
+                    error: '',
+                    success: false,
+                    token: null     
                 }; 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,7 +41,6 @@ class Login extends React.Component {
     this.state.email.length !== 0 && this.state.password.length >= 8
       ? this.setState({validForm: true}) 
       : this.setState({validForm: false}); 
-
   }
 
   handleSubmit(event) {
@@ -62,7 +64,10 @@ class Login extends React.Component {
           res.json()
           if(res.status === 200) {
               // token? 
-              this.props.history.push("dashboard");
+              this.setState({
+                token: res.token, 
+                success: true
+              })
           } else if (res.status === 403) {
               // Failure in parsing the token or creating the user in firestore. 
               this.setState({error: '403 Uh-oh! That didn\'t look right. Try again?'}); 
@@ -76,6 +81,14 @@ class Login extends React.Component {
   }
 
   render () {
+
+    if(this.state.success) {
+      return <Redirect to={{
+        pathname:"/dashboard",
+        state: {token: this.state.token}
+       }} />
+    }
+
     return (
       <div className={styles.loginPage}>
         <Navbar /> 
@@ -85,6 +98,7 @@ class Login extends React.Component {
           <form className={styles.loginContainer} onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
+            <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p>
             <Button type="submit"   label="Login" disabled={!this.state.validForm}/> 
             <p className="error-message"> {this.state.error} </p>
           </form>

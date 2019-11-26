@@ -6,6 +6,7 @@ import {
 } from 'components';
 import PageNav from './pageNav'
 import Dropbox from './dropbox'
+import {Redirect} from 'react-router-dom';
 
 const APPLICATION_SCHEMA = {
   status: 'unsubmitted',
@@ -315,12 +316,17 @@ const Submitted = () => (
   </div>
 )
 
-const Application = () => {
+const Application = (props) => {
+
   const [stage, changeStage] = useState(0)
   const [page, changePage] = useState(0)
 
   const [applicationForm, setApplication] = useState(APPLICATION_SCHEMA)
   const [resume, setResume] = useState()
+
+  if(props.location.state.token === undefined) {
+    return (<Redirect to="/login"/>); 
+  }
 
   const nextPage = pageNumber => formData => {
     // Move to the next page
