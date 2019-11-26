@@ -7,7 +7,7 @@ import {
 } from 'components';
 import styles from './create.module.css';
 
-class Login extends React.Component {
+class Create extends React.Component {
   // Initial login page to the dashboard, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
   // This should also branch to a create account page if they don't already have one? 
@@ -32,7 +32,7 @@ class Login extends React.Component {
   }
 
   handleChange = async (event) => {
-    
+
     this.setState({error: ''})
 
     switch(event.target.name) {
@@ -57,23 +57,23 @@ class Login extends React.Component {
     const post = {
       email: this.state.email,
       password: this.state.password
-  }
+    }
 
-  const options = {
+    const options = {
       method: 'POST', 
       body: JSON.stringify(post), 
       headers: {
           'Access-Control-Request-Headers': 'POST', 
           'Content-Type': 'application/json'
       }
-  }; 
+    }; 
 
-  fetch("https://cuhacking.com/api/mailinglist/users", options)
+    fetch("https://cuhacking.com/api/mailinglist/users", options)
       .then(res => {
           res.json()
           if(res.status === 201) {
-              // The account was created successfully.  
-              // Switch to application page. 
+              // token? 
+              this.props.history.push("dashboard");
           } else if (res.status === 501) {
               // Failure in parsing the token or creating the user in firestore. 
               this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 
@@ -82,7 +82,7 @@ class Login extends React.Component {
           }
       })
       .catch(err => {
-          this.setState({error: 'Uh-oh! That didn\'t work. Try again?', value: '', valid: false, loading: false}); 
+          this.setState({error: 'Uh-oh! That didn\'t work. Try again?'}); 
       })
   }
 
@@ -91,7 +91,7 @@ class Login extends React.Component {
       <div className={styles.loginPage}>
         <Navbar /> 
         <div> 
-          <h2> Create your cuHacking account!</h2> 
+          <h2> Create your cuHacking account.</h2> 
           <form className={styles.loginContainer} onSubmit={this.handleSubmit}> 
             <Input name="email"     type="email"    label="Email"                                     value={this.state.email}      onChange={this.handleChange} required={true}/>
             <Input name="pw"        type="password" label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>
@@ -108,4 +108,4 @@ class Login extends React.Component {
 
 }
 
-export default Login; 
+export default Create; 
