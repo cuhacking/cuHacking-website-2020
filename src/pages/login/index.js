@@ -31,6 +31,8 @@ class Login extends React.Component {
       case 'password':
         await this.setState({password: event.target.value}) 
         break; 
+      default: 
+        break; 
     }
 
     this.state.email.length !== 0 && this.state.password.length >= 8
@@ -56,7 +58,7 @@ class Login extends React.Component {
       }
     }; 
 
-    fetch("cuhacking.com/api-dev/signin", options)
+    fetch("https://cuhacking.com/api-dev/signin", options)
       .then(res => {
           res.json()
           if(res.status === 200) {

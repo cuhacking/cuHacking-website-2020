@@ -68,18 +68,18 @@ class Create extends React.Component {
       }
     }; 
 
-    fetch("cuhacking.com/api-dev/users", options)
+    fetch("https://cuhacking.com/api-dev/users", options)
       .then(res => {
-          res.json()
-          if(res.status === 201) {
-              // token? 
-              this.props.history.push("dashboard");
-          } else if (res.status === 501) {
-              // Failure in parsing the token or creating the user in firestore. 
-              this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 
-          } else {
-              this.setState({error: 'UNKNOWN STATUS CODE Uh-oh! Something went wrong. Try again?'}); 
-          }
+        res.json()
+        if(res.status === 201) {
+            // token? 
+            this.props.history.push("dashboard");
+        } else if (res.status === 501) {
+            // Failure in parsing the token or creating the user in firestore. 
+            this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 
+        } else {
+            this.setState({error: 'UNKNOWN STATUS CODE Uh-oh! Something went wrong. Try again?'}); 
+        }
       })
       .catch(err => {
           this.setState({error: 'Uh-oh! That didn\'t work. Try again?'}); 
