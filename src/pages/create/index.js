@@ -8,7 +8,7 @@ import {
 import styles from './create.module.css';
 
 class Create extends React.Component {
-  // Initial login page to the dashboard, ask for email/password by default. 
+  // Initial login page to the application, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
   // This should also branch to a create account page if they don't already have one? 
 
@@ -72,7 +72,7 @@ class Create extends React.Component {
         res.json()
         if(res.status === 201) {
             // token? 
-            this.props.history.push("dashboard");
+            this.props.history.push("application");
         } else if (res.status === 501) {
             // Failure in parsing the token or creating the user in firestore. 
             this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 

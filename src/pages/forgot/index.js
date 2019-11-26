@@ -8,7 +8,7 @@ import {
 import styles from './forgot.module.css';
 
 class Forgot extends React.Component {
-  // Initial login page to the dashboard, ask for email/password by default. 
+  // Initial login page to the application, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
   // This should also branch to a create account page if they don't already have one? 
 

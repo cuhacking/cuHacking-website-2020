@@ -10,7 +10,7 @@ h2 {
   font-weight: normal;
 }
 
-.dashboard {
+.application {
   display: flex;
   flex-direction: row;
   height: 100vh;
@@ -132,7 +132,7 @@ h2 {
 }
 
 @media (prefers-color-scheme: dark) {
-  .dashboard {
+  .application {
     background-image: url('../../assets/applications-bkg-dark.svg');
   }
 }

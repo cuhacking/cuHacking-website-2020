@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from './dashboard.module.css';
+import styles from './index.module.css';
 import {
   Input,
   Button,
@@ -378,7 +378,7 @@ const Application = props => {
   ]
 
   return (
-    <div className={styles.dashboard}>
+    <div className={styles.application}>
       <PageNav
         currentPage={page}
         changePage={changePage}
