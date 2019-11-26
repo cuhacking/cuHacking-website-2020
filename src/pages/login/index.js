@@ -85,7 +85,7 @@ class Login extends React.Component {
     if(this.state.success) {
       return <Redirect to={{
         pathname:"/dashboard",
-        state: {token: this.state.token}
+        token: this.state.token
        }} />
     }
 
