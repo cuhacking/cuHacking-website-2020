@@ -40,6 +40,11 @@ option {
   color: black;
 }
 
+.checkInput {
+  display: flex;
+  margin: 25px 0;
+}
+
 .selectContainer {
   display: flex;
   justify-content: flex-end;

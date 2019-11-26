@@ -6,6 +6,18 @@ import {ReactComponent as Logo} from 'assets/largeLogo.svg'
 import styles from './pageNav.module.css'
 
 const PageButton = ({id, page, label, closeOverlay}) => {
+  if (id === 6) {
+    return (
+      <button
+        className={styles.selectedButton}
+        type='button'
+      >
+        <div className={styles.indicatorOn}/>
+        <span className={styles.buttonLabel}>{label}</span>
+      </button>
+    )
+  }
+
   const disabled = id > page.stage
   const active = id === page.current
 
@@ -36,7 +48,7 @@ const PageButton = ({id, page, label, closeOverlay}) => {
   )
 }
 
-const PageNav = ({stage, currentPage, changePage}) => {
+const PageNav = ({stage, currentPage, changePage, submitted}) => {
   const isMobile = useMobile()
   const [showOverlay, toggleOverlay] = useState(false)
 
@@ -46,17 +58,25 @@ const PageNav = ({stage, currentPage, changePage}) => {
     stage
   }
 
+  const buttons = !submitted ? (
+    <>
+      <PageButton closeOverlay={() => toggleOverlay(false)} id={1} page={page} label='Basic Info'/>
+      <PageButton closeOverlay={() => toggleOverlay(false)} id={2} page={page} label='About You'/>
+      <PageButton closeOverlay={() => toggleOverlay(false)} id={3} page={page} label='Skills & Feats'/>
+      <PageButton closeOverlay={() => toggleOverlay(false)} id={4} page={page} label='Profile'/>
+      <PageButton closeOverlay={() => toggleOverlay(false)} id={5} page={page} label='Submit'/>
+    </>
+  ) : (
+    <PageButton closeOverlay={() => toggleOverlay(false)} id={6} label='Application Status'/>
+  )
+
   const menu = (
     <div className={styles.container}>
       <div className={styles.logo}>
         <Logo className={styles.logo}/>
       </div>
       <div className={styles.pageButtons}>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={1} page={page} label='Basic Info'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={2} page={page} label='About You'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={3} page={page} label='Skills & Feats'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={4} page={page} label='Profile'/>
-        <PageButton closeOverlay={() => toggleOverlay(false)} id={5} page={page} label='Submit'/>
+        {buttons}
       </div>
       <button className={styles.logoutButton}>Logout</button>
     </div>

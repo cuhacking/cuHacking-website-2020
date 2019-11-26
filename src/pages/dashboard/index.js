@@ -1,5 +1,4 @@
-import React, {Component, useState} from 'react';
-import ReactDOM from 'react-dom';
+import React, {useState} from 'react';
 import styles from './dashboard.module.css';
 import {
   Input,
@@ -45,8 +44,8 @@ const APPLICATION_SCHEMA = {
   },
   terms: {
     codeOfConduct: false,
-    privacyPolicy: false,
-    contestTerms: false
+    privacyPolicy: false
+    // contestTerms: false // TODO: Remind Ryan that we don't need this anymore
   }
 }
 
@@ -121,6 +120,7 @@ const AboutYou = ({initialState, nextPage}) => {
       ((target.type === 'checkbox' ? target.checked : target.value) || APPLICATION_SCHEMA.personalInfo[target.name])
   })
 
+  // TODO: use actual school options
   const schoolOptions = [
     1, 2, 3, 4
   ]
@@ -177,17 +177,7 @@ const AboutYou = ({initialState, nextPage}) => {
           <Input placeholder='Ottawa, Ontario' value={personalInfo.cityOfOrigin} name="cityOfOrigin" label="Where will you be travelling from? * " required/>
         </div>
         <div className={styles.section} style={{paddingTop: 10}}>
-          <label>
-            <input
-              name="wantsShuttle"
-              type="checkbox"
-              checked={personalInfo.wantsShuttle}
-              onChange={onChange}
-              // className={styles.checkbox}
-            />
-            <i>I'm interested in a shuttle coming to my city (based on demand).</i>
-          </label>
-          {/* <p>If you are not travelling from Ottawa, are you interested in a shuttle? <br/> We'll be creating them based on demand.</p> */}
+          <Input checked={personalInfo.wantsShuttle} inputStyle='checkbox' name='wantsShuttle' label="I'm interested in a shuttle coming to my city (based on demand)."/>
         </div>
         <Button label="Next" type='submit'/>
       </form>
@@ -263,44 +253,67 @@ const Profile = ({initialState, nextPage, resume, setResume}) => {
   )
 }
 
-function Submit(props) {
+const Submit = ({initialState, submitApplication}) => {
+  const [terms, setInfo] = useState(initialState)
 
-  function handleNext(event) {
-    event.preventDefault();
-    ReactDOM.render(<Status/>, document.getElementById('form-container'));
-  }
+  // Updates the state for the part of the form which changed
+  const onChange = event => setInfo({
+    ...terms,
+    [event.target.name]: (event.target.checked || APPLICATION_SCHEMA.terms[event.target.name])
+  })
+
+  const Link = ({href, children}) => (
+    <a
+      style={{color: 'var(--secondaryColour)'}}
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer external'
+    >
+      {children}
+    </a>
+  )
 
   return (
     <div className={styles.page} id={styles.submit}>
       <h1 className={styles.formHeading}> Submit </h1>
-      <form onSubmit={handleNext} onChange={props.onChange} className={styles.formContainer}>
-          <div className={styles.row}>
-            <p> check </p>
-            <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"> MLH Code of Conduct.</a></p>
-          </div>
-          <div className={styles.row}>
-            <p> check </p>
-            <p> I have read and agree to the <a href="https://mlh.io/privacy"> MLH Privacy Policy.</a></p>
-          </div>
-          <div className={styles.row}>
-            <p> check </p>
-            <p> I have read and agree to the <a href="https://static.mlh.io/docs/mlh-member-event-guidelines.pdf"> MLH Contest Terms.</a></p>
-          </div>
-          <Button label="Next"/>
-        </form>
-      </div>
+      <form onSubmit={() => submitApplication({terms})} onChange={onChange} className={styles.formContainer}>
+        <div className={styles.section}>
+          <Input
+            checked={terms.codeOfConduct}
+            inputStyle='checkbox'
+            name='codeOfConduct'
+            label={
+              <div>
+                I have read and agree to the <Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</Link>.
+              </div>
+            }
+          />
+        </div>
+        <div className={styles.section}>
+          <Input
+            checked={terms.privacyPolicy}
+            inputStyle='checkbox'
+            name='privacyPolicy'
+            label={
+              <div>
+                I authorize you to share certain application/registration information for event administration, ranking, MLH administration, pre and post-event informational e-mails, and occasional messages about hackathons in-line with the <Link href='https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md'>MLH Privacy Policy</Link>. I further I agree to the terms of both the <Link href='https://mlh.io/privacy'>MLH Contest Terms and Conditions</Link> and the <Link href='https://mlh.io/privacy'>MLH Privacy Policy</Link>.
+              </div>
+            }
+          />
+        </div>
+        <Button label="Submit" type='submit'/>
+      </form>
+    </div>
   )
 }
 
-function Status() {
-  return (
-    <div className={styles.page} id={styles.start}>
-      <p id={styles.cuHacking2020}> cuHacking 2020 </p>
-      <p id={styles.applicationTitle}> Application </p>
-      <p> We have received your application! Keep an eye on your email for updates! </p>
-    </div>
-    )
-}
+const Submitted = () => (
+  <div className={styles.page} id={styles.start}>
+    <h1 id={styles.superTitle}>Application</h1>
+    <h2 id={styles.title}>Submitted</h2>
+    <p>We have received your application! Keep an eye on your email for updates.</p>
+  </div>
+)
 
 const Application = () => {
   const [stage, changeStage] = useState(0)
@@ -314,10 +327,23 @@ const Application = () => {
     changeStage(pageNumber)
     changePage(pageNumber)
 
+    // TODO: Save using the API
+
     // Save the application
     if (formData) {
       setApplication({...applicationForm, ...formData})
     }
+  }
+
+  const submitApplication = formData => {
+    // Move to the next page
+    changeStage(6)
+    changePage(6)
+
+    // TODO: Send the whole application to the api
+
+    // TODO: pull 'submitted' into a constant
+    setApplication({...applicationForm, ...formData, status: 'submitted'})
   }
 
   const pages = [
@@ -326,7 +352,8 @@ const Application = () => {
     <AboutYou initialState={applicationForm.personalInfo} nextPage={nextPage(3)}/>,
     <Skills initialState={applicationForm.skills} nextPage={nextPage(4)}/>,
     <Profile initialState={applicationForm.profile} nextPage={nextPage(5)} resume={resume} setResume={setResume}/>,
-    // <Submit initialState={applicationForm.terms}/>
+    <Submit initialState={applicationForm.terms} submitApplication={submitApplication}/>,
+    <Submitted/>
   ]
 
   return (
@@ -335,6 +362,7 @@ const Application = () => {
         currentPage={page}
         changePage={changePage}
         stage={stage}
+        submitted={applicationForm.status === 'submitted'}
       />
       {pages[page]}
     </div>

@@ -5,6 +5,16 @@ import styles from './input.module.css';
 
 const Input = ({label, inputStyle, options = [], ...props}) => {
   switch (inputStyle) {
+    case 'checkbox':
+      return (
+        <label className={styles.checkInput}>
+          <input
+            type="checkbox"
+            {...props}
+          />
+          <i>{label}</i>
+        </label>
+      )
     case 'select':
       return (
         <div className={styles.inputContainer}>
