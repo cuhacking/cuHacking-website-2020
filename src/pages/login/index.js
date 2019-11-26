@@ -44,14 +44,13 @@ class Login extends React.Component {
   handleSubmit(event) {
 
     event.preventDefault(); 
-    const post = {
-      email: this.state.email,
-      password: this.state.password
-    }
 
     const options = {
       method: 'POST', 
-      body: JSON.stringify(post), 
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password
+      }), 
       headers: {
           'Access-Control-Request-Headers': 'POST', 
           'Content-Type': 'application/json'
