@@ -24,6 +24,8 @@ class Login extends React.Component {
 
   handleChange = async (event) => {
 
+    this.setState({error: ''});
+
     switch(event.target.name) {
       case 'email':
         await this.setState({email: event.target.value})  
@@ -41,7 +43,7 @@ class Login extends React.Component {
 
   }
 
-  handleSubmit(event) {
+  handleSubmit(event) { 
 
     event.preventDefault(); 
     const post = {
@@ -82,6 +84,7 @@ class Login extends React.Component {
         <Navbar /> 
         <div className={styles.loginContainer}> 
           <h2>Welcome to cuHacking!</h2> 
+          <p>Don't have an account yet? <a href="/create">Click here!</a></p>
           <form onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
