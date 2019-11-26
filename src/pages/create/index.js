@@ -106,7 +106,6 @@ class Create extends React.Component {
       </div>
     );
   }
-
 }
 
 export default Create; 

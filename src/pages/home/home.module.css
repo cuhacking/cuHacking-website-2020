@@ -47,11 +47,16 @@
 
 .landingBottom {
   display: flex; 
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   align-content: center;
   justify-content: center;
   width: 100%; 
   margin-bottom: 50px;
+}
+
+.landingBottom > h2 {
+  margin-bottom: 0; 
 }
 
 .slide {
@@ -62,6 +67,7 @@
   width: 90%;
   max-width: 1024px;
 }
+
 
 /* Sponsors slide */
 #sponsorBkg {
