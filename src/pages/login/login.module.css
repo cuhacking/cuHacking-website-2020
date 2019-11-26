@@ -1,3 +1,13 @@
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+ }
+
+ .container > h2 {
+  margin-bottom: 0; 
+}
+
 .loginPage {
   height: 100vh;
   padding: 0;

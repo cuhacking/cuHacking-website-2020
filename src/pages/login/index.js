@@ -80,14 +80,14 @@ class Login extends React.Component {
     return (
       <div className={styles.loginPage}>
         <Navbar /> 
-        <div className={styles.loginContainer}> 
+        <div className={styles.container}> 
           <h2>Welcome to cuHacking!</h2> 
           <p>Don't have an account? <a href="/create"> Click here.</a></p>
-          <form onSubmit={this.handleSubmit} > 
+          <form className={styles.loginContainer} onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
-            <p className="error-message"> {this.state.error} </p>
             <Button type="submit"   label="Login" disabled={!this.state.validForm}/> 
+            <p className="error-message"> {this.state.error} </p>
           </form>
         </div>
       </div>

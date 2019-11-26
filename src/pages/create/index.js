@@ -15,7 +15,7 @@ class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {  email: '',          
-                    password: '',        
+                    password: '',     
                     password2: '',
                     validForm: false,
                     error: ''    
@@ -90,17 +90,15 @@ class Create extends React.Component {
     return (
       <div className={styles.loginPage}>
         <Navbar /> 
-        <div> 
+        <div className={styles.container}> 
           <h2>Create your cuHacking account.</h2> 
           <p>Already have an account? <a href="/login"> Click here to login.</a></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit}> 
             <Input name="email"     type="email"    label="Email"                                     value={this.state.email}      onChange={this.handleChange} required={true}/>
             <Input name="pw"        type="password" label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>
-            <Input name="pw2"       type="password" label="Verify your password."                     value={this.state.password2}  onChange={this.handleChange} required={true}/>
+            <Input name="pw2"       type="password" label="Verify your password."                     value={this.state.password2}  onChange={this.handleChange} required={true}/>     
+            <Button type="submit" label="Create Account" disabled={!this.state.validForm}/>      
             <p id="error-message"> {this.state.error} </p>
-            <div className={styles.createButton}>
-              <Button type="submit" label="Create Account" disabled={!this.state.validForm}/> 
-            </div>
           </form>
         </div>
       </div>
