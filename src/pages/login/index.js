@@ -56,7 +56,7 @@ class Login extends React.Component {
       }
     }; 
 
-    fetch("https://cuhacking.com/api/mailinglist/signin", options)
+    fetch("cuhacking.com/api-dev/signin", options)
       .then(res => {
           res.json()
           if(res.status === 200) {
