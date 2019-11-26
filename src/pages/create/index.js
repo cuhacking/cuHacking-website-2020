@@ -68,7 +68,7 @@ class Create extends React.Component {
       }
     }; 
 
-    fetch("https://cuhacking.com/api-dev/users", options)
+    fetch("https://cuhacking.com/api-dev/register", options)
       .then(res => {
         res.json()
         if(res.status === 201) {
