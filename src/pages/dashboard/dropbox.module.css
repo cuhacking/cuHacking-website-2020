@@ -1,7 +1,8 @@
 .emptyBox, .fullBox {
-  height: 30vh; 
+  height: 30vh;
+  width: 100%; 
   padding-top: 1vh;
-  margin-top: 2vh;
+  margin-top: 5vh;
   align-items: center;
   text-align: center;
   display: flex; 
@@ -21,4 +22,10 @@
 
 .fullBox:hover {
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+  .emptyBox, .fullBox {
+    color: var(--darkPrimaryColour)
+  }
 }

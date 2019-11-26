@@ -47,7 +47,7 @@ h2 {
 }
 
 .formContainer {
-  width: 100%;
+  width: 95%;
 }
 
 .page {
@@ -75,6 +75,11 @@ h2 {
 
 .colItem {
   width:  49%;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
 }
 
 /* Start Page */
