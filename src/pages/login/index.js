@@ -33,7 +33,7 @@ class Login extends React.Component {
         break; 
     }
 
-    this.state.email.length != 0 && this.state.password.length != 0
+    this.state.email.length !== 0 && this.state.password.length >= 8
       ? this.setState({validForm: true}) 
       : this.setState({validForm: false}); 
 
@@ -83,6 +83,7 @@ class Login extends React.Component {
           <form onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
+            <p className="error-message"> {this.state.error} </p>
             <Button type="submit"   label="Login" disabled={!this.state.validForm}/> 
           </form>
         </div>
