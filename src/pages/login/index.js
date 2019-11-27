@@ -9,7 +9,7 @@ import styles from './login.module.css';
 import { Redirect } from 'react-router-dom'; 
 
 class Login extends React.Component {
-  // Initial login page to the dashboard, ask for email/password by default. 
+  // Initial login page to the application, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
   // This should also branch to a create account page if they don't already have one? 
 
@@ -84,7 +84,7 @@ class Login extends React.Component {
 
     if(this.state.success) {
       return <Redirect to={{
-        pathname:"/dashboard",
+        pathname:"/application",
         token: this.state.token
        }} />
     }

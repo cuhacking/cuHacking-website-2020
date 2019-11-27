@@ -6,6 +6,7 @@
   background-color: var(--primaryColour);
   color: var(--secondTextColour);
   font-size: 18px;
+  position: relative;
 }
 
 .buttonDisabled {

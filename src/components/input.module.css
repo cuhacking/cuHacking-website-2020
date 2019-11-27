@@ -42,12 +42,14 @@ option {
 
 .checkInput {
   display: flex;
+  position: relative;
   margin: 25px 0;
 }
 
 .selectContainer {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
 .selectIcon {
