@@ -50,10 +50,10 @@ option {
 }
 
 .checkInput {
-
+  cursor: pointer; 
   display: flex;
   position: relative;
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 .checkbox {
@@ -61,7 +61,6 @@ option {
   opacity: 0.7; 
   appearance: none;
   border: 1px solid var(--textColour); 
-  cursor: pointer; 
   height: 16px;
   width: 16px; 
 }

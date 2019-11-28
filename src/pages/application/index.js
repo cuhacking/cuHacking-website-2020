@@ -29,7 +29,14 @@ const APPLICATION_SCHEMA = {
     expectedGraduation: 2019,
     cityOfOrigin: '',
     tShirtSize: 'Small',
-    dietaryRestrictions: '',
+    dietaryRestrictions: {
+      halal: false,
+      vegetarian: false, 
+      lactoseFree: false,
+      treeNutFree: false,
+      glutenFree: false, 
+      other: ''  
+    }, 
     wantsShuttle: false
   },
   skills: {
@@ -114,11 +121,19 @@ const BasicInfo = ({initialState, nextPage}) => {
 const AboutYou = ({initialState, nextPage}) => {
   const [personalInfo, setInfo] = useState(initialState)
 
-  const onChange = ({target}) => setInfo({
-    ...personalInfo,
-    [target.name]:
-      ((target.type === 'checkbox' ? target.checked : target.value) || APPLICATION_SCHEMA.personalInfo[target.name])
-  })
+  const onChange = ({target}) => {
+    if(target.name in personalInfo.dietaryRestrictions){
+        personalInfo.dietaryRestrictions[target.name] = ((target.type === 'checkbox' ? target.checked : target.value)); 
+        console.log(personalInfo.dietaryRestrictions); 
+    } else {
+      setInfo({
+        ...personalInfo,
+        [target.name]:
+          ((target.type === 'checkbox' ? target.checked : target.value) || APPLICATION_SCHEMA.personalInfo[target.name])
+      })
+    }
+  }
+    
 
   const degreeOptions = [
     'Bachelor',
@@ -164,8 +179,18 @@ const AboutYou = ({initialState, nextPage}) => {
         <div className={styles.section}>
           <Input defaultValue={personalInfo.tShirtSize} name="tShirtSize" label="What is your T-Shirt size (unisex)? *" required inputStyle='select' options={tShirtSizes}/>
         </div>
+        <div className={styles.section}> 
+          <p>Please select any dietary restrictions you have. </p> 
+        </div> 
+        <div className={styles.section} id={styles.restrictionsContainer}>
+          <Input defaultChecked={personalInfo.dietaryRestrictions.halal}        inputStyle='checkbox' name='halal' label="Halal"/> 
+          <Input defaultChecked={personalInfo.dietaryRestrictions.vegetarian}   inputStyle='checkbox' name='vegetarian' label="Vegetarian"/> 
+          <Input defaultChecked={personalInfo.dietaryRestrictions.lactoseFree}  inputStyle='checkbox' name='lactoseFree' label="Lactose Free"/> 
+          <Input defaultChecked={personalInfo.dietaryRestrictions.treeNutFree}  inputStyle='checkbox' name='treeNutFree' label="Tree Nut Free"/> 
+          <Input defaultChecked={personalInfo.dietaryRestrictions.glutenFree}   inputStyle='checkbox' name='glutenFree' label="Gluten Free"/> 
+        </div>
         <div className={styles.section}>
-          <Input placeholder="e.x. I'm vegeterian" defaultValue={personalInfo.dietaryRestrictions} name="dietaryRestrictions" type="text" label="Please specify (in detail) any dietary restrictions you may have."/>
+          <Input defaultValue={personalInfo.dietaryRestrictions.other} name="other" type="text" label="Have an allergy or dietary restriction not on this list? Let us know."/>
         </div>
         <div className={styles.section}>
           <Input placeholder='Ottawa, Ontario' defaultValue={personalInfo.cityOfOrigin} name="cityOfOrigin" label="Where will you be travelling from? * " required/>
