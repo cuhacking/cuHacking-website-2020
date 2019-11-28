@@ -35,6 +35,10 @@ input:-webkit-autofill:focus
   width: 100%; 
 }
 
+.input:focus, .longInput:focus, .selectInput:focus {
+  outline: none; 
+}
+
 .longInput {
   resize: none;
   vertical-align: bottom;
