@@ -50,9 +50,29 @@ option {
 }
 
 .checkInput {
+
   display: flex;
   position: relative;
   margin: 25px 0;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  opacity: 0.7; 
+  appearance: none;
+  border: 1px solid var(--textColour); 
+  cursor: pointer; 
+  height: 16px;
+  width: 16px; 
+}
+
+.checkbox:hover {
+  opacity: 1; 
+}
+
+.checkbox:checked {
+  opacity: 1; 
+  background-color: var(--secondaryColour); 
 }
 
 .selectContainer {

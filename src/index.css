@@ -28,14 +28,7 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
-input {
-  -webkit-appearance: none; 
-  -moz-appearance: none;  
-}
 
-input:focus {
-  outline: none; 
-}
 
 h2 {
   font-family: 'Reem Kufi', sans-serif;

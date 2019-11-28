@@ -9,6 +9,7 @@ const Input = ({label, inputStyle, options = [], ...props}) => {
       return (
         <label className={styles.checkInput}>
           <input
+            className={styles.checkbox}
             type="checkbox"
             {...props}
           />
