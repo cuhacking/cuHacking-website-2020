@@ -3,7 +3,8 @@ import 'index.css';
 import {
     Input, 
     Button, 
-    Navbar
+    Navbar,
+    Password
 } from 'components';
 import styles from './login.module.css';
 import { Redirect } from 'react-router-dom'; 
@@ -97,7 +98,7 @@ class Login extends React.Component {
           <p>Don't have an account? <a href="/create"> Click here.</a></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit} > 
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
-            <Input  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
+            <Password  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
             <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p>
             <Button type="submit"   label="Login" disabled={!this.state.validForm}/> 
             <p className="error-message"> {this.state.error} </p>

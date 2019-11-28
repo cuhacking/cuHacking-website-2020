@@ -3,7 +3,8 @@ import 'index.css';
 import {
     Input, 
     Button, 
-    Navbar
+    Navbar,
+    Password
 } from 'components';
 import styles from './create.module.css';
 import zxcvbn from 'zxcvbn'; 
@@ -127,9 +128,9 @@ class Create extends React.Component {
           <h2>Create your cuHacking account.</h2> 
           <p>Already have an account? <a href="/login"> Click here to login.</a></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit}> 
-            <Input placeholder="email@example.com" name="email"     type="email"    label="Email"                                     value={this.state.email}      onChange={this.handleChange} required={true}/>
-            <Input placeholder="Password" name="pw"        type={this.state.hidden ? "password" : "text"} label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>
-            <Input placeholder="Confirm"  name="pw2"       type="password" label="Confirm your password."                     value={this.state.password2}  onChange={this.handleChange} required={true}/>     
+            <Input placeholder="email@example.com" name="email"     type="email"    label="Email"        value={this.state.email}      onChange={this.handleChange} required={true}/>
+            <Password placeholder="Password" name="pw" label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>
+            <Password placeholder="Confirm"  name="pw2"label="Confirm your password."                    value={this.state.password2}  onChange={this.handleChange} required={true}/>     
             {this.PasswordStrengthMeter()}
             <Button type="submit" label="Create Account" disabled={!this.state.validForm}/>      
             <p id="error-message"> {this.state.error} </p>
