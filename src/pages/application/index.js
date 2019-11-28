@@ -21,7 +21,8 @@ const APPLICATION_SCHEMA = {
     emergencyPhone: ''
   },
   personalInfo: {
-    school: 'Other',
+    school: '',
+    otherSchool: '',  // I JUST ADDED THIS - WE MIGHT NEED TO CHANGE SOMETHING ON THE API SIDE. 
     major: '',
     minor: '',
     degree: 'Bachelor',
@@ -149,7 +150,8 @@ const AboutYou = ({initialState, nextPage}) => {
       <h1 className={styles.formHeading}>About You</h1>
       <form onSubmit={() => nextPage({personalInfo})} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
-          <Input defaultValue={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['Other', ...schools]}/>
+          <Input defaultValue={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['', ...schools]}/>
+          <Input defaultValue={personalInfo.otherSchool} name='school' type="text" label="If other, please specify." />
         </div>
         <div className={styles.section}>
           <Input placeholder='Computer Science' defaultValue={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
@@ -172,7 +174,7 @@ const AboutYou = ({initialState, nextPage}) => {
           We're looking at getting shuttles to transport hackers from other cities to cuHacking and back, however they will be organized based on demand.
         </div>
         <div className={styles.section}>
-          <Input defaultChecked={personalInfo.wantsShuttle} inputStyle='checkbox' name='wantsShuttle' label="I'm interested in using a shuttle service from my city."/>
+          <Input defaultChecked={personalInfo.wantsShuttle} inputStyle='checkbox' name='wantsShuttle' label="&nbsp; I'm interested in using a shuttle service from my city."/> 
         </div>
         <Button label="Next" type='submit'/>
       </form>
