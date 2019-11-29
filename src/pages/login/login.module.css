@@ -2,9 +2,16 @@
   display: flex; 
   flex-direction: column; 
   align-items: center;
- }
+  animation: fadein 1s;
+}
 
- .container > h2 {
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+.container > h2 {
   margin-bottom: 0; 
 }
 

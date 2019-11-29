@@ -1,6 +1,6 @@
 import React from 'react';
 import Cookies from 'js-cookie'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import 'index.css';
 import {
     Input, 
@@ -112,18 +112,27 @@ class Create extends React.Component {
       }
     }; 
 
+    const expiry = {
+      expires: 1/23 // A little less than an hour, things fail if the user still has an expired token
+    }
+
     fetch(`${API_URL}/users/register`, options)
       .then(res => {
-        res.json()
-        if(res.status === 201) {
-            // token? 
-            this.props.history.push("application");
-        } else if (res.status === 501) {
-            // Failure in parsing the token or creating the user in firestore. 
-            this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 
-        } else {
-            this.setState({error: 'UNKNOWN STATUS CODE Uh-oh! Something went wrong. Try again?'}); 
-        }
+        res.json().then(body => {
+          if(res.status === 201) {
+              Cookies.set('email', body.user.email, expiry)
+              Cookies.set('token', body.user.token, expiry)
+
+              this.props.history.push("application");
+          } else if (res.status === 409) {
+              this.setState({error: 'Email already in use.'}); 
+          } else if (res.status === 501) {
+              // Failure in parsing the token or creating the user in firestore. 
+              this.setState({error: '501 - Something went wrong on our end! Try it a minute?'}); 
+          } else {
+              this.setState({error: 'UNKNOWN STATUS CODE Uh-oh! Something went wrong. Try again?'}); 
+          }
+        })
       })
       .catch(err => {
           this.setState({error: 'Uh-oh! That didn\'t work. Try again?'}); 
@@ -135,13 +144,13 @@ class Create extends React.Component {
     if (this.state.moveOn) {
       return <Redirect to='/'/>
     }
-    
+
     return (
       <div className={styles.loginPage}>
         <Navbar /> 
         <div className={styles.container}> 
           <h2>Create your cuHacking account.</h2> 
-          <p>Already have an account? <a href="/login"> Click here to login.</a></p>
+          <p>Already have an account? <Link to="/login">Click here to login.</Link></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit}> 
             <Input placeholder="email@example.com" name="email"     type="email"    label="Email"        value={this.state.email}      onChange={this.handleChange} required={true}/>
             <Password placeholder="Password" name="pw" label="Create a password. (Minimum 8 characters)" value={this.state.password}   onChange={this.handleChange} required={true}/>

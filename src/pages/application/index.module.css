@@ -52,12 +52,22 @@ h2 {
   width: 95%;
 }
 
+#startButton {
+  transition: opacity linear 1s;
+}
+
 .page {
   display: flex;
   flex: 1;
   flex-direction: column;
   padding: 0 25px;
   width: 90%;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .formHeading {

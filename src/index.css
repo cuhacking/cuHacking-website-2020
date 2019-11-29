@@ -12,6 +12,7 @@ a {
   text-decoration: none; 
   font-size: inherit; 
   font-family: inherit;
+  color: var(--lightPrimaryColour);
 }
 
 html, body {
@@ -48,5 +49,9 @@ h2 {
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
     --backgroundColour: black; 
+  }
+
+  a {
+    color: var(--secondaryColour);
   }
 }

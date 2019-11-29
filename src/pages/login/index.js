@@ -9,7 +9,7 @@ import {
 } from 'components';
 import styles from './login.module.css';
 import {useAuth} from 'hooks'
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 // const API_URL = 'https://cuhacking.com/api'
 const API_URL = 'http://localhost:3000/api-dev'
@@ -71,16 +71,21 @@ class LoginComponent extends React.Component {
       }
     };
 
+    const expiry = {
+      expires: 1/23 // A little less than a hour so nothing weird happens
+    }
+
     fetch(`${API_URL}/users/signin`, options)
       .then(res => {
           if(res.status === 200) {
-              res.json()
-              Cookies.set('email', this.state.email)
-              Cookies.set('token', res.token)
+              res.json().then(body => {
+                Cookies.set('email', this.state.email, expiry)
+                Cookies.set('token', body.token, expiry)
 
-              this.setState({
-                token: res.token,
-                success: true
+                this.setState({
+                  token: res.token,
+                  success: true
+                })  
               })
           } else if (res.status === 401) {
               // Incorrect password
@@ -112,7 +117,7 @@ class LoginComponent extends React.Component {
         <Navbar />
         <div className={styles.container}>
           <h2>Welcome to cuHacking!</h2>
-          <p>Don't have an account? <a href="/register"> Click here.</a></p>
+          <p>Don't have an account? <Link to="/register"> Sign up now.</Link></p>
           <form className={styles.loginContainer} onSubmit={this.handleSubmit} >
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Password  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>

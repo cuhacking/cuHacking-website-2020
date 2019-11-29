@@ -17,7 +17,7 @@ const Dropbox = ({resume, setResume=()=>console.error('setResume not provided')}
   if (!resume) {
     return (
       <div {...getRootProps({className: styles.emptyBox})}>
-        <input {...getInputProps()}/>
+        <input {...getInputProps({name: 'resume'})}/>
         <FontAwesomeIcon icon={faCloudUploadAlt} size='5x'/>
         <p>Drop your resume here, or click to select it. (PDF only)</p>
       </div>

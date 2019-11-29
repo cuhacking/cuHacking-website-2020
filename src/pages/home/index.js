@@ -40,7 +40,7 @@ function Landing() {
       </div>  
       <div className={styles.landingBottom}>
         <h2 className={styles.applicationMessage}> Applications are now open!</h2>
-        <Link to="/application">
+        <Link to="/login">
           <Button type="submit" label="APPLY NOW"/>    
         </Link>
         {/*<MailingListForm />*/}

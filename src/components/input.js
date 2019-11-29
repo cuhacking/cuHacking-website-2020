@@ -13,7 +13,7 @@ const Input = ({label, inputStyle, options = [], ...props}) => {
             type="checkbox"
             {...props}
           />
-          <i>{label}</i>
+          <i className={styles.checkBoxLabel}>{label}</i>
         </label>
       )
     case 'select':

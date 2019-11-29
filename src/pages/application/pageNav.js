@@ -77,21 +77,29 @@ const PageNav = ({stage, currentPage, changePage, submitted}) => {
   )
 
   const logout = () => {
+    const token = Cookies.get('token')
     const options = {
       method: 'GET',
       headers: {
         'Access-Control-Request-Headers': 'GET',
+        'Authorization': `Bearer ${token}`
       }
     };
 
-    fetch(`${API_URL}/users/signout`, options)
-      .then(res => {
-        Cookies.remove('email')
-        Cookies.remove('token')
+    Cookies.remove('email')
+    Cookies.remove('token')
 
-        history.push('/')
-      })
-      .catch(error => console.log('something went wrong when logging out!'))
+    history.push('/')
+
+    // FIXME: Use the sign out api to disable the token
+    // fetch(`${API_URL}/users/signout`, options)
+    //   .then(res => {
+    //     Cookies.remove('email')
+    //     Cookies.remove('token')
+
+    //     history.push('/')
+    //   })
+    //   .catch(error => console.log('something went wrong when logging out!'))
   }
 
   const menu = (

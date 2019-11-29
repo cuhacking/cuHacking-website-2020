@@ -18,7 +18,7 @@ const Stripe = ({isActive, dimensions}) => {
   );
 };
 
-const Button = ({type, label, action, disabled}) => {
+const Button = ({type, label, action, disabled, ...props}) => {
   const buttonRef = useRef();
 
   const isMobile = useMobile()
@@ -40,6 +40,7 @@ const Button = ({type, label, action, disabled}) => {
         ref={buttonRef}
         type={type || 'button'}
         className={styles.buttonDisabled}
+        {...props}
       >
         <Stripe
           dimensions={dimensions}
@@ -59,6 +60,7 @@ const Button = ({type, label, action, disabled}) => {
         onMouseEnter={() => toggleStripe(true)}
         onMouseLeave={() => toggleStripe(false)}
         onClick={action}
+        {...props}
       >
         <Stripe
           dimensions={dimensions}

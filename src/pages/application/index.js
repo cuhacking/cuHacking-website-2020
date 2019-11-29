@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import Cookies from 'js-cookie'
 import styles from './index.module.css';
 import {
   Input,
@@ -7,10 +8,13 @@ import {
 import PageNav from './pageNav'
 import Dropbox from './dropbox'
 import {schools} from './schools.json'
-import {Redirect} from 'react-router-dom';
+import {Redirect, useHistory} from 'react-router-dom';
+
+// const API_URL = 'https://cuhacking.com/api'
+const API_URL = 'http://localhost:3000/api-dev'
 
 const APPLICATION_SCHEMA = {
-  status: 'unsubmitted',
+  status: 'unstarted',
   basicInfo: {
     firstName: '',
     lastName: '',
@@ -59,11 +63,11 @@ const APPLICATION_SCHEMA = {
   }
 }
 
-const StartPage = ({nextPage}) => (
+const StartPage = ({nextPage, isLoading, startLabel}) => (
   <div className={styles.page} id={styles.start}>
     <h1 id={styles.superTitle}>cuHacking 2020</h1>
     <h2 id={styles.title}>Application</h2>
-    <Button label='Start' action={() => nextPage()}/>
+    <Button label={startLabel} action={() => nextPage()} disabled={isLoading}/>
   </div>
 )
 
@@ -75,6 +79,11 @@ const BasicInfo = ({initialState, nextPage}) => {
     ...basicInfo,
     [event.target.name]: (event.target.value || APPLICATION_SCHEMA.basicInfo[event.target.name])
   })
+
+  const onSubmit = event => {
+    event.preventDefault()
+    nextPage({basicInfo})
+  }
 
   const genderOptions = [
     'Prefer not to answer',
@@ -96,7 +105,7 @@ const BasicInfo = ({initialState, nextPage}) => {
   return (
     <div className={styles.page}>
       <h1 className={styles.formHeading}>Basic Info</h1>
-      <form onSubmit={() => nextPage({basicInfo})} onChange={onChange} className={styles.formContainer}>
+      <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input defaultValue={basicInfo.firstName} name="firstName" type="text" label="First Name *" placeholder="John" required={true}/>
           <Input defaultValue={basicInfo.lastName} name="lastName"  type="text" label="Last Name *" placeholder="Smith" required={true}/>
@@ -133,7 +142,11 @@ const AboutYou = ({initialState, nextPage}) => {
       })
     }
   }
-    
+  
+  const onSubmit = event => {
+    event.preventDefault()
+    nextPage({personalInfo})
+  }
 
   const degreeOptions = [
     'Bachelor',
@@ -163,14 +176,14 @@ const AboutYou = ({initialState, nextPage}) => {
   return (
     <div className={styles.page}>
       <h1 className={styles.formHeading}>About You</h1>
-      <form onSubmit={() => nextPage({personalInfo})} onChange={onChange} className={styles.formContainer}>
+      <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input defaultValue={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['', ...schools]}/>
           <Input defaultValue={personalInfo.otherSchool} name='school' type="text" label="If other, please specify." />
         </div>
         <div className={styles.section}>
           <Input placeholder='Computer Science' defaultValue={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
-          <Input placeholder='Psychology' defaultValue={personalInfo.minor} name="minor" type="text" label="What is your minor (if applicable)?" required={true}/>
+          <Input placeholder='Psychology' defaultValue={personalInfo.minor} name="minor" type="text" label="What is your minor (if applicable)?"/>
         </div>
         <div className={styles.section}>
           <Input defaultValue={personalInfo.degree} name="degree" label="What degree are you pursuing?" inputStyle='select' options={degreeOptions} required/>
@@ -216,13 +229,18 @@ const Skills = ({initialState, nextPage}) => {
     [event.target.name]: (event.target.value || APPLICATION_SCHEMA.skills[event.target.name])
   })
 
+  const onSubmit = event => {
+    event.preventDefault()
+    nextPage({skills})
+  }
+
   return (
     <div className={styles.page}>
       <h1 className={styles.formHeading}>Skills & Feats</h1>
-      <form onSubmit={() => nextPage({skills})} onChange={onChange} className={styles.formContainer}>
+      <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input defaultValue={skills.numHackathons} name="numHackathons" type="number" min={0} label="How many hackathons have you been to?"/>
-          <Input defaultValue={skills.selfTitle} placeholder='Frontend Developer (React)' name="selfTitle" type="text" label="How would you describe yourself?"/>
+          <Input defaultValue={skills.selfTitle} placeholder='Front-end Developer (React)' name="selfTitle" type="text" label="How would you describe yourself?"/>
         </div>
         <div className={styles.section}>
           <Input defaultValue={skills.accomplishmentStatement} name="accomplishmentStatement" inputStyle='long' label="What are you looking to learn or accomplish at cuHacking 2020?"/>
@@ -245,6 +263,11 @@ const Profile = ({initialState, nextPage, resume, setResume}) => {
     [event.target.name]: (event.target.value || APPLICATION_SCHEMA.profile[event.target.name])
   })
 
+  const onSubmit = event => {
+    event.preventDefault()
+    nextPage({profile})
+  }
+
   const employmentTypes = [
     'Internship (Co-op)',
     'Full time',
@@ -254,7 +277,7 @@ const Profile = ({initialState, nextPage, resume, setResume}) => {
   return (
     <div className={styles.page}>
       <h1 className={styles.formHeading}>Profile</h1>
-      <form onSubmit={() => nextPage({profile})} onChange={onChange} className={styles.formContainer}>
+      <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input defaultValue={profile.github} name="github" type="text" label="GitHub"/>
           <Input defaultValue={profile.linkedin} name="linkedin" type="text" label="LinkedIn"/>
@@ -284,6 +307,11 @@ const Submit = ({initialState, submitApplication}) => {
     [event.target.name]: (event.target.checked || APPLICATION_SCHEMA.terms[event.target.name])
   })
 
+  const onSubmit = event => {
+    event.preventDefault()
+    submitApplication({terms})
+  }
+
   const Link = ({href, children}) => (
     <a
       style={{color: 'var(--secondaryColour)', textDecoration: 'underline'}}
@@ -298,7 +326,7 @@ const Submit = ({initialState, submitApplication}) => {
   return (
     <div className={styles.page} id={styles.submit}>
       <h1 className={styles.formHeading}> Submit </h1>
-      <form onSubmit={() => submitApplication({terms})} onChange={onChange} className={styles.formContainer}>
+      <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input
             defaultChecked={terms.codeOfConduct}
@@ -357,45 +385,132 @@ const Submitted = () => (
 )
 
 const Application = props => {
-  // TODO: push the stage along with the unsubmitted application on save
+  const token = Cookies.get('token')
+
+  const [isLoading, setLoading] = useState(true)
+  const history = useHistory()
+  const [startLabel, setLabel] = useState('Loading...')
+
   const [stage, changeStage] = useState(0)
   const [page, changePage] = useState(0)
 
   const [applicationForm, setApplication] = useState(APPLICATION_SCHEMA)
   const [resume, setResume] = useState()
 
-  if(props.location.token === undefined) {
-    return (<Redirect to="/login"/>); 
-  }
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Access-Control-Request-Headers': 'GET',
+        'Authorization': `Bearer ${token}`
+      }
+    };
 
-  const nextPage = pageNumber => formData => {
-    // Move to the next page
-    changeStage(pageNumber)
-    changePage(pageNumber)
+    const fetchApplication = async () => {
+      const response = await fetch(`${API_URL}/users/application`, options)
+      console.log('Status: ', response.status)
+      if (response.status === 200) {
+        const body = await response.json()
+        const application = body.data
 
-    // TODO: Save using the API
+        console.log('Initial application: ', application)
+        if (application.status === 'submitted') {
+          console.log('Submitted')
+          changeStage(6)
+          changePage(6)
+        } else {
+          console.log('Unsubmitted')
+          if (application.status === 'unstarted') {
+            setLabel('Start')
+          } else {
+            setLabel('Continue')
+          }
+        }
+        setApplication(application)
+        setLoading(false)
+      } else {
+        console.log('Authentication failed: ', response.status)
+        Cookies.remove('email')
+        Cookies.remove('token')
 
-    // Save the application
-    if (formData) {
-      setApplication({...applicationForm, ...formData})
+        history.push('/login')
+      }
     }
+
+    fetchApplication()
+  }, [])
+  
+  const nextPage = pageNumber => formData => {
+    const newApplication = {...applicationForm, ...formData, stage: stage+1}
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(newApplication),
+      headers: {
+        'Access-Control-Request-Headers': 'POST',
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    };
+
+    console.log('next!', options)
+    fetch(`${API_URL}/users/application/save`, options).then(res => {
+      console.log('Save status:', res.status)
+      
+      // Save the application
+      if (formData) {
+        setApplication(newApplication)
+      }
+      
+      // Move to the next page
+      changeStage(pageNumber)
+      changePage(pageNumber)
+    }).catch(error => {console.log(error)})
   }
 
   const submitApplication = formData => {
-    // Move to the next page
-    changeStage(6)
-    changePage(6)
+    const finalForm = {...applicationForm, ...formData, status: 'submitted'}
+    const payload = new FormData()
+    const email = Cookies.get('email')
 
-    // TODO: Send the whole application to the api
+    console.log(resume)
+    payload.append('form', JSON.stringify(finalForm))
+    payload.append('email', email)
+    if (resume) {
+      payload.append('resume', resume, resume.path)
+    }
 
-    // TODO: pull 'submitted' into a constant
-    console.log({...applicationForm, ...formData, status: 'submitted'})
-    setApplication({...applicationForm, ...formData, status: 'submitted'})
+    const options = {
+      method: 'POST',
+      body: payload,
+      headers: {
+        'Access-Control-Request-Headers': 'POST',
+        'Authorization': `Bearer ${token}`,
+      }
+    };
 
+    console.log('next!', options)
+    fetch(`${API_URL}/users/application/submit`, options).then(res => {
+      console.log('Submit status:', res.status)
+
+      setApplication(finalForm)
+
+      // Move to the next page
+      changeStage(6)
+      changePage(6)
+    }).catch(error => {console.log(error)})
   }
 
   const pages = [
-    <StartPage nextPage={nextPage(1)}/>,
+    <StartPage
+      nextPage={() => {
+        const pageNumber = (applicationForm.stage || 1)
+        changeStage(pageNumber)
+        changePage(pageNumber > 4 ? 4 : pageNumber)
+      }}
+      isLoading={isLoading}
+      startLabel={startLabel}
+    />,
     <BasicInfo initialState={applicationForm.basicInfo} nextPage={nextPage(2)}/>,
     <AboutYou initialState={applicationForm.personalInfo} nextPage={nextPage(3)}/>,
     <Skills initialState={applicationForm.skills} nextPage={nextPage(4)}/>,
