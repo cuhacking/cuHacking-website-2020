@@ -1,0 +1,166 @@
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 6em;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+.application {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  background-position: bottom right;
+  background-size: cover;
+}
+
+.sideNav {
+  color: var(--secondTextColour);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--navBackgroundColour);
+  width: 20%;
+}
+
+.sideNavList {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--darkPrimaryColour);
+  border-top: 2px solid var(--secondaryColour);
+  width: 100%;
+}
+
+.sideNavLogout {
+  text-align: center;
+  font-size: 1em;
+}
+
+.sideNavLogout:hover {
+  cursor: pointer;
+  background-color: var(--darkPrimaryColour);
+  text-align: center;
+  font-size: 1em;
+}
+
+.formContainer {
+  width: 95%;
+}
+
+#startButton {
+  transition: opacity linear 1s;
+}
+
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 25px;
+  width: 90%;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.formHeading {
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 4em;
+  margin-bottom: 0;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* Start Page */
+#start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#start > #superTitle {
+  font-size: 2em;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 0;
+}
+
+#start > #title {
+  font-size: 5em;
+  font-weight: normal;
+  font-style: normal;
+  margin-top: 35px;
+  margin-bottom: 50px;
+  line-height: 0;
+}
+
+/* Basic Info Page */
+#basicInfo {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+/* About You Page */ 
+#restrictionsContainer {
+  background-color: offwhite; 
+  flex-direction: column; 
+  justify-content: space-evenly;
+}
+
+/* Profile Page */
+#resume {
+  height: 30vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 4px dashed #9756D8;
+  background-color: rgba(151, 86, 216, 0.1);
+}
+
+@media only screen and (min-width: 1000px) {
+  .application {
+    background-image: url('../../assets/applications-bkg.svg');
+  }
+
+  .section {
+    flex-direction: row;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .application {
+      background-image: url('../../assets/applications-bkg-dark.svg');
+    }
+  }  
+}
+
+@media only screen and (min-width: 700px) {
+
+  #restrictionsContainer {
+    margin: 10px 0; 
+    flex-direction: row;
+  }
+
+  .page {
+    align-items: center;
+  }
+  .formContainer, .formHeading {
+    max-width: 800px;
+  }  
+}

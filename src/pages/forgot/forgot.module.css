@@ -1,0 +1,34 @@
+.container {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+ }
+
+ .container > h2 {
+  margin-bottom: 0; 
+}
+
+.forgotPage {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formVisible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 100%; 
+}
+
+.formInvisible {
+  opacity: 0; 
+}
+
+.forgotPassword {
+  text-align: left; 
+}

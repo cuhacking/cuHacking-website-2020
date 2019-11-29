@@ -16,7 +16,6 @@ export default class MailingListForm extends Component {
                         valid: false,       // email in value is a valid email
                         error: ''           // Error message displayed below email form.        
                     }; 
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }

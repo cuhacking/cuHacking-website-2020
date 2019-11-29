@@ -1,7 +1,9 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import 'index.css';
 import {
   MailingListForm,
+  Button, 
   Navbar, 
   MLHBanner, 
   Footer,
@@ -27,7 +29,8 @@ import {
   Voiceflow,
   Wolfram
 } from 'assets/sponsors';
-import styles from './index.module.css';
+import styles from './home.module.css';
+import { Link } from 'react-router-dom'; 
 
 function Landing() {
   return (
@@ -37,7 +40,11 @@ function Landing() {
         <div className={styles.landingDate}/>
       </div>  
       <div className={styles.landingBottom}>
-        <MailingListForm /> 
+        <h2 className={styles.applicationMessage}> Applications are now open!</h2>
+        <Link to="/login">
+          <Button type="submit" label="APPLY NOW"/>    
+        </Link>
+        {/*<MailingListForm />*/}
       </div>
     </div> 
   );
@@ -103,9 +110,12 @@ function Sponsors() {
 
 export default () => (
   <>
+    <Helmet>
+      <title>cuHacking 2020</title>
+    </Helmet>
     <Navbar/>
     <div id={styles.content}>
-      <Landing/>
+      <Landing/>      
       <Sponsors/>
     </div>
     <Footer/> 
