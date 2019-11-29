@@ -9,10 +9,10 @@ import {
 import PageNav from './pageNav'
 import Dropbox from './dropbox'
 import {schools} from './schools.json'
-import {Redirect, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-// const API_URL = 'https://cuhacking.com/api'
-const API_URL = 'http://localhost:3000/api-dev'
+const API_URL = 'https://cuhacking.com/api'
+// const API_URL = 'http://localhost:3000/api-dev'
 
 const APPLICATION_SCHEMA = {
   status: 'unstarted',
@@ -439,7 +439,7 @@ const Application = props => {
     }
 
     fetchApplication()
-  }, [])
+  }, [history, token])
   
   const nextPage = pageNumber => formData => {
     const newApplication = {...applicationForm, ...formData, stage: stage+1}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext, createContext } from 'react'
 import Cookies from 'js-cookie'
 
-// const API_URL = 'https://cuhacking.com/api'
-const API_URL = 'http://localhost:3000/api-dev'
+const API_URL = 'https://cuhacking.com/api'
+// const API_URL = 'http://localhost:3000/api-dev'
 
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {

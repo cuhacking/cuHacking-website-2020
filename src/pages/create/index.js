@@ -12,8 +12,8 @@ import {
 import styles from './create.module.css';
 import zxcvbn from 'zxcvbn'; 
 
-// const API_URL = 'https://cuhacking.com/api'
-const API_URL = 'http://localhost:3000/api-dev'
+const API_URL = 'https://cuhacking.com/api'
+// const API_URL = 'http://localhost:3000/api-dev'
 
 class Create extends React.Component {
   // Initial login page to the application, ask for email/password by default. 

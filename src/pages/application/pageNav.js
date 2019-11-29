@@ -8,7 +8,7 @@ import {ReactComponent as Logo} from 'assets/largeLogo.svg'
 import styles from './pageNav.module.css'
 
 // const API_URL = 'https://cuhacking.com/api'
-const API_URL = 'http://localhost:3000/api-dev'
+// const API_URL = 'http://localhost:3000/api-dev'
 
 const PageButton = ({id, page, label, closeOverlay}) => {
   if (id === 6) {
@@ -77,14 +77,14 @@ const PageNav = ({stage, currentPage, changePage, submitted}) => {
   )
 
   const logout = () => {
-    const token = Cookies.get('token')
-    const options = {
-      method: 'GET',
-      headers: {
-        'Access-Control-Request-Headers': 'GET',
-        'Authorization': `Bearer ${token}`
-      }
-    };
+    // const token = Cookies.get('token')
+    // const options = {
+    //   method: 'GET',
+    //   headers: {
+    //     'Access-Control-Request-Headers': 'GET',
+    //     'Authorization': `Bearer ${token}`
+    //   }
+    // };
 
     Cookies.remove('email')
     Cookies.remove('token')

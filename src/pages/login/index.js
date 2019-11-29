@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Helmet} from 'react-helmet';
 import Cookies from 'js-cookie'
 import 'index.css';
@@ -9,11 +9,11 @@ import {
     Password
 } from 'components';
 import styles from './login.module.css';
-import {useAuth} from 'hooks'
+// import {useAuth} from 'hooks'
 import { Redirect, Link } from 'react-router-dom';
 
-// const API_URL = 'https://cuhacking.com/api'
-const API_URL = 'http://localhost:3000/api-dev'
+const API_URL = 'https://cuhacking.com/api'
+// const API_URL = 'http://localhost:3000/api-dev'
 
 class LoginComponent extends React.Component {
   // Initial login page to the application, ask for email/password by default.
@@ -136,45 +136,45 @@ class LoginComponent extends React.Component {
 
 }
 
-const Login = () => {
-  const auth = useAuth()
-  const [validForm, validateForm] = useState(false)
-  const [creds, setCreds] = useState({
-    email: '',
-    password: ''
-  })
+// const Login = () => {
+//   const auth = useAuth()
+//   const [validForm, validateForm] = useState(false)
+//   const [creds, setCreds] = useState({
+//     email: '',
+//     password: ''
+//   })
 
-  const onChange = event => {
-    event.preventDefault()
-    setCreds({...creds, [event.target.name]: event.target.value})
+//   const onChange = event => {
+//     event.preventDefault()
+//     setCreds({...creds, [event.target.name]: event.target.value})
 
-    validateForm(creds.email.length !== 0 && creds.password.length >= 8)
-  }
+//     validateForm(creds.email.length !== 0 && creds.password.length >= 8)
+//   }
 
-  const onSubmit = async () => {
-    const success = await auth.login(creds.email, creds.password)
+//   const onSubmit = async () => {
+//     const success = await auth.login(creds.email, creds.password)
     
-    if (success) {
-      console.log('SUCCESS')
-      // return <Redirect to='/'/>
-    }
-  }
+//     if (success) {
+//       console.log('SUCCESS')
+//       // return <Redirect to='/'/>
+//     }
+//   }
 
-  return (
-    <div className={styles.loginPage}>
-      <Navbar />
-      <div className={styles.container}>
-        <h2>Welcome to cuHacking!</h2>
-        <p>Don't have an account? <a href="/register"> Click here.</a></p>
-        <form className={styles.loginContainer} onSubmit={onSubmit} onChange={onChange} >
-          <Input type="email" name="email" label="Email" required={true}/>
-          <Password type="password" name="password" label="Password" required={true}/>
-          {/* <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p> */}
-          <Button type="submit"   label="Login" disabled={!validForm}/>
-          {/* <p className="error-message"> {this.state.error} </p> */}
-        </form>
-      </div>
-    </div>
-  )
-}
+//   return (
+//     <div className={styles.loginPage}>
+//       <Navbar />
+//       <div className={styles.container}>
+//         <h2>Welcome to cuHacking!</h2>
+//         <p>Don't have an account? <a href="/register"> Click here.</a></p>
+//         <form className={styles.loginContainer} onSubmit={onSubmit} onChange={onChange} >
+//           <Input type="email" name="email" label="Email" required={true}/>
+//           <Password type="password" name="password" label="Password" required={true}/>
+//           {/* <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p> */}
+//           <Button type="submit"   label="Login" disabled={!validForm}/>
+//           {/* <p className="error-message"> {this.state.error} </p> */}
+//         </form>
+//       </div>
+//     </div>
+//   )
+// }
 export default LoginComponent;
