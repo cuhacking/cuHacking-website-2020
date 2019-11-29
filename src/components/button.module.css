@@ -1,0 +1,39 @@
+.button {
+  opacity: 1; 
+  padding: 0;
+  margin: 25px;
+  border: none;
+  background-color: var(--primaryColour);
+  color: var(--secondTextColour);
+  font-size: 18px;
+  position: relative;
+}
+
+.buttonDisabled {
+  opacity: 0.2; 
+  padding: 0;
+  margin: 25px;
+  border: none;
+  background-color: var(--primaryColour);
+  color: var(--secondTextColour);
+  font-size: 18px;
+}
+
+
+.label {
+  margin: 5px 80px;
+  position: relative;
+  z-index: 2;
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+.bkgStripe {
+  position: absolute;
+  background-color: var(--secondaryColour);
+}
+
+@media only screen and (min-width: 700px) {
+  .button:hover {
+    cursor: pointer;
+  }
+}

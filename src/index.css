@@ -5,7 +5,6 @@
   --primaryColour: #5827B8;
   --darkPrimaryColour: #280749;
   --secondaryColour: #00D0FE;
-  --background: url('./assets/bkg.svg');
   --backgroundColour: white; 
 }
 
@@ -13,6 +12,7 @@ a {
   text-decoration: none; 
   font-size: inherit; 
   font-family: inherit;
+  color: var(--lightPrimaryColour);
 }
 
 html, body {
@@ -25,17 +25,11 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth; 
   color: var(--textColour);
+  background-color: var(--backgroundColour);
   font-family: 'Montserrat', sans-serif;
 }
 
-input {
-  -webkit-appearance: none; 
-  -moz-appearance: none;  
-}
 
-input:focus {
-  outline: none; 
-}
 
 h2 {
   font-family: 'Reem Kufi', sans-serif;
@@ -43,21 +37,21 @@ h2 {
 
 #root {
   background-color: var(--backgroundColour); 
-  background-image: var(--background); 
-  background-size: cover;
-  background-position: bottom;
   min-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
   * {
-    --textColour: #ffffff;
+    --textColour: #FFFFFF;
     --secondTextColour: #FFFFFF; 
     --lightPrimaryColour: #9756D8; 
     --primaryColour: #5827B8;
     --darkPrimaryColour: #280749;
     --secondaryColour: #00D0FE;
-    --background: url('./assets/bkg-dark.svg'); 
     --backgroundColour: black; 
+  }
+
+  a {
+    color: var(--secondaryColour);
   }
 }
