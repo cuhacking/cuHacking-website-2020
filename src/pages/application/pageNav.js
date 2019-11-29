@@ -1,9 +1,14 @@
 import React, {useState} from 'react'
+import Cookies from 'js-cookie'
+import { useHistory } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {useMobile} from 'hooks'
 import {ReactComponent as Logo} from 'assets/largeLogo.svg'
 import styles from './pageNav.module.css'
+
+// const API_URL = 'https://cuhacking.com/api'
+const API_URL = 'http://localhost:3000/api-dev'
 
 const PageButton = ({id, page, label, closeOverlay}) => {
   if (id === 6) {
@@ -50,6 +55,7 @@ const PageButton = ({id, page, label, closeOverlay}) => {
 
 const PageNav = ({stage, currentPage, changePage, submitted}) => {
   const isMobile = useMobile()
+  const history = useHistory()
   const [showOverlay, toggleOverlay] = useState(false)
 
   const page = {
@@ -70,6 +76,24 @@ const PageNav = ({stage, currentPage, changePage, submitted}) => {
     <PageButton closeOverlay={() => toggleOverlay(false)} id={6} label='Application Status'/>
   )
 
+  const logout = () => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Access-Control-Request-Headers': 'GET',
+      }
+    };
+
+    fetch(`${API_URL}/users/signout`, options)
+      .then(res => {
+        Cookies.remove('email')
+        Cookies.remove('token')
+
+        history.push('/')
+      })
+      .catch(error => console.log('something went wrong when logging out!'))
+  }
+
   const menu = (
     <div className={styles.container}>
       <div className={styles.logo}>
@@ -78,7 +102,7 @@ const PageNav = ({stage, currentPage, changePage, submitted}) => {
       <div className={styles.pageButtons}>
         {buttons}
       </div>
-      <button className={styles.logoutButton}>Logout</button>
+      <button className={styles.logoutButton} onClick={logout}>Logout</button>
     </div>
   )
 

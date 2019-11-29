@@ -1,83 +1,99 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Cookies from 'js-cookie'
 import 'index.css';
 import {
-    Input, 
-    Button, 
+    Input,
+    Button,
     Navbar,
     Password
 } from 'components';
 import styles from './login.module.css';
-import { Redirect } from 'react-router-dom'; 
+import {useAuth} from 'hooks'
+import { Redirect, useHistory } from 'react-router-dom';
 
-class Login extends React.Component {
-  // Initial login page to the application, ask for email/password by default. 
+// const API_URL = 'https://cuhacking.com/api'
+const API_URL = 'http://localhost:3000/api-dev'
+
+class LoginComponent extends React.Component {
+  // Initial login page to the application, ask for email/password by default.
   // To think about - do we want to add Sign in with Google/Apple/etc...
-  // This should also branch to a create account page if they don't already have one? 
+  // This should also branch to a create account page if they don't already have one?
 
   constructor(props) {
     super(props);
-    this.state = {  email: '',          
+
+    const token = Cookies.get('token')
+    const email = Cookies.get('email')
+
+    this.state = {  email: email || '',
                     password: '',
-                    validForm: false, 
+                    validForm: false,
                     error: '',
-                    success: false,
-                    token: null     
-                }; 
+                    success: token ? true : false,
+                    token: token || null
+                };
     this.handleSubmit = this.handleSubmit.bind(this);
+
+
   }
 
   handleChange = async (event) => {
 
     switch(event.target.name) {
       case 'email':
-        await this.setState({email: event.target.value})  
-        break; 
+        await this.setState({email: event.target.value})
+        break;
       case 'password':
-        await this.setState({password: event.target.value}) 
-        break; 
-      default: 
-        break; 
+        await this.setState({password: event.target.value})
+        break;
+      default:
+        break;
     }
 
     this.state.email.length !== 0 && this.state.password.length >= 8
-      ? this.setState({validForm: true}) 
-      : this.setState({validForm: false}); 
+      ? this.setState({validForm: true})
+      : this.setState({validForm: false});
   }
 
   handleSubmit(event) {
 
-    event.preventDefault(); 
+    event.preventDefault();
 
     const options = {
-      method: 'POST', 
+      method: 'POST',
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password
-      }), 
+      }),
       headers: {
-          'Access-Control-Request-Headers': 'POST', 
+          'Access-Control-Request-Headers': 'POST',
           'Content-Type': 'application/json'
       }
-    }; 
+    };
 
-    fetch("https://cuhacking.com/api-dev/signin", options)
+    fetch(`${API_URL}/users/signin`, options)
       .then(res => {
-          res.json()
           if(res.status === 200) {
-              // token? 
+              res.json()
+              Cookies.set('email', this.state.email)
+              Cookies.set('token', res.token)
+
               this.setState({
-                token: res.token, 
+                token: res.token,
                 success: true
               })
+          } else if (res.status === 401) {
+              // Incorrect password
+              this.setState({error: 'Incorrect email or password.'});
           } else if (res.status === 403) {
-              // Failure in parsing the token or creating the user in firestore. 
-              this.setState({error: '403 Uh-oh! That didn\'t look right. Try again?'}); 
+              // Failure in parsing the token or creating the user in firestore.
+              this.setState({error: 'Uh-oh! That didn\'t look right. Try again?'});
           } else {
-              this.setState({error: 'UNKNOWN STATUS CODE Uh-oh! Something went wrong. Try again?'}); 
+              this.setState({error: 'I\'m not sure what happened. Try again?'});
           }
       })
       .catch(err => {
-          this.setState({error: 'Uh-oh! That didn\'t work. Try again?'}); 
+          this.setState({error: 'Uh-oh! That didn\'t work. Try again?'});
       })
   }
 
@@ -86,21 +102,22 @@ class Login extends React.Component {
     if(this.state.success) {
       return <Redirect to={{
         pathname:"/application",
+        email: this.state.email,
         token: this.state.token
        }} />
     }
 
     return (
       <div className={styles.loginPage}>
-        <Navbar /> 
-        <div className={styles.container}> 
-          <h2>Welcome to cuHacking!</h2> 
-          <p>Don't have an account? <a href="/create"> Click here.</a></p>
-          <form className={styles.loginContainer} onSubmit={this.handleSubmit} > 
+        <Navbar />
+        <div className={styles.container}>
+          <h2>Welcome to cuHacking!</h2>
+          <p>Don't have an account? <a href="/register"> Click here.</a></p>
+          <form className={styles.loginContainer} onSubmit={this.handleSubmit} >
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Password  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
-            <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p>
-            <Button type="submit"   label="Login" disabled={!this.state.validForm}/> 
+            {/* <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p> */}
+            <Button type="submit"   label="Login" disabled={!this.state.validForm}/>
             <p className="error-message"> {this.state.error} </p>
           </form>
         </div>
@@ -110,4 +127,50 @@ class Login extends React.Component {
 
 }
 
-export default Login; 
+const Login = () => {
+  const auth = useAuth()
+  const [validForm, validateForm] = useState(false)
+  const [creds, setCreds] = useState({
+    email: '',
+    password: ''
+  })
+
+  const onChange = event => {
+    event.preventDefault()
+    setCreds({...creds, [event.target.name]: event.target.value})
+
+    validateForm(creds.email.length !== 0 && creds.password.length >= 8)
+  }
+
+  const onSubmit = async () => {
+    const success = await auth.login(creds.email, creds.password)
+    
+    if (success) {
+      console.log('SUCCESS')
+      // return <Redirect to='/'/>
+    }
+  }
+
+  // Immediately redirects to the application if the user exists
+  // if (auth.user) {
+  //   return <Redirect to='/application'/>
+  // }
+
+  return (
+    <div className={styles.loginPage}>
+      <Navbar />
+      <div className={styles.container}>
+        <h2>Welcome to cuHacking!</h2>
+        <p>Don't have an account? <a href="/register"> Click here.</a></p>
+        <form className={styles.loginContainer} onSubmit={onSubmit} onChange={onChange} >
+          <Input type="email" name="email" label="Email" required={true}/>
+          <Password type="password" name="password" label="Password" required={true}/>
+          {/* <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p> */}
+          <Button type="submit"   label="Login" disabled={!validForm}/>
+          {/* <p className="error-message"> {this.state.error} </p> */}
+        </form>
+      </div>
+    </div>
+  )
+}
+export default LoginComponent;

@@ -1,4 +1,6 @@
 import React from 'react';
+import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 import 'index.css';
 import {
     Input, 
@@ -9,6 +11,9 @@ import {
 import styles from './create.module.css';
 import zxcvbn from 'zxcvbn'; 
 
+// const API_URL = 'https://cuhacking.com/api'
+const API_URL = 'http://localhost:3000/api-dev'
+
 class Create extends React.Component {
   // Initial login page to the application, ask for email/password by default. 
   // To think about - do we want to add Sign in with Google/Apple/etc...
@@ -16,11 +21,16 @@ class Create extends React.Component {
 
   constructor(props) {
     super(props);
+
+    const token = Cookies.get('token')
+    const email = Cookies.get('email')
+
     this.state = {  email: '',          
                     password: '',     
                     password2: '',
                     validForm: false,
-                    error: ''    
+                    error: '',
+                    moveOn: token && email
                 }; 
     this.handleChange = this.handleChange.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -102,7 +112,7 @@ class Create extends React.Component {
       }
     }; 
 
-    fetch("https://cuhacking.com/api-dev/users/", options)
+    fetch(`${API_URL}/users/register`, options)
       .then(res => {
         res.json()
         if(res.status === 201) {
@@ -121,6 +131,11 @@ class Create extends React.Component {
   }
 
   render () {
+
+    if (this.state.moveOn) {
+      return <Redirect to='/'/>
+    }
+    
     return (
       <div className={styles.loginPage}>
         <Navbar /> 

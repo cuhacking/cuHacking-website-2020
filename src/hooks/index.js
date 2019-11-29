@@ -1,3 +1,4 @@
+import {useAuth} from './useAuth'
 import useMobile from './useMobile'
 
-export {useMobile}
+export {useAuth, useMobile}
