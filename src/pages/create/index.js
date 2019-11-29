@@ -1,5 +1,6 @@
 import React from 'react';
 import Cookies from 'js-cookie'
+import {Helmet} from 'react-helmet';
 import {Redirect, Link} from 'react-router-dom'
 import 'index.css';
 import {
@@ -147,6 +148,9 @@ class Create extends React.Component {
 
     return (
       <div className={styles.loginPage}>
+        <Helmet>
+          <title>Register | cuHacking 2020</title>
+        </Helmet>
         <Navbar /> 
         <div className={styles.container}> 
           <h2>Create your cuHacking account.</h2> 

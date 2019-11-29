@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Helmet} from 'react-helmet';
 import Cookies from 'js-cookie'
 import 'index.css';
 import {
@@ -114,6 +115,9 @@ class LoginComponent extends React.Component {
 
     return (
       <div className={styles.loginPage}>
+        <Helmet>
+          <title>Login | cuHacking 2020</title>
+        </Helmet>
         <Navbar />
         <div className={styles.container}>
           <h2>Welcome to cuHacking!</h2>
@@ -155,11 +159,6 @@ const Login = () => {
       // return <Redirect to='/'/>
     }
   }
-
-  // Immediately redirects to the application if the user exists
-  // if (auth.user) {
-  //   return <Redirect to='/application'/>
-  // }
 
   return (
     <div className={styles.loginPage}>

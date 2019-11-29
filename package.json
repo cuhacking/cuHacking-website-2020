@@ -15,6 +15,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.2.1",
+    "react-helmet": "^5.2.1",
     "react-particles-js": "^2.6.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1",

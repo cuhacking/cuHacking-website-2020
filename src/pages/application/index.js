@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Cookies from 'js-cookie'
+import {Helmet} from 'react-helmet';
 import styles from './index.module.css';
 import {
   Input,
@@ -521,6 +522,9 @@ const Application = props => {
 
   return (
     <div className={styles.application}>
+      <Helmet>
+        <title>Application | cuHacking 2020</title>
+      </Helmet>
       <PageNav
         currentPage={page}
         changePage={changePage}

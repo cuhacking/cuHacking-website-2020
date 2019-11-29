@@ -68,10 +68,6 @@ option {
   margin: 1px 10px;
 }
 
-.checkboxLabel {
-
-}
-
 .checkbox:hover {
   opacity: 1; 
 }

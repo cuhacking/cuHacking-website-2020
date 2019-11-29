@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import 'index.css';
 import {
   MailingListForm,
@@ -109,6 +110,9 @@ function Sponsors() {
 
 export default () => (
   <>
+    <Helmet>
+      <title>cuHacking 2020</title>
+    </Helmet>
     <Navbar/>
     <div id={styles.content}>
       <Landing/>      
