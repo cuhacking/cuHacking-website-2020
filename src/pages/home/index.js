@@ -67,14 +67,14 @@ function Sponsors() {
     <div className={styles.slide}>
       <div id={styles.sponsorBkg}>
         <h2>Sponsors</h2>
-        <div className={styles.logoSection}> 
+        <div className={styles.logoSection}>
           {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
-        <div className={styles.logoSection}> 
+        <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 
           {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
-        <div className={styles.logoSection}> 
+        <div className={styles.logoSection}>
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
         </div>
@@ -85,7 +85,7 @@ function Sponsors() {
           {sponsorLogo(styles.balsamiq, 'https://balsamiq.com', Balsamiq)}
           {sponsorLogo(styles.fdmGroup, 'https://fdmgroup.com', FdmGroup)}
         </div>
-        <div className={styles.logoSection}>  
+        <div className={styles.logoSection}>
           {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
           {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
           {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
