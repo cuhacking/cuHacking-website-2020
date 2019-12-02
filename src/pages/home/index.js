@@ -26,7 +26,8 @@ import {
   Rbc,
   Sketch,
   Voiceflow,
-  Wolfram
+  Wolfram,
+  Stickermule
 } from 'assets/sponsors';
 import styles from './home.module.css';
 import { Link } from 'react-router-dom'; 
@@ -70,17 +71,17 @@ function Sponsors() {
           {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
+          {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 
           {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
         </div>
-        <div className={styles.logoSection}>
+        <div className={styles.logoSection}> 
           {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
         </div>
-        <div className={styles.logoSection}>
+        <div className={styles.logoSection}> 
           {sponsorLogo(styles.balsamiq, 'https://balsamiq.com', Balsamiq)}
           {sponsorLogo(styles.fdmGroup, 'https://fdmgroup.com', FdmGroup)}
         </div>
@@ -94,6 +95,7 @@ function Sponsors() {
           {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
           {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
           {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
+          {sponsorLogo(styles.stickermule, 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral', Stickermule)}
         </div>
         <h2>Partners</h2>
           <div id={styles.partners}>
