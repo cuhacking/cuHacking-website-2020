@@ -97,6 +97,11 @@
 }
 
 /* Giga */
+#martello {
+  width: 90%; 
+  margin-bottom: 10px;
+}
+
 #rbc {
   display: flex;
   height: 200px;

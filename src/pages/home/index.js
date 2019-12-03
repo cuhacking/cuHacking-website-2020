@@ -27,7 +27,8 @@ import {
   Sketch,
   Voiceflow,
   Wolfram,
-  Stickermule
+  Stickermule,
+  Martello
 } from 'assets/sponsors';
 import styles from './home.module.css';
 import { Link } from 'react-router-dom'; 
@@ -85,6 +86,9 @@ function Sponsors() {
         <h2>Sponsors</h2>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
+        </div>
+        <div className={styles.logoSection}>
+          {sponsorLogo(styles.martello, 'https://martellotech.com/', Martello)} 
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 

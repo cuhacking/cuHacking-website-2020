@@ -13,7 +13,8 @@ import {ReactComponent as Rbc} from './rbc.svg';
 import {ReactComponent as Sketch} from './sketch.svg';
 import {ReactComponent as Voiceflow} from './voiceflow.svg';
 import {ReactComponent as Wolfram} from './wolfram.svg';
-import {ReactComponent as Stickermule} from './stickermule.svg'
+import {ReactComponent as Stickermule} from './stickermule.svg'; 
+import {ReactComponent as Martello} from './martello.svg'; 
 
 export {
   OnePassword,
@@ -31,5 +32,6 @@ export {
   Sketch,
   Voiceflow,
   Wolfram,
-  Stickermule
+  Stickermule, 
+  Martello
 }
