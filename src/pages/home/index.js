@@ -32,6 +32,22 @@ import {
 import styles from './home.module.css';
 import { Link } from 'react-router-dom'; 
 
+function Announcements() {
+  return (
+    <div className={styles.slide} id={styles.announcements}>
+      <div className={styles.announcement}>
+        <h3>MLH Local Hack Day: Build</h3>
+        <p> Join us on <strong>December 7th</strong> for a one-day mini hackathon with the global MLH community. <a href="https://localhackday.mlh.io/build/locations/2531" target="_blank" rel="noopener noreferrer">Click here to register!</a></p>
+      </div>
+      <div className={styles.announcement}>
+        <h3>Interested in Volunteering?</h3>
+        <p>Would you like to help run Carleton's biggest hackathon? Volunteers are always welcome!<a href="https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform" target="_blank" rel="noopener noreferrer"> Sign up here! </a></p> 
+      </div>
+    </div>
+  )
+
+}
+
 function Landing() {
   return (
     <div className={styles.slide}>
@@ -116,7 +132,8 @@ export default () => (
     </Helmet>
     <Navbar/>
     <div id={styles.content}>
-      <Landing/>      
+      <Landing/>   
+      <Announcements />    
       <Sponsors/>
     </div>
     <Footer/> 

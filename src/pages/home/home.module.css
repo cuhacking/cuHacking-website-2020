@@ -67,6 +67,17 @@
   max-width: 1024px;
 }
 
+#announcements {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 30px; 
+}
+
+.announcementContainer {
+  height: 100%; 
+  width: 50%; 
+}
 
 /* Sponsors slide */
 #sponsorBkg {
@@ -166,6 +177,13 @@
 }
 
 @media only screen and (min-width: 700px) {
+
+  #announcements {
+    flex-direction: row;
+    text-align: center;
+    margin-bottom: 30px; 
+  }
+
   /* Landing slide */
   .landingTop {
     flex-direction: row;
@@ -183,7 +201,7 @@
   }
 
   .landingBottom {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     justify-content: flex-end;
   }
 
