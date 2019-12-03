@@ -85,10 +85,10 @@ function Sponsors() {
       <div id={styles.sponsorBkg}>
         <h2>Sponsors</h2>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.martello, '#', Martello)} 
+          {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
         <div className={styles.logoSection}>
-          {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
+          {sponsorLogo(styles.martello, 'https://martellotech.com/', Martello)} 
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 
