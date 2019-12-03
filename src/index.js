@@ -18,6 +18,7 @@ const App = () => (
         <Route path="/register" component={Create}/> 
         <Route path="/forgot" component={Forgot}/>
         <Route path="/application" component={Application}/> 
+        <Route component={Home}/> 
       </Switch>
     </Router>
   </ProvideAuth>
