@@ -75,6 +75,12 @@
 }
 
 /* Sponsors slide */
+.sectionContainer {
+  width: 100%;
+  margin-bottom: 40px; 
+  border-bottom: 1px solid var(--secondaryColour); 
+}
+
 #sponsorBkg {
   display: flex;
   flex-direction: column; 
@@ -205,12 +211,22 @@
     margin-bottom: 100px;
   }
 
+  .sectionContainer {
+    width: 100%;
+    margin-bottom: 50px; 
+    border-bottom: 1px solid var(--secondaryColour); 
+  }
+
   .logoSection {
     margin-bottom: 40px;
   }
 
   #rbc, #martello {
     height: 325px;
+  }
+
+  #rbc {
+    margin-right: 30px; 
   }
 
   /* Mega */
