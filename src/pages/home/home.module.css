@@ -97,12 +97,7 @@
 }
 
 /* Giga */
-#martello {
-  width: 90%; 
-  margin-bottom: 10px;
-}
-
-#rbc {
+#rbc, #martello {
   display: flex;
   height: 200px;
   margin-bottom: 10px;
@@ -214,7 +209,7 @@
     margin-bottom: 40px;
   }
 
-  #rbc {
+  #rbc, #martello {
     height: 325px;
   }
 
