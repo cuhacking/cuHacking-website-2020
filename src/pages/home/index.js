@@ -84,39 +84,49 @@ function Sponsors() {
     <div className={styles.slide}>
       <div id={styles.sponsorBkg}>
         <h2>Sponsors</h2>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
+
+        <div className={styles.sectionContainer}> {/*Giga Sponsors*/}
+          <div className={styles.logoSection}>
+            {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
+            {sponsorLogo(styles.martello, 'https://martellotech.com/', Martello)} 
+          </div>
         </div>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.martello, 'https://martellotech.com/', Martello)} 
+        <div className={styles.sectionContainer}> {/*Mega Sponsors*/}
+          <div className={styles.logoSection}> 
+            {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 
+            {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
+          </div>
+          <div className={styles.logoSection}>
+            {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
+            {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
+          </div>
+          <div className={styles.logoSection}> 
+            {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
+          </div>
         </div>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)} 
-          {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
+
+        <div className={styles.sectionContainer}> {/*Kilo Sponsors*/}
+          <div className={styles.logoSection}> 
+            {sponsorLogo(styles.balsamiq, 'https://balsamiq.com', Balsamiq)}
+            {sponsorLogo(styles.fdmGroup, 'https://fdmgroup.com', FdmGroup)}
+          </div>    
         </div>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
-          {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
+
+        <div className={styles.sectionContainer}> {/*In-kind Sponsors*/}
+          <div className={styles.logoSection}>
+            {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
+            {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
+            {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
+            {sponsorLogo(styles.jetbrains, 'https://www.jetbrains.com/', JetBrains)}
+          </div>
+          <div className={styles.logoSection}>
+            {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
+            {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
+            {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
+            {sponsorLogo(styles.stickermule, 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral', Stickermule)}
+          </div>
         </div>
-        <div className={styles.logoSection}> 
-          {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
-        </div>
-        <div className={styles.logoSection}> 
-          {sponsorLogo(styles.balsamiq, 'https://balsamiq.com', Balsamiq)}
-          {sponsorLogo(styles.fdmGroup, 'https://fdmgroup.com', FdmGroup)}
-        </div>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.onePassword, 'https://1password.com', OnePassword)}
-          {sponsorLogo(styles.digitalOcean, 'https://www.digitalocean.com/', DigitalOcean)}
-          {sponsorLogo(styles.ea, 'https://www.ea.com', Ea)}
-          {sponsorLogo(styles.jetbrains, 'https://www.jetbrains.com/', JetBrains)}
-        </div>
-        <div className={styles.logoSection}>
-          {sponsorLogo(styles.sketch, 'https://www.sketch.com/', Sketch)}
-          {sponsorLogo(styles.voiceflow, 'https://www.voiceflow.com/', Voiceflow)}
-          {sponsorLogo(styles.wolfram, 'https://wolfram.com', Wolfram)}
-          {sponsorLogo(styles.stickermule, 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral', Stickermule)}
-        </div>
+        
         <h2>Partners</h2>
           <div id={styles.partners}>
             <Partner id={styles.SCSLogo} url="https://carleton.ca/scs/" src={logoSCS} alt="Link to Carleton's School of Computer Science Webpage"/>

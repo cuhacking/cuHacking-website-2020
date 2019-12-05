@@ -75,6 +75,11 @@
 }
 
 /* Sponsors slide */
+.sectionContainer {
+  width: 100%;
+  margin-bottom: 40px; 
+}
+
 #sponsorBkg {
   display: flex;
   flex-direction: column; 
@@ -97,12 +102,7 @@
 }
 
 /* Giga */
-#martello {
-  width: 90%; 
-  margin-bottom: 10px;
-}
-
-#rbc {
+#rbc, #martello {
   display: flex;
   height: 200px;
   margin-bottom: 10px;
@@ -210,12 +210,21 @@
     margin-bottom: 100px;
   }
 
+  .sectionContainer {
+    width: 100%;
+    margin-bottom: 50px; 
+  }
+
   .logoSection {
     margin-bottom: 40px;
   }
 
-  #rbc {
+  #rbc, #martello {
     height: 325px;
+  }
+
+  #rbc {
+    margin-right: 30px; 
   }
 
   /* Mega */
