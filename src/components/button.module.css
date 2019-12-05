@@ -1,39 +1,54 @@
+.button,
+.disabled,
+.solidButton,
+.solidDisabled {
+  all: unset;
+  padding: 12px 20px;
+  margin: 25px;
+  font-size: 18px;
+  border: 2px solid var(--primaryColour);
+  min-width: 150px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: .2s;
+}
+
 .button {
-  opacity: 1; 
-  padding: 0;
-  margin: 25px;
-  border: none;
+  background-color: var(--backgroundColour);
+  color: var(--primaryColour);
+}
+
+.disabled {
+  background-color: var(--backgroundColour);
+  border-color: #999999;
+  color: #999999;
+}
+
+.solidButton {
+  user-select: none;
   background-color: var(--primaryColour);
-  color: var(--secondTextColour);
-  font-size: 18px;
-  position: relative;
+  color: white;
 }
 
-.buttonDisabled {
-  opacity: 0.2; 
-  padding: 0;
-  margin: 25px;
-  border: none;
-  background-color: var(--primaryColour);
-  color: var(--secondTextColour);
-  font-size: 18px;
-}
-
-
-.label {
-  margin: 5px 80px;
-  position: relative;
-  z-index: 2;
-  font-family: 'Reem Kufi', sans-serif;
-}
-
-.bkgStripe {
-  position: absolute;
-  background-color: var(--secondaryColour);
+.solidDisabled {
+  user-select: none;
+  background-color: #999999;
+  border-color: #999999;
+  color: white;
 }
 
 @media only screen and (min-width: 700px) {
   .button:hover {
+    background-color: var(--primaryColour);
+    color: white;
+    cursor: pointer;
+  }
+
+  .solidButton:hover {
+    background-color: var(--darkPrimaryColour);
+    border-color: var(--darkPrimaryColour);
+    color: white;
     cursor: pointer;
   }
 }

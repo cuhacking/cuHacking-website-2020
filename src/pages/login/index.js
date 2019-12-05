@@ -126,7 +126,7 @@ class LoginComponent extends React.Component {
             <Input  type="email"    name="email"    label="Email"     value={this.state.email} onChange={this.handleChange} required={true}/>
             <Password  type="password" name="password" label="Password"  value={this.state.password} onChange={this.handleChange} required={true}/>
             {/* <p className={styles.forgotPassword}><a href="/forgot"> Forgot your password? </a></p> */}
-            <Button type="submit"   label="Login" disabled={!this.state.validForm}/>
+            <Button type='submit' label="Login" disabled={!this.state.validForm}/>
             <p className="error-message"> {this.state.error} </p>
           </form>
         </div>
