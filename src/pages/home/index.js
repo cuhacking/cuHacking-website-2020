@@ -1,8 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { useInView } from 'react-intersection-observer'
 import 'index.css'
 import { Button, Navbar, MLHBanner, Footer } from 'components'
 import { ReactComponent as Logo } from 'assets/logo-animated.svg'
+import { ReactComponent as Cu } from 'assets/cu-animated.svg'
 import logoMLH from 'assets/partners/mlh.svg'
 import logoSCE from 'assets/partners/sce.png'
 import logoSCS from 'assets/partners/scs.png'
@@ -75,6 +77,29 @@ const Landing = () => (
     </div>
   </div>
 )
+
+const HackathonDefinition = () => {
+  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true })
+
+  return (
+    <div ref={ref} className={styles.slide} id={styles.hackathonDefinition}>
+      <div className={styles.feature}>{inView ? <Cu /> : <div />}</div>
+      <div className={styles.explanation}>
+        <h1>What's a hackathon?</h1>
+        <p>
+          Think of it as a marathon of building and learning new things. Students from different universities and
+          backgrounds get to work together to turn an idea into a reality. Be it an app, website, or hardware hack, the
+          sky's the limit!
+        </p>
+        <p>
+          At cuHacking, we’ll provide you with the freedom and incentive to make something cool in 24 hours. We welcome
+          everyone - regardless of your background, education, or experience! All you have to bring is a laptop and a
+          winning attitude.
+        </p>
+      </div>
+    </div>
+  )
+}
 
 function Sponsors() {
   const Partner = ({ id, url, src, alt }) => (
@@ -184,6 +209,7 @@ export default () => (
     <Navbar />
     <div id={styles.content}>
       <Landing />
+      <HackathonDefinition />
       {/* <Announcements /> */}
       {/* <Sponsors /> */}
     </div>

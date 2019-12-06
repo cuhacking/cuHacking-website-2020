@@ -27,8 +27,9 @@
 /* Landing slide */
 #landing {
   display: flex;
+  align-items: flex-start;
   margin-top: 100px;
-  margin-bottom: 30vh;
+  height: 90vh;
 }
 
 .logoContainer {
@@ -91,6 +92,39 @@
 @media (prefers-color-scheme: dark) {
   .shortLogo2020 {
     background-image: url('../../assets/shortLogo2020-dark.svg');
+  }
+}
+
+/* Hackathon Definition slide */
+#hackathonDefinition {
+  display: flex;
+  flex-direction: column;
+}
+
+.explanation {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+}
+
+.feature {
+  display: flex;
+  flex: 0.8;
+  margin: 0 15vw;
+}
+
+@media only screen and (min-width: 700px) {
+  #hackathonDefinition {
+    flex-direction: row-reverse;
+  }
+
+  .explanation {
+    text-align: right;
+  }
+
+  .feature {
+    margin: 0 5vw;
   }
 }
 
