@@ -5,6 +5,7 @@ import 'index.css'
 import { Button, Navbar, MLHBanner, Footer } from 'components'
 import { ReactComponent as Logo } from 'assets/logo-animated.svg'
 import { ReactComponent as Cu } from 'assets/cu-animated.svg'
+import richcraft from 'assets/richcraft.png'
 import logoMLH from 'assets/partners/mlh.svg'
 import logoSCE from 'assets/partners/sce.png'
 import logoSCS from 'assets/partners/scs.png'
@@ -37,7 +38,7 @@ function Announcements() {
         <p>
           {' '}
           Join us on <strong>December 7th</strong> for a one-day mini hackathon with the global MLH community.{' '}
-          <a href="https://localhackday.mlh.io/build/locations/2531" target="_blank" rel="noopener noreferrer">
+          <a href='https://localhackday.mlh.io/build/locations/2531' target='_blank' rel='noopener noreferrer'>
             Click here to register!
           </a>
         </p>
@@ -47,9 +48,9 @@ function Announcements() {
         <p>
           Would you like to help run Carleton's biggest hackathon? Volunteers are always welcome!
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             {' '}
             Sign up here!{' '}
@@ -70,8 +71,8 @@ const Landing = () => (
         <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button link to="/login" label="Apply Now" />
-        <Button link to="/sponsorship" label="Sponsor Us" />
+        <Button link to='/login' label='Apply Now' />
+        <Button link to='/sponsorship' label='Sponsor Us' />
       </div>
       <p className={styles.notice}>Applications close on December 9, 2019 at 23:59 EST.</p>
     </div>
@@ -84,7 +85,7 @@ const HackathonDefinition = () => {
   return (
     <div ref={ref} className={styles.slide} id={styles.hackathonDefinition}>
       <div className={styles.feature}>{inView ? <Cu /> : <div />}</div>
-      <div className={styles.explanation}>
+      <div className={styles.explanationLeft}>
         <h1>What's a hackathon?</h1>
         <p>
           Think of it as a marathon of building and learning new things. Students from different universities and
@@ -101,15 +102,52 @@ const HackathonDefinition = () => {
   )
 }
 
+const Volunteer = () => (
+  <div className={styles.slide} id={styles.volunteer}>
+    <img className={styles.feature} src={richcraft} alt='Richcraft Hall: the cuHacking venue' />
+    <div className={styles.explanationRight}>
+      <h1>I want to volunteer!</h1>
+      <p>
+        Looking to be more involved than just a regular hacker? Sign up to get instant access to all the
+        behind-the-scenes cuHacking fun.
+      </p>
+      <Button
+        external
+        link
+        to='https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform'
+        target='_blank'
+        rel='noopener noreferrer'
+        label='Volunteer'
+        style={{ marginLeft: 0 }}
+      />
+      <p>
+        Have a knack for photography or videography? We have a special spot for you.{' '}
+        <span role='img' aria-label='wink ;)'>
+          😉
+        </span>
+      </p>
+      <Button
+        external
+        link
+        to='https://forms.gle/JEX6iR6NvJcmH4wK7'
+        target='_blank'
+        rel='noopener noreferrer'
+        label='Photograph'
+        style={{ marginLeft: 0 }}
+      />
+    </div>
+  </div>
+)
+
 function Sponsors() {
   const Partner = ({ id, url, src, alt }) => (
-    <a className={styles.partnerLogo} href={url} target="_blank" rel="noopener noreferrer">
+    <a className={styles.partnerLogo} href={url} target='_blank' rel='noopener noreferrer'>
       <img id={id} src={src} alt={alt} />
     </a>
   )
 
   const sponsorLogo = (id, url, Logo) => (
-    <a id={id} href={url} target="_blank" rel="noopener noreferrer">
+    <a id={id} href={url} target='_blank' rel='noopener noreferrer'>
       <Logo />
     </a>
   )
@@ -177,22 +215,22 @@ function Sponsors() {
         <div id={styles.partners}>
           <Partner
             id={styles.SCSLogo}
-            url="https://carleton.ca/scs/"
+            url='https://carleton.ca/scs/'
             src={logoSCS}
             alt="Link to Carleton's School of Computer Science Webpage"
           />
           <Partner
             id={styles.SCELogo}
-            url="https://carleton.ca/sce/"
+            url='https://carleton.ca/sce/'
             src={logoSCE}
             alt="Link to Carleton's School of Computer and Systems Engineering Webpage"
           />
-          <Partner id={styles.MLHLogo} url="https://mlh.io/" src={logoMLH} alt="Link to MLH Webpage" />
+          <Partner id={styles.MLHLogo} url='https://mlh.io/' src={logoMLH} alt='Link to MLH Webpage' />
         </div>
       </div>
       <p style={{ textAlign: 'center' }}>
         Thinking about sponsoring? Reach out to{' '}
-        <a className={styles.mailToLink} href="mailto:sponsorship@cuhacking.com">
+        <a className={styles.mailToLink} href='mailto:sponsorship@cuhacking.com'>
           sponsorship@cuhacking.com
         </a>{' '}
         to learn more.
@@ -210,6 +248,7 @@ export default () => (
     <div id={styles.content}>
       <Landing />
       <HackathonDefinition />
+      <Volunteer />
       {/* <Announcements /> */}
       {/* <Sponsors /> */}
     </div>

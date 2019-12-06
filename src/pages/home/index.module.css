@@ -95,16 +95,17 @@
   }
 }
 
-/* Hackathon Definition slide */
-#hackathonDefinition {
+/* Hackathon Definition and volunteer slides */
+#hackathonDefinition,
+#volunteer {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
-.explanation {
-  display: flex;
+.explanationLeft,
+.explanationRight {
   flex: 1;
-  flex-direction: column;
   text-align: center;
 }
 
@@ -112,6 +113,7 @@
   display: flex;
   flex: 0.8;
   margin: 0 15vw;
+  max-width: 75vw;
 }
 
 @media only screen and (min-width: 700px) {
@@ -119,8 +121,16 @@
     flex-direction: row-reverse;
   }
 
-  .explanation {
+  #volunteer {
+    flex-direction: row;
+  }
+
+  .explanationLeft {
     text-align: right;
+  }
+
+  .explanationRight {
+    text-align: left;
   }
 
   .feature {
