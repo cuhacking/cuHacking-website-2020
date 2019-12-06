@@ -2,16 +2,16 @@
 .disabled,
 .solidButton,
 .solidDisabled {
-  all: unset;
-  padding: 12px 20px;
-  margin: 25px;
+  display: inline-block;
+  padding: 12px 15px;
+  margin: 15px;
   font-size: 18px;
   border: 2px solid var(--primaryColour);
   min-width: 150px;
   text-align: center;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  transition: .2s;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.2s;
 }
 
 .button {
