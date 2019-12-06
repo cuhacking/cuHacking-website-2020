@@ -27,8 +27,8 @@
 /* Landing slide */
 #landing {
   display: flex;
-  align-items: flex-start;
-  margin-top: 100px;
+  align-items: center;
+  margin-top: 200px;
   height: 90vh;
 }
 
@@ -43,6 +43,18 @@
 .landingLogo {
   width: 50vw;
   max-width: 512px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 1s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .landingInfo {
@@ -76,6 +88,7 @@
 @media only screen and (min-width: 700px) {
   #landing {
     flex-direction: row;
+    align-items: flex-start;
   }
 
   .landingInfo {
