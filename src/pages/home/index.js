@@ -205,10 +205,10 @@ export default () => (
       <HackathonDefinition />
       <Volunteer />
     </div>
-    <div id={styles.faqContent}>
+    <div id={styles.otherContent}>
       <Faq />
     </div>
-    <div id={styles.bottomContent}>
+    <div id={styles.otherContent}>
       <Sponsors />
     </div>
     <Footer />

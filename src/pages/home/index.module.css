@@ -1,6 +1,5 @@
 #topContent,
-#faqContent,
-#bottomContent {
+#otherContent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -10,12 +9,9 @@
 
 #topContent {
   background-image: url('../../assets/bkg.svg');
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
-}
-
-#faqContent {
-  background-color: var(--backgroundColour);
+  background-repeat: no-repeat;
 }
 
 .slide {
@@ -25,6 +21,13 @@
   align-items: center;
   width: 90%;
   max-width: var(--contentWidth);
+}
+
+@media only screen and (min-width: 700px) {
+  #topContent {
+    background-position: center -100px;
+    background-size: 110%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
