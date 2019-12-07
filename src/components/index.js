@@ -1,9 +1,10 @@
-import MailingListForm from './mailingListForm'; 
-import Navbar from './navbar'; 
-import MLHBanner from './mlhBanner'; 
-import Footer from './footer';
-import Input from './input';
-import Button from './button';
-import Password from './password'; 
+import MailingListForm from './mailingListForm'
+import Navbar from './navbar'
+import MLHBanner from './mlhBanner'
+import Footer from './footer'
+import Input from './input'
+import Button from './button'
+import Password from './password'
+import Acordian from './acordian'
 
-export {Footer, MLHBanner, MailingListForm, Navbar, Input, Button, Password};
+export { Footer, MLHBanner, MailingListForm, Navbar, Input, Button, Password, Acordian }

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  cursor: pointer;
+}
+
+.titleSpace {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+  padding: 0 25px;
+}
+
+.title {
+  display: flex;
+  flex: 1;
+}
+
+.contentClosed,
+.contentOpen {
+  display: flex;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.contentClosed {
+  border-width: 1.5px 0 0 0;
+}
+
+.contentOpen {
+  padding: 25px;
+  border-width: 1.5px 0 1.5px 0;
+  border-top-color: var(--primaryColour);
+  border-bottom-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  .contentClosed,
+  .contentOpen {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .contentOpen {
+    border-top-color: var(--secondaryColour);
+    border-bottom-color: white;
+  }
+}

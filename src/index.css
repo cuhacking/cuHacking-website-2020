@@ -48,6 +48,13 @@ h3 {
   font-weight: lighter;
 }
 
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 #root {
   background-color: var(--backgroundColour);
   min-height: 100vh;
