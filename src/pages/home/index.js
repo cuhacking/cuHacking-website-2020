@@ -30,37 +30,6 @@ import {
 } from 'assets/sponsors'
 import styles from './index.module.css'
 
-function Announcements() {
-  return (
-    <div className={styles.slide} id={styles.announcements}>
-      <div className={styles.announcement}>
-        <h3>MLH Local Hack Day: Build</h3>
-        <p>
-          {' '}
-          Join us on <strong>December 7th</strong> for a one-day mini hackathon with the global MLH community.{' '}
-          <a href='https://localhackday.mlh.io/build/locations/2531' target='_blank' rel='noopener noreferrer'>
-            Click here to register!
-          </a>
-        </p>
-      </div>
-      <div className={styles.announcement}>
-        <h3>Interested in Volunteering?</h3>
-        <p>
-          Would you like to help run Carleton's biggest hackathon? Volunteers are always welcome!
-          <a
-            href='https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            {' '}
-            Sign up here!{' '}
-          </a>
-        </p>
-      </div>
-    </div>
-  )
-}
-
 const Landing = () => (
   <div className={styles.slide} id={styles.landing}>
     <Logo className={styles.landingLogo} />
@@ -262,10 +231,7 @@ export default () => (
     <div id={styles.faqContent}>
       <Faq />
     </div>
-    <div id={styles.bottomContent}>
-      {/* <Announcements /> */}
-      {/* <Sponsors /> */}
-    </div>
+    <div id={styles.bottomContent}>{/* <Sponsors /> */}</div>
     <Footer />
     <MLHBanner />
   </>
