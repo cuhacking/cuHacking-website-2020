@@ -1,9 +1,6 @@
 import React from 'react';
 import 'index.css';
 import {
-  Redirect
-} from 'react-router-dom'; 
-import {
     Navbar, 
     Button 
 } from 'components';

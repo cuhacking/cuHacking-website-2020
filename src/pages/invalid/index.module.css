@@ -1,7 +1,11 @@
 .heading {
     font-size: 10em; 
-    font-weight: bolder; 
+    line-height: 1em; 
+    font-weight: thin;
     margin: 0 auto;  
+    -webkit-text-fill-color: var(--backgroundColour); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--textColour);
 }
 
 .container {
