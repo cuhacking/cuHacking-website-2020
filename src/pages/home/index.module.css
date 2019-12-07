@@ -126,7 +126,14 @@
   display: flex;
   flex: 0.8;
   margin: 0 15vw;
-  max-width: 75vw;
+}
+
+#richcraft {
+  align-self: stretch;
+  background-image: url('../../assets/richcraft.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (min-width: 700px) {

@@ -104,7 +104,7 @@ const HackathonDefinition = () => {
 
 const Volunteer = () => (
   <div className={styles.slide} id={styles.volunteer}>
-    <img className={styles.feature} src={richcraft} alt='Richcraft Hall: the cuHacking venue' />
+    <div className={styles.feature} id={styles.richcraft} />
     <div className={styles.explanationRight}>
       <h1>I want to volunteer!</h1>
       <p>
