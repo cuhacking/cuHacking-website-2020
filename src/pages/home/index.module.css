@@ -1,12 +1,21 @@
-#content {
+#topContent,
+#faqContent,
+#bottomContent {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+}
+
+#topContent {
   background-image: url('../../assets/bkg.svg');
   background-position: bottom;
   background-size: cover;
+}
+
+#faqContent {
+  background-color: var(--backgroundColour);
 }
 
 .slide {
@@ -19,7 +28,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  #content {
+  #topContent {
     background-image: url('../../assets/bkg-dark.svg');
   }
 }
@@ -156,6 +165,13 @@
   .feature {
     margin: 0 5vw;
   }
+}
+
+/* Frequently Asked Questions */
+#faq {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 75px;
 }
 
 /* Next */

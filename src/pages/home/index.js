@@ -1,11 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useInView } from 'react-intersection-observer'
-import 'index.css'
-import { Button, Navbar, MLHBanner, Footer } from 'components'
+import { Button, Navbar, MLHBanner, Footer, Acordian } from 'components'
 import { ReactComponent as Logo } from 'assets/logo-animated.svg'
 import { ReactComponent as Cu } from 'assets/cu-animated.svg'
-import richcraft from 'assets/richcraft.png'
+import { questions } from './faq.json'
+
 import logoMLH from 'assets/partners/mlh.svg'
 import logoSCE from 'assets/partners/sce.png'
 import logoSCS from 'assets/partners/scs.png'
@@ -139,6 +139,15 @@ const Volunteer = () => (
   </div>
 )
 
+const Faq = () => (
+  <div className={styles.slide} id={styles.faq}>
+    <h1>Frequently Asked Questions</h1>
+    {questions.map(({ question, answer }) => (
+      <Acordian title={question} content={answer} />
+    ))}
+  </div>
+)
+
 function Sponsors() {
   const Partner = ({ id, url, src, alt }) => (
     <a className={styles.partnerLogo} href={url} target='_blank' rel='noopener noreferrer'>
@@ -245,10 +254,15 @@ export default () => (
       <title>cuHacking 2020</title>
     </Helmet>
     <Navbar />
-    <div id={styles.content}>
+    <div id={styles.topContent}>
       <Landing />
       <HackathonDefinition />
       <Volunteer />
+    </div>
+    <div id={styles.faqContent}>
+      <Faq />
+    </div>
+    <div id={styles.bottomContent}>
       {/* <Announcements /> */}
       {/* <Sponsors /> */}
     </div>
