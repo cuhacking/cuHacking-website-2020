@@ -46,7 +46,7 @@ class Forgot extends React.Component {
       }
     }; 
 
-    fetch("https://cuhacking.com/api-dev/resetpassword", options)
+    fetch("https://cuhacking.com/api-dev/users/resetpassword", options)
       .then(res => {
           res.json()
           if(res.status === 200) {
