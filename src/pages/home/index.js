@@ -53,7 +53,7 @@ const HackathonDefinition = () => {
 
   return (
     <div ref={ref} className={styles.slide} id={styles.hackathonDefinition}>
-      <div className={styles.feature}>{inView ? <Cu /> : <div />}</div>
+      {inView ? <Cu className={styles.feature} /> : <div className={styles.feature} />}
       <div className={styles.explanationLeft}>
         <h1>What's a hackathon?</h1>
         <p>
