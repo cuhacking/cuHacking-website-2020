@@ -52,3 +52,30 @@
     cursor: pointer;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .button,
+  .disabled,
+  .solidButton,
+  .solidDisabled {
+    border-color: var(--secondaryColour);
+  }
+
+  .button {
+    background-color: var(--backgroundColour);
+    color: var(--secondaryColour);
+  }
+
+  .solidButton {
+    user-select: none;
+    background-color: var(--secondaryColour);
+    color: white;
+  }
+
+  @media only screen and (min-width: 700px) {
+    .button:hover {
+      background-color: var(--secondaryColour);
+      color: var(--backgroundColour);
+    }
+  }
+}
