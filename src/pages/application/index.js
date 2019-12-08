@@ -180,7 +180,7 @@ const AboutYou = ({initialState, nextPage}) => {
       <form onSubmit={onSubmit} onChange={onChange} className={styles.formContainer}>
         <div className={styles.section}>
           <Input defaultValue={personalInfo.school} name="school" type="text" label="What school do you attend? *" required={true} inputStyle='select' options={['', ...schools]}/>
-          <Input defaultValue={personalInfo.otherSchool} name='school' type="text" label="If other, please specify." />
+          <Input defaultValue={personalInfo.otherSchool} name='otherSchool' type="text" label="If other, please specify." />
         </div>
         <div className={styles.section}>
           <Input placeholder='Computer Science' defaultValue={personalInfo.major} name="major" type="text" label="What is your major?*" required={true}/>
