@@ -40,7 +40,7 @@
 #landing {
   display: flex;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 10vh;
   height: 90vh;
 }
 
@@ -101,6 +101,7 @@
   #landing {
     flex-direction: row;
     align-items: flex-start;
+    margin-top: 18vh;
   }
 
   .landingInfo {
