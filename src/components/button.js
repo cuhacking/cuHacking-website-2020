@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from './button.module.css'
 
-const Button = ({ type, label, action, disabled, external, solid, link, to, ...props }) => {
+const Button = ({ type, label, disabled, external, solid, link, to, ...props }) => {
   if (disabled) {
     return <div className={solid ? styles.solidDisabled : styles.disabled}>{label.toUpperCase()}</div>
   } else if (link) {

@@ -40,7 +40,7 @@
 #landing {
   display: flex;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 10vh;
   height: 90vh;
 }
 
@@ -101,6 +101,7 @@
   #landing {
     flex-direction: row;
     align-items: flex-start;
+    margin-top: 18vh;
   }
 
   .landingInfo {
@@ -348,26 +349,31 @@
     border-style: solid;
   }
 
+  #martello,
   #cse,
+  #lighthouseLabs,
   #sketch {
     stroke-width: 1px;
     stroke: white;
   }
 
+  #marchNetworks,
   #fdmGroup {
     stroke-width: 3px;
     stroke: white;
   }
 
-  #ea {
+  #ea,
+  #wolfram {
     stroke-width: 5px;
     stroke: white;
   }
 
   #voiceflow {
-    stroke-width: 10px;
+    stroke-width: 20px;
     stroke: white;
   }
+
   @media only screen and (min-width: 700px) {
     .logo {
       filter: grayscale(100%) invert();
