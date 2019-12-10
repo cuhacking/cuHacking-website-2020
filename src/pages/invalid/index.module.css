@@ -1,0 +1,45 @@
+.heading {
+    font-size: 10em; 
+    line-height: 1em; 
+    font-weight: thin;
+    margin: 0 auto;  
+    -webkit-text-fill-color: var(--backgroundColour); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--textColour);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  
+.invalidPage {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/login-bkg.svg');
+    background-position: center;
+    background-size: cover;
+}
+  
+@media (prefers-color-scheme: dark) {
+    .invalidPage {
+      background-image: url('../../assets/login-bkg-dark.svg');
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .heading {
+        font-size: 20em; 
+    }
+}

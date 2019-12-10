@@ -37,8 +37,7 @@ class Forgot extends React.Component {
     const options = {
       method: 'POST', 
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
+        email: this.state.email
       }), 
       headers: {
           'Access-Control-Request-Headers': 'POST', 
@@ -46,7 +45,7 @@ class Forgot extends React.Component {
       }
     }; 
 
-    fetch("https://cuhacking.com/api-dev/resetpassword", options)
+    fetch("https://cuhacking.com/api-dev/users/resetpassword", options)
       .then(res => {
           res.json()
           if(res.status === 200) {

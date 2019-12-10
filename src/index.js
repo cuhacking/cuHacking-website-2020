@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Home from 'pages/home'
-import Login from 'pages/login'
-import Application from 'pages/application'
-import Create from 'pages/create'
-import Forgot from 'pages/forgot'
+// import Login from 'pages/login'
+// import Application from 'pages/application'
+// import Create from 'pages/create'
+// import Forgot from 'pages/forgot'
+import Invalid from 'pages/invalid'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './index.css'
 import { ProvideAuth } from 'hooks/useAuth'
@@ -18,7 +19,7 @@ const App = () => (
         {/* <Route path="/register" component={Create}/>  */}
         {/* <Route path="/forgot" component={Forgot}/> */}
         {/* <Route path="/application" component={Application}/>  */}
-        <Route component={Home} />
+        <Route component={Invalid} />
       </Switch>
     </Router>
   </ProvideAuth>
