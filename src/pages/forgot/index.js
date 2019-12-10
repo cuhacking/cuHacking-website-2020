@@ -37,8 +37,7 @@ class Forgot extends React.Component {
     const options = {
       method: 'POST', 
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
+        email: this.state.email
       }), 
       headers: {
           'Access-Control-Request-Headers': 'POST', 

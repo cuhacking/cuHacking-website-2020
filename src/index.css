@@ -1,54 +1,74 @@
 * {
   --textColour: #000000;
-  --secondTextColour: #FFFFFF; 
-  --lightPrimaryColour: #9756D8; 
-  --primaryColour: #5827B8;
+  --secondTextColour: #ffffff;
+  --lightPrimaryColour: #9756d8;
+  --primaryColour: #7c39bf;
   --darkPrimaryColour: #280749;
-  --secondaryColour: #00D0FE;
-  --backgroundColour: white; 
+  --secondaryColour: #00d0fe;
+  --backgroundColour: white;
+  --contentWidth: 1200px;
+  /* We can't use this in media queries, but it's useful to know */
+  --mobileThresh: 700px;
 }
 
 a {
-  text-decoration: none; 
-  font-size: inherit; 
+  text-decoration: none;
+  font-size: inherit;
   font-family: inherit;
   color: var(--lightPrimaryColour);
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
-  width: 100vw; 
+  width: 100vw;
   min-width: 335px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   color: var(--textColour);
   background-color: var(--backgroundColour);
   font-family: 'Montserrat', sans-serif;
 }
 
-
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+  font-size: 48px;
+}
 
 h2 {
   font-family: 'Reem Kufi', sans-serif;
 }
 
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
 #root {
-  background-color: var(--backgroundColour); 
+  background-color: var(--backgroundColour);
   min-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
   * {
-    --textColour: #FFFFFF;
-    --secondTextColour: #FFFFFF; 
-    --lightPrimaryColour: #9756D8; 
-    --primaryColour: #5827B8;
+    --textColour: #ffffff;
+    --secondTextColour: #ffffff;
+    --lightPrimaryColour: #9756d8;
+    --primaryColour: #9756d8;
     --darkPrimaryColour: #280749;
-    --secondaryColour: #00D0FE;
-    --backgroundColour: black; 
+    --secondaryColour: #00d0fe;
+    --backgroundColour: black;
   }
 
   a {
