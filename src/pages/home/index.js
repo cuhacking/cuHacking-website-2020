@@ -111,9 +111,27 @@ const Volunteer = () => (
 const Faq = () => (
   <div className={styles.slide} id={styles.faq}>
     <h1>Frequently Asked Questions</h1>
-    {questions.map(({ question, answer }) => (
-      <Acordian title={question} content={answer} />
-    ))}
+    {questions.map(({ question, answer }) => {
+      if (question === 'Where is cuHacking 2020 taking place?') {
+        return (
+          <Acordian key={question} title={question}>
+            <p>
+              cuHacking 2020 will take place in{' '}
+              <a href='https://carleton.ca/campus/map/#RB' target='_blank' rel='noopener noreferrer'>
+                Richcraft Hall (RB)
+              </a>{' '}
+              at Carleton University in Ottawa, Ontario.
+            </p>
+          </Acordian>
+        )
+      } else {
+        return (
+          <Acordian key={question} title={question}>
+            <p>{answer}</p>
+          </Acordian>
+        )
+      }
+    })}
   </div>
 )
 

@@ -1,12 +1,52 @@
 {
   "questions": [
     {
-      "question": "Lorum impsum?",
-      "answer": "...dolor sit amet, consectetur adipiscing elit. Integer vestibulum dictum felis, id luctus urna sodales in. Nunc et eros dignissim, gravida turpis sit amet, dignissim neque. Nam est lacus, ultricies laoreet elementum sit amet, pharetra ac augue. Nunc at tellus quam. Praesent iaculis vitae mi quis faucibus. Fusce vel odio vitae nisl commodo feugiat sed lobortis nibh. Ut eleifend tristique nulla nec maximus. Praesent quis feugiat augue, a euismod sem. Integer rutrum sapien at lacus posuere, sed bibendum neque tristique. Suspendisse ut metus dignissim, ornare leo in, convallis sapien. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus ornare ipsum non erat porttitor tempus. Nunc nec ultricies lectus. Sed et lacus et justo euismod pharetra eget nec tellus."
+      "question": "Who can participate?",
+      "answer": "Any student in highschool, university, or college can attend!"
     },
     {
-      "question": "Mauris eget dictum nibh, eget faucibus sapien?",
-      "answer": "Donec sollicitudin felis egestas semper faucibus. Fusce a erat augue. Nam a ante ut orci elementum pretium. Phasellus facilisis eleifend interdum. Nullam vitae felis ut tortor facilisis malesuada. Donec eget urna egestas, rhoncus nisl non, malesuada ipsum. Morbi dignissim, odio ac gravida suscipit, nibh lorem rhoncus magna, vel mattis quam purus et neque. Aliquam turpis est, imperdiet quis molestie vel, viverra sed ligula. Suspendisse turpis tortor, pellentesque quis arcu non, bibendum bibendum leo. Duis et nisl ante. Donec sed erat non lorem egestas dapibus id nec augue. Duis vitae justo condimentum, pulvinar libero eu, aliquam tortor. Praesent ornare dolor at odio rhoncus varius. Suspendisse pharetra pulvinar risus in posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+      "question": "How much does it cost?",
+      "answer": "cuHacking 2020 is completely free! (We even cover the food)"
+    },
+    {
+      "question": "Will food be provided?",
+      "answer": "All your meals will be provided at the hackathon. Lunch, dinner will be provided on Saturday, and breakfast and lunch on Sunday. We will have snacks throughout the event."
+    },
+    {
+      "question": "What if I’ve never been to a hackathon?",
+      "answer": "We accept a large amount of novice and first-time hackers. In 2019, over 50% of hackers attended cuHacking as their first hackathon. We will have mentors, workshops, and presentations to help you with your hack. Come ready to learn some awesome new skills and meet new people!"
+    },
+    {
+      "question": "Where is cuHacking 2020 taking place?",
+      "answer": "cuHacking 2020 will take place in [Richcraft Hall (RB)](https://carleton.ca/campus/map/#RB) at Carleton University in Ottawa, Ontario."
+    },
+    {
+      "question": "How many people are on a team?",
+      "answer": "Teams can vary in size from 2-4 people. We recommend making a group of 4, and making new friends!"
+    },
+    {
+      "question": "Do I need a team beforehand?",
+      "answer": "You do not need to make a team beforehand. There will be an opportunity to meet people to work with during this event."
+    },
+    {
+      "question": "Can I work on my project before the hackathon?",
+      "answer": "No. All projects must be made during the 24 hours of hacking at the event. You can learn the skills needed to work on the projects beforehand, but pre-existing projects are not allowed at cuHacking to maintain fairness between teams."
+    },
+    {
+      "question": "Will you be sending buses?",
+      "answer": "We will be providing a bus for hackers in Toronto. More details to come about this and other locations."
+    },
+    {
+      "question": "Is there travel reimbursement?",
+      "answer": "We may provide some travel reimbursement based on our funding. Stay tuned for more info."
+    },
+    {
+      "question": "Where can I find parking?",
+      "answer": "There are many places to park over the weekend. Parking information can be found at [Carleton Parking Services](https://carleton.ca/parking/)."
+    },
+    {
+      "question": "Is the parking covered?",
+      "answer": "Parking will not be covered for hackers by cuHacking. For Ottawa participants, we recommend taking a bus or the O-Train to campus. There are various free Park and Ride locations on the weekend that hackers can use.\n\nIf you would prefer to park on campus, information can be found [online](https://carleton.ca/parking/), parking is cheap on the weekends."
     }
   ]
 }
