@@ -40,10 +40,10 @@ const Landing = () => (
         <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button link to='/login' label='Apply Now' />
-        <Button link to='/sponsorship' label='Sponsor Us' />
+        <Button link to='/login' label='Apply Now' disabled />
+        {/* <Button link to='/sponsorship' label='Sponsor Us' /> */}
       </div>
-      <p className={styles.notice}>Applications close on December 9, 2019 at 23:59 EST.</p>
+      <p className={styles.notice}>Second wave of applications begins Decemeber 13.</p>
     </div>
   </div>
 )

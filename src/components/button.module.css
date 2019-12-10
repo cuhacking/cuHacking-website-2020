@@ -12,6 +12,7 @@
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   transition: 0.2s;
+  user-select: none;
 }
 
 .button {
@@ -55,9 +56,7 @@
 
 @media (prefers-color-scheme: dark) {
   .button,
-  .disabled,
-  .solidButton,
-  .solidDisabled {
+  .solidButton {
     border-color: var(--secondaryColour);
   }
 
