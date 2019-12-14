@@ -44,10 +44,9 @@ const Landing = () => (
         <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button link to='/login' label='Apply Now' disabled />
-        {/* <Button link to='/sponsorship' label='Sponsor Us' /> */}
+        <Button external link to='https://my.cuhacking.com' label='Apply Now' />
       </div>
-      <p className={styles.notice}>Second wave of applications begins Decemeber 14.</p>
+      <p className={styles.notice}>Applications close Decemeber 27 at 11:59pm EST.</p>
     </div>
   </div>
 )
@@ -125,6 +124,36 @@ const Faq = () => (
                 Richcraft Hall (RB)
               </a>{' '}
               at Carleton University in Ottawa, Ontario.
+            </p>
+          </Acordian>
+        )
+      } else if (question === 'Where can I find parking?') {
+        return (
+          <Acordian key={question} title={question}>
+            <p>
+              There are many places to park over the weekend. Parking information can be found at{' '}
+              <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
+                Carleton Parking Services
+              </a>
+              {'.'}
+            </p>
+          </Acordian>
+        )
+      } else if (question === 'Is the parking covered?') {
+        return (
+          <Acordian key={question} title={question}>
+            <p>
+              Parking will not be covered for hackers by cuHacking. For Ottawa participants, we recommend taking a bus
+              or the O-Train to campus. There are various free Park and Ride locations on the weekend that hackers can
+              use.
+            </p>
+            <p>
+              If you would prefer to park on campus, information on how to do that can be found{' '}
+              <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
+                here
+              </a>
+              {'. '}
+              Parking is cheaper on the weekends.
             </p>
           </Acordian>
         )
