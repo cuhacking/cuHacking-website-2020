@@ -43,7 +43,7 @@ const Landing = () => (
         <Button link to='/login' label='Apply Now' disabled />
         {/* <Button link to='/sponsorship' label='Sponsor Us' /> */}
       </div>
-      <p className={styles.notice}>Second wave of applications begins Decemeber 13.</p>
+      <p className={styles.notice}>Second wave of applications begins Decemeber 14.</p>
     </div>
   </div>
 )
