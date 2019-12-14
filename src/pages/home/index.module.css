@@ -199,7 +199,8 @@
 
 /* Giga tier */
 #rbc,
-#martello {
+#martello,
+#rossVideo {
   display: flex;
   height: 325px;
   margin-bottom: 75px;
@@ -211,7 +212,9 @@
 #marchNetworks,
 #cse,
 #fullscript,
-#lighthouseLabs {
+#lighthouseLabs,
+#caseWare,
+#deloitte {
   width: 80%;
 }
 
@@ -225,7 +228,8 @@
 
 /* Kilo tier */
 #balsamiq,
-#fdmGroup {
+#fdmGroup,
+#kinaxis {
   width: 51%;
   margin-bottom: 75px;
 }
@@ -260,11 +264,11 @@
 
 @media only screen and (min-width: 700px) {
   .logo {
-    filter: grayscale(100%);
+    transition: 0.2s;
   }
 
   .logo:hover {
-    filter: grayscale(0%);
+    scale: 1.05;
   }
 
   .logoSection {
@@ -282,11 +286,13 @@
   #ciena,
   #cse,
   #fullscript,
-  #lighthouseLabs {
+  #lighthouseLabs,
+  #deloitte {
     width: 30%;
   }
 
-  #marchNetworks {
+  #marchNetworks,
+  #caseWare {
     width: 45%;
   }
 
@@ -315,6 +321,11 @@
   #fdmGroup {
     width: 18%;
     margin: -25px 25px 10px;
+  }
+
+  #kinaxis {
+    width: 25%;
+    margin: -25px 25px 0;
   }
 
   /* In Kind tier */
@@ -349,10 +360,16 @@
     border-style: solid;
   }
 
+  #deloitte {
+    stroke-width: 0.5px;
+    stroke: white;
+  }
+
   #martello,
   #cse,
   #lighthouseLabs,
-  #sketch {
+  #sketch,
+  #caseWare {
     stroke-width: 1px;
     stroke: white;
   }
@@ -372,16 +389,5 @@
   #voiceflow {
     stroke-width: 20px;
     stroke: white;
-  }
-
-  @media only screen and (min-width: 700px) {
-    .logo {
-      filter: grayscale(100%) invert();
-      transition: 0.2s;
-    }
-
-    .logo:hover {
-      filter: grayscale(0%);
-    }
   }
 }

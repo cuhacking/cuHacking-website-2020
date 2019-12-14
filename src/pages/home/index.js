@@ -12,16 +12,20 @@ import logoSCS from 'assets/partners/scs.png'
 import {
   OnePassword,
   Balsamiq,
+  CaseWare,
   Ciena,
   Cse,
+  Deloitte, // TODO: use deloitte's dark logo in dark theme
   DigitalOcean,
   Ea,
   FdmGroup,
   Fullscript,
   JetBrains,
+  Kinaxis,
   LighthouseLabs,
   MarchNetworks,
   Rbc,
+  RossVideo,
   Sketch,
   Voiceflow,
   Wolfram,
@@ -154,6 +158,7 @@ function Sponsors() {
       <div className={styles.tier}>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.martello, 'https://martellotech.com/', Martello)}
+          {sponsorLogo(styles.rossVideo, 'https://www.rossvideo.com/', RossVideo)}
           {sponsorLogo(styles.rbc, 'https://www.rbcroyalbank.com', Rbc)}
         </div>
       </div>
@@ -162,16 +167,19 @@ function Sponsors() {
           {sponsorLogo(styles.ciena, 'https://www.ciena.ca', Ciena)}
           {sponsorLogo(styles.marchNetworks, 'https://marchnetworks.com', MarchNetworks)}
           {sponsorLogo(styles.cse, 'https://www.cse-cst.gc.ca/en', Cse)}
+          {sponsorLogo(styles.caseWare, 'https://idea.caseware.com/products/idea/', CaseWare)}
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
+          {sponsorLogo(styles.deloitte, 'https://www2.deloitte.com/', Deloitte)}
         </div>
       </div>
       <div className={styles.tier}>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.balsamiq, 'https://balsamiq.com', Balsamiq)}
           {sponsorLogo(styles.fdmGroup, 'https://fdmgroup.com', FdmGroup)}
+          {sponsorLogo(styles.kinaxis, 'https://www.kinaxis.com/', Kinaxis)}
         </div>
       </div>
       <div className={styles.tier}>
