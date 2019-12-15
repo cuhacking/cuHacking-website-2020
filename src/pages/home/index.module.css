@@ -208,7 +208,7 @@
 }
 
 #rossVideo {
-  width: 80%;
+  /* width: 80%; */
 }
 
 /* Mega tier */
@@ -282,7 +282,8 @@
 
   /* Giga tier */
   #rbc,
-  #martello {
+  #martello,
+  #rossVideo {
     margin-bottom: 0;
   }
 
