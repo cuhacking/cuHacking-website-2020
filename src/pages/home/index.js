@@ -9,14 +9,17 @@ import { questions } from './faq.json'
 import logoMLH from 'assets/partners/mlh.svg'
 import logoSCE from 'assets/partners/sce.png'
 import logoSCS from 'assets/partners/scs.png'
-import {
+import sponsors from 'assets/sponsors'
+import styles from './index.module.css'
+
+const {
   OnePassword,
   TwoKeys,
   Balsamiq,
   CaseWare,
   Ciena,
   Cse,
-  Deloitte, // TODO: use deloitte's dark logo in dark theme
+  Deloitte,
   DigitalOcean,
   Ea,
   FdmGroup,
@@ -25,15 +28,14 @@ import {
   Kinaxis,
   LighthouseLabs,
   MarchNetworks,
+  Martello,
   Rbc,
   RossVideo,
   Sketch,
-  Voiceflow,
-  Wolfram,
   Stickermule,
-  Martello
-} from 'assets/sponsors'
-import styles from './index.module.css'
+  Voiceflow,
+  Wolfram
+} = sponsors
 
 const Landing = () => (
   <div className={styles.slide} id={styles.landing}>

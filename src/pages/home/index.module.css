@@ -340,7 +340,6 @@
   #onePassword,
   #digitalOcean,
   #sketch,
-  #stickermule,
   #voiceflow {
     width: 15%;
     margin: 0 20px;
@@ -348,7 +347,8 @@
 
   #ea,
   #jetbrains,
-  #wolfram {
+  #wolfram,
+  #stickermule {
     width: 8%;
     margin: 0 20px;
   }
@@ -368,7 +368,6 @@
     border-style: solid;
   }
 
-  #deloitte,
   #twoKeys {
     stroke-width: 0.5px;
     stroke: white;
@@ -376,27 +375,13 @@
 
   #martello,
   #cse,
-  #lighthouseLabs,
-  #sketch,
   #caseWare {
     stroke-width: 1px;
     stroke: white;
   }
 
-  #marchNetworks,
-  #fdmGroup {
+  #marchNetworks {
     stroke-width: 3px;
-    stroke: white;
-  }
-
-  #ea,
-  #wolfram {
-    stroke-width: 5px;
-    stroke: white;
-  }
-
-  #voiceflow {
-    stroke-width: 20px;
     stroke: white;
   }
 }
