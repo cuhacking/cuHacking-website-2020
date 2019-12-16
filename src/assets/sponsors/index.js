@@ -1,4 +1,5 @@
 import { ReactComponent as OnePassword } from './1password.svg'
+import { ReactComponent as TwoKeys } from './2keys.svg'
 import { ReactComponent as Balsamiq } from './balsamiq.svg'
 import { ReactComponent as CaseWare } from './caseWare.svg'
 import { ReactComponent as Ciena } from './ciena.svg'
@@ -22,6 +23,7 @@ import { ReactComponent as Martello } from './martello.svg'
 
 export {
   OnePassword,
+  TwoKeys,
   Balsamiq,
   CaseWare,
   Ciena,

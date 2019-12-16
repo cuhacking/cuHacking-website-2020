@@ -207,10 +207,6 @@
   width: 100%;
 }
 
-#rossVideo {
-  /* width: 80%; */
-}
-
 /* Mega tier */
 #ciena,
 #marchNetworks,
@@ -218,7 +214,8 @@
 #fullscript,
 #lighthouseLabs,
 #caseWare,
-#deloitte {
+#deloitte,
+#twoKeys {
   width: 80%;
 }
 
@@ -292,7 +289,8 @@
   #cse,
   #fullscript,
   #lighthouseLabs,
-  #deloitte {
+  #deloitte,
+  #twoKeys {
     width: 30%;
   }
 
@@ -317,19 +315,24 @@
     margin-bottom: 10px;
   }
 
+  #twoKeys {
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
   /* Kilo tier */
   #balsamiq {
-    width: 18%;
+    width: 15%;
     margin: 0 25px;
   }
 
   #fdmGroup {
-    width: 18%;
+    width: 15%;
     margin: -25px 25px 10px;
   }
 
   #kinaxis {
-    width: 25%;
+    width: 20%;
     margin: -25px 25px 0;
   }
 
@@ -365,7 +368,8 @@
     border-style: solid;
   }
 
-  #deloitte {
+  #deloitte,
+  #twoKeys {
     stroke-width: 0.5px;
     stroke: white;
   }
