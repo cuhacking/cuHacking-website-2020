@@ -30,7 +30,7 @@ body {
   scroll-behavior: smooth;
   color: var(--textColour);
   background-color: var(--backgroundColour);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
 }
 
 h1 {
@@ -43,13 +43,13 @@ h2 {
 }
 
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   font-size: 35px;
   font-weight: lighter;
 }
 
 h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;

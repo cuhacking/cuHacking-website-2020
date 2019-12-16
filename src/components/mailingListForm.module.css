@@ -1,6 +1,6 @@
 #mailingListText {
   color: var(--textColour);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   width: 100%;
   font-size: 1em;
   margin: 0 auto;
@@ -19,7 +19,7 @@
   height: 40px;
   background-color: white;
   border: 1px solid black;
-  border-left: 3px solid #00D0FE;
+  border-left: 3px solid #00d0fe;
   color: black;
   font-size: 20px;
   margin-right: 10px;
@@ -28,16 +28,16 @@
   transition-duration: 0.3ms;
 }
 
-  .emailField:disabled {
-    transition-duration: 0.3s;
-    opacity: 0.5;
-  }
+.emailField:disabled {
+  transition-duration: 0.3s;
+  opacity: 0.5;
+}
 
 .submitButton {
   opacity: 1;
   width: 48px;
   height: 48px;
-  background-color: #5827B8;
+  background-color: #5827b8;
   border: 1px solid var(--textColour);
   color: white;
   font-family: Inconsolata;
@@ -46,23 +46,23 @@
   transition-duration: 0.3s;
 }
 
-  .submitButton:enabled {
-    cursor: pointer;
-  }
+.submitButton:enabled {
+  cursor: pointer;
+}
 
-  .submitButton:hover:enabled {
-    color: white;
-  }
+.submitButton:hover:enabled {
+  color: white;
+}
 
-  .submitButton:active:enabled {
-    transition-duration: 0s;
-    background-color: var(--lightPrimaryColour);
-  }
+.submitButton:active:enabled {
+  transition-duration: 0s;
+  background-color: var(--lightPrimaryColour);
+}
 
-  .submitButton:disabled {
-    transition-duration: 0.3s;
-    opacity: 0.2
-  }
+.submitButton:disabled {
+  transition-duration: 0.3s;
+  opacity: 0.2;
+}
 
 .after {
   opacity: 0;
@@ -70,13 +70,13 @@
 
 .errorMessage {
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   color: red;
 }
 
 .dialogText {
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   color: var(--textColour);
 }
 
@@ -95,6 +95,6 @@
     color: white;
     border-color: #919191;
     background-color: rgba(255, 255, 255, 0);
-    border-left: 3px solid #00D0FE;
+    border-left: 3px solid #00d0fe;
   }
 }

@@ -1,17 +1,16 @@
 /* Change Autocomplete styles in Chrome*/
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus
-{
-  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
   -webkit-transition-delay: 9999s;
 }
 
 .inputContainer {
   padding: 5px;
   margin-right: 1vw;
-  width: 100%; 
-  display: flex; 
+  width: 100%;
+  display: flex;
   flex-direction: column;
 }
 
@@ -19,20 +18,22 @@ input:-webkit-autofill:focus
   color: var(--textColour);
   margin: 0;
   margin-top: 0.4em;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   font-size: 14px;
 }
 
-.input, .longInput, .selectInput {
+.input,
+.longInput,
+.selectInput {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
-  border: none; 
-  border-bottom: 1px solid var(--textColour); 
+  border: none;
+  border-bottom: 1px solid var(--textColour);
   color: var(--textColour);
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'M PLUS 1p', sans-serif;
   font-size: 18px;
-  width: 100%; 
+  width: 100%;
 }
 
 .longInput {
@@ -50,7 +51,7 @@ option {
 }
 
 .checkInput {
-  cursor: pointer; 
+  cursor: pointer;
   display: flex;
   position: relative;
   margin: 10px 0;
@@ -60,21 +61,21 @@ option {
   display: flex;
   flex: 1;
   -webkit-appearance: none;
-  opacity: 0.7; 
+  opacity: 0.7;
   appearance: none;
-  border: 1px solid var(--textColour); 
+  border: 1px solid var(--textColour);
   height: 16px;
-  min-width: 16px; 
+  min-width: 16px;
   margin: 1px 10px;
 }
 
 .checkbox:hover {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .checkbox:checked {
-  opacity: 1; 
-  background-color: var(--secondaryColour); 
+  opacity: 1;
+  background-color: var(--secondaryColour);
 }
 
 .selectContainer {
