@@ -203,7 +203,7 @@ function Sponsors() {
         </div>
         <div className={styles.logoSection}>
           {sponsorLogo(styles.fullscript, 'https://fullscript.com', Fullscript)}
-          {sponsorLogo(styles.twoKeys, 'https://www2.deloitte.com/', TwoKeys)}
+          {sponsorLogo(styles.twoKeys, 'https://2keys.ca/', TwoKeys)}
           {sponsorLogo(styles.lighthouseLabs, 'https://www.lighthouselabs.ca', LighthouseLabs)}
           {sponsorLogo(styles.deloitte, 'https://www2.deloitte.com/', Deloitte)}
         </div>
