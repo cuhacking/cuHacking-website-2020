@@ -34,7 +34,7 @@ class Password extends React.Component {
       return (
         <div className={styles.inputContainer}>
           <div className={styles.passwordField}> 
-            <input name={this.props.name} onChange={this.props.onChange} type={this.state.hidden? 'password' : 'text'} className={styles.input} label={this.props.label} placeholder={this.props.placeholder} required={true}/>
+            <input id={styles.passwordInput} name={this.props.name} onChange={this.props.onChange} type={this.state.hidden? 'password' : 'text'} className={styles.input} label={this.props.label} placeholder={this.props.placeholder} required={true}/>
             <div className={styles.visibilityToggle} onClick={this.toggleVisibility}> {this.eyeIcon()} </div>
           </div>
           <p className={styles.label}>{this.props.label}</p>
