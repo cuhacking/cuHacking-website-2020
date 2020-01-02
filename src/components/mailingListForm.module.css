@@ -6,6 +6,11 @@
   margin: 0 auto;
 }
 
+#buttonLabel {
+  margin: 5px 10px; 
+
+}
+
 .emailForm {
   display: flex;
   justify-content: flex-end;
@@ -15,6 +20,7 @@
   margin: 10px 0;
 }
 
+/*
 .emailField {
   height: 40px;
   background-color: white;
@@ -22,6 +28,18 @@
   border-left: 3px solid #00d0fe;
   color: black;
   font-size: 20px;
+  margin-right: 10px;
+  padding: 3px 10px;
+  width: 80%;
+  transition-duration: 0.3ms;
+}*/ 
+
+.emailField {
+  font-family: 'M PLUS 1p', sans-serif; 
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
   margin-right: 10px;
   padding: 3px 10px;
   width: 80%;
@@ -34,14 +52,13 @@
 }
 
 .submitButton {
+  padding: 2px; 
   opacity: 1;
-  width: 48px;
-  height: 48px;
-  background-color: #5827b8;
+  background-color: rgba(255, 255, 255, 0);
   border: 1px solid var(--textColour);
   color: white;
-  font-family: Inconsolata;
-  font-size: 17px;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 1em; 
   text-decoration: none;
   transition-duration: 0.3s;
 }
@@ -69,32 +86,14 @@
 }
 
 .errorMessage {
-  text-align: right;
+  text-align: left;
   font-family: 'M PLUS 1p', sans-serif;
   color: red;
 }
 
 .dialogText {
-  text-align: right;
+  text-align: left;
   font-family: 'M PLUS 1p', sans-serif;
   color: var(--textColour);
 }
 
-@media (orientation: portrait) {
-  .errorMessage {
-    text-align: center;
-  }
-
-  .dialogText {
-    text-align: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .emailField {
-    color: white;
-    border-color: #919191;
-    background-color: rgba(255, 255, 255, 0);
-    border-left: 3px solid #00d0fe;
-  }
-}
