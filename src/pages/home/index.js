@@ -39,7 +39,7 @@ const {
 
 const Landing = () => (
   <div className={styles.slide} id={styles.landing}>
-    <Logo className={styles.landingLogo} />
+    <Logo className={styles.landingLogo} id='home' />
     <div className={styles.landingInfo}>
       <div className={styles.shortLogo2020} />
       <div>
@@ -81,7 +81,7 @@ const Volunteer = () => (
   <div className={styles.slide} id={styles.volunteer}>
     <div className={styles.feature} id={styles.richcraft} />
     <div className={styles.explanationRight}>
-      <h1>I want to volunteer!</h1>
+      <h1 id='volunteer'>I want to volunteer!</h1>
       <p>
         Looking to be more involved than just a regular hacker? Sign up to get instant access to all the
         behind-the-scenes cuHacking fun.
@@ -116,7 +116,7 @@ const Volunteer = () => (
 
 const Faq = () => (
   <div className={styles.slide} id={styles.faq}>
-    <h1>Frequently Asked Questions</h1>
+    <h1 id='faq'>Frequently Asked Questions</h1>
     {questions.map(({ question, answer }) => {
       if (question === 'Where is cuHacking 2020 taking place?') {
         return (
@@ -185,7 +185,7 @@ function Sponsors() {
   )
 
   return (
-    <div className={styles.slide}>
+    <div className={styles.slide} id='sponsors'>
       <h2>SPONSORS</h2>
       <div className={styles.tier}>
         <div className={styles.logoSection}>
