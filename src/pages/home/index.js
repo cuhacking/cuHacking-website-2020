@@ -47,9 +47,10 @@ const Landing = () => (
         <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button external link to='https://my.cuhacking.com' label='Apply Now' />
+        <Button external link to='https://my.cuhacking.com' disabled label='Apply Now' />
       </div>
-      <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p>
+      {/* <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p> */}
+      <p className={styles.notice}>Applications closed for maintenance. Will reopen later today.</p>
     </div>
   </div>
 )
