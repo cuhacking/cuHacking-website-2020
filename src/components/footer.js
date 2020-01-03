@@ -1,7 +1,6 @@
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
-  faEnvelope, 
   faHeart,
   faArrowUp
 } from '@fortawesome/free-solid-svg-icons';
@@ -10,24 +9,14 @@ import {
   faLinkedin,
   faInstagram,
   faTwitter,
-  faGithub,
-  faFacebook
+  faGithub
 } from '@fortawesome/free-brands-svg-icons';
 import styles from './footer.module.css';
-import {
-  Button, MailingListForm
-} from 'components';
 
 const renderLogo = (icon, target, link) => (
   <a className={styles.socialButton} target={target} rel='noopener noreferrer' href={link}>
     <FontAwesomeIcon icon={icon} size='lg'/>
   </a> 
-);
-
-const renderLink = (icon, target, link, description) => (
-  <a className={styles.socialLink} target={target} rel='noopener noreferrer' href={link}>
-    <p className={styles.nomargin}> <FontAwesomeIcon icon={icon} size='1x'/> {description} </p>
-  </a>
 );
 
 const socialLinks = () => (
