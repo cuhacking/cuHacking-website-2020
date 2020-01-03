@@ -58,7 +58,7 @@ const description = () => (
 const navLinks = () => (
   <div className={styles.footerContent} id={styles.navList}>
     <p className={styles.footerHeader}> Navigation </p> 
-    <a href="#"> Home </a>
+    <a href="#home"> Home </a>
     <a href="#volunteer"> Volunteer </a>
     <a href="#faq"> FAQ </a>
     <a href="#sponsors"> Sponsors </a>
@@ -74,12 +74,14 @@ const contactUs = () => (
   </div>   
 )
 
+/* for the future
 const mailingList = () => (
   <div className={styles.footerContent} id={styles.mailingList}>
     <p className={styles.footerHeader}>Stay up to date with cuHacking</p>
     <MailingListForm/> 
   </div>
 )
+*/ 
 
 export default () => (
   <footer id={styles.container}>       
@@ -89,7 +91,7 @@ export default () => (
       </div> 
       <div className={styles.row} id={styles.contentWrapper}> 
         {description()} 
-        {mailingList()}
+        {navLinks()}
         {contactUs()}
       </div>
       <div className={styles.row}>
