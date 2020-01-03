@@ -51,7 +51,7 @@ const MLHCodeOfConduct = () => (
 const description = () => (
   <div className={styles.footerContent} id={styles.footerDescription}>
     <div id={styles.logo}/> 
-    <p className={styles.nomargin}> This little blurb is about how good cuHacking is going to be and what it's all about. Maybe I'll just rip something from the sponsorship package. But it can only be this long</p> 
+    <p className={styles.nomargin}> cuHacking 2020 is set to provide an unforgettable experience, where students can enhance technical skills, make new friends, and create genuine connections with industry professionals. We can't wait to see you there!</p>
   </div>
 )
 
