@@ -49,7 +49,7 @@ const Landing = () => (
       <div className={styles.landingButtons}>
         <Button external link to='https://my.cuhacking.com' label='Apply Now' />
       </div>
-      <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p>
+      {/* <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p> */}
     </div>
   </div>
 )
