@@ -48,32 +48,6 @@ const MLHCodeOfConduct = () => (
   </p> 
 )
 
-const description = () => (
-  <div className={styles.footerContent} id={styles.footerDescription}>
-    <div id={styles.logo}/> 
-    <p className={styles.nomargin}> cuHacking 2020 is set to provide an unforgettable experience, where students can enhance technical skills, make new friends, and create genuine connections with industry professionals. We can't wait to see you there!</p>
-  </div>
-)
-
-const navLinks = () => (
-  <div className={styles.footerContent} id={styles.navList}>
-    <p className={styles.footerHeader}> Navigation </p> 
-    <a href="#home"> Home </a>
-    <a href="#volunteer"> Volunteer </a>
-    <a href="#faq"> FAQ </a>
-    <a href="#sponsors"> Sponsors </a>
-    <a href='https://my.cuhacking.com'>Login </a>
-  </div>   
-)
-
-const contactUs = () => (
-  <div className={styles.footerContent} id={styles.contactForm}>
-    <p className={styles.footerHeader}>Connect with us</p>
-    {socialLinks()}
-    <p className={styles.nomargin}> Check us out on social. Or, email us at <a href='mailto:info@cuhacking.com' id={styles.mailTo}> info@cuHacking.com </a></p> 
-  </div>   
-)
-
 /* for the future
 const mailingList = () => (
   <div className={styles.footerContent} id={styles.mailingList}>
@@ -85,14 +59,29 @@ const mailingList = () => (
 
 export default () => (
   <footer id={styles.container}>       
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id='footer'>
       <div className={styles.backToTopContainer}>
-        <a href='#'> <FontAwesomeIcon icon={faArrowUp} size='sm'/> Back to Top </a>
+        <a href='#home'> <FontAwesomeIcon icon={faArrowUp} size='sm'/> Back to Top </a>
       </div> 
       <div className={styles.row} id={styles.contentWrapper}> 
-        {description()} 
-        {navLinks()}
-        {contactUs()}
+        <div className={styles.footerContent} id={styles.footerDescription}>
+          <div id={styles.logo}/> 
+          <p className={styles.nomargin}> cuHacking 2020 is set to provide an unforgettable experience, where students can enhance technical skills, make new friends, and create genuine connections with industry professionals. We can't wait to see you there!</p>
+        </div>
+        <div className={styles.footerContent} id={styles.navList}>
+          <p className={styles.footerHeader}> Navigation </p> 
+          <a href="#home"> Home </a>
+          <a href="#volunteer"> Volunteer </a>
+          <a href="#faq"> FAQ </a>
+          <a href="#sponsors"> Sponsors </a>
+          <a href='https://my.cuhacking.com'>Login </a>
+       </div>   
+       <div className={styles.footerContent} id={styles.contactForm}>
+          <p className={styles.footerHeader}>Connect with us</p>
+          {socialLinks()}
+          <p className={styles.nomargin}> Got questions? Let's talk! </p>
+          <p className={styles.nomargin}>  Check us out on social. Or, email us at <a href='mailto:info@cuhacking.com' id={styles.mailTo}> info@cuHacking.com </a></p> 
+       </div>
       </div>
       <div className={styles.row}>
         {madeWithLove()}
