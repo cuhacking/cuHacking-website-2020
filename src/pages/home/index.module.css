@@ -1,3 +1,5 @@
+
+
 #topContent,
 #otherContent {
   display: flex;
@@ -384,4 +386,8 @@
     stroke-width: 3px;
     stroke: white;
   }
+}
+
+.faqLink {
+  color: var(--secondaryColour); 
 }

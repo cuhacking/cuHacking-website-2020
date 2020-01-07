@@ -123,7 +123,7 @@ const Faq = () => (
           <Acordian key={question} title={question}>
             <p>
               cuHacking 2020 will take place in{' '}
-              <a href='https://carleton.ca/campus/map/#RB' target='_blank' rel='noopener noreferrer'>
+              <a href='https://carleton.ca/campus/map/#RB' className={styles.faqLink} target='_blank' rel='noopener noreferrer'>
                 Richcraft Hall (RB)
               </a>{' '}
               at Carleton University in Ottawa, Ontario.
@@ -135,7 +135,7 @@ const Faq = () => (
           <Acordian key={question} title={question}>
             <p>
               There are many places to park over the weekend. Parking information can be found at{' '}
-              <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
+              <a href='https://carleton.ca/parking/' className={styles.faqLink} target='_blank' rel='noopener noreferrer'>
                 Carleton Parking Services
               </a>
               {'.'}
