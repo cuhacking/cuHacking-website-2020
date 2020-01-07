@@ -1,0 +1,44 @@
+.button {
+  font-family: 'M PLUS 1p', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  width: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  left: 50%;
+  background: var(--backgroundColour);
+  transition: 0.3s ease 0s, left 0.3s ease 0s;
+}
+
+.button:hover:after {
+  width: 80%;
+  left: 10%;
+  background: var(--textColour);
+}
+
+@media only screen and (min-width: 1000px) {
+  .button {
+    width: 100px;
+  }
+
+  .button:hover {
+    color: #ffffff;
+  }
+}
