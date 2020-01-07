@@ -262,7 +262,7 @@ export default () => (
     <div id={styles.topContent}>
       <Landing />
       <HackathonDefinition />
-      <Volunteer />
+      {/* <Volunteer /> */}
     </div>
     <div id={styles.otherContent}>
       <Faq />
