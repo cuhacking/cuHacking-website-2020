@@ -22,7 +22,7 @@
   font-size: 15px; 
 }
 
-a {
+#container a {
   color: var(--secondTextColour); 
 }
 
@@ -47,7 +47,6 @@ a:hover {
 }
 
 #navList {
-  margin-left: 10px; 
   list-style: none; 
   text-decoration: none; 
   color: white; 
@@ -76,7 +75,6 @@ a:hover {
   margin-bottom: 20px; 
 }
 
-#mailingList {
 #navList {
   order: 3;
 }
@@ -170,12 +168,13 @@ a:hover {
   }
   
   #contactForm {
-    order: 3; 
+    justify-content: right;
+    order: 2; 
     margin-bottom: 0px; 
   }
   
   #navList {
-    order: 2;
+    order: 3;
   }
 
 }

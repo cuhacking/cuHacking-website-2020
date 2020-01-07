@@ -5,7 +5,7 @@
   position:fixed;
   right:20px;
   top:0;
-  width:10%;
+  width:5%;
   z-index:10000;
 }
 
@@ -15,6 +15,7 @@
 
 @media only screen and (min-width: 700px) {
   #container {
-    right:60px;
+    width:10%; 
+    right: 60px;
   }
 }
