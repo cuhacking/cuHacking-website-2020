@@ -26,10 +26,6 @@
   color: var(--secondTextColour); 
 }
 
-a:hover {
-  color: var(--lightPrimaryColour); 
-}
-
 #logo {
   width: 120px;
   height: 40px;
@@ -125,7 +121,12 @@ a:hover {
 }
 
 .socialButton:hover {
-  color: #9756D8;
+  color: #9756D8 !important;
+  transition: 0.2s;
+}
+
+.navLink:hover {
+  color: #9756D8 !important;
   transition: 0.2s;
 }
 

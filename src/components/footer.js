@@ -70,17 +70,16 @@ export default () => (
         </div>
         <div className={styles.footerContent} id={styles.navList}>
           <p className={styles.footerHeader}> Navigation </p> 
-          <a href="#home"> Home </a>
-          <a href="#volunteer"> Volunteer </a>
-          <a href="#faq"> FAQ </a>
-          <a href="#sponsors"> Sponsors </a>
-          <a href='https://my.cuhacking.com'>Login </a>
+          <a className={styles.navLink} href="#home"> Home </a>
+          <a className={styles.navLink} href="#faq"> FAQ </a>
+          <a className={styles.navLink} href="#sponsors"> Sponsors </a>
+          <a className={styles.navLink} href='https://my.cuhacking.com'>Login </a>
        </div>   
        <div className={styles.footerContent} id={styles.contactForm}>
           <p className={styles.footerHeader}>Connect with us</p>
           {socialLinks()}
           <p className={styles.nomargin}> Got questions? Let's talk! </p>
-          <p className={styles.nomargin}>  Check us out on social. Or, email us at <a href='mailto:info@cuhacking.com' id={styles.mailTo}> info@cuHacking.com </a></p> 
+          <p className={styles.nomargin}> Check us out on social. Or, email us at <a href='mailto:info@cuhacking.com' id={styles.mailTo}> info@cuHacking.com </a></p> 
        </div>
       </div>
       <div className={styles.row}>
