@@ -61,7 +61,7 @@ export default () => (
   <footer id={styles.container}>       
     <div className={styles.wrapper} id='footer'>
       <div className={styles.backToTopContainer}>
-        <a href='#home'> <FontAwesomeIcon icon={faArrowUp} size='sm'/> Back to Top </a>
+        <a href='#'> <FontAwesomeIcon icon={faArrowUp} size='sm'/> Back to Top </a>
       </div> 
       <div className={styles.row} id={styles.contentWrapper}> 
         <div className={styles.footerContent} id={styles.footerDescription}>
