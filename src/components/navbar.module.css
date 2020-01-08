@@ -32,6 +32,11 @@
   background-position: center;
 }
 
+#footer:before{ 
+  height: 100px; 
+  content: ''; 
+}
+
 .navLinks {
   background-color: var(--backgroundColour);
   margin: 0px 0px; 
@@ -40,11 +45,13 @@
   align-items: center;
   position: fixed; 
   right: 0px; 
-  height: 100vh; 
+  height: auto; 
   top: 100px; 
   transform: translateX(100%);
-  transition: transform 0.5s ease-in; 
-  width: 60%; 
+  transition: transform 0.35s ease-in; 
+  width: 100%; 
+  padding-bottom: 20px; 
+  border-bottom: 1px solid var(--textColour);
 }
 
 .navLinks li {
@@ -73,6 +80,11 @@
   height: 100%; 
 }
 
+.wrapper:before {
+  height: 100px; 
+  content: ''; 
+}
+
 @media screen and (min-width: 700px) {
 
   #container {
@@ -90,9 +102,12 @@
     top: initial; 
     justify-content: space-around;
     list-style: none;
-    width: 30%;  
+    width: 60%;  
     transform: translateX(0%); 
+    padding-bottom: 0px; 
+    border-bottom: 0px; 
   }
+
 
   .navLinks li {
     opacity: 1;
