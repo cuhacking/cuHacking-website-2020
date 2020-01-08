@@ -1,8 +1,6 @@
 .nomargin p {
   font-family: 'M PLUS 1p', sans-serif; 
 }
-
-
 #madeWithLove {
   font-family: 'Reem Kufi', sans-serif;
 }
@@ -24,6 +22,10 @@
 
 #container a {
   color: var(--secondTextColour); 
+}
+
+#container a:hover {
+  color: var(--lightPrimaryColour); 
 }
 
 #logo {

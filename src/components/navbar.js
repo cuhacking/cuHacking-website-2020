@@ -3,6 +3,8 @@ import styles from './navbar.module.css';
 import {
   NavButton
 } from 'components'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const navSlide = () => {
   const nav = document.querySelector('#navLinkList'); 
@@ -46,10 +48,6 @@ export default () => (
         <NavButton label='Login' link='https://my.cuhacking.com/login' onClick={navSlide}/> 
       </li>
     </ul>
-    <div className={styles.burger} id="burger" onClick={navSlide}>
-      <div className={styles.line1}/>
-      <div className={styles.line2}/>
-      <div className={styles.line3}/> 
-    </div>
+    <FontAwesomeIcon icon={faBars} className={styles.burger} id='burger' onClick={navSlide} size='lg'/>
   </nav>
 );
