@@ -85,7 +85,7 @@
   content: ''; 
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1300px) {
 
   #container {
     position: fixed;
@@ -102,12 +102,11 @@
     top: initial; 
     justify-content: space-around;
     list-style: none;
-    width: 60%;  
+    width: 30%;  
     transform: translateX(0%); 
     padding-bottom: 0px; 
     border-bottom: 0px; 
   }
-
 
   .navLinks li {
     opacity: 1;
@@ -115,6 +114,12 @@
 
   .burger {
     display: none; 
+  }
+    
+  @media screen and (max-width: 1600px) {
+    #container {
+        justify-content: space-evenly;
+    }
   }
 }
 
