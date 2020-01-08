@@ -77,42 +77,42 @@ const HackathonDefinition = () => {
   )
 }
 
-const Volunteer = () => (
-  <div className={styles.slide} id={styles.volunteer}>
-    <div className={styles.feature} id={styles.richcraft} />
-    <div className={styles.explanationRight}>
-      <h1>I want to volunteer!</h1>
-      <p>
-        Looking to be more involved than just a regular hacker? Sign up to get instant access to all the
-        behind-the-scenes cuHacking fun.
-      </p>
-      <Button
-        external
-        link
-        to='https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform'
-        target='_blank'
-        rel='noopener noreferrer'
-        label='Volunteer'
-        style={{ marginLeft: 0 }}
-      />
-      <p>
-        Have a knack for photography or videography? We have a special spot for you.{' '}
-        <span role='img' aria-label='wink ;)'>
-          😉
-        </span>
-      </p>
-      <Button
-        external
-        link
-        to='https://forms.gle/JEX6iR6NvJcmH4wK7'
-        target='_blank'
-        rel='noopener noreferrer'
-        label='Photograph'
-        style={{ marginLeft: 0 }}
-      />
-    </div>
-  </div>
-)
+// const Volunteer = () => (
+//   <div className={styles.slide} id={styles.volunteer}>
+//     <div className={styles.feature} id={styles.richcraft} />
+//     <div className={styles.explanationRight}>
+//       <h1>I want to volunteer!</h1>
+//       <p>
+//         Looking to be more involved than just a regular hacker? Sign up to get instant access to all the
+//         behind-the-scenes cuHacking fun.
+//       </p>
+//       <Button
+//         external
+//         link
+//         to='https://docs.google.com/forms/d/e/1FAIpQLSeQjgCEb6PNZBK1PEm3rFA9EHkO7LmyxSSBNGLu16XzIY_B7Q/viewform'
+//         target='_blank'
+//         rel='noopener noreferrer'
+//         label='Volunteer'
+//         style={{ marginLeft: 0 }}
+//       />
+//       <p>
+//         Have a knack for photography or videography? We have a special spot for you.{' '}
+//         <span role='img' aria-label='wink ;)'>
+//           😉
+//         </span>
+//       </p>
+//       <Button
+//         external
+//         link
+//         to='https://forms.gle/JEX6iR6NvJcmH4wK7'
+//         target='_blank'
+//         rel='noopener noreferrer'
+//         label='Photograph'
+//         style={{ marginLeft: 0 }}
+//       />
+//     </div>
+//   </div>
+// )
 
 const Faq = () => (
   <div className={styles.slide} id={styles.faq}>
