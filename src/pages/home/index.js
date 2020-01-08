@@ -39,7 +39,7 @@ const {
 
 const Landing = () => (
   <div className={styles.slide} id={styles.landing}>
-    <Logo className={styles.landingLogo} id='home' />
+    <Logo className={styles.landingLogo}/>
     <div className={styles.landingInfo}>
       <div className={styles.shortLogo2020} />
       <div>
@@ -115,8 +115,10 @@ const Volunteer = () => (
 )
 
 const Faq = () => (
+  <>
+  <span className={styles.scrollMarker} id='faq'></span>
   <div className={styles.slide} id={styles.faq}>
-    <h1 id='faq'>Frequently Asked Questions</h1>
+    <h1>Frequently Asked Questions</h1>
     {questions.map(({ question, answer }) => {
       if (question === 'Where is cuHacking 2020 taking place?') {
         return (
@@ -169,6 +171,7 @@ const Faq = () => (
       }
     })}
   </div>
+  </> 
 )
 
 function Sponsors() {

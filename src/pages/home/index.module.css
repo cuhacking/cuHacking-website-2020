@@ -25,6 +25,11 @@
   max-width: var(--contentWidth);
 }
 
+.slide:before {
+  height: 100px; 
+  content: ""; 
+}
+
 @media only screen and (min-width: 700px) {
   #topContent {
     background-position: center -100px;
