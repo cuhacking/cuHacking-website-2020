@@ -10,7 +10,6 @@ const navSlide = () => {
   nav.classList.toggle(styles.navActive); 
 }
 
-
 export default () => (
   /*
   <div id={styles.container}>
@@ -32,13 +31,16 @@ export default () => (
     </a>
     <ul className={styles.navLinks} id='navLinkList'>
       <li>
-        <NavButton label='Home' link='#home' onClick={navSlide}/> 
+        <NavButton label='Home' link='#' onClick={navSlide}/> 
       </li>
       <li>
         <NavButton label='FAQ'  link='#faq' onClick={navSlide}/>  
       </li>
       <li>
         <NavButton label='Sponsors' link='#sponsors' onClick={navSlide}/> 
+      </li>
+      <li>
+        <NavButton label='Contact Us' link='#footer' onClick={navSlide}/> 
       </li>
       <li>
         <NavButton label='Login' link='https://my.cuhacking.com/login' onClick={navSlide}/> 
