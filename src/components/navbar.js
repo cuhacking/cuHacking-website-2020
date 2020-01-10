@@ -28,7 +28,7 @@ export default () => (
     </nav>
   </div>*/ 
   <nav id={styles.container}>
-    <a href='#home' className={styles.logoContainer}>
+    <a href='#' className={styles.logoContainer}>
       <div id={styles.navLogo}/>
     </a>
     <ul className={styles.navLinks} id='navLinkList'>
