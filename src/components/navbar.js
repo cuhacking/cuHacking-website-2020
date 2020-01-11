@@ -43,8 +43,11 @@ export default () => (
       <li>
         <NavButton label='Contact Us' link='#footer' onClick={navSlide} />
       </li>
-      <li>
+      {/* <li>
         <NavButton label='Login' link='https://my.cuhacking.com/login' onClick={navSlide} />
+      </li> */}
+      <li>
+        <NavButton label='Live' link='https://live.cuhacking.com/profile' onClick={navSlide} />
       </li>
     </ul>
     <FontAwesomeIcon icon={faBars} className={styles.burger} id='burger' onClick={navSlide} size='lg' />

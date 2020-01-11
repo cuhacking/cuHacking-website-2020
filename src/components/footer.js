@@ -82,8 +82,11 @@ export default () => (
             {' '}
             Sponsors{' '}
           </a>
-          <a className={styles.navLink} href='https://my.cuhacking.com'>
+          {/* <a className={styles.navLink} href='https://my.cuhacking.com'>
             Login{' '}
+          </a> */}
+          <a className={styles.navLink} href='https://live.cuhacking.com/profile'>
+            Live{' '}
           </a>
         </div>
         <div className={styles.footerContent} id={styles.contactForm}>
