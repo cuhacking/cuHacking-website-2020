@@ -1,20 +1,21 @@
 #container {
-  display:block;
-  max-width: 90px;
-  min-width:60px;
-  position:fixed;
-  right:20px;
-  top:0;
-  width:10%;
-  z-index:10000;
+  display:none;
 }
 
-#banner {
-  width: 100%; 
-}
-
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 1300px) {
   #container {
-    right:60px;
+    display:block;
+    max-width: 90px;
+    min-width:60px;
+    position:fixed;
+    right:20px;
+    top:0;
+    width:5%;
+    z-index:10000;
   }
+  
+  #banner {
+    width: 100%; 
+  }
+  
 }

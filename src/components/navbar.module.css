@@ -1,24 +1,30 @@
 #container {
-  position: absolute;
+  align-items: center; 
+  position: fixed;
   top: 0;
   left: 0;
   margin: auto;
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   z-index: 10;
+  background-color: var(--backgroundColour);
+}
+
+#container a {
+  color: var(--textColour); 
 }
 
 #navbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 90%;
   max-width: var(--contentWidth);
 }
 
 #navLogo {
-  width: 120px;
+  width: 100%;
   height: 100%;
   background-image: url('../assets/shortLogo.svg');
   background-size: contain;
@@ -26,9 +32,95 @@
   background-position: center;
 }
 
-@media only screen and (min-width: 700px) {
-  #navbar {
-    justify-content: flex-start;
+#footer:before{ 
+  height: 100px; 
+  content: ''; 
+}
+
+.navLinks {
+  background-color: var(--backgroundColour);
+  margin: 0px 0px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed; 
+  right: 0px; 
+  height: auto; 
+  top: 100px; 
+  transform: translateX(100%);
+  transition: transform 0.35s ease-in; 
+  width: 100%; 
+  padding-bottom: 20px; 
+  border-bottom: 1px solid var(--textColour);
+}
+
+.navLinks li {
+  opacity: 1; 
+  list-style: none;
+}
+
+.burger { 
+  padding: 20px;
+  display: block; 
+  cursor: pointer; 
+}
+
+.navActive {
+  transform: translateX(0%); 
+}
+
+.burger div {
+  background-color: white; 
+  width: 25px;
+  height: 3px; 
+  margin: 5px; 
+}
+
+.logoContainer {
+  width: 120px;
+  height: 100%; 
+}
+
+.wrapper:before {
+  height: 100px; 
+  content: ''; 
+}
+
+@media screen and (min-width: 1300px) {
+
+  #container {
+    position: fixed;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, var(--backgroundColour) 70%, rgba(255,255,255,0) 100%);
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 0px;
+    height: initial; 
+    top: initial; 
+    justify-content: space-around;
+    list-style: none;
+    width: 30%;  
+    transform: translateX(0%); 
+    padding-bottom: 0px; 
+    border-bottom: 0px; 
+  }
+
+  .navLinks li {
+    opacity: 1;
+  }
+
+  .burger {
+    display: none; 
+  }
+    
+  @media screen and (max-width: 1600px) {
+    #container {
+        justify-content: space-evenly;
+    }
   }
 }
 

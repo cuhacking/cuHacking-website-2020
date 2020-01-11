@@ -43,11 +43,13 @@ const Landing = () => (
     <div className={styles.landingInfo}>
       <div className={styles.shortLogo2020} />
       <div>
-        <h3 className={styles.eventInfo}>January 11-12</h3>
+        {/* <h3 className={styles.eventInfo}>January 11-12</h3> */}
+        <h3 className={styles.eventInfo}>Today!</h3>
         <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button external link to='https://my.cuhacking.com' label='Register' />
+        <Button external link to='https://my.cuhacking.com/register' label='Register' />
+        <Button external link to='https://live.cuhacking.com/schedule' label='Schedule' />
       </div>
       {/* <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p> */}
     </div>
@@ -114,61 +116,105 @@ const HackathonDefinition = () => {
 //   </div>
 // )
 
-const Faq = () => (
-  <div className={styles.slide} id={styles.faq}>
-    <h1>Frequently Asked Questions</h1>
-    {questions.map(({ question, answer }) => {
-      if (question === 'Where is cuHacking 2020 taking place?') {
-        return (
-          <Acordian key={question} title={question}>
-            <p>
-              cuHacking 2020 will take place in{' '}
-              <a href='https://carleton.ca/campus/map/#RB' target='_blank' rel='noopener noreferrer'>
-                Richcraft Hall (RB)
-              </a>{' '}
-              at Carleton University in Ottawa, Ontario.
-            </p>
-          </Acordian>
-        )
-      } else if (question === 'Where can I find parking?') {
-        return (
-          <Acordian key={question} title={question}>
-            <p>
-              There are many places to park over the weekend. Parking information can be found at{' '}
-              <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
-                Carleton Parking Services
-              </a>
-              {'.'}
-            </p>
-          </Acordian>
-        )
-      } else if (question === 'Is the parking covered?') {
-        return (
-          <Acordian key={question} title={question}>
-            <p>
-              Parking will not be covered for hackers by cuHacking. For Ottawa participants, we recommend taking a bus
-              or the O-Train to campus. There are various free Park and Ride locations on the weekend that hackers can
-              use.
-            </p>
-            <p>
-              If you would prefer to park on campus, information on how to do that can be found{' '}
-              <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
-                here
-              </a>
-              {'. '}
-              Parking is cheaper on the weekends.
-            </p>
-          </Acordian>
-        )
-      } else {
-        return (
-          <Acordian key={question} title={question}>
-            <p>{answer}</p>
-          </Acordian>
-        )
-      }
-    })}
+const Location = () => (
+  <div className={styles.slide} id={styles.volunteer}>
+    <div className={styles.feature} id={styles.richcraft} />
+    <div className={styles.explanationRight}>
+      <h1>Where is it?</h1>
+      <p>
+        Once again, cuHacking will be taking place at Richcraft Hall. Don't want to be lost? Use our mobile apps to
+        access our building map, and do much more!
+      </p>
+      <Button
+        external
+        link
+        to='https://play.google.com/store/apps/details?id=com.cuhacking.app'
+        target='_blank'
+        rel='noopener noreferrer'
+        label='Android'
+        style={{ marginLeft: 0 }}
+      />
+      <Button
+        external
+        link
+        to='https://apps.apple.com/ca/app/cuhacking/id1490263765'
+        target='_blank'
+        rel='noopener noreferrer'
+        label='iOS'
+        style={{ marginLeft: 0 }}
+      />
+    </div>
   </div>
+)
+
+const Faq = () => (
+  <>
+    <span className={styles.scrollMarker} id='faq'></span>
+    <div className={styles.slide} id={styles.faq}>
+      <h1>Frequently Asked Questions</h1>
+      {questions.map(({ question, answer }) => {
+        if (question === 'Where is cuHacking 2020 taking place?') {
+          return (
+            <Acordian key={question} title={question}>
+              <p>
+                cuHacking 2020 will take place in{' '}
+                <a
+                  href='https://carleton.ca/campus/map/#RB'
+                  className={styles.faqLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Richcraft Hall (RB)
+                </a>{' '}
+                at Carleton University in Ottawa, Ontario.
+              </p>
+            </Acordian>
+          )
+        } else if (question === 'Where can I find parking?') {
+          return (
+            <Acordian key={question} title={question}>
+              <p>
+                There are many places to park over the weekend. Parking information can be found at{' '}
+                <a
+                  href='https://carleton.ca/parking/'
+                  className={styles.faqLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Carleton Parking Services
+                </a>
+                {'.'}
+              </p>
+            </Acordian>
+          )
+        } else if (question === 'Is the parking covered?') {
+          return (
+            <Acordian key={question} title={question}>
+              <p>
+                Parking will not be covered for hackers by cuHacking. For Ottawa participants, we recommend taking a bus
+                or the O-Train to campus. There are various free Park and Ride locations on the weekend that hackers can
+                use.
+              </p>
+              <p>
+                If you would prefer to park on campus, information on how to do that can be found{' '}
+                <a href='https://carleton.ca/parking/' target='_blank' rel='noopener noreferrer'>
+                  here
+                </a>
+                {'. '}
+                Parking is cheaper on the weekends.
+              </p>
+            </Acordian>
+          )
+        } else {
+          return (
+            <Acordian key={question} title={question}>
+              <p>{answer}</p>
+            </Acordian>
+          )
+        }
+      })}
+    </div>
+  </>
 )
 
 function Sponsors() {
@@ -185,7 +231,7 @@ function Sponsors() {
   )
 
   return (
-    <div className={styles.slide}>
+    <div className={styles.slide} id='sponsors'>
       <h2>SPONSORS</h2>
       <div className={styles.tier}>
         <div className={styles.logoSection}>
@@ -263,6 +309,7 @@ export default () => (
       <Landing />
       <HackathonDefinition />
       {/* <Volunteer /> */}
+      <Location />
     </div>
     <div id={styles.otherContent}>
       <Faq />

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 import styles from './mailingListForm.module.css';
 
@@ -72,7 +70,7 @@ export default class MailingListForm extends Component {
 
 
     text() {
-        return this.state.status === 'before' ? <p className={styles.dialogText} id={styles.mailingListText}> Join our mailing list! Be the first to know when applications open.</p>
+        return this.state.status === 'before' ? <p className={styles.dialogText} id={styles.mailingListText}> Subscribe to our newsletter to receive updates on applications, prizes, and all things cuHacking. </p>
                                               : <p className={styles.dialogText} id={styles.mailingListText}> Thanks! We'll keep you in the loop!</p> 
     }
 
@@ -81,8 +79,8 @@ export default class MailingListForm extends Component {
         <div id={styles.mailingListForm} onClick={this.openField}>
             {this.text()}
             <form className={`${styles.emailForm} ${this.state.status === 'after' ? styles.after : ''}`} onSubmit={this.handleSubmit}>
-                <input className={styles.emailField}     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email address.." value={this.state.value} onChange={this.handleChange} />
-                <button className={styles.submitButton}  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> <FontAwesomeIcon icon={faArrowRight}/></button>
+                <input className={styles.emailField}     disabled={this.state.loading || this.state.status === "after"} type="text" placeholder="Enter your email.." value={this.state.value} onChange={this.handleChange} />
+                <button className={styles.submitButton}  disabled={this.state.loading || this.state.status === "after" || !this.state.valid} type="submit"> < p id={styles.buttonLabel}> Subscribe </p> </button>
             </form>
             <p className={styles.errorMessage}>&nbsp;{this.state.error}</p>
         </div>

@@ -15,7 +15,6 @@ a {
   text-decoration: none;
   font-size: inherit;
   font-family: inherit;
-  color: var(--lightPrimaryColour);
 }
 
 html,
@@ -71,7 +70,4 @@ h4 {
     --backgroundColour: black;
   }
 
-  a {
-    color: var(--secondaryColour);
-  }
 }
