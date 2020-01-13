@@ -85,9 +85,6 @@ export default () => (
           <a className={styles.navLink} href='https://my.cuhacking.com/login'>
             Login{' '}
           </a>
-          <a className={styles.navLink} href='https://live.cuhacking.com/profile'>
-            Live{' '}
-          </a>
         </div>
         <div className={styles.footerContent} id={styles.contactForm}>
           <p className={styles.footerHeader}>Connect with us</p>
