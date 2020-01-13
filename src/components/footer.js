@@ -82,9 +82,9 @@ export default () => (
             {' '}
             Sponsors{' '}
           </a>
-          {/* <a className={styles.navLink} href='https://my.cuhacking.com'>
+          <a className={styles.navLink} href='https://my.cuhacking.com/login'>
             Login{' '}
-          </a> */}
+          </a>
           <a className={styles.navLink} href='https://live.cuhacking.com/profile'>
             Live{' '}
           </a>

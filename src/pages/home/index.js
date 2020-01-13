@@ -44,12 +44,13 @@ const Landing = () => (
       <div className={styles.shortLogo2020} />
       <div>
         {/* <h3 className={styles.eventInfo}>January 11-12</h3> */}
-        <h3 className={styles.eventInfo}>Today!</h3>
-        <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p>
+        {/* <p className={styles.eventInfo}>Richcraft Hall · Carleton University</p> */}
+        <h3 className={styles.eventInfo}>Thanks for coming!</h3>
+        <p className={styles.eventInfo}>Stay tuned for more updates.</p>
       </div>
       <div className={styles.landingButtons}>
-        <Button external link to='https://my.cuhacking.com/register' label='Register' />
-        <Button external link to='https://live.cuhacking.com/schedule' label='Schedule' />
+        <Button external link to='https://my.cuhacking.com/login' label='Login' />
+        {/* <Button external link to='https://live.cuhacking.com/schedule' label='Schedule' /> */}
       </div>
       {/* <p className={styles.notice}>Applications close January 5 at 11:59pm EST.</p> */}
     </div>
